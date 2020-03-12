@@ -1,0 +1,13 @@
+{
+  "views": [
+    {
+      "type": "text",
+      "title": "Hello",
+      "text": "hello"
+    },
+    {
+      "type": "text",
+      "text": "two"
+    }
+  ]
+}
