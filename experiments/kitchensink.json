@@ -2,8 +2,9 @@
   "views": [
     {
       "type": "text",
+      "instruction": true,
       "title": "Hello",
-      "text": "hello"
+      "text": "hello<br />This is a **test**!"
     },
     {
       "type": "text",
