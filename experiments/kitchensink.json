@@ -4,7 +4,19 @@
       "type": "text",
       "instruction": true,
       "title": "Hello",
+      "text": "ID=1"
+    },
+    {
+      "type": "gonogo",
+      "instruction": true,
+      "title": "Hello",
       "text": "hello<br />This is a **test**!"
+    },
+    {
+      "type": "text",
+      "instruction": true,
+      "title": "Hello",
+      "text": "ID=3"
     },
     {
       "type": "bart",
@@ -12,7 +24,7 @@
       "reward": 1,
       "maxPumps": 30,
       "initialPumps": 2,
-      "rounds": 5
+      "rounds": 1
     },
     {
       "type": "text",
