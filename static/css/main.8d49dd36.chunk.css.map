@@ -1,1 +1,0 @@
-{"version":3,"sources":["index.css"],"names":[],"mappings":"AAAA,OACE,SACF,CAEA,iBACE,eACF,CAKA,gBACE,aACF","file":"main.8d49dd36.chunk.css","sourcesContent":[".about {\n  color: red;\n}\n\n.study-container {\n  margin-top: 16px;\n}\n\n.view-container {\n}\n\n.Text-container {\n  padding: 0 8px 0 8px;\n}\n"]}
