@@ -1,0 +1,9 @@
+{
+  "next": "Next",
+  "finish": "Finish",
+  "errors.required": "You must respond to proceed.",
+  "BART.cashIn": "Cash",
+  "BART.pump": "Pump",
+  "BART.trialCounter": "Trial ${trial} of ${trials}",
+  "questions.email": "What is your email?"
+}

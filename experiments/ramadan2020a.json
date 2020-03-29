@@ -1,39 +1,19 @@
 {
-  "studyId": "kitchensink",
+  "studyId": "ramadan2020",
   "conditon": "a",
   "whenFinishedRedirectTo": "https://google.com?ID=123456",
   "metadata": {
-    "maintainer": "ansarinia@me.com"
+    "maintainer": "salar.rad@gmail.com"
   },
   "views": [
     {
       "id": "email",
       "type": "text",
       "instruction": false,
-      "text": "${questions.email}",
+      "text": "What is your email?",
       "help": "Example: support@cut.social",
       "placeholder": "Email",
       "pattern": "*@*.*"
-    },
-    {
-			"id": "Go/NoGo",
-			"type":"gonogo",
-			"text":"Quick, tap/click on the stars. If you see a circle, do not click or tap on the opposite side.",
-			"help":"Press one of the images in less than three seconds.",
-      "trials": {
-        "total": 4,
-        "go": 2,
-        "left": 2,
-        "leftGo": 1
-      },
-      "stimuliDuration": 30000,
-      "fixationDuration": 1000, 
-      "feedbackDuration": 1000,
-      "timeoutsBeforeReset": 10,
-      "choices": {
-        "go": "star",
-        "nogo": "circle"
-      }
     },
     {
       "id": "email",
@@ -41,6 +21,21 @@
       "instruction": true,
       "text": "In the next page, you will play 5 rounds of Go/NoGo task"
     },
+    {
+			"id": "Go/NoGo",
+			"type":"gonogo",
+			"text":"Quick, tap/click on the stars. If you see a circle, do not click or tap on the opposite side.",
+			"help":"Press one of the images in less than three seconds.",
+			"trials": 5,
+      "ISI": 3000,
+      "ITI": 2000,
+      "showFixation": true,
+			"timeoutsBeforeForcedTerminate": 10,
+			"choices": [
+				{ "value": "star", "expectedResponse": "go" },
+				{ "value": "circle", "expectedResponse": "nogo" }
+      ]
+		},
     {
       "id": "bart-instruction",
       "type": "text",
@@ -54,7 +49,7 @@
       "reward": 1,
       "maxPumps": 30,
       "initialPumps": 2,
-      "trials": 2
+      "rounds": 2
     },
     {
       "id": "sample-likert",
