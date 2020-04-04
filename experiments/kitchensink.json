@@ -16,6 +16,14 @@
       "pattern": "*@*.*"
     },
     {
+      "type": "bart",
+      "text": "two",
+      "reward": 1,
+      "maxPumps": 30,
+      "initialPumps": 2,
+      "trials": 2
+    },
+    {
 			"id": "Go/NoGo",
 			"type":"gonogo",
 			"text":"Quick, tap/click on the stars. If you see a circle, do not click or tap on the opposite side.",
@@ -47,14 +55,6 @@
       "instruction": true,
       "title": "Hello",
       "text": "In the following page, you are expected to play a BART task for 2 rounds."
-    },
-    {
-      "type": "bart",
-      "text": "two",
-      "reward": 1,
-      "maxPumps": 30,
-      "initialPumps": 2,
-      "trials": 2
     },
     {
       "id": "sample-likert",
