@@ -10,9 +10,9 @@
       "id": "email",
       "type": "text",
       "instruction": false,
-      "text": "${questions.email}",
-      "help": "Example: support@cut.social",
-      "placeholder": "Email",
+      "text": "ramadan2020.questions.email",
+      "help": "ramadan2020.questions.email_example",
+      "placeholder": "ramadan2020.questions.email_placeholder",
       "pattern": "*@*.*"
     },
     {

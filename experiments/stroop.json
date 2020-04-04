@@ -7,18 +7,18 @@
   },
   "views": [
     {
-			"id": "Stroop Demo",
+			"id": "stroop_demo",
 			"type":"stroop",
-			"text":"Quick, select the choice that matches the color of the presented text.",
-			"help":"Press one of the choices in less than three seconds.",
+			"text":"${stroop_demo.rule}",
+			"help":"${stroop_demo.help}",
       "trials": [
-        {"stimulus": "Green,#0f860f", "choices": ["Green,#ff2020", "Red,#0f860f"]},
-        {"stimulus": "Red,#bd1a1a", "choices": ["Red,#ff2020", "Green,#0f860f"]},
-        {"stimulus": "Green,#0f860f", "choices": ["Green,#ff2020", "Red,#bd1a1a"]},
-        {"stimulus": "Red,#bd1a1a", "choices": ["Green,#bd1a1a", "Red,#0f860f"]},
-        {"stimulus": "Green,#0f860f", "choices": ["Green,#ff2020", "Red,#bd1a1a"]}
+        {"stimulus": "${stroop.green},#0f860f", "choices": ["${stroop.green},#ff2020", "${stroop.red},#0f860f"]},
+        {"stimulus": "${stroop.red},#bd1a1a", "choices": ["${stroop.red},#ff2020", "${stroop.green},#0f860f"]},
+        {"stimulus": "${stroop.green},#0f860f", "choices": ["${stroop.green},#ff2020", "${stroop.red},#bd1a1a"]},
+        {"stimulus": "${stroop.red},#bd1a1a", "choices": ["${stroop.green},#bd1a1a", "${stroop.red},#0f860f"]},
+        {"stimulus": "${stroop.green},#0f860f", "choices": ["${stroop.green},#ff2020", "${stroop.red},#bd1a1a"]}
       ],
-      "stimuliDuration": 10000,
+      "stimulusDuration": 3000,
       "fixationDuration": 1000, 
       "feedbackDuration": 1000,
       "timeoutsBeforeReset": 10
