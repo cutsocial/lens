@@ -7,6 +7,18 @@
   },
   "views": [
     {
+      "id": "sample-likert",
+      "type": "matrix",
+      "text": "Choose the answer that reflects what you think?",
+      "requiredQuestions": [0,1,2],
+      "choices": [ "Never", "Almost never", "Neutral", "Sometimes", "Always" ],
+      "questions": [
+        "Question one",
+        "Question two",
+        "Question three"
+      ]
+    },
+    {
       "id": "email",
       "type": "text",
       "instruction": false,
@@ -55,18 +67,6 @@
       "instruction": true,
       "title": "Hello",
       "text": "In the following page, you are expected to play a BART task for 2 rounds."
-    },
-    {
-      "id": "sample-likert",
-      "type": "matrix",
-      "text": "Choose the answer that reflects what you think?",
-      "requiredRows": [0,1,2],
-      "cols": [ "Never", "Almost never", "Neutral", "Sometimes", "Always" ],
-      "rows": [
-        "Question one",
-        "Question two",
-        "Question three"
-      ]
     },
     {
       "id": "sample choice",

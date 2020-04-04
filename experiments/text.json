@@ -1,0 +1,20 @@
+{
+  "studyId": "text-demo",
+  "conditon": "a",
+  "whenFinishedRedirectTo": "https://google.com?ID=123456",
+  "metadata": {
+    "maintainer": "ansarinia@me.com"
+  },
+  "views": [
+    {
+      "id": "email",
+      "type": "text",
+      "instruction": false,
+      "text": "ramadan2020.questions.email",
+      "help": "ramadan2020.questions.email_example",
+      "placeholder": "ramadan2020.questions.email_placeholder",
+      "pattern": "*@*.*"
+    }
+
+  ]
+}
