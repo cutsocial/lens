@@ -1,7 +1,7 @@
 {
   "studyId": "text-demo",
   "conditon": "a",
-  "whenFinishedRedirectTo": "https://google.com?ID=123456",
+  "submissionNote": "submission.note",
   "metadata": {
     "maintainer": "ansarinia@me.com"
   },

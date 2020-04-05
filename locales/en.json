@@ -4,6 +4,7 @@
   "next": "Next",
   "yes": "Yes",
   "finish": "Finish",
+  "finish_and_redirect": "Continue",
   "errors.required": "You must respond to proceed.",
   "bart.cash": "Cash",
   "bart.pump": "Pump",
@@ -24,5 +25,7 @@
   "colors.green": "Green",
   "colors.red": "Red",
 
-  "stroop_demo.rule": "Select the answer that matches the color of presented text."
+  "stroop_demo.rule": "Select the answer that matches the color of presented text.",
+
+  "submission.note": "Thank you!"
 }

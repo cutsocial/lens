@@ -1,7 +1,8 @@
 {
   "studyId": "ramadan2020",
   "conditon": "b",
-  "whenFinishedRedirectTo": "https://google.com?ID=123456",
+  "redirectTo": "https://google.com?ID=123456",
+  "submissionNote": "submission.note",
   "metadata": {
     "maintainer": "salar.rad@gmail.com"
   },
