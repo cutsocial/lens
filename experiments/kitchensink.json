@@ -33,7 +33,7 @@
       "text": "two",
       "reward": 1,
       "maxPumps": 30,
-      "initialPumps": 2,
+      "safePumps": 2,
       "trials": 2
     },
     {
