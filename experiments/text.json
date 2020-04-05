@@ -10,6 +10,7 @@
       "id": "email",
       "type": "text",
       "instruction": false,
+      "required": true,
       "text": "ramadan2020.questions.email",
       "help": "ramadan2020.questions.email_example",
       "placeholder": "ramadan2020.questions.email_placeholder",

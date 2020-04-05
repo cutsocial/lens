@@ -12,12 +12,34 @@
 			"type":"stroop",
 			"rule":"stroop_demo.rule",
 			"help":"stroop_demo.help",
+			"colors": {
+				"G": "#00ff00",
+				"R": "#ff0000"
+			},
+			"words": {
+				"G": "colors.green",
+				"R": "colors.red"
+			},
       "trials": [
-        {"stimulus": "colors.green,#0f860f", "choices": ["colors.green,#ff2020", "colors.red,#0f860f"]},
-        {"stimulus": "colors.red,#bd1a1a", "choices": ["colors.red,#ff2020", "colors.green,#0f860f"]},
-        {"stimulus": "colors.green,#0f860f", "choices": ["colors.green,#ff2020", "colors.red,#bd1a1a"]},
-        {"stimulus": "colors.red,#bd1a1a", "choices": ["colors.green,#bd1a1a", "colors.red,#0f860f"]},
-        {"stimulus": "colors.green,#0f860f", "choices": ["colors.green,#ff2020", "colors.red,#bd1a1a"]}
+				{"stimulus": "GG", "choices": ["GG", "RR"]},
+				{"stimulus": "GG", "choices": ["GG", "RG"]},
+				{"stimulus": "GG", "choices": ["GR", "RR"]},	
+				{"stimulus": "GG", "choices": ["GR", "RG"]},
+				
+				{"stimulus": "RR", "choices": ["GG", "RR"]},
+				{"stimulus": "RR", "choices": ["GG", "RG"]},
+				{"stimulus": "RR", "choices": ["GR", "RR"]},	
+				{"stimulus": "RR", "choices": ["GR", "RG"]},
+							
+				{"stimulus": "RG", "choices": ["GG", "RR"]},
+				{"stimulus": "RG", "choices": ["GG", "RG"]},
+				{"stimulus": "RG", "choices": ["GR", "RR"]},	
+				{"stimulus": "RG", "choices": ["GR", "RG"]},
+							
+				{"stimulus": "GR", "choices": ["GG", "RR"]},
+				{"stimulus": "GR", "choices": ["GG", "RG"]},
+				{"stimulus": "GR", "choices": ["GR", "RR"]},	
+				{"stimulus": "GR", "choices": ["GR", "RG"]}
       ],
       "stimulusDuration": 3000,
       "fixationDuration": 1000, 
