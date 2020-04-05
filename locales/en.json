@@ -18,5 +18,11 @@
   "gonogo.ready_question": "Are you ready?",
   "bart.trialCounter": "Trial {{trial}} of {{trials}}",
   "ramadan2020.questions.email": "What is your email?",
-  "ramadan2020.questions.email_placeholder": "Email"
+  "ramadan2020.questions.email_placeholder": "Email",
+
+  "stroop.are_you_ready": "Are you ready?",
+  "colors.green": "Green",
+  "colors.red": "Red",
+
+  "stroop_demo.rule": "Select the answer that matches the color of presented text."
 }

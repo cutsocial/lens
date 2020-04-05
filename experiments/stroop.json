@@ -9,16 +9,16 @@
     {
 			"id": "stroop_demo",
 			"type":"stroop",
-			"text":"${stroop_demo.rule}",
-			"help":"${stroop_demo.help}",
+			"rule":"stroop_demo.rule",
+			"help":"stroop_demo.help",
       "trials": [
-        {"stimulus": "${stroop.green},#0f860f", "choices": ["${stroop.green},#ff2020", "${stroop.red},#0f860f"]},
-        {"stimulus": "${stroop.red},#bd1a1a", "choices": ["${stroop.red},#ff2020", "${stroop.green},#0f860f"]},
-        {"stimulus": "${stroop.green},#0f860f", "choices": ["${stroop.green},#ff2020", "${stroop.red},#bd1a1a"]},
-        {"stimulus": "${stroop.red},#bd1a1a", "choices": ["${stroop.green},#bd1a1a", "${stroop.red},#0f860f"]},
-        {"stimulus": "${stroop.green},#0f860f", "choices": ["${stroop.green},#ff2020", "${stroop.red},#bd1a1a"]}
+        {"stimulus": "colors.green,#0f860f", "choices": ["colors.green,#ff2020", "colors.red,#0f860f"]},
+        {"stimulus": "colors.red,#bd1a1a", "choices": ["colors.red,#ff2020", "colors.green,#0f860f"]},
+        {"stimulus": "colors.green,#0f860f", "choices": ["colors.green,#ff2020", "colors.red,#bd1a1a"]},
+        {"stimulus": "colors.red,#bd1a1a", "choices": ["colors.green,#bd1a1a", "colors.red,#0f860f"]},
+        {"stimulus": "colors.green,#0f860f", "choices": ["colors.green,#ff2020", "colors.red,#bd1a1a"]}
       ],
-      "stimulusDuration": 3000,
+      "stimulusDuration": 30000,
       "fixationDuration": 1000, 
       "feedbackDuration": 1000,
       "timeoutsBeforeReset": 10
