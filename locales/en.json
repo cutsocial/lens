@@ -32,5 +32,5 @@
 
   "stroop_demo.rule": "Select the answer that matches the color of presented text.",
 
-  "submission.note": "Thank you! Your submission code is: {{submissionCode}}"
+  "submission.note": "Thank you! Your submission code is: **{{submissionCode}}**"
 }

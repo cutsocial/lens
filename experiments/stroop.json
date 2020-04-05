@@ -19,10 +19,10 @@
         {"stimulus": "colors.red,#bd1a1a", "choices": ["colors.green,#bd1a1a", "colors.red,#0f860f"]},
         {"stimulus": "colors.green,#0f860f", "choices": ["colors.green,#ff2020", "colors.red,#bd1a1a"]}
       ],
-      "stimulusDuration": 30000,
+      "stimulusDuration": 3000,
       "fixationDuration": 1000, 
       "feedbackDuration": 1000,
-      "timeoutsBeforeReset": 10
+      "timeoutsBeforeReset": 1
     }
   ]
 }
