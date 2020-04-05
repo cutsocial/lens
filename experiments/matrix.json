@@ -12,6 +12,7 @@
       "type": "matrix",
       "text": "Choose the answer that reflects what you think?",
       "requiredQuestions": [0,1,2],
+      "direction": "vertical",
       "choices": [ "Never", "Almost never", "Neutral", "Sometimes", "Always" ],
       "questions": [
         "Question one",
