@@ -102,7 +102,7 @@
         "food.reminder.q.7?",
 	"food.reminder.q.8?",	
 	"food.reminder.q.9?",	
-	"food.reminder.q.10?"	    
+	"food.reminder.q.10?",	    
       ]
     },
     {
@@ -137,7 +137,7 @@
 			{ "value": "star", "expectedResponse": "go" },
 			{ "value": "circle", "expectedResponse": "nogo" }
       ]
-    },
+		},
     {
       "id": "bart-instruction",
       "type": "text",
@@ -173,7 +173,8 @@
         "trust.q2",
         "trust.q3",
         "trust.q4",
-        "trust.q5"]
+        "trust.q5",
+	    ]
     },  
     {
       "id": "sample-likert",
@@ -211,7 +212,7 @@
         "dospert.q27",
         "dospert.q28",
 	"dospert.q29",
-	"dospert.q30"     
+	"dospert.q30",     
       ]
     },
     {
