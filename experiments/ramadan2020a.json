@@ -1,6 +1,6 @@
 {
   "studyId": "ramadan2020",
-  "conditon": "b",
+  "conditon": "a",
   "redirectTo": "https://google.com?ID=123456",
   "submissionNote": "submission.note",
   "metadata": {
@@ -16,19 +16,6 @@
       "placeholder": "Email",
       "pattern": "*@*.*"
     },
-    {
-      "id": "sample-likerts",
-      "type": "matrix",
-      "text": "sex.q?",
-      "requiredQuestions": [0,1,2],
-      "direction": "vertical",
-      "choices": [ "sex.c1", "sex.c2", "sex.c3", "sex.c4"],
-      "questions": [
-        "Question one",
-        "Question two",
-        "Question three"
-      ]
-    },  
     {
       "id": "email",
       "type": "text",
