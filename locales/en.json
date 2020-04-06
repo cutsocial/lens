@@ -64,8 +64,7 @@
   "risk.qual.c3":	"moderate return and moderate risk",
   "risk.qual.c4":	"low return and no risk",
   
-  "bart.intro": "The next task is a game. There is a ball in the middle of the screen that grows bigger every time you press the ‘pump’ button. You receive points for each additional pump, but only if the ball doesn't pop. If it does, you lose all your points in that round. If you're satisfied with your points in any round, and you don’t want to pump the ball anymore, you can press the ‘cash in’ button to save your points and go to the next round. You will play a total of 20 rounds. Press ‘Next’ to begin.",
-  
+  "bart.intro": "The first task is a game. There is a ball in the middle of the screen that grows bigger every time you press the ‘pump’ button. You receive points for each additional pump, but only if the ball doesn't pop. If it does, you lose all your points in that round. If you're satisfied with your points in any round, and you don’t want to pump the ball anymore, you can press the ‘cash in’ button to save your points and go to the next round. You will play a total of 20 rounds. Press ‘Next’ to begin.",
 
   "bart.cash": "Cash",
   "bart.pump": "Pump",
@@ -78,6 +77,51 @@
   "bart.total_score_report": "In total, you have {{score}} points.",
   "bart.total_points": "Total Points",
   "bart.trialCounter": "Trial {{trial}} of {{trials}}",
+  
+  "food.reminder.q.instruction":	"Have you eaten or drank any of the following in the last 24 hours?	Do you own any of the following items?",
+  "food.reminder.q.1":	"French fries?",
+  "food.reminder.q.2":	"Meat?"
+  "food.reminder.q.3":	"Chocolate?",
+  "food.reminder.q.4":	"Coke?",
+  "food.reminder.q.5":	"Ice cream?",
+  "food.reminder.q.6":	"Pizza?",
+  "food.reminder.q.7":	"Cookies?",
+  "food.reminder.q.8":	"Coffee?,
+  "food.reminder.q.9":	"Pastries?",
+  "food.reminder.q.10":	"Fruits?",
+  
+  "food.reminder.time.q":	"When did you have your last meal?",
+  "food.reminder.c1":	"Less than 2 hour ago",
+  "food.reminder.c2":	"2-4 hours ago",
+  "food.reminder.c3":	"4-6 hours ago",
+  "food.reminder.c4":	"6-8 hours ago",
+  "food.reminder.c5":	"8-10 hours ago",
+  "food.reminder.c6":	"10-12 hours ago",
+  "food.reminder.c7":	"12-14 hours ago",
+  "food.reminder.c8":	"over 14 hours ago",
+  
+  "ownership.q.instruction": "Do you own any of the following items?",
+  "ownership.q.1": "Bike?",
+  "ownership.q.2": "Back pack?",
+  "ownership.q.3": "Wrist watch?",
+  "ownership.q.4": "Sunglasses?",
+  "ownership.q.5": "Diary notebook?",
+  "ownership.q.6": "Personal mug?",
+  "ownership.q.7": "Hand sanitizer?",
+  "ownership.q.8": "Flashlight?",
+  "ownership.q.9": "Headphones?",
+  "ownership.q.10": "Raincoat?",
+  
+  "ownership.time.q":	"When did last have phone call?",
+  "ownership.c1":	"Less than 2 hour ago",
+  "ownership.c2":	"2-4 hours ago",
+  "ownership.c3":	"4-6 hours ago",
+  "ownership.c4":	"6-8 hours ago",
+  "ownership.c5":	"8-10 hours ago",
+  "ownership.c6":	"10-12 hours ago",
+  "ownership.c7":	"12-14 hours ago",
+  "ownership.c8":	"over 14 hours ago",
+ 
   
   "gonogo.are_you_ready": "Are you ready?",
   "gonogo.restart": "Restart",
@@ -92,5 +136,60 @@
 
   "stroop_demo.rule": "Select the answer that matches the color of presented text.",
 
-  "submission.note": "Thank you! Your submission code is: **{{submissionCode}}**"
+  "dospert.intro":	"For each of the following statements, please indicate the likelihood that you would engage in the described activity or behavior if you were to find yourself in that situation:"
+  "dospert.q1":	"Admitting that your tastes are different from those of a friend.",
+  "dospert.q2":	"Going camping in the wilderness.",
+  "dospert.q3":	"Betting a day’s income at the horse races.",
+  "dospert.q4":	"Investing 10% of your annual income in a moderate growth mutual fund.",
+  "dospert.q5":	"Drinking heavily at a social function.",
+  "dospert.q6":	"Taking some questionable deductions on your income tax return.",
+  "dospert.q7":	"Disagreeing with an authority figure on a major issue.",
+  "dospert.q8":	"Betting a day’s income at a high-stake poker game.",
+  "dospert.q9":	"Having an affair with a married man/woman.",
+  "dospert.q10":	"Passing off somebody else’s work as your own.",
+  "dospert.q11":	"Going down a ski run that is beyond your ability.",
+  "dospert.q12":	"Investing 5% of your annual income in a very speculative stock.",
+  "dospert.q13":	"Going whitewater rafting at high water in the spring.",
+  "dospert.q14":	"Betting a day’s income on the outcome of a sporting event.",
+  "dospert.q15":	"Engaging in unprotected sex.",
+  "dospert.q16":	"Revealing a friend’s secret to someone else.",
+  "dospert.q17":	"Driving a car without wearing a seat belt.",
+  "dospert.q18":	"Investing 10% of your annual income in a new business venture.",
+  "dospert.q19":	"Taking a skydiving class.",
+  "dospert.q20":	"Riding a motorcycle without a helmet.",
+  "dospert.q21":	"Choosing a career that you truly enjoy over a more secure one.",
+  "dospert.q22":	"Speaking your mind about an unpopular issue in a meeting at work.",
+  "dospert.q23":	"Sunbathing without sunscreen.",
+  "dospert.q24":	"Bungee jumping off a tall bridge.",
+  "dospert.q25":	"Piloting a small plane.",
+  "dospert.q26":	"Walking home alone at night in an unsafe area of town.",
+  "dospert.q27":	"Moving to a city far away from your extended family.",
+  "dospert.q28":	"Starting a new career in your mid-thirties.",
+  "dospert.q29":	"Leaving your young children alone at home while running an errand.",
+  "dospert.q30":	"Not returning a wallet you found that contains $200."
+  
+  
+  "dospert.c1":	"Extremely Unlikely",
+  "dospert.c2":	"Moderately Unlikely",
+  "dospert.c3":	"Somewhat Unlikely",
+  "dospert.c4":	"Not Sure",
+  "dospert.c5":	"Somewhat likely",
+  "dospert.c6":	"Moderately likely",
+  "dospert.c7":	"Extremely likely",
+  
+  "social.dilemma.q":	"Please imagine the following: You and a person you don't know have to split a sum of money. Niether of you knows the exact amount but is between 0$ and $1000. You each have to choose an amount that you'd like to recieve. This could be anything between $0 to $1000. You'll know about each other's requested amounts only after you make your decision. If the sum of requests by the two of you is less than $1000, then you get the amount you reuqested. But if it exceeds $1000, neither of you gets any of the money. So although larger requests get you more money, you might also end up getting nothing. Please indicate the amount you'd like to receive?"
+
+  "trust.q":	"Using the following scale, please indicate how much you agree or disagree with the following statements:",
+  "trust.q1":	"Most people tell a lie when they can benefit by doing so.",
+  "trust.q2":	"Those devoted to unselfish causes are often exploited by others.",
+  "trust.q3":	"Some people do not cooperate because they pursue only their own short-term self-interest. Thus, things that can be done well if people cooperate often fail because of these people.",
+  "trust.q4":	"Most people are basically honest.",
+  "trust.q5":	"There will be more people who will not work if the social security system is developed further.",
+  "trust.c1":	"Strongly Disagree",
+  "trust.c2":	"Disagree",
+  "trust.c3":	"Nuetral",
+  "trust.c4":	"Strongly agree",
+  "trust.c5":	"Agree",  
+  
+  "submission.note": "Thank you for your participation. You can see your performance on the next page. Please write your email in the box below if you'd like to participate in similar studies. Thanks! Your submission code is: **{{submissionCode}}**"
 }
