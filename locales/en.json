@@ -78,15 +78,15 @@
   "bart.total_points": "Total Points",
   "bart.trialCounter": "Trial {{trial}} of {{trials}}",
   
-  "food.reminder.q.instruction":	"Have you eaten or drank any of the following in the last 24 hours?	Do you own any of the following items?",
+  "food.reminder.q.instruction": "Have you eaten or drank any of the following in the last 24 hours?",
   "food.reminder.q.1":	"French fries?",
-  "food.reminder.q.2":	"Meat?"
+  "food.reminder.q.2":	"Meat?",
   "food.reminder.q.3":	"Chocolate?",
   "food.reminder.q.4":	"Coke?",
   "food.reminder.q.5":	"Ice cream?",
   "food.reminder.q.6":	"Pizza?",
   "food.reminder.q.7":	"Cookies?",
-  "food.reminder.q.8":	"Coffee?,
+  "food.reminder.q.8":	"Coffee?",
   "food.reminder.q.9":	"Pastries?",
   "food.reminder.q.10":	"Fruits?",
   
@@ -136,7 +136,7 @@
 
   "stroop_demo.rule": "Select the answer that matches the color of presented text.",
 
-  "dospert.intro":	"For each of the following statements, please indicate the likelihood that you would engage in the described activity or behavior if you were to find yourself in that situation:"
+  "dospert.intro":	"For each of the following statements, please indicate the likelihood that you would engage in the described activity or behavior if you were to find yourself in that situation:",
   "dospert.q1":	"Admitting that your tastes are different from those of a friend.",
   "dospert.q2":	"Going camping in the wilderness.",
   "dospert.q3":	"Betting a day’s income at the horse races.",
@@ -166,7 +166,7 @@
   "dospert.q27":	"Moving to a city far away from your extended family.",
   "dospert.q28":	"Starting a new career in your mid-thirties.",
   "dospert.q29":	"Leaving your young children alone at home while running an errand.",
-  "dospert.q30":	"Not returning a wallet you found that contains $200."
+  "dospert.q30":	"Not returning a wallet you found that contains $200.",
   
   
   "dospert.c1":	"Extremely Unlikely",
@@ -177,7 +177,7 @@
   "dospert.c6":	"Moderately likely",
   "dospert.c7":	"Extremely likely",
   
-  "social.dilemma.q":	"Please imagine the following: You and a person you don't know have to split a sum of money. Niether of you knows the exact amount but is between 0$ and $1000. You each have to choose an amount that you'd like to recieve. This could be anything between $0 to $1000. You'll know about each other's requested amounts only after you make your decision. If the sum of requests by the two of you is less than $1000, then you get the amount you reuqested. But if it exceeds $1000, neither of you gets any of the money. So although larger requests get you more money, you might also end up getting nothing. Please indicate the amount you'd like to receive?"
+  "social.dilemma.q":	"Please imagine the following: You and a person you don't know have to split a sum of money. Niether of you knows the exact amount but is between 0$ and $1000. You each have to choose an amount that you'd like to recieve. This could be anything between $0 to $1000. You'll know about each other's requested amounts only after you make your decision. If the sum of requests by the two of you is less than $1000, then you get the amount you reuqested. But if it exceeds $1000, neither of you gets any of the money. So although larger requests get you more money, you might also end up getting nothing. Please indicate the amount you'd like to receive?",
 
   "trust.q":	"Using the following scale, please indicate how much you agree or disagree with the following statements:",
   "trust.q1":	"Most people tell a lie when they can benefit by doing so.",
