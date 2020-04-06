@@ -28,7 +28,14 @@
         "Question two",
         "Question three"
       ]
-    },  
+    },
+    {
+	"id": "sample choice",
+	"type": "matrix",
+	"text": "sex.q",
+	"choices": [ "sex.c1", "sex.c2", "sex.c3", "sex.c4" ],
+	"required": true
+    },
     {
       "id": "email",
       "type": "text",
