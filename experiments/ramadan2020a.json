@@ -41,14 +41,50 @@
       ]
     },
     {
-      "id": "sex",
+      "id": "age",
       "type": "matrix",
-      "text": "sex.q",
+      "text": "age.q",
       "requiredQuestions": [0],
       "direction": "vertical",
-      "choices": [ "sex.c1", "sex.c2", "sex.c3", "sex.c4" ],
-      "questions": [ "sex.q" ]
+      "choices": [ "age.c1","age.c2","age.c3","age.c4","age.c5","age.c6","age.c7","age.c8","age.c9","age.c10" ],
+      "questions": [ "age.q" ]
     },
+    {
+      "id": "living",
+      "type": "matrix",
+      "text": "living.q",
+      "requiredQuestions": [0],
+      "direction": "vertical",
+      "choices": [ "living.c1","living.c2", "living.c3","living.c4" ],
+      "questions": [ "living.q" ]
+    },
+    {
+      "id": "income",
+      "type": "matrix",
+      "text": "income.self.q",
+      "requiredQuestions": [0],
+      "direction": "vertical",
+      "choices": [ "income.self.c1",  "income.self.c2",  "income.self.c3",  "income.self.c4",  "income.self.c5", "income.self.c6" ],
+      "questions": [ "living.q" ]
+    },
+    {
+      "id": "education",
+      "type": "matrix",
+      "text": "income.self.q",
+      "requiredQuestions": [0],
+      "direction": "vertical",
+      "choices": [ "education.c1","education.c2","education.c3","education.c4","education.c5","education.c6","education.c7","education.c8"],
+      "questions": [ "education.q" ]
+    },	  
+    {
+      "id": "risk.qual",
+      "type": "matrix",
+      "text": "income.self.q",
+      "requiredQuestions": [0],
+      "direction": "vertical",
+      "choices": [ "risk.qual.c1", "risk.qual.c2", "risk.qual.c3", "risk.qual.c4",],
+      "questions": [ "risk.qual." ]
+    },	  
     {
       "id": "email",
       "type": "text",
