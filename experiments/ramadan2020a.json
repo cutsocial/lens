@@ -12,14 +12,10 @@
       "id": "sample choice",
       "type": "choice",
       "text": "age.q",
-      "choices": [ "Male", "Female", "The one that Germans conder as third gender", "Prefer not to say" ],
+      "choices": [ "sex.c1", "sex.c2", "sex.c3", "sex.c4" ],
       "required": true
     },
-
-	  
-	  
-	  
-	  {
+    {
       "id": "email",
       "type": "text",
       "instruction": false,
