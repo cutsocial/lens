@@ -82,15 +82,9 @@
       "text": "income.self.q",
       "requiredQuestions": [0],
       "direction": "vertical",
-      "choices": [ "risk.qual.c1", "risk.qual.c2", "risk.qual.c3", "risk.qual.c4",],
+      "choices": [ "risk.qual.c1", "risk.qual.c2", "risk.qual.c3", "risk.qual.c4"],
       "questions": [ "risk.qual." ]
     },	  
-    {
-      "id": "email",
-      "type": "text",
-      "instruction": true,
-      "text": "In the next page, you will play 5 rounds of Go/NoGo task"
-    },
     {
 			"id": "Go/NoGo",
 			"type":"gonogo",
@@ -110,8 +104,8 @@
       "id": "bart-instruction",
       "type": "text",
       "instruction": true,
-      "title": "Hello",
-      "text": "In the following page, you are expected to play a BART task for 2 rounds."
+      "title": "",
+      "text": "bart.intro"
     },
     {
       "type": "bart",
@@ -134,13 +128,10 @@
       ]
     },
     {
-      "id": "sample choice",
-      "type": "choice",
-      "text": "Gender?",
-      "choices": [ "Male", "Female", "The one that Germans conder as third gender", "Prefer not to say" ],
-      "required": true
+      "id": "email",
+      "type": "text",
+      "instruction": true,
+      "text": "In the next page, you will play 5 rounds of Go/NoGo task"
     }
-
-
   ]
 }
