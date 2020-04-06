@@ -20,7 +20,7 @@
       "id": "sample-likerts",
       "type": "matrix",
       "text": "Choose the answer that reflects what you think?",
-      "requiredQuestions": [0,1,2],
+      "requiredQuestions": [0],
       "direction": "vertical",
       "choices": [ "Never", "Almost never", "Neutral", "Sometimes", "Always" ],
       "questions": [
