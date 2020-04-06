@@ -36,7 +36,9 @@
       "requiredQuestions": [0],
       "direction": "vertical",
       "choices": [ "sex.c1", "sex.c2", "sex.c3", "sex.c4" ],
-      "questions": [ "sex.q" ]
+      "questions": [
+      "sex.q"
+      ]
     },
     {
       "id": "email",
