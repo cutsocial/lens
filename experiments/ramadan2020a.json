@@ -29,6 +29,17 @@
         "Question three"
       ]
     },
+	  {
+      "id": "sex",
+      "type": "matrix",
+      "text": "sex.q",
+      "requiredQuestions": [0],
+      "direction": "vertical",
+      "choices": [ "sex.c1", "sex.c2", "sex.c3", "sex.c4" ],
+      "questions": [
+      "sex.q"
+      ]
+    },
     {
 	"id": "sample choice",
 	"type": "matrix",
