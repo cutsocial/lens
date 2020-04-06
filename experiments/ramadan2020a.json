@@ -63,7 +63,7 @@
       "text": "income.self.q",
       "requiredQuestions": [0],
       "direction": "vertical",
-      "choices": [ "income.parent.q.c1",  "income.parent.c2",  "income.parent.c3",  "income.parent.c4",  "income.parent.c5", "income.parent   .c6" ],
+      "choices": [ "income.parent.c1",  "income.parent.c2",  "income.parent.c3",  "income.parent.c4",  "income.parent.c5", "income.parent.c6" ],
       "questions": [ "income.parent.q" ]
     }, 
     {
@@ -82,13 +82,13 @@
       "requiredQuestions": [0],
       "direction": "vertical",
       "choices": [ "risk.qual.c1", "risk.qual.c2", "risk.qual.c3", "risk.qual.c4"],
-      "questions": [ "risk.qual." ]
+      "questions": [ "risk.qual.q" ]
     },	
     {
       "id": "food reminder",
       "type": "matrix",
       "text": "Have you eaten or drank any of the following in the last 24 hours?",
-      "requiredQuestions": [0],
+      "requiredQuestions": [0,1,2,3,4,5,6,7,8,9],
       "direction": "vertical",
       "choices": [ "Yes", "No" ],
       "questions": [
@@ -110,17 +110,8 @@
       "text": "When did you have your last meal?",
       "requiredQuestions": [0],
       "direction": "vertical",
-      "choices": [ "Yes", "No" ],
-      "questions": [
-        "food.reminder.c1",
-        "food.reminder.c2",
-        "food.reminder.c3",
-	"food.reminder.c4",
- 	"food.reminder.c5",
-        "food.reminder.c6",
-        "food.reminder.c7",
-	"food.reminder.c8"
-      ]
+      "choices": [ "food.reminder.c1", "food.reminder.c2", "food.reminder.c3", "food.reminder.c4", "food.reminder.c5", "food.reminder.c6", "food.reminder.c7", "food.reminder.c8" ],
+      "questions": ["food.reminder.time.q"]
     },
     {
       "id": "Go/NoGo introduction",
