@@ -102,7 +102,7 @@
         "food.reminder.q.7?",
 	"food.reminder.q.8?",	
 	"food.reminder.q.9?",	
-	"food.reminder.q.10?",	    
+	"food.reminder.q.10?"	    
       ]
     },
     {
@@ -137,7 +137,7 @@
 			{ "value": "star", "expectedResponse": "go" },
 			{ "value": "circle", "expectedResponse": "nogo" }
       ]
-		},
+    },
     {
       "id": "bart-instruction",
       "type": "text",
@@ -157,7 +157,7 @@
       "id": "social dilemma",
       "type": "text",
       "instruction": false,
-      "text": "Please imagine the following: You and a person you don't know have to split a sum of money. Niether of you knows the exact amount but is between 0$ and $1000. You each have to choose an amount that you'd like to recieve. This could be anything between $0 to $1000. You'll know about each other's requested amounts only after you make your decision. If the sum of requests by the two of you is less than $1000, then you get the amount you reuqested. But if it exceeds $1000, neither of you gets any of the money. So although larger requests get you more money, you might also end up getting nothing. Please indicate the amount you'd like to receive?",
+      "text": "Please imagine the following: You and a person you don't know have to split a sum of money. Neither of you knows the exact amount but it's between $0 and $1000. You each have to choose an amount that you'd like to recieve. It could be anything between $0 to $1000. You'll know each other's requested amounts only after you've made your decision. If the sum of money requested by the two of you is less than $1000, then you each get the amount you reuqested. But if the sum exceeds $1000, neither of you gets any of the money. So although larger requests get you more money, you might also end up getting nothing. Please indicate the amount you'd like to receive?",
       "help": "",
       "placeholder": "$0 to $1000 ",
       "pattern": ""
@@ -173,8 +173,7 @@
         "trust.q2",
         "trust.q3",
         "trust.q4",
-        "trust.q5",
-	    ]
+        "trust.q5"]
     },  
     {
       "id": "sample-likert",
@@ -212,7 +211,7 @@
         "dospert.q27",
         "dospert.q28",
 	"dospert.q29",
-	"dospert.q30",     
+	"dospert.q30"     
       ]
     },
     {
