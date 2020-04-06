@@ -82,22 +82,60 @@
       "text": "income.self.q",
       "requiredQuestions": [0],
       "direction": "vertical",
-      "choices": [ "risk.qual.c1", "risk.qual.c2", "risk.qual.c3", "risk.qual.c4",],
+      "choices": [ "risk.qual.c1", "risk.qual.c2", "risk.qual.c3", "risk.qual.c4"],
       "questions": [ "risk.qual." ]
-    },	  
+    },	
     {
-			"id": "Go/NoGo",
-			"type":"gonogo",
-			"text":"Quick, tap/click on the stars. If you see a circle, do not click or tap on the opposite side.",
-			"help":"Press one of the images in less than three seconds.",
-			"trials": 5,
-      "ISI": 3000,
-      "ITI": 2000,
-      "showFixation": true,
-			"timeoutsBeforeForcedTerminate": 10,
-			"choices": [
-				{ "value": "star", "expectedResponse": "go" },
-				{ "value": "circle", "expectedResponse": "nogo" }
+      "id": "food reminder",
+      "type": "matrix",
+      "text": "Have you eaten or drank any of the following in the last 24 hours?",
+      "requiredQuestions": [0],
+      "direction": "vertical",
+      "choices": [ "Yes", "No" ],
+      "questions": [
+        "food.reminder.q.1?",
+        "food.reminder.q.2?",
+        "food.reminder.q.3?",
+	"food.reminder.q.4?",
+ 	"food.reminder.q.5?",
+        "food.reminder.q.6?",
+        "food.reminder.q.7?",
+	"food.reminder.q.8?",	
+	"food.reminder.q.9?",	
+	"food.reminder.q.10?",	    
+      ]
+    },
+    {
+      "id": "food.reminder.time.q",
+      "type": "matrix",
+      "text": "When did you have your last meal?",
+      "requiredQuestions": [0],
+      "direction": "vertical",
+      "choices": [ "Yes", "No" ],
+      "questions": [
+        "food.reminder.c1",
+        "food.reminder.c2",
+        "food.reminder.c3",
+	"food.reminder.c4",
+ 	"food.reminder.c5",
+        "food.reminder.c6",
+        "food.reminder.c7",
+	"food.reminder.c8"
+      ]
+    },
+    {
+	"id": "Go/NoGo",
+	"type":"gonogo",
+	"text":"Quick, tap/click on the stars. If you see a circle, do not click or tap on the opposite side.",
+	"help":"Press one of the images in less than three seconds.",
+	"trials": 5,
+      	"ISI": 3000,
+	"ITI": 2000,
+	"showFixation": true,
+		"timeoutsBeforeForcedTerminate": 10,
+		"choices": [
+			{ "value": "star", "expectedResponse": "go" },
+			{ "value": "circle", "expectedResponse": "nogo" }
       ]
 		},
     {
