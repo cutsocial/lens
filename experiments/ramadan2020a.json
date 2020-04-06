@@ -1,20 +1,12 @@
 {
   "studyId": "ramadan2020",
-  "conditon": "a",
+  "conditon": "b",
   "redirectTo": "https://google.com?ID=123456",
   "submissionNote": "submission.note",
   "metadata": {
     "maintainer": "salar.rad@gmail.com"
   },
   "views": [
-    
-    {
-      "id": "sample choice",
-      "type": "choice",
-      "text": "age.q",
-      "choices": [ "sex.c1", "sex.c2", "sex.c3", "sex.c4" ],
-      "required": true
-    },
     {
       "id": "email",
       "type": "text",
@@ -24,6 +16,19 @@
       "placeholder": "Email",
       "pattern": "*@*.*"
     },
+    {
+      "id": "sample-likerts",
+      "type": "matrix",
+      "text": "sex.q?",
+      "requiredQuestions": [0,1,2],
+      "direction": "vertical",
+      "choices": [ "sex.c1", "sex.c2", "sex.c3", "sex.c4"],
+      "questions": [
+        "Question one",
+        "Question two",
+        "Question three"
+      ]
+    },  
     {
       "id": "email",
       "type": "text",
