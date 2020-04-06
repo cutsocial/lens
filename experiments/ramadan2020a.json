@@ -7,7 +7,19 @@
     "maintainer": "salar.rad@gmail.com"
   },
   "views": [
+    
     {
+      "id": "sample choice",
+      "type": "choice",
+      "text": "age.q",
+      "choices": [ "Male", "Female", "The one that Germans conder as third gender", "Prefer not to say" ],
+      "required": true
+    },
+
+	  
+	  
+	  
+	  {
       "id": "email",
       "type": "text",
       "instruction": false,
