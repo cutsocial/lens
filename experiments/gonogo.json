@@ -8,11 +8,11 @@
   },
   "views": [
     {
-			"id": "Go/NoGo Demo",
-			"type":"gonogo",
-			"text":"Quick, tap/click on the stars. If you see a circle, do not click or tap on the opposite side.",
-			"help":"Press one of the images in less than three seconds.",
-      "trials": {
+	"id": "Go/NoGo Demo",
+	"type":"gonogo",
+	"text":"Quick, tap/click on the stars. If you see a circle, do not click or tap on the opposite side.",
+	"help":"Press one of the images in less than three seconds.",
+      	"trials": {
         "total": 3,
         "go": 2,
         "left": 1,
