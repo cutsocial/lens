@@ -25,6 +25,7 @@
   "sex.c1":	"Male",
   "sex.c2":	"Female",
   "sex.c3":	"Other",
+  "sex.c3":	"Prefer not to say",
   
   "living.q":	"Which option describes your living area?",
   "living.c1":	"Large city",
