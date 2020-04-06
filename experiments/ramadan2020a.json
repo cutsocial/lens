@@ -8,27 +8,17 @@
   },
   "views": [
     {
-      "id": "email",
+      "id": "introduction",
       "type": "text",
-      "instruction": false,
-      "text": "What is your email?",
-      "help": "Example: support@cut.social",
-      "placeholder": "Email",
-      "pattern": "*@*.*"
+      "instruction": true,
+      "text": "intro"
     },
-    {
-      "id": "sample-likerts",
-      "type": "matrix",
-      "text": "Choose the answer that reflects what you think?",
-      "requiredQuestions": [0],
-      "direction": "vertical",
-      "choices": [ "Never", "Almost never", "Neutral", "Sometimes", "Always" ],
-      "questions": [
-        "Question one",
-        "Question two",
-        "Question three"
-      ]
-    },
+   {
+      "id": "introduction",
+      "type": "text",
+      "instruction": true,
+      "text": "intro.demographics"
+    },	  
     {
       "id": "sex",
       "type": "matrix",
@@ -67,6 +57,15 @@
       "choices": [ "income.self.c1",  "income.self.c2",  "income.self.c3",  "income.self.c4",  "income.self.c5", "income.self.c6" ],
       "questions": [ "living.q" ]
     },
+    {
+      "id": "income",
+      "type": "matrix",
+      "text": "income.self.q",
+      "requiredQuestions": [0],
+      "direction": "vertical",
+      "choices": [ "income.parent.q.c1",  "income.parent.c2",  "income.parent.c3",  "income.parent.c4",  "income.parent.c5", "income.parent   .c6" ],
+      "questions": [ "income.parent.q" ]
+    }, 
     {
       "id": "education",
       "type": "matrix",
@@ -124,6 +123,12 @@
       ]
     },
     {
+      "id": "Go/NoGo introduction",
+      "type": "text",
+      "instruction": true,
+      "text": "intro"
+    },
+    {
 	"id": "Go/NoGo",
 	"type":"gonogo",
 	"text":"Quick, tap/click on the stars. If you see a circle, do not click or tap on the opposite side.",
@@ -137,7 +142,7 @@
 			{ "value": "star", "expectedResponse": "go" },
 			{ "value": "circle", "expectedResponse": "nogo" }
       ]
-    },
+    },	  
     {
       "id": "bart-instruction",
       "type": "text",
@@ -219,6 +224,15 @@
       "type": "text",
       "instruction": true,
       "text": "In the next page, you will play 5 rounds of Go/NoGo task"
+    },
+    {
+      "id": "email",
+      "type": "text",
+      "instruction": false,
+      "text": "submission.note",
+      "help": "Example: support@cut.social",
+      "placeholder": "Email",
+      "pattern": "*@*.*"
     }
   ]
 }
