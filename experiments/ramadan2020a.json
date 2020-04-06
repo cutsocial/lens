@@ -14,7 +14,7 @@
       "text": "intro"
     },
    {
-      "id": "introduction",
+      "id": "demographics",
       "type": "text",
       "instruction": true,
       "text": "intro.demographics"
