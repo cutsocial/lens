@@ -1,6 +1,6 @@
 {
   "studyId": "ramadan2020",
-  "conditon": "a",
+  "conditon": "b",
   "redirectTo": "https://google.com?ID=123456",
   "submissionNote": "submission.note",
   "metadata": {
@@ -16,6 +16,19 @@
       "placeholder": "Email",
       "pattern": "*@*.*"
     },
+    {
+      "id": "sample-likerts",
+      "type": "matrix",
+      "text": "Choose the answer that reflects what you think?",
+      "requiredQuestions": [0,1,2],
+      "direction": "vertical",
+      "choices": [ "Never", "Almost never", "Neutral", "Sometimes", "Always" ],
+      "questions": [
+        "Question one",
+        "Question two",
+        "Question three"
+      ]
+    },  
     {
       "id": "email",
       "type": "text",
