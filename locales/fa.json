@@ -11,5 +11,7 @@
   "gonogo.ready_question": "آماده‌ای؟",
   "bart.trialCounter": "Trial {{trial}} of {{trials}}",
   "ramadan2020.questions.email": "What is your email?",
-  "ramadan2020.questions.email_placeholder": "Email"
+  "ramadan2020.questions.email_placeholder": "Email",
+
+  "submission.note": ""
 }
