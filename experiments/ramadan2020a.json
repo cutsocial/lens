@@ -82,7 +82,7 @@
       "text": "income.self.q",
       "requiredQuestions": [0],
       "direction": "vertical",
-      "choices": [ "risk.qual.c1", "risk.qual.c2", "risk.qual.c3", "risk.qual.c4"],
+      "choices": [ "risk.qual.c1", "risk.qual.c2", "risk.qual.c3", "risk.qual.c4",],
       "questions": [ "risk.qual." ]
     },	  
     {
