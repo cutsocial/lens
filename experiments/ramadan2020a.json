@@ -87,7 +87,7 @@
     {
       "id": "food reminder",
       "type": "matrix",
-      "text": "Have you eaten or drank any of the following in the last 24 hours?",
+      "text": "food.reminder.q.instruction",
       "requiredQuestions": [0,1,2,3,4,5,6,7,8,9],
       "direction": "vertical",
       "choices": [ "Yes", "No" ],
@@ -119,20 +119,25 @@
       "instruction": true,
       "text": "gonogo.introduction"
     },
-    {
-	"id": "Go/NoGo",
-	"type":"gonogo",
-	"text":"Quick, tap/click on the stars. If you see a circle, do not click or tap on the opposite side.",
-	"help":"Press one of the images in less than three seconds.",
-	"trials": 5,
-      	"ISI": 3000,
-	"ITI": 2000,
-	"showFixation": true,
-		"timeoutsBeforeForcedTerminate": 10,
-		"choices": [
-			{ "value": "star", "expectedResponse": "go" },
-			{ "value": "circle", "expectedResponse": "nogo" }
-      ]
+        {
+      "id": "Go/NoGo Demo",
+      "type":"gonogo",
+      "text":"Quick, tap/click on the stars. If you see a circle, do not click or tap on the opposite side.",
+      "help":"Press one of the images in less than three seconds.",
+      "trials": {
+        "total": 3,
+        "go": 2,
+        "left": 1,
+        "leftGo": 1
+      },
+      "stimuliDuration": 1000,
+      "fixationDuration": 1000, 
+      "feedbackDuration": 1000,
+      "timeoutsBeforeReset": 10,
+      "choices": {
+        "go": "star",
+        "nogo": "circle"
+      }
     },	  
     {
       "id": "bart-instruction",
