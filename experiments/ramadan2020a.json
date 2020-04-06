@@ -92,16 +92,16 @@
       "direction": "vertical",
       "choices": [ "Yes", "No" ],
       "questions": [
-        "food.reminder.q.1?",
-        "food.reminder.q.2?",
-        "food.reminder.q.3?",
-	"food.reminder.q.4?",
- 	"food.reminder.q.5?",
-        "food.reminder.q.6?",
-        "food.reminder.q.7?",
-	"food.reminder.q.8?",	
-	"food.reminder.q.9?",	
-	"food.reminder.q.10?"	    
+        "food.reminder.q.1",
+        "food.reminder.q.2",
+        "food.reminder.q.3",
+	"food.reminder.q.4",
+ 	"food.reminder.q.5",
+        "food.reminder.q.6",
+        "food.reminder.q.7",
+	"food.reminder.q.8",	
+	"food.reminder.q.9",	
+	"food.reminder.q.10"	    
       ]
     },
     {
@@ -117,7 +117,7 @@
       "id": "Go/NoGo introduction",
       "type": "text",
       "instruction": true,
-      "text": "intro"
+      "text": "gonogo.introduction"
     },
     {
 	"id": "Go/NoGo",
