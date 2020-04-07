@@ -177,12 +177,27 @@
         "trust.q5"]
     },  
     {
+      "id": "trust",
+      "type": "matrix",
+      "text": "trust.q",
+      "requiredQuestions": [0,1,2],
+      "direction": "vertical",
+      "choices": [ "trust.c1","trust.c2","trust.c3","trust.c4","trust.c5"],
+      "questions": [
+        "trust.q1",
+        "trust.q2",
+        "trust.q3",
+        "trust.q4",
+        "trust.q5"]
+    },
+    {
       "id": "dospert",
       "type": "matrix",
-      "text": "dospert.intro",
-      "requiredRows": [0,1,2],
-      "cols": [ "dospert.c1", "dospert.c2", "dospert.c3", "dospert.c4", "dospert.c5", "dospert.c6", "dospert.c7" ],
-      "rows": [
+      "text": "trust.q",
+      "requiredQuestions": [0,1,2],
+      "direction": "vertical",
+      "choices": [ "dospert.c1", "dospert.c2", "dospert.c3", "dospert.c4", "dospert.c5", "dospert.c6", "dospert.c7" ],
+      "questions": [
         "dospert.q1",
         "dospert.q2",
         "dospert.q3",
@@ -214,7 +229,7 @@
 	"dospert.q29",
 	"dospert.q30"     
       ]
-    },
+    },	  
     {
       "id": "email",
       "type": "text",
