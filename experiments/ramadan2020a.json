@@ -49,7 +49,7 @@
       "questions": [ "living.q" ]
     },
     {
-      "id": "income",
+      "id": "income.self",
       "type": "matrix",
       "text": "income.self.q",
       "requiredQuestions": [0],
@@ -58,7 +58,7 @@
       "questions": [ "living.q" ]
     },
     {
-      "id": "income",
+      "id": "income.parents",
       "type": "matrix",
       "text": "income.self.q",
       "requiredQuestions": [0],
@@ -85,7 +85,7 @@
       "questions": [ "risk.qual.q" ]
     },	
     {
-      "id": "food reminder",
+      "id": "food.reminder",
       "type": "matrix",
       "text": "food.reminder.q.instruction",
       "requiredQuestions": [0,1,2,3,4,5,6,7,8,9],
@@ -105,9 +105,9 @@
       ]
     },
     {
-      "id": "food.reminder.time.q",
+      "id": "food.reminder.time",
       "type": "matrix",
-      "text": "When did you have your last meal?",
+      "text": "food.reminder.time.q",
       "requiredQuestions": [0],
       "direction": "vertical",
       "choices": [ "food.reminder.c1", "food.reminder.c2", "food.reminder.c3", "food.reminder.c4", "food.reminder.c5", "food.reminder.c6", "food.reminder.c7", "food.reminder.c8" ],
@@ -140,7 +140,7 @@
       }
     },	  
     {
-      "id": "bart-instruction",
+      "id": "bart intro",
       "type": "text",
       "instruction": true,
       "title": "",
@@ -158,13 +158,13 @@
       "id": "social dilemma",
       "type": "text",
       "instruction": false,
-      "text": "Please imagine the following: You and a person you don't know have to split a sum of money. Neither of you knows the exact amount but it's between $0 and $1000. You each have to choose an amount that you'd like to recieve. It could be anything between $0 to $1000. You'll know each other's requested amounts only after you've made your decision. If the sum of money requested by the two of you is less than $1000, then you each get the amount you reuqested. But if the sum exceeds $1000, neither of you gets any of the money. So although larger requests get you more money, you might also end up getting nothing. Please indicate the amount you'd like to receive?",
+      "text": "social.dilemma.q",
       "help": "",
       "placeholder": "$0 to $1000 ",
       "pattern": ""
     },
     {
-      "id": "sample-likert",
+      "id": "trust",
       "type": "matrix",
       "text": "trust.q",
       "requiredRows": [0,1,2],
@@ -177,7 +177,7 @@
         "trust.q5"]
     },  
     {
-      "id": "sample-likert",
+      "id": "dospert",
       "type": "matrix",
       "text": "dospert.intro",
       "requiredRows": [0,1,2],
@@ -214,12 +214,6 @@
 	"dospert.q29",
 	"dospert.q30"     
       ]
-    },
-    {
-      "id": "email",
-      "type": "text",
-      "instruction": true,
-      "text": "In the next page, you will play 5 rounds of Go/NoGo task"
     },
     {
       "id": "email",
