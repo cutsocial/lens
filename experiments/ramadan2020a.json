@@ -1,6 +1,6 @@
 	{
 	"studyId": "ramadan2020",
-	"conditon": "b",
+	"conditon": "a",
 	"redirectTo": "https://google.com?ID=123456",
 	"submissionNote": "submission.note",
 	"metadata": {
@@ -144,7 +144,7 @@
 		"rule": "stroop_demo.rule",
 		"help": "stroop_demo.help",
 		"colors": {
-			"G": "#00ff00",
+			"G": "#009900",
 			"R": "#ff0000"
 		},
 		"words": {
