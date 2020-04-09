@@ -20,6 +20,12 @@
       "text": "intro.demographics"
     },
     {
+      "id": "country",
+      "type": "text",
+      "instruction": false,
+      "text": "country.q",
+    },    
+    {
       "id": "sex",
       "type": "matrix",
       "text": "",
@@ -180,23 +186,23 @@
       ]
     },
     {
-      "id": "Go/NoGo introduction",
+      "id": "gonogo.practice.introduction",
       "type": "text",
       "instruction": true,
       "text": "gonogo.introduction"
     },
     {
-      "id": "Go/NoGo Demo",
+      "id": "gonogo.practice",
       "type": "gonogo",
-      "text": "Quick, tap/click on the stars. If you see a circle, do not click or tap on the opposite side.",
-      "help": "Press one of the images in less than three seconds.",
+      "text": "gonogo.instruction",
+      "help": "",
       "trials": {
-        "total": 5,
-        "go": 2,
-        "left": 1,
-        "leftGo": 1
+        "total": 12,
+        "go": 6,
+        "left": 6,
+        "leftGo": 3
       },
-      "stimuliDuration": 1000,
+      "stimuliDuration": 3000,
       "fixationDuration": 1000,
       "feedbackDuration": 1000,
       "timeoutsBeforeReset": 10,
@@ -206,7 +212,39 @@
       }
     },
     {
-      "id": "stroop_demo",
+      "id": "gonogo.mian.introduction",
+      "type": "text",
+      "instruction": true,
+      "text": "gonogo.main.introduction"
+    },
+    {
+      "id": "gonogo.practice",
+      "type": "gonogo",
+      "text": "gonogo.instruction",
+      "help": "Press one of the images in less than three seconds.",
+      "trials": {
+        "total": 12,
+        "go": 6,
+        "left": 3,
+        "leftGo": 3
+      },
+      "stimuliDuration": 3000,
+      "fixationDuration": 1000,
+      "feedbackDuration": 0,
+      "timeoutsBeforeReset": 10,
+      "choices": {
+        "go": "star",
+        "nogo": "circle"
+      }
+    },
+    {
+      "id": "stroop.practice.introduction",
+      "type": "text",
+      "instruction": true,
+      "text": "stroop.practice.introduction"
+    },
+    {
+      "id": "stroop.practice",
       "type": "stroop",
       "rule": "stroop_demo.rule",
       "help": "stroop_demo.help",
@@ -335,8 +373,148 @@
       "stimulusDuration": 3000,
       "fixationDuration": 1000,
       "feedbackDuration": 1000,
-      "timeoutsBeforeReset": 1
+      "timeoutsBeforeReset": 10
     },
+     {
+      "id": "stroop.main.introduction",
+      "type": "text",
+      "instruction": true,
+      "text": "stroop.main.introduction"
+    },
+    {
+      "id": "stroop.main",
+      "type": "stroop",
+      "rule": "stroop_demo.rule",
+      "help": "stroop_demo.help",
+      "colors": {
+        "G": "#009900",
+        "R": "#ff0000"
+      },
+      "words": {
+        "G": "colors.green",
+        "R": "colors.red"
+      },
+      "trials": [
+        {
+          "stimulus": "GG",
+          "choices": [
+            "GG",
+            "RR"
+          ]
+        },
+        {
+          "stimulus": "GG",
+          "choices": [
+            "GG",
+            "RG"
+          ]
+        },
+        {
+          "stimulus": "GG",
+          "choices": [
+            "GR",
+            "RR"
+          ]
+        },
+        {
+          "stimulus": "GG",
+          "choices": [
+            "GR",
+            "RG"
+          ]
+        },
+        {
+          "stimulus": "RR",
+          "choices": [
+            "GG",
+            "RR"
+          ]
+        },
+        {
+          "stimulus": "RR",
+          "choices": [
+            "GG",
+            "RG"
+          ]
+        },
+        {
+          "stimulus": "RR",
+          "choices": [
+            "GR",
+            "RR"
+          ]
+        },
+        {
+          "stimulus": "RR",
+          "choices": [
+            "GR",
+            "RG"
+          ]
+        },
+        {
+          "stimulus": "RG",
+          "choices": [
+            "GG",
+            "RR"
+          ]
+        },
+        {
+          "stimulus": "RG",
+          "choices": [
+            "GG",
+            "RG"
+          ]
+        },
+        {
+          "stimulus": "RG",
+          "choices": [
+            "GR",
+            "RR"
+          ]
+        },
+        {
+          "stimulus": "RG",
+          "choices": [
+            "GR",
+            "RG"
+          ]
+        },
+        {
+          "stimulus": "GR",
+          "choices": [
+            "GG",
+            "RR"
+          ]
+        },
+        {
+          "stimulus": "GR",
+          "choices": [
+            "GG",
+            "RG"
+          ]
+        },
+        {
+          "stimulus": "GR",
+          "choices": [
+            "GR",
+            "RR"
+          ]
+        },
+        {
+          "stimulus": "GR",
+          "choices": [
+            "GR",
+            "RG"
+          ]
+        }
+      ],
+      "stimulusDuration": 3000,
+      "fixationDuration": 1000,
+      "feedbackDuration": 0,
+      "timeoutsBeforeReset": 10
+    },
+    
+    
     {
       "id": "bart intro",
       "type": "text",
