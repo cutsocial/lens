@@ -35,7 +35,7 @@
     {
       "id": "age",
       "type": "matrix",
-      "text": "age.q",
+      "text": "",
       "requiredQuestions": [
         0
       ],
@@ -57,7 +57,7 @@
     {
       "id": "living",
       "type": "matrix",
-      "text": "living.q",
+      "text": "",
       "requiredQuestions": [
         0
       ],
@@ -73,7 +73,7 @@
     {
       "id": "income.self",
       "type": "matrix",
-      "text": "income.self.q",
+      "text": "",
       "requiredQuestions": [0],
       "direction": "vertical",
       "choices": [
@@ -84,12 +84,12 @@
         "income.self.c5",
         "income.self.c6"
       ],
-      "questions": [ "living.q" ]
+      "questions": [ "income.self.q" ]
     },
     {
       "id": "income.parents",
       "type": "matrix",
-      "text": "income.self.q",
+      "text": "",
       "requiredQuestions": [ 0 ],
       "direction": "vertical",
       "choices": [
@@ -123,7 +123,7 @@
     {
       "id": "risk.qual",
       "type": "matrix",
-      "text": "income.self.q",
+      "text": "",
       "requiredQuestions": [
         0
       ],
