@@ -66,7 +66,7 @@
   "risk.qual.c3":	"moderate return and moderate risk",
   "risk.qual.c4":	"low return and no risk",
   
-  "bart.intro": "The next task is a game. There is a ball in the middle of the screen that grows bigger every time you press the ‘pump’ button. You receive points for each additional pump, but only if the ball doesn't pop. If it does, you lose all your points in that round. If you're satisfied with your points in any round, and you don’t want to pump the ball anymore, you can press the ‘cash in’ button to save your points and go to the next round. You will play a total of 20 rounds. Press ‘Next’ to begin.",
+  "bart.intro": "In the next task you'll see a ball in the middle of the screen that grows bigger every time you press the ‘pump’ button. You receive points for each additional pump, but only if the ball doesn't blow up. If it does, you lose all your points in that round. You can also press the ‘cash in’ button to save your points if you don’t want to pump the ball anymore. You will play a total of 20 rounds. Press ‘Next’ to begin.",
 
   "bart.cash": "Cash",
   "bart.pump": "Pump",
@@ -124,7 +124,7 @@
   "ownership.c7":	"12-14 hours ago",
   "ownership.c8":	"over 14 hours ago",
  
-  "gonogo.introduction": "Great. So here is the first task. In each round, you'll  see the shape of a blue or a yellow on the left or on the right side of the screen. If you see a blue, you should click/tap on it. If you see a yellow star, you should click/tap on the grey star on the opposite side. You have 3 seconds to respond but faster and accurate responses will get you more points. Let's start with a few practice rounds with feedback.",
+  "gonogo.introduction": "Great. So here is the first task. You'll breifly see the shape of a blue circle or a yellow on the left or on the right side of the screen. If you see a yellow star, you should click/tap on it. If you see a blue circle, you should click/tap on the opposite side. You have 3 seconds to respond but faster and accurate responses will get you more points. Let's start with a few practice rounds with feedback.",
   "gonogo.are_you_ready": "Are you ready?",
   "gonogo.restart": "Restart",
   "gonogo.start": "Start",
