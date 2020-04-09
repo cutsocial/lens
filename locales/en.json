@@ -7,7 +7,7 @@
   "finish_and_redirect": "Continue",
   "errors.required": "You must respond to proceed.",
   
-  "intro": "Hello!  Do you know what kind of risk taker you are? Do you know how your cognitive control ability compares to other people? This is your chance to find out!  Press Next to test yourself.", 
+  "intro": "Hello! \nDo you know what kind of risk taker you are? Do you have higher or lower cognitive abilities compared to other people? This is your chance to find out! \nPress **Next** to test yourself.", 
   "intro.demographics": "First we need a few pieces of information about you. This imporves our feedback to you.",
   
   "age.q":	"What is your age?",
