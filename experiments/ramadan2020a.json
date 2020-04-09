@@ -341,7 +341,6 @@
       "id": "bart intro",
       "type": "text",
       "instruction": true,
-      "title": "",
       "text": "bart.intro"
     },
     {
