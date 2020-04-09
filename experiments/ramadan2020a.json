@@ -105,7 +105,7 @@
     {
       "id": "education",
       "type": "matrix",
-      "text": "income.self.q",
+      "text": "",
       "requiredQuestions": [ 0 ],
       "direction": "vertical",
       "choices": [
