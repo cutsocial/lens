@@ -181,7 +181,7 @@
   
   "social.dilemma.q":	"Please imagine the following: You and a person you don't know have to split a sum of money. The amount is between 0$ and $1000 but niether of you knows the exact amount. You each have to choose an amount that you'd like to recieve. This could be anything between $0 to $1000. You'll only know about each other's requested amounts only after you make your decision. If the sum of requests by the two of you is less than $1000, then you get the amount you requested. But if it exceeds $1000, neither of you gets any of the money. So although larger requests could get you more money, you might also end up getting nothing. Please indicate the amount you'd like to receive:",
 
-  "trust.q":	"Please indicate how much you agree or disagree with the following statements:",
+  "trust.q":	"How much you agree or disagree with the following statements:",
   "trust.q1":	"Most people tell a lie when they can benefit by doing so.",
   "trust.q2":	"Those devoted to unselfish causes are often exploited by others.",
   "trust.q3":	"Some people do not cooperate because they pursue only their own short-term self-interest. Thus, things that can be done well if people cooperate often fail because of these people.",
@@ -190,8 +190,8 @@
   "trust.c1":	"Strongly Disagree",
   "trust.c2":	"Disagree",
   "trust.c3":	"Nuetral",
-  "trust.c4":	"Strongly agree",
-  "trust.c5":	"Agree",  
+  "trust.c4":	"Agree",
+  "trust.c5":	"Strongly agree",  
   
   "submission.note": "Thank you for your participation. You can see your performance on the next page. Please write your email in the box below if you'd like to participate in similar studies. Thanks! Your submission code is: **{{submissionCode}}**"
 }
