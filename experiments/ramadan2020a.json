@@ -4,7 +4,7 @@
   "redirectTo": "https://google.com?ID=123456",
   "submissionNote": "submission.note",
   "metadata": {
-    "maintainer": "salar.rad@gmail.com"
+    "maintainer": "salarirad@gmail.com"
   },
   "views": [
     {
@@ -389,7 +389,7 @@
     {
       "id": "dospert",
       "type": "matrix",
-      "text": "trust.q",
+      "text": "dospert.intro",
       "requiredQuestions": [
         0,
         1,
