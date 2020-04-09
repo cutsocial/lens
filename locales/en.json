@@ -7,10 +7,12 @@
   "finish_and_redirect": "Continue",
   "errors.required": "You must respond to proceed.",
   
-  "intro": "Hello! <br />Do you know what kind of risk taker you are? Do you have higher or lower cognitive abilities compared to other people? This is your chance to find out! <br />Press **Next** to test yourself.", 
+  "intro": "Hello! <br />Do you know what kind of risk taker you are? Do you have higher or lower cognitive abilities compared to other people? This is your chance to find out! <br /><br />Press **Next** to test yourself.", 
   "intro.demographics": "First we need a few pieces of information about you. This imporves our feedback to you.",
   
-  "age.q":	"What is your age?",
+  "country.q": "Which country do you live in?"
+  
+  "age.q":	"What is your **age**?",
   "age.c1":	"Under 18",
   "age.c2": "18-26",
   "age.c3":	"25-30",
@@ -22,19 +24,19 @@
   "age.c9":	"55-60",
   "age.c10": "Over 60",
   
-  "sex.q":	"What is your sex?",
+  "sex.q":	"What is your **sex**?",
   "sex.c1":	"Male",
   "sex.c2":	"Female",
   "sex.c3":	"Other",
   "sex.c4":	"Prefer not to say",
   
-  "living.q":	"Which option describes your living area?",
+  "living.q":	"Which option describes your **living area**?",
   "living.c1":	"Large city",
   "living.c2":	"Small city",
   "living.c3":	"Suburban",
   "living.c4":	"Rural",
   
-  "income.self.q":	"What is your annual income?",
+  "income.self.q":	"What is **your monthly income**?",
   "income.self.c1":	"Less than $1000",
   "income.self.c2":	"$1000-$2000",
   "income.self.c3":	"$3000-$4000",
@@ -42,7 +44,7 @@
   "income.self.c5":	"$5000-$6000",
   "income.self.c6":	"More than $6000",
   
-  "income.parent.q":	"What is your parents' monthly income?",
+  "income.parent.q":	"What is your **parents' monthly income**?",
   "income.parent.c1":	"Less than $1000",
   "income.parent.c2":	"$1000-$2000",
   "income.parent.c3":	"$3000-$4000",
@@ -50,7 +52,7 @@
   "income.parent.c5":	"$5000-$6000",
   "income.parent.c6":	"More than $6000",
 
-  "education.q": "What is your education level?",
+  "education.q": "What is your **education** level?",
   "education.c1": "Some elementary school",
   "education.c2":	"Some high school",
   "education.c3":	"High school graduate",
@@ -66,7 +68,7 @@
   "risk.qual.c3":	"moderate return and moderate risk",
   "risk.qual.c4":	"low return and no risk",
   
-  "bart.intro": "In the next task you'll see a ball in the middle of the screen that grows bigger every time you press the ‘pump’ button. You receive points for each additional pump, but only if the ball doesn't blow up. If it does, you lose all your points in that round. You can also press the ‘cash in’ button to save your points if you don’t want to pump the ball anymore. You will play a total of 20 rounds. Press ‘Next’ to begin.",
+  "bart.intro": "In the next task you'll see a ball in the middle of the screen that grows bigger every time you press the ‘pump’ button. <br /><br />You receive points for each additional pump, but only if the ball doesn't blow up. If it does, you lose all your points in that round. You can also select the ‘cash in’ button to save your points if you don’t want to pump the ball anymore. <br /><br />Press ‘Next’ to begin.",
 
   "bart.cash": "Cash",
   "bart.pump": "Pump",
@@ -124,10 +126,12 @@
   "ownership.c7":	"12-14 hours ago",
   "ownership.c8":	"over 14 hours ago",
  
-  "gonogo.introduction": "Great. So here is the first task. You'll breifly see the shape of a blue circle or a yellow on the left or on the right side of the screen. If you see a yellow star, you should click/tap on it. If you see a blue circle, you should click/tap on the opposite side. You have 3 seconds to respond but faster and accurate responses will get you more points. Let's start with a few practice rounds with feedback.",
+  "gonogo.introduction": "Great. <br />So here is the first task. <br />You'll briefly see the shape of a blue circle or a yellow star on the left or on the right side of the screen. If you see a yellow star, you should click/tap on it. <br /><br />If you see a blue circle, you should click/tap on the opposite side. You have 3 seconds to respond but faster and accurate responses will get you more points. <br /><br />Let's start with a few practice rounds with feedback.",
   "gonogo.are_you_ready": "Are you ready?",
   "gonogo.restart": "Restart",
   "gonogo.start": "Start",
+  "gonogo.instruction": "Quick, tap/click on the stars. If you see a circle, do not click or tap on the opposite side."
+  "gonogo.main.introduction": "Ok, so let's begin the main task. You will not receive feedback. Press next to begin."
 
   "ramadan2020.questions.email": "What is your email?",
   "ramadan2020.questions.email_placeholder": "Email",
@@ -136,8 +140,10 @@
   "colors.green": "Green",
   "colors.red": "Red",
 
-  "stroop_demo.rule": "Select the answer that matches the color of presented text.",
-
+  "stroop_demo.rule": "Select one of the bottom texts that matches the color of the text on top.",
+  "stroop.practice.introduction": "In the next task, you'll see color names in different print colors. So they could be RED, GREEN, REDinGREEN, GREENinRED. You need to choose the print colors. So for example, if you see GREENRED, you need to select the RED or REDinGREEN. Press next to play a couple of practice rounds."
+  "stroop.main.introduction": "Now the main trial begins. You will not receive feedback. Preass next to continue."
+  
   "dospert.intro":	"For each of the following statements, please indicate the likelihood that you would engage in the described activity or behavior if you were to find yourself in that situation:",
   "dospert.q1":	  "Admitting that your tastes are different from those of a friend.",
   "dospert.q2":	  "Going camping in the wilderness.",
@@ -179,7 +185,7 @@
   "dospert.c6":	"Moderately likely",
   "dospert.c7":	"Extremely likely",
   
-  "social.dilemma.q":	"Please imagine the following: You and a person you don't know have to split a sum of money. The amount is between 0$ and $1000 but niether of you knows the exact amount. You each have to choose an amount that you'd like to recieve. This could be anything between $0 to $1000. You'll only know about each other's requested amounts only after you make your decision. If the sum of requests by the two of you is less than $1000, then you get the amount you requested. But if it exceeds $1000, neither of you gets any of the money. So although larger requests could get you more money, you might also end up getting nothing. Please indicate the amount you'd like to receive:",
+  "social.dilemma.q":	"Please imagine the following: <br /><br />You and a person you don't know have to split a sum of money. The amount is between 0$ and $1000 but niether of you knows the exact amount. <br /><br />You each have to choose an amount that you'd like to recieve. This could be anything between $0 to $1000. You'll only know about each other's requested amounts only after you make your decision. <br /><br />If the sum of requests by the two of you is less than $1000, then you get the amount you requested. But if it exceeds $1000, neither of you gets any of the money. <br /><br />So although larger requests could get you more money, you might also end up getting nothing. <br /><br />Please indicate the amount you'd like to receive:",
 
   "trust.q":	"How much you agree or disagree with the following statements:",
   "trust.q1":	"Most people tell a lie when they can benefit by doing so.",
