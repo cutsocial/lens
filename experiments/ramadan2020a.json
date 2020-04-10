@@ -196,7 +196,7 @@
 			"text": "gonogo.instruction",
 			"help": "",
 			"trials": {
-				"total": 0,
+				"total": 12,
 				"go": 6,
 				"left": 6,
 				"leftGo": 3
@@ -222,7 +222,7 @@
 			"text": "gonogo.instruction",
 			"help": "Press one of the images in less than three seconds.",
 			"trials": {
-				"total": 0,
+				"total": 12,
 				"go": 6,
 				"left": 3,
 				"leftGo": 3
