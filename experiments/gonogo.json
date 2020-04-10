@@ -20,11 +20,11 @@
       },
       "stimuliDuration": 3000,
       "fixationDuration": 1000, 
-      "feedbackDuration": 0,
+      "feedbackDuration": 1000,
       "timeoutsBeforeReset": 2,
       "choices": {
         "go": "star",
-        "nogo": "circle"
+        "nogo": "blue-star"
       }
     },
     {
