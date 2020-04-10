@@ -206,12 +206,12 @@
 			"feedbackDuration": 1000,
 			"timeoutsBeforeReset": 10,
 			"choices": {
-				"go": "star",
-				"nogo": "circle"
+				"go": "blue-star",
+				"nogo": "star"
 			}
 		},
 		{
-			"id": "gonogo.mian.introduction",
+			"id": "gonogo.main.introduction",
 			"type": "text",
 			"instruction": true,
 			"text": "gonogo.main.introduction"
@@ -232,8 +232,8 @@
 			"feedbackDuration": 0,
 			"timeoutsBeforeReset": 10,
 			"choices": {
-				"go": "star",
-				"nogo": "circle"
+				"go": "blue-star",
+				"nogo": "star"
 			}
 		},
 		{
