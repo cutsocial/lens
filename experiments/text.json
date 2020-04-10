@@ -11,7 +11,7 @@
       "type": "text",
       "instruction": false,
       "required": true,
-      "text": "ramadan2020.questions.email",
+      "text": "stroop.practice.introduction",
       "help": "ramadan2020.questions.email_example",
       "placeholder": "ramadan2020.questions.email_placeholder",
       "pattern": "*@*.*"
