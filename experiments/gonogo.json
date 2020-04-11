@@ -10,7 +10,7 @@
     {
 	"id": "Go/NoGo Demo",
 	"type":"gonogo",
-	"text":"Quick, tap/click on the stars. If you see a circle, do not click or tap on the opposite side.",
+	"text":"",
 	"help":"Press one of the images in less than three seconds.",
       	"trials": {
         "total": 3,

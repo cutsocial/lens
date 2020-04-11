@@ -130,7 +130,7 @@
 	"gonogo.are_you_ready": "Are you ready?",
 	"gonogo.restart": "Restart",
 	"gonogo.start": "Start",
-	"gonogo.instruction": "Tap or click quickly on the blue stars. If you see a yellow star, click or tap on the opposite side.",
+	"gonogo.instruction": "Tap or click quickly on the blue stars. For yellow stars, click or tap on the opposite side.",
 	"gonogo.main.introduction": "Ok, so let's begin the main task. You will not receive feedback. Press next to begin.",
 
 	"ramadan2020.questions.email": "What is your email?",
@@ -140,7 +140,7 @@
 	"colors.green": "Green",
 	"colors.red": "Red",
 
-	"stroop_demo.rule": "Name the color of the text on top.",
+	"stroop_demo.rule": "What's the color of this text?",
 	"stroop.practice.introduction": "In the next task, you'll see color names written in different inks on the top: <span style='color:red'>*RED*</span>, <span style='color:green'>*GREEN*</span>, <span style='color:green'>*RED*</span>, or <span style='color:red'>*GREEN*</span>.<br /><br />You have two choices on the bottom left and right. You should select the one that matches the **color** of the text on top:\n- If you see <span style='color:red'>*GREEN*</span> or <span style='color:red'>*RED*</span>, you can select <span style='color:red'>*RED*</span> or <span style='color:green'>*RED*</span>.\n- If you see <span style='color:green'>*RED*</span> or <span style='color:green'>*GREEN*</span>, you can select <span style='color:red'>*GREEN*</span> or <span style='color:green'>*GREEN*</span>.\n\nPress next to play a few practice rounds.",
 	"stroop.main.introduction": "Now the main trial begins. You will not receive feedback. Preass next to continue.",
 
