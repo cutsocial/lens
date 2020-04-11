@@ -289,7 +289,7 @@
 						"GG",
 						"RR"
 					]
-				},   
+				},
 				{
 					"stimulus": "RR",
 					"choices": [
@@ -303,7 +303,7 @@
 						"GR",
 						"RR"
 					]
-				},   
+				},
 				{
 					"stimulus": "RR",
 					"choices": [
@@ -339,7 +339,7 @@
 						"GR",
 						"RG"
 					]
-				},   
+				},
 				{
 					"stimulus": "GR",
 					"choices": [
@@ -353,7 +353,7 @@
 						"GR",
 						"RR"
 					]
-				},   
+				},
 				{
 					"stimulus": "GR",
 					"choices": [
@@ -367,7 +367,7 @@
 						"GG",
 						"RG"
 					]
-				},   
+				}
 			],
 			"stimulusDuration": 3000,
 			"fixationDuration": 1000,
@@ -427,7 +427,7 @@
 						"GG",
 						"RR"
 					]
-				},   
+				},
 				{
 					"stimulus": "RR",
 					"choices": [
@@ -441,7 +441,7 @@
 						"GR",
 						"RR"
 					]
-				},   
+				},
 				{
 					"stimulus": "RR",
 					"choices": [
@@ -477,7 +477,7 @@
 						"GR",
 						"RG"
 					]
-				},   
+				},
 				{
 					"stimulus": "GR",
 					"choices": [
@@ -491,7 +491,7 @@
 						"GR",
 						"RR"
 					]
-				},   
+				},
 				{
 					"stimulus": "GR",
 					"choices": [
@@ -505,7 +505,7 @@
 						"GG",
 						"RG"
 					]
-				},   
+				}
 			],
 			"stimulusDuration": 3000,
 			"fixationDuration": 1000,
