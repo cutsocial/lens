@@ -524,9 +524,9 @@
 			"id": "bart",
 			"type": "bart",
 			"reward": 1,
-			"maxPumps": 10,
+			"maxPumps": 20,
 			"safePumps": 1,
-			"trials": 3
+			"trials": 8
 		},
 		{
 			"id": "social dilemma",
