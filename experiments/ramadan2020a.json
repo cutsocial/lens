@@ -263,17 +263,10 @@
 					]
 				},
 				{
-					"stimulus": "GG",
+					"stimulus": "RG",
 					"choices": [
 						"GG",
 						"RG"
-					]
-				},
-				{
-					"stimulus": "GG",
-					"choices": [
-						"GR",
-						"RR"
 					]
 				},
 				{
@@ -291,6 +284,13 @@
 					]
 				},
 				{
+					"stimulus": "RG",
+					"choices": [
+						"GG",
+						"RR"
+					]
+				},   
+				{
 					"stimulus": "RR",
 					"choices": [
 						"GG",
@@ -298,54 +298,48 @@
 					]
 				},
 				{
+					"stimulus": "GR",
+					"choices": [
+						"GR",
+						"RR"
+					]
+				},   
+				{
 					"stimulus": "RR",
 					"choices": [
 						"GR",
 						"RR"
 					]
 				},
+
+				{
+					"stimulus": "RG",
+					"choices": [
+						"GR",
+						"RR"
+					]
+				},
+				{
+					"stimulus": "RG",
+					"choices": [
+						"GR",
+						"RG"
+					]
+				},
+				{
+					"stimulus": "GR",
+					"choices": [
+						"GG",
+						"RR"
+					]
+				},
 				{
 					"stimulus": "RR",
 					"choices": [
 						"GR",
 						"RG"
 					]
-				},
-				{
-					"stimulus": "RG",
-					"choices": [
-						"GG",
-						"RR"
-					]
-				},
-				{
-					"stimulus": "RG",
-					"choices": [
-						"GG",
-						"RG"
-					]
-				},
-				{
-					"stimulus": "RG",
-					"choices": [
-						"GR",
-						"RR"
-					]
-				},
-				{
-					"stimulus": "RG",
-					"choices": [
-						"GR",
-						"RG"
-					]
-				},
-				{
-					"stimulus": "GR",
-					"choices": [
-						"GG",
-						"RR"
-					]
-				},
+				},   
 				{
 					"stimulus": "GR",
 					"choices": [
@@ -354,19 +348,26 @@
 					]
 				},
 				{
-					"stimulus": "GR",
+					"stimulus": "GG",
 					"choices": [
 						"GR",
 						"RR"
 					]
-				},
+				},   
 				{
 					"stimulus": "GR",
 					"choices": [
 						"GR",
 						"RG"
 					]
-				}
+				},
+				{
+					"stimulus": "GG",
+					"choices": [
+						"GG",
+						"RG"
+					]
+				},   
 			],
 			"stimulusDuration": 3000,
 			"fixationDuration": 1000,
@@ -400,17 +401,10 @@
 					]
 				},
 				{
-					"stimulus": "GG",
+					"stimulus": "RG",
 					"choices": [
 						"GG",
 						"RG"
-					]
-				},
-				{
-					"stimulus": "GG",
-					"choices": [
-						"GR",
-						"RR"
 					]
 				},
 				{
@@ -428,6 +422,13 @@
 					]
 				},
 				{
+					"stimulus": "RG",
+					"choices": [
+						"GG",
+						"RR"
+					]
+				},   
+				{
 					"stimulus": "RR",
 					"choices": [
 						"GG",
@@ -435,54 +436,48 @@
 					]
 				},
 				{
+					"stimulus": "GR",
+					"choices": [
+						"GR",
+						"RR"
+					]
+				},   
+				{
 					"stimulus": "RR",
 					"choices": [
 						"GR",
 						"RR"
 					]
 				},
+
+				{
+					"stimulus": "RG",
+					"choices": [
+						"GR",
+						"RR"
+					]
+				},
+				{
+					"stimulus": "RG",
+					"choices": [
+						"GR",
+						"RG"
+					]
+				},
+				{
+					"stimulus": "GR",
+					"choices": [
+						"GG",
+						"RR"
+					]
+				},
 				{
 					"stimulus": "RR",
 					"choices": [
 						"GR",
 						"RG"
 					]
-				},
-				{
-					"stimulus": "RG",
-					"choices": [
-						"GG",
-						"RR"
-					]
-				},
-				{
-					"stimulus": "RG",
-					"choices": [
-						"GG",
-						"RG"
-					]
-				},
-				{
-					"stimulus": "RG",
-					"choices": [
-						"GR",
-						"RR"
-					]
-				},
-				{
-					"stimulus": "RG",
-					"choices": [
-						"GR",
-						"RG"
-					]
-				},
-				{
-					"stimulus": "GR",
-					"choices": [
-						"GG",
-						"RR"
-					]
-				},
+				},   
 				{
 					"stimulus": "GR",
 					"choices": [
@@ -491,19 +486,26 @@
 					]
 				},
 				{
-					"stimulus": "GR",
+					"stimulus": "GG",
 					"choices": [
 						"GR",
 						"RR"
 					]
-				},
+				},   
 				{
 					"stimulus": "GR",
 					"choices": [
 						"GR",
 						"RG"
 					]
-				}
+				},
+				{
+					"stimulus": "GG",
+					"choices": [
+						"GG",
+						"RG"
+					]
+				},   
 			],
 			"stimulusDuration": 3000,
 			"fixationDuration": 1000,
