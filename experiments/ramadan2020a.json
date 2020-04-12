@@ -618,7 +618,7 @@
 			"id": "email",
 			"type": "text",
 			"instruction": false,
-			"text": "submission.note",
+			"text": "submission.q_email",
 			"help": "Example: support@cut.social",
 			"placeholder": "Email",
 			"pattern": "*@*.*"
