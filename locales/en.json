@@ -128,6 +128,7 @@
 
 	"gonogo.introduction": "Great. So here is the first task. <br /><br />You'll briefly see the shape of a blue circle or a yellow star on the left or on the right side of the screen. If you see a yellow star, you should click/tap on it. <br /><br />If you see a blue circle, you should click/tap on the opposite side. You have 3 seconds to respond but faster and accurate responses will get you more points. <br /><br />Let's start with a few practice rounds with feedback.",
 	"gonogo.are_you_ready": "Are you ready?",
+	"gonogo.too_many_timeouts": "You waited too long! Let's start over."
 	"gonogo.restart": "Restart",
 	"gonogo.start": "Start",
 	"gonogo.instruction": "Tap on the blue stars. For yellow stars, tap on the opposite side.",
