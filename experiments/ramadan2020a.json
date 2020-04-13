@@ -87,7 +87,8 @@
 				"income.self.c3",
 				"income.self.c4",
 				"income.self.c5",
-				"income.self.c6"
+				"income.self.c6",
+				"income.self.c7"
 			],
 			"questions": ["income.self.q"]
 		},
@@ -103,7 +104,8 @@
 				"income.parent.c3",
 				"income.parent.c4",
 				"income.parent.c5",
-				"income.parent.c6"
+				"income.parent.c6",
+				"income.parent.c7"
 			],
 			"questions": ["income.parent.q"]
 		},
