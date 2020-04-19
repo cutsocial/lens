@@ -10,7 +10,7 @@
     {
 	"id": "Go/NoGo Demo",
 	"type":"gonogo",
-	"text":"",
+	"text":"Click as fast as you can",
 	"help":"Press one of the images in less than three seconds.",
       	"trials": {
         "total": 3,
