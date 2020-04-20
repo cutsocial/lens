@@ -369,6 +369,13 @@
 						"GG",
 						"RG"
 					]
+				},
+				{
+					"stimulus": "GG",
+					"choices": [
+						"GG",
+						"RG"
+					]
 				}
 			],
 			"stimulusDuration": 3000,
