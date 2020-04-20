@@ -146,7 +146,7 @@
 
 	"stroop_demo.rule": "What's the color of this text?",
 	"stroop.practice.introduction": "In the next task, you'll see color names written in different inks on the top: <span style='color:red'>*RED*</span>, <span style='color:green'>*GREEN*</span>, <span style='color:green'>*RED*</span>, or <span style='color:red'>*GREEN*</span>.<br /><br />You have two choices on the bottom left and right. You should select the one that matches the **color** of the text on top:\n- For <span style='color:red'>*GREEN*</span> or <span style='color:red'>*RED*</span>, the correct choices are <span style='color:red'>*RED*</span> or <span style='color:green'>*RED*</span>.\n- For <span style='color:green'>*RED*</span> or <span style='color:green'>*GREEN*</span>, the correct choices are <span style='color:red'>*GREEN*</span> or <span style='color:green'>*GREEN*</span>.\n\nPress next to play a few practice rounds.",
-	"stroop.main.introduction": "Now the main trial begins. You will not receive feedback. Preass next to continue.",
+	"stroop.main.introduction": "Now the main trial begins. You will not receive feedback. Press next to continue.",
 
 	"dospert.intro": "For each of the following statements, please indicate the likelihood that you would engage in the described activity or behavior if you were to find yourself in that situation:",
 	"dospert.q1": "Admitting that your tastes are different from those of a friend.",
