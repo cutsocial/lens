@@ -22,7 +22,8 @@
 			"id": "country",
 			"type": "text",
 			"instruction": false,
-			"text": "country.q"
+			"text": "country.q",
+			"autoComplete": "countries"
 		},
 		{
 			"id": "sex",

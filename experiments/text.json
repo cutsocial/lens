@@ -14,7 +14,7 @@
       "text": "stroop.practice.introduction",
       "help": "ramadan2020.questions.email_example",
       "placeholder": "ramadan2020.questions.email_placeholder",
-      "pattern": "*@*.*"
+      "autoComplete": "countries"
     }
 
   ]
