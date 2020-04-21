@@ -13,10 +13,10 @@
 	"text":"Click as fast as you can",
 	"help":"Press one of the images in less than three seconds.",
       	"trials": {
-        "total": 3,
-        "go": 2,
-        "left": 1,
-        "leftGo": 1
+        "total": 8,
+        "go": 4,
+        "left": 4,
+        "leftGo": 2
       },
       "stimuliDuration": 3000,
       "fixationDuration": 1000, 
