@@ -6,7 +6,7 @@
   "finish": "الپایان",
   "errors.required": "You must respond to proceed.",
   "bart.cash": "النقد",
-  "bart.pump": "الپمپ",
+  "bart.balloon_tooltip": "الپمپ",
   "bart.trial_label": "Round {{trial}} of {{trials}}",
   "bart.exploded_title": "Exploded!",
   "bart.next_reward": "Next Reward",

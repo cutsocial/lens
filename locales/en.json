@@ -75,7 +75,7 @@
 	"bart.intro": "Cool. So in the next task, you'll see a ball in the middle of the screen that grows bigger every time you press the ‘pump’ button. <br /><br />You receive points for each pump, but only if the ball doesn't blow up. If the ball explodes, you lose all your points in that round. <br /><br />You can also select the ‘cash in’ button to save your points if you don’t want to pump the ball anymore. <br /><br />Press ‘Next’ to begin.",
 
 	"bart.cash": "Cash",
-	"bart.pump": "Pump",
+	"bart.balloon_tooltip": "Touch to pump",
 	"bart.trial_label": "Round {{trial}} of {{trials}}",
 	"bart.exploded_title": "Exploded!",
 	"bart.next_reward": "Next Reward",
