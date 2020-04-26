@@ -301,6 +301,49 @@
 	"fasting.c1": "Yes",
 	"fasting.c2": "No",
 	 
+	 
+	 
+	"svo.q": "Please pick the option that you prefer:"
+	"svo.intro":"This is a point allocation task. You get to decide how to split points between yourself and another person. This person will be randomly selected from the participants in this experiment.<br /><br />Your total points will be used to calculate your participation bonus. So, every point has value: the more points you receive, the better for you, and the more points the 'Other' receives, the better for him/her.<br /><br />There are no right or wrong answers -- choose the option that you, for whatever reason, prefer most.",
+	 
+	"svo.c1.a":"480 for me, 80 for them",
+	"svo.c1.b":"540 for me, 280 for them",
+	"svo.c1.c":"480 for me, 480 for them",
+	 
+	"svo.c2.a":"560 for me, 300 for them",
+	"svo.c2.b":"500 for me, 500 for them",
+	"svo.c2.c":"500 for me, 100 for them",
+	
+	"svo.c3.a":"520 for me, 520 for them",
+	"svo.c3.b":"520 for me, 120 for them",
+	"svo.c3.c":"580 for me, 320 for them",
+	 
+	"svo.c4.a":"500 for me, 100 for them",
+	"svo.c4.b":"560 for me, 300 for them",
+	"svo.c4.c":"490 for me, 490 for them",
+	 
+	"svo.c5.a":"560 for me, 300 for them",
+	"svo.c5.b":"500 for me, 500 for them",
+	"svo.c5.c":"490 for me, 90 for them",
+	 
+	"svo.c6.a":"500 for me, 500 for them",
+	"svo.c6.b":"500 for me, 100 for them",
+	"svo.c6.c":"570 for me, 300 for them",
+	
+	"svo.c7.a":"510 for me, 510 for them",
+	"svo.c7.b":"560 for me, 300 for them",
+	"svo.c7.c":"510 for me, 110 for them",
+	 
+	"svo.c8.a":"550 for me, 300 for them",
+	"svo.c8.b":"500 for me, 300 for them",
+	"svo.c8.c":"500 for me, 500 for them",
+	 
+	"svo.c9.a":"480 for me, 100 for them",
+	"svo.c9.b":"490 for me, 490 for them",
+	"svo.c9.c":"540 for me, 300 for them",
+	 
+	 
+
 	
 	"submission.note": "Thanks! Your submission code is: **{{submissionCode}}**",
 	"submission.q_email": "Thank you for your participation. You can see your performance on the next page. Please write your email in the box below if you'd like to participate in similar studies."
