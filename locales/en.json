@@ -219,13 +219,13 @@
 	"control.q11": "There is really no way I can solve all the problems I have.",
 	"control.q12": "I sometimes feel I am being pushed around in my life.",
 	 
-	"control.c1": "Strongly agree",
-	"control.c2": "Somewhat agree",
-	"control.c3": "Agree",
+	"control.c1": "Strongly disagree",
+	"control.c2": "Somewhat disagree",
+	"control.c3": "disgree",
 	"control.c4": "Neither agree nor disagree",
-	"control.c5": "Somewhat disagree",
-	"control.c6": "Disagree",
-	"control.c7": "Strongly disagree",
+	"control.c5": "Somewhat agree",
+	"control.c6": "Agree",
+	"control.c7": "Strongly agree",
 
 	"patience.q": "How willing are you to give up something that is beneficial for you today in order to benefit more from that in the future?",
 	 
