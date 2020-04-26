@@ -13,6 +13,39 @@
 			"text": "intro"
 		},
 		{
+			"id": "recip.alt",
+			"type": "matrix",
+			"text": "control.q",
+			"slider": true,
+			"requiredQuestions": [
+				0,
+				1,
+				2
+			],
+			"direction": "vertical",
+			"choices": [
+				"recip.c0",
+				"recip.c1",
+				"recip.c2",
+				"recip.c3",
+				"recip.c4",
+				"recip.c5",
+				"recip.c6",
+				"recip.c7",
+				"recip.c8",
+				"recip.c9",
+				"recip.c10",
+				"recip.c11"
+			],
+			"questions": [
+				"pos.reicp",
+				"neg.recip.1",
+				"neg.recip.2",
+				"neg.recip.3",
+				"altruism"
+			]
+		},
+		{
 			"id": "svo.intro",
 			"type": "text",
 			"instruction": true,
