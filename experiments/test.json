@@ -1,0 +1,110 @@
+{
+	"studyId": "ramadan2020",
+	"conditon": "a",
+	"redirectTo": "https://google.com?ID=123456",
+	"submissionNote": "submission.note",
+	"metadata": {
+		"maintainer": "salarirad@gmail.com"
+	},
+	"views": [{
+			"id": "introduction",
+			"type": "text",
+			"instruction": true,
+			"text": "intro"
+		},
+		{
+			"id": "social dilemma",
+			"type": "text",
+			"instruction": false,
+			"required": true,
+			"text": "social.dilemma.q",
+			"help": "",
+			"placeholder": "$0 to $1000",
+			"pattern": ""
+		},
+		{
+			"id": "trust",
+			"type": "matrix",
+			"text": "trust.q",
+			"slider": true,
+			"requiredQuestions": [
+				0,
+				1,
+				2
+			],
+			"direction": "vertical",
+			"choices": [
+				"trust.c1",
+				"trust.c2",
+				"trust.c3",
+				"trust.c4",
+				"trust.c5"
+			],
+			"questions": [
+				"trust.q1",
+				"trust.q2",
+				"trust.q3",
+				"trust.q4",
+				"trust.q5"
+			]
+		},
+		{
+			"id": "control",
+			"type": "matrix",
+			"text": "control.q",
+			"slider": true,
+			"requiredQuestions": [
+				0,
+				1,
+				2
+			],
+			"direction": "vertical",
+			"choices": [
+				"control.c1",
+				"control.c2",
+				"control.c3",
+				"control.c4",
+				"control.q5",
+				"control.q6",
+				"control.q7"
+			],
+			"questions": [
+				"control.q1",
+				"control.q2",
+				"control.q3",
+				"control.q4",
+				"control.q5",
+				"control.q6",
+				"control.q7",
+				"control.q8",
+				"control.q9",
+				"control.q10",
+				"control.q11",
+				"control.q12"
+			]
+		},
+		{
+			"id": "patience",
+			"type": "matrix",
+			"text": "",
+			"slider": true,
+			"requiredQuestions": [0],
+			"direction": "vertical",
+			"choices": [
+				"patience.c1",
+				"patience.c2",
+				"patience.c3",
+				"patience.c4",
+				"patience.c5",
+				"patience.c6",
+				"patience.c7",
+				"patience.c8",
+				"patience.c9",
+				"patience.c10",
+				"patience.c11"
+
+			],
+			"questions": ["patience.q"]
+		}
+	]
+}
