@@ -260,13 +260,44 @@
 	"risk.falk.c10": "9",
 	"risk.falk.c11": "10 (very willing)",
 	 
-	"hunger": "How hungry are you right now?",
-	"religiosity": "How religiosut do you consider yourself?",
-	"diet": "Are you on a special diet?",
-	"fasting": "Were you fasting while taking this survey?", 
+	"hunger.q": "How hungry are you right now?",
+	"hunger.c0":"not hungry at all",
+	"hunger.c1":"1",
+	"hunger.c2":"2",
+	"hunger.c3":"3",
+	"hunger.c4":"4",
+	"hunger.c5":"6",
+	"hunger.c5":"7",
+	"hunger.c8":"8",
+	"hunger.c9":"9",	
+	"hunger.c10":"10",	
+	"hunger.c11":"extremely hungry",	
+	 
+	 
+	"religiosity.q": "How religious do you consider yourself?",
+	"religiosity.c0":"not religious at all",
+	"religiosity.c1":"2",
+	"religiosity.c2":"3",
+	"religiosity.c3":"4",
+	"religiosity.c4":"5",
+	"religiosity.c5":"6",
+	"religiosity.c5":"7",
+	"religiosity.c8":"8",
+	"religiosity.c9":"9",	
+	"religiosity.c10":"10",
+	"religiosity.c11":"very religious hungery",	
+	 
+	 
+	"diet.q": "Are you on a special diet?",
+	"diet.1": "Yes",
+	"diet.2": "No",
+	 
+	 
+	"fasting.q": "Were you fasting while taking this survey?", 
+	"fasting.1": "Yes",
+	"fasting.2": "No",
 	 
 	
-	 
 	"submission.note": "Thanks! Your submission code is: **{{submissionCode}}**",
 	"submission.q_email": "Thank you for your participation. You can see your performance on the next page. Please write your email in the box below if you'd like to participate in similar studies."
 
