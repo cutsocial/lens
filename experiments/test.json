@@ -13,6 +13,101 @@
 			"text": "intro"
 		},
 		{
+			"id": "patience",
+			"type": "matrix",
+			"text": "",
+			"slider": true,
+			"requiredQuestions": [0],
+			"direction": "vertical",
+			"choices": [
+				"patience.c1",
+				"patience.c2",
+				"patience.c3",
+				"patience.c4",
+				"patience.c5",
+				"patience.c6",
+				"patience.c7",
+				"patience.c8",
+				"patience.c9",
+				"patience.c10",
+				"patience.c11"
+				
+			],
+			"questions": ["patience.q"]
+		},
+		{
+			"id": "hunger",
+			"type": "matrix",
+			"text": "",
+			"slider": true,
+			"requiredQuestions": [0],
+			"direction": "vertical",
+			"choices": [
+				"hunger.c0",
+				"hunger.c1",
+				"hunger.c2",
+				"hunger.c3",
+				"hunger.c4",
+				"hunger.c5",
+				"hunger.c6",
+				"hunger.c7",
+				"hunger.c8",
+				"hunger.c9",
+				"hunger.c10"
+				
+			],
+			"questions": ["hunger.q"]
+		},
+		{
+			"id": "religiosity",
+			"type": "matrix",
+			"text": "",
+			"slider": true,
+			"requiredQuestions": [0],
+			"direction": "vertical",
+			"choices": [
+				"religiosity.c0",
+				"religiosity.c1",
+				"religiosity.c2",
+				"religiosity.c3",
+				"religiosity.c4",
+				"religiosity.c5",
+				"religiosity.c6",
+				"religiosity.c7",
+				"religiosity.c8",
+				"religiosity.c9",
+				"religiosity.c10"
+				
+			],
+			"questions": ["religiosity.q"]
+		},
+		{
+			"id": "diet",
+			"type": "matrix",
+			"text": "",
+			"slider": true,
+			"requiredQuestions": [0],
+			"direction": "vertical",
+			"choices": [
+				"diet.c1",
+				"diet.c2"				
+			],
+			"questions": ["diet.q"]
+		},
+				{
+			"id": "fasting",
+			"type": "matrix",
+			"text": "",
+			"slider": true,
+			"requiredQuestions": [0],
+			"direction": "vertical",
+			"choices": [
+				"fasting.c1",
+				"fasting.c2"				
+			],
+			"questions": ["fasting.q"]
+		}, 
+		{
 			"id": "social dilemma",
 			"type": "text",
 			"instruction": false,
