@@ -78,7 +78,9 @@
 				"religiosity.c7",
 				"religiosity.c8",
 				"religiosity.c9",
-				"religiosity.c10"
+				"religiosity.c10",
+				"religiosity.c11"
+				
 				
 			],
 			"questions": ["religiosity.q"]
