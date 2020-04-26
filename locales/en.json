@@ -1,4 +1,4 @@
-{
+ {
 	"language_selector.text": "Please select a language to continue",
 	"loading": "Loading...",
 	"next": "Next",
@@ -204,7 +204,43 @@
 	"trust.c3": "Nuetral",
 	"trust.c4": "Agree",
 	"trust.c5": "Strongly agree",
+	
+	"control.q": "How much you agree or disagree with the following statements:",
+	"control.q1": "I can do just about anything I really set my mind to.",
+	"control.q2": "When I really want to do something, I usually find a way to succeed at it.",
+	"control.q3": "Whether or not I am able to get what I want is in my own hands.",
+	"control.q4": "What happens to me in the future mostly depends on me.",
+	"control.q5": "Other people determine most of what I can and cannot do.",
+	"control.q6": "There is little I can do to change many of the important things in my life.",
+	"control.q7": "I often feel helpless in dealing with the problems of life.", 
+	"control.q8": "What happens in my life is often beyond my control.", 
+	"control.q9": "There are many things that interfere with what I want to do.",
+	"control.q10": "I have little control over the things that happen to me.",
+	"control.q11": "There is really no way I can solve all the problems I have.",
+	"control.q12": "I sometimes feel I am being pushed around in my life.",
+	 
+	"control.c1": "Strongly agree",
+	"control.c2": "Somewhat agree",
+	"control.c3": "Agree",
+	"control.c4": "Neither agree nor disagree",
+	"control.c5": "Somewhat disagree",
+	"control.c6": "Disagree",
+	"control.c7": "Strongly disagree",
 
+	"patience.q": "How willing are you to give up something that is beneficial for you today in order to benefit more from that in the future?",
+	 
+	"patience.c1": "0 (completely unwilling)",
+	"patience.c2": "1",
+	"patience.c3": "2",
+	"patience.c4": "3",
+	"patience.c5": "4",
+	"patience.c6": "5",
+	"patience.c7": "6",
+	"patience.c8": "7",
+	"patience.c9": "8",
+	"patience.c10": "9",
+	"patience.c11": "10 (very willing)",
+	 
 	"submission.note": "Thanks! Your submission code is: **{{submissionCode}}**",
 	"submission.q_email": "Thank you for your participation. You can see your performance on the next page. Please write your email in the box below if you'd like to participate in similar studies."
 
