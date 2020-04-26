@@ -87,7 +87,7 @@
 			"id": "diet",
 			"type": "matrix",
 			"text": "",
-			"slider": true,
+			"slider": false,
 			"requiredQuestions": [0],
 			"direction": "vertical",
 			"choices": [
@@ -100,7 +100,7 @@
 			"id": "fasting",
 			"type": "matrix",
 			"text": "",
-			"slider": true,
+			"slider": false,
 			"requiredQuestions": [0],
 			"direction": "vertical",
 			"choices": [
@@ -157,6 +157,7 @@
 			],
 			"direction": "vertical",
 			"choices": [
+				"risk.falk.c0",
 				"risk.falk.c1",
 				"risk.falk.c2",
 				"risk.falk.c3",
@@ -199,6 +200,7 @@
 				"control.c7"
 			],
 			"questions": [
+				"control.q0",
 				"control.q1",
 				"control.q2",
 				"control.q3",
@@ -209,8 +211,7 @@
 				"control.q8",
 				"control.q9",
 				"control.q10",
-				"control.q11",
-				"control.q12"
+				"control.q11"
 			]
 		},
 		{
@@ -221,6 +222,7 @@
 			"requiredQuestions": [0],
 			"direction": "vertical",
 			"choices": [
+				"patience.c0",
 				"patience.c1",
 				"patience.c2",
 				"patience.c3",
