@@ -41,6 +41,7 @@
 			"id": "age",
 			"type": "matrix",
 			"text": "",
+			"slider": true,
 			"requiredQuestions": [0],
 			"direction": "vertical",
 			"choices": [
@@ -75,6 +76,7 @@
 			"id": "income.self",
 			"type": "matrix",
 			"text": "",
+			"slider": true,
 			"requiredQuestions": [0],
 			"direction": "vertical",
 			"choices": [
@@ -92,6 +94,7 @@
 			"id": "income.parents",
 			"type": "matrix",
 			"text": "",
+			"slider": true,
 			"requiredQuestions": [0],
 			"direction": "vertical",
 			"choices": [
@@ -547,6 +550,7 @@
 			"id": "trust",
 			"type": "matrix",
 			"text": "trust.q",
+			"slider": true,
 			"requiredQuestions": [
 				0,
 				1,
