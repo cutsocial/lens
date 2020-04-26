@@ -23,15 +23,14 @@
 			"type": "text",
 			"instruction": false,
 			"text": "country.q",
-			"autoComplete": "countries"
+			"autoComplete": "countries",
+			"required": true
 		},
 		{
 			"id": "sex",
 			"type": "matrix",
 			"text": "",
-			"requiredQuestions": [
-				0
-			],
+			"requiredQuestions": [0],
 			"direction": "vertical",
 			"choices": [
 				"sex.c1", "sex.c2", "sex.c3", "sex.c4"
@@ -42,9 +41,7 @@
 			"id": "age",
 			"type": "matrix",
 			"text": "",
-			"requiredQuestions": [
-				0
-			],
+			"requiredQuestions": [0],
 			"direction": "vertical",
 			"choices": [
 				"age.c1",
@@ -64,9 +61,7 @@
 			"id": "living",
 			"type": "matrix",
 			"text": "",
-			"requiredQuestions": [
-				0
-			],
+			"requiredQuestions": [0],
 			"direction": "vertical",
 			"choices": [
 				"living.c1",
@@ -542,6 +537,7 @@
 			"id": "social dilemma",
 			"type": "text",
 			"instruction": false,
+			"required": true,
 			"text": "social.dilemma.q",
 			"help": "",
 			"placeholder": "$0 to $1000 ",
@@ -628,6 +624,7 @@
 			"id": "email",
 			"type": "text",
 			"instruction": false,
+			"required": false,
 			"text": "submission.q_email",
 			"help": "Example: support@cut.social",
 			"placeholder": "Email",
