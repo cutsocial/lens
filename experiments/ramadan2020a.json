@@ -573,6 +573,41 @@
 			]
 		},
 		{
+			"id": "control",
+			"type": "matrix",
+			"text": "control.q",
+			"slider": true,
+			"requiredQuestions": [
+				0,
+				1,
+				2
+			],
+			"direction": "vertical",
+			"choices": [
+				"control.c1",
+				"control.c2",
+				"control.c3",
+				"control.c4",
+				"control.q5",
+				"control.q6",
+				"control.q7",
+			],
+			"questions": [
+				"control.q1",
+				"control.q2",
+				"control.q3",
+				"control.q4",
+				"control.q5",
+				"control.q6",
+				"control.q7",
+				"control.q8",
+				"control.q9",
+				"control.q10",
+				"control.q11",
+				"control.q12",
+			]
+		},
+		{
 			"id": "dospert",
 			"type": "matrix",
 			"text": "dospert.intro",
