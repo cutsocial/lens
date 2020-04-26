@@ -31,7 +31,119 @@
 				"svo.c1.c"	
 			],
 			"questions": ["svo.q"]
-		},	  
+		},	
+		{
+			"id": "svo.2",
+			"type": "matrix",
+			"text": "",
+			"slider": false,
+			"requiredQuestions": [0],
+			"direction": "vertical",
+			"choices": [
+				"svo.c2.a",
+				"svo.c2.b",
+				"svo.c2.c"	
+			],
+			"questions": ["svo.q"]
+		},
+		{
+			"id": "svo.3",
+			"type": "matrix",
+			"text": "",
+			"slider": false,
+			"requiredQuestions": [0],
+			"direction": "vertical",
+			"choices": [
+				"svo.c3.a",
+				"svo.c3.b",
+				"svo.c3.c"	
+			],
+			"questions": ["svo.q"]
+		},
+		{
+			"id": "svo.4",
+			"type": "matrix",
+			"text": "",
+			"slider": false,
+			"requiredQuestions": [0],
+			"direction": "vertical",
+			"choices": [
+				"svo.c4.a",
+				"svo.c4.b",
+				"svo.c4.c"	
+			],
+			"questions": ["svo.q"]
+		},
+		{
+			"id": "svo.5",
+			"type": "matrix",
+			"text": "",
+			"slider": false,
+			"requiredQuestions": [0],
+			"direction": "vertical",
+			"choices": [
+				"svo.c5.a",
+				"svo.c5.b",
+				"svo.c5.c"	
+			],
+			"questions": ["svo.q"]
+		},
+		{
+			"id": "svo.6",
+			"type": "matrix",
+			"text": "",
+			"slider": false,
+			"requiredQuestions": [0],
+			"direction": "vertical",
+			"choices": [
+				"svo.c6.a",
+				"svo.c6.b",
+				"svo.c6.c"	
+			],
+			"questions": ["svo.q"]
+		},
+		{
+			"id": "svo.7",
+			"type": "matrix",
+			"text": "",
+			"slider": false,
+			"requiredQuestions": [0],
+			"direction": "vertical",
+			"choices": [
+				"svo.c7.a",
+				"svo.c7.b",
+				"svo.c7.c"	
+			],
+			"questions": ["svo.q"]
+		},
+		{
+			"id": "svo.8",
+			"type": "matrix",
+			"text": "",
+			"slider": false,
+			"requiredQuestions": [0],
+			"direction": "vertical",
+			"choices": [
+				"svo.c8.a",
+				"svo.c8.b",
+				"svo.c8.c"	
+			],
+			"questions": ["svo.q"]
+		},
+		{
+			"id": "svo.9",
+			"type": "matrix",
+			"text": "",
+			"slider": false,
+			"requiredQuestions": [0],
+			"direction": "vertical",
+			"choices": [
+				"svo.c9.a",
+				"svo.c9.b",
+				"svo.c9.c"	
+			],
+			"questions": ["svo.q"]
+		}, 
 		{
 			"id": "patience",
 			"type": "matrix",
