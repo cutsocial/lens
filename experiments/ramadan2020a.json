@@ -682,7 +682,7 @@
 			"id": "diet",
 			"type": "matrix",
 			"text": "",
-			"slider": true,
+			"slider": false,
 			"requiredQuestions": [0],
 			"direction": "vertical",
 			"choices": [
@@ -695,7 +695,7 @@
 			"id": "fasting",
 			"type": "matrix",
 			"text": "",
-			"slider": true,
+			"slider": false,
 			"requiredQuestions": [0],
 			"direction": "vertical",
 			"choices": [
