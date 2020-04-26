@@ -229,7 +229,7 @@
 
 	"patience.q": "How willing are you to give up something that is beneficial for you today in order to benefit more from that in the future?",
 	 
-	"patience.c1": "completely unwilling",
+	"patience.c1": "not willing at all",
 	"patience.c1": "1",
 	"patience.c2": "2",
 	"patience.c3": "3",
@@ -274,7 +274,7 @@
 	"hunger.c8":"8",	
 	"hunger.c9":"9",	
 	"hunger.c10": "10",
-	"hunger.c10": "extremely hungry",	
+	"hunger.c11": "extremely hungry",	
 	 
 	 
 	"religiosity.q": "How religious do you consider yourself?",
@@ -289,7 +289,7 @@
 	"religiosity.c8":"8",	
 	"religiosity.c9":"9",
 	"religiosity.c10":"10",
-	"religiosity.c11":"very religious hungery",	
+	"religiosity.c11":"very religious",	
 	 
 	 
 	"diet.q": "Are you on a special diet?",
