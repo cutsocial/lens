@@ -615,6 +615,7 @@
 			"requiredQuestions": [0],
 			"direction": "vertical",
 			"choices": [
+				"patience.c0",
 				"patience.c1",
 				"patience.c2",
 				"patience.c3",
@@ -691,7 +692,7 @@
 			],
 			"questions": ["diet.q"]
 		},
-				{
+		{
 			"id": "fasting",
 			"type": "matrix",
 			"text": "",
