@@ -229,7 +229,7 @@
 
 	"patience.q": "How willing are you to give up something that is beneficial for you today in order to benefit more from that in the future?",
 	 
-	"patience.c1": "not willing at all",
+	"patience.c0": "not willing at all",
 	"patience.c1": "1",
 	"patience.c2": "2",
 	"patience.c3": "3",
