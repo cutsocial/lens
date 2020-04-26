@@ -13,6 +13,26 @@
 			"text": "intro"
 		},
 		{
+			"id": "svo.intro",
+			"type": "text",
+			"instruction": true,
+			"text": "svo.intro"
+		},
+		{
+			"id": "svo.1",
+			"type": "matrix",
+			"text": "",
+			"slider": false,
+			"requiredQuestions": [0],
+			"direction": "vertical",
+			"choices": [
+				"svo.c1.a",
+				"svo.c1.b",
+				"svo.c1.c"	
+			],
+			"questions": ["svo.q"]
+		},	  
+		{
 			"id": "patience",
 			"type": "matrix",
 			"text": "",
