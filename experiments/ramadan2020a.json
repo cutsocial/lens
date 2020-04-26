@@ -590,7 +590,7 @@
 				"control.c4",
 				"control.q5",
 				"control.q6",
-				"control.q7",
+				"control.q7"
 			],
 			"questions": [
 				"control.q1",
@@ -604,9 +604,32 @@
 				"control.q9",
 				"control.q10",
 				"control.q11",
-				"control.q12",
+				"control.q12"
 			]
 		},
+		{
+			"id": "patience",
+			"type": "matrix",
+			"text": "",
+			"slider": true,
+			"requiredQuestions": [0],
+			"direction": "vertical",
+			"choices": [
+				"patience.c1",
+				"patience.c2",
+				"patience.c3",
+				"patience.c4",
+				"patience.c5",
+				"patience.c6",
+				"patience.c7",
+				"patience.c8",
+				"patience.c9",
+				"patience.c10",
+				"patience.c11"
+				
+			],
+			"questions": ["patience.q"]
+		},  
 		{
 			"id": "dospert",
 			"type": "matrix",
