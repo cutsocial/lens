@@ -7,22 +7,14 @@
     "maintainer": "ansarinia@me.com"
   },
   "views": [
-    {
-      "id": "bart_demo",
-      "type": "bart",
-      "reward": 1,
-      "maxPumps": 10,
-      "safePumps": 3,
-      "trials": 3
-    },
-    {
-      "id": "bart_demo2",
-      "type": "bart",
-      "reward": 2,
-      "maxPumps": 100,
-      "safePumps": 1,
-      "trials": 2
-    }
+		{
+			"id": "bart",
+			"type": "bart",
+			"reward": 1,
+			"maxPumps": 20,
+			"safePumps": 1,
+			"trials": 8
+		}
 
   ]
 }
