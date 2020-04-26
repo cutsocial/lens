@@ -12,7 +12,7 @@
       "type": "bart",
       "reward": 1,
       "maxPumps": 10,
-      "safePumps": 1,
+      "safePumps": 3,
       "trials": 3
     },
     {
