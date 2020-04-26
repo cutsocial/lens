@@ -293,13 +293,13 @@
 	 
 	 
 	"diet.q": "Are you on a special diet?",
-	"diet.1": "Yes",
-	"diet.2": "No",
+	"diet.c1": "Yes",
+	"diet.c2": "No",
 	 
 	 
 	"fasting.q": "Were you fasting while taking this survey?", 
-	"fasting.1": "Yes",
-	"fasting.2": "No",
+	"fasting.c1": "Yes",
+	"fasting.c2": "No",
 	 
 	
 	"submission.note": "Thanks! Your submission code is: **{{submissionCode}}**",
