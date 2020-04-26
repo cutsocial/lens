@@ -303,7 +303,7 @@
 	 
 	 
 	 
-	"svo.q": "Please pick the option that you prefer:"
+	"svo.q": "Please pick the option that you prefer:",
 	"svo.intro":"This is a point allocation task. You get to decide how to split points between yourself and another person. This person will be randomly selected from the participants in this experiment.<br /><br />Your total points will be used to calculate your participation bonus. So, every point has value: the more points you receive, the better for you, and the more points the 'Other' receives, the better for him/her.<br /><br />There are no right or wrong answers -- choose the option that you, for whatever reason, prefer most.",
 	 
 	"svo.c1.a":"480 for me, 80 for them",
