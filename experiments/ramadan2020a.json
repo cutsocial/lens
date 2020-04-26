@@ -543,7 +543,7 @@
 			"required": true,
 			"text": "social.dilemma.q",
 			"help": "",
-			"placeholder": "$0 to $1000 ",
+			"placeholder": "$0 to $1000",
 			"pattern": ""
 		},
 		{
