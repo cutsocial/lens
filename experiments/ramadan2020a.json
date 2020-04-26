@@ -648,7 +648,8 @@
 				"hunger.c7",
 				"hunger.c8",
 				"hunger.c9",
-				"hunger.c10"
+				"hunger.c10",
+				"hunger.c11"
 				
 			],
 			"questions": ["hunger.q"]
@@ -671,7 +672,8 @@
 				"religiosity.c7",
 				"religiosity.c8",
 				"religiosity.c9",
-				"religiosity.c10"
+				"religiosity.c10",
+				"religiosity.c11"
 				
 			],
 			"questions": ["religiosity.q"]
