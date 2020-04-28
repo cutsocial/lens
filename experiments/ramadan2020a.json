@@ -104,7 +104,8 @@
 				"income.parent.c4",
 				"income.parent.c5",
 				"income.parent.c6",
-				"income.parent.c7"
+				"income.parent.c7",
+				"income.parent.c8"
 			],
 			"questions": ["income.parent.q"]
 		},
@@ -142,8 +143,14 @@
 			],
 			"questions": ["risk.qual.q"]
         },
+	{
+			"id": "tasks intro",
+			"type": "text",
+			"instruction": true,
+			"text": "tasks.intro"
+	},	  
         {
-			"id": "social dilemma",
+			"id": "social dilemma 1",
 			"type": "text",
 			"instruction": false,
 			"required": true,
@@ -172,8 +179,18 @@
 			"placeholder": "250 to 750",
 			"pattern": ""
         },
+	{
+			"id": "social dilemma 4",
+			"type": "text",
+			"instruction": false,
+			"required": true,
+			"text": "social.dilemma.q3",
+			"help": "",
+			"placeholder": "375 to 625",
+			"pattern": ""
+        },
         {
-			"id": "social dilemma",
+			"id": "social dilemma 5",
 			"type": "text",
 			"instruction": false,
 			"required": true,
