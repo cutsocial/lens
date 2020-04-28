@@ -1,4 +1,4 @@
- {
+{
 	"language_selector.text": "Please select a language to continue",
 	"loading": "Loading...",
 	"next": "Next",
@@ -8,9 +8,10 @@
 	"errors.required": "You must respond to proceed.",
 	"text.choose_a_country": "Choose a Country",
 	"text.no_options": "No Options",
+    
+    "intro": "**Welcome!**<br /><br />This study is part of a research project on decision making, conducted by researchers at the New School for Social Research.<br /><br />The entire study takes less than 15 minutes. And, we will follow up with you in a few weeks for the second study for which you will be paid seperately.<br /><br />For participating in they study, you receive a flat fee plus bonus points based on your responses in different tasks. **The bonus points can double your earnings**.<br /><br />The study does not require specific background knowledge. As long as you follow the instructions, your bonuses should be on the higher end. Your participation is, of course, voluntary. Your responses will be entirely anonymous.<br /><br />For any questions or comments, send them to the email address below:salam955@newschool.edu<br /><br />Press **Next** to begin.",
 
-    	"intro": "**Welcome!**<br /><br />This study is part of a research project on decision making, conducted by researchers at the New School for Social Research.<br /><br />The entire study takes less than 15 minutes. And, we will follow up with you in a few weeks for the second study for which you will be paid seperately.<br /><br />For participating in they study, you receive a flat fee plus bonus points based on your responses in different tasks. **The bonus points can double your earnings**.<br /><br />The study does not require specific background knowledge. As long as you follow the instructions, your bonuses should be on the higher end. Your participation is, of course, voluntary. Your responses will be entirely anonymous.<br /><br />For any questions or comments, send them to the email address below:salam955@newschool.edu<br />Press **Next** to begin.",
-	"intro.demographics": "First we need a few pieces of information about you. This makes our feedback to you more accurate.",
+	"intro.demographics": "First we need some information about you.",
 
 	"country.q": "Which **country** do you live in?",
 
@@ -72,7 +73,7 @@
 	"risk.qual.c3": "moderate return and moderate risk",
 	"risk.qual.c4": "low return and no risk",
 
-	"bart.intro": "Cool. So in the next task, you'll see a ball in the middle of the screen that grows bigger every time you press the ‘pump’ button. <br /><br />You receive points for each pump, but only if the ball doesn't blow up. If the ball explodes, you lose all your points in that round. <br /><br />You can also select the ‘cash in’ button to save your points if you don’t want to pump the ball anymore. <br /><br />Press ‘Next’ to begin.",
+	"bart.intro": "Great. So in the first task, you'll see a ball in the middle of the screen that grows bigger every time you press on it.<br /><br />You receive points for each pump, but only if the ball doesn't blow up. If the ball explodes, you lose all your points in that round.<br /><br />You can also select the ‘cash in’ button to save your points if you don’t want to pump the ball anymore.<br /><br />Press **Next** to begin.",
 
 	"bart.cash": "Cash",
 	"bart.balloon_tooltip": "Touch to pump",
@@ -82,7 +83,7 @@
 	"bart.next_trial": "Next Round",
 	"bart.cashed_title": "Cashed!",
 	"bart.trial_score_report": "You scored {{score}} points in this round.",
-	"bart.total_score_report": "In total, you have {{score}} points.",
+	"bart.total_score_report": " In total, you have {{score}} points.",
 	"bart.total_points": "Total Points",
 	"bart.trialCounter": "Trial {{trial}} of {{trials}}",
 
@@ -149,8 +150,6 @@
 	"stroop_demo.rule": "What's the color of this text?",
 	"stroop.practice.introduction": "In the next task, you'll see color names written in different inks on the top: <span style='color:red'>*RED*</span>, <span style='color:green'>*GREEN*</span>, <span style='color:green'>*RED*</span>, or <span style='color:red'>*GREEN*</span>.<br /><br />You have two choices on the bottom left and right. You should select the one that matches the **color** of the text on top:\n- For <span style='color:red'>*GREEN*</span> or <span style='color:red'>*RED*</span>, the correct choices are <span style='color:red'>*RED*</span> or <span style='color:green'>*RED*</span>.\n- For <span style='color:green'>*RED*</span> or <span style='color:green'>*GREEN*</span>, the correct choices are <span style='color:red'>*GREEN*</span> or <span style='color:green'>*GREEN*</span>.\n\nPress next to play a few practice rounds.",
 	"stroop.main.introduction": "Now the main trial begins. You will not receive feedback. Press next to continue.",
-
-	"social.dilemma.q": "Please imagine the following: <br /><br />You and a person you don't know have to split a sum of money. The amount is between 0$ and $1000 but niether of you knows the exact amount. <br /><br />You each have to choose an amount that you'd like to recieve. This could be anything between $0 to $1000. You'll only know about each other's requested amounts only after you make your decision. <br /><br />If the sum of requests by the two of you is less than $1000, then you get the amount you requested. But if it exceeds $1000, neither of you gets any of the money. <br /><br />So although larger requests could get you more money, you might also end up getting nothing. <br /><br />Please indicate the amount you'd like to receive:",
 
 	"trust.q": "How much you agree or disagree with the following statements:",
 	"trust.q1": "Most people tell a lie when they can benefit by doing so.",
@@ -263,7 +262,7 @@
 	 
 	 
 	"svo.q": "Please pick the option that you prefer:",
-	"svo.intro":"Next is a point allocation task. You get to decide how to split points between yourself and another person. This person will be randomly selected from other participants in this experiment.<br /><br />Your points will be used to calculate your bonus. So, every point has value: the more points you receive, the better for you, and the more points the 'Other' receives, the better for him/her.<br /><br />There are no right or wrong answers -- choose the option that you, for whatever reason, prefer most. You'll play 9 rounds. Pres 'Next' to begin",
+	"svo.intro":"Next is a point allocation task. You get to decide how to split points between yourself and another person. This person will be randomly selected from other participants in this experiment.<br /><br />Your points will be used to calculate your bonus. So, every point has value: the more points you receive, the better for you, and the more points the 'Other' receives, the better for him/her.<br /><br />There are no right or wrong answers -- choose the option that you, for whatever reason, prefer most. You'll play 9 rounds. Press 'Next' to begin",
 	 
 	"svo.c1.a":"480 for me, 80 for Other",
 	"svo.c1.b":"540 for me, 280 for Other",
@@ -294,7 +293,7 @@
 	"svo.c7.c":"510 for me, 110 for Other",
 	 
 	"svo.c8.a":"550 for me, 300 for Other",
-	"svo.c8.b":"500 for me, 300 for Other",
+	"svo.c8.b":"500 for me, 100 for Other",
 	"svo.c8.c":"500 for me, 500 for Other",
 	 
 	"svo.c9.a":"480 for me, 100 for Other",
@@ -318,8 +317,20 @@
 	"recip.c8": "8",
 	"recip.c9": "9",
 	"recip.c10": "10",
-	"recip.c11": "very willing",
-	 
+    "recip.c11": "very willing",
+    
+    "soc.dilemma1":"375 and 625",
+    "soc.dilemma2":"250 and 750",
+    "soc.dilemma3":"125 and 875",
+    "soc.dilemma4":"500",
+    
+    "social.dilemma.q1": "In this task, you and 4 other participants in this study have to divide some bonus points. Each of you privately requests some points.<br /><br />Between 0 and 1000 points are available, but the exact number is unknown until you all make your requests.<br /><br />If the sum of requests by all of you is less than the number of available points, then you each receive the bonus points you requested. But if it is more than the available points, none of you gets anything.<br /><br />So larger requests could get you more bonus points, but you might also end up with nothing. Please indicate the number of points you'd like to receive:",
+
+    "social.dilemma.q2":"Now we know the total number of available points is between 125 and 875. How many points do you request? Again, your request will be added to requests by 4 other subjects. If it is over 875, you do not get any points. Please indicate the number of points you'd like to receive:",
+    "social.dilemma.q3":"And if the total number of points is somewhere between 250 and 750, how many points do you request?",
+    "social.dilemma.q4":"Last one: This time, we know the total number of points is 500. How many points do you request",
+
+
 	"submission.note": "Thanks! Your submission code is: **{{submissionCode}}**",
 	"submission.q_email": "Thank you for your participation. You can see your performance on the next page. Please write your email in the box below if you'd like to participate in similar studies."
 
