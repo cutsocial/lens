@@ -73,7 +73,7 @@
 	"risk.qual.c3": "moderate return and moderate risk",
 	"risk.qual.c4": "low return and no risk",
 
-	"bart.intro": "Great. So in the first task, you'll see a ball in the middle of the screen that grows bigger every time you press on it.<br /><br />You receive points for each pump, but only if the ball doesn't blow up. If the ball explodes, you lose all your points in that round.<br /><br />You can also select the ‘cash in’ button to save your points if you don’t want to pump the ball anymore.<br /><br />Press **Next** to begin.",
+	"bart.intro": "Great. So in the next task, you'll see a ball in the middle of the screen that grows bigger every time you press on it.<br /><br />You receive points for each pump, but only if the ball doesn't blow up. If the ball explodes, you lose all your points in that round.<br /><br />You can also select the ‘cash in’ button to save your points if you don’t want to pump the ball anymore.<br /><br />Press **Next** to begin.",
 
 	"bart.cash": "Cash",
 	"bart.balloon_tooltip": "Touch to pump",
@@ -131,7 +131,7 @@
 	"ownership.c7": "12-14 hours ago",
 	"ownership.c8": "over 14 hours ago",
 
-	"gonogo.introduction": "Great. So here is the first task. <br /><br />You'll briefly see the shape of a blue or yellow star on the left or on the right side of the screen. If you see a blue star, you should click/tap on it. <br /><br />If you see a yellow star, you should click/tap on the opposite side. You have 3 seconds to respond but faster and accurate responses will get you more points. <br /><br />Let's start with a few practice rounds with feedback.",
+	"gonogo.introduction": "Great. We're almost done.<br /><br />Next, you'll briefly see the shape of a blue or yellow star on the left or on the right side of the screen. If you see a blue star, you should click/tap on it. <br /><br />If you see a yellow star, you should click/tap on the opposite side. You have 3 seconds to respond but faster and accurate responses will get you more points. <br /><br />Let's start with a few practice rounds with feedback.",
 	"gonogo.are_you_ready": "Are you ready?",
 	"gonogo.too_many_timeouts": "You waited too long! Let's start over.",
 	"gonogo.restart": "Restart",
@@ -317,19 +317,18 @@
 	"recip.c8": "8",
 	"recip.c9": "9",
 	"recip.c10": "10",
-    "recip.c11": "very willing",
+	
+	"recip.c11": "very willing",
     
-    "soc.dilemma1":"375 and 625",
-    "soc.dilemma2":"250 and 750",
-    "soc.dilemma3":"125 and 875",
-    "soc.dilemma4":"500",
-    
-    "social.dilemma.q1": "In this task, you and 4 other participants in this study have to divide some bonus points. Each of you privately requests some of the points.<br /><br />Between 0 and 1000 points are available, but the exact number is unknown until you all make your requests.<br /><br />If the sum of requests by all of you is less than the number of available points, then you each receive the bonus points you requested. But if it is more than the available points, none of you gets anything.<br /><br />So larger requests could get you more bonus points, but you might also end up with nothing. Please indicate the number of points you'd like to receive:",
+	"soc.dilemma1":"375 and 625",
+	"soc.dilemma2":"250 and 750",
+	"soc.dilemma3":"125 and 875",
+	"soc.dilemma4":"500",
 
-    "social.dilemma.q2":"Now we know the total number of available points is between 125 and 875. How many points do you request? Again, your request will be added to requests by 4 other subjects. If it is over 875, you do not get any points. Please indicate the number of points you'd like to receive:",
-    "social.dilemma.q3":"And if the total number of points is somewhere between 250 and 750, how many points do you request?",
-    "social.dilemma.q4":"Last one: This time, we know the total number of points is 500. How many points do you request",
-
+	"social.dilemma.q1": "In this first task, you and 4 other participants in this study have to divide some bonus points. Each of you privately requests some of the points.<br /><br />Between 0 and 1000 points are available, but the exact number is unknown until you all make your requests.<br /><br />If the sum of requests by all of you is less than the number of available points, then you each receive the bonus points you requested. But if it is more than the available points, none of you gets anything.<br /><br />So larger requests could get you more bonus points, but you might also end up with nothing. Please indicate the number of points you'd like to receive:",
+	"social.dilemma.q2":"Great. We know the total number of available points is between 125 and 875. How many points do you request?<br /><br />Again, your request will be added to requests by 4 other subjects. If it is over 875, you do not get any points.<br /><br />Please indicate the number of points you'd like to receive:",
+	"social.dilemma.q3":"And if the total number of points is somewhere between 250 and 750, how many points do you request?<br /><br />(The rules are the same. Your request will be added to request by 4 other participants...).",
+	"social.dilemma.q4":"Last one: This time, we know the total number of points is 500. How many points do you request",
 
 	"submission.note": "Thanks! Your submission code is: **{{submissionCode}}**",
 	"submission.q_email": "Thank you for your participation. You can see your performance on the next page. Please write your email in the box below if you'd like to participate in similar studies."
