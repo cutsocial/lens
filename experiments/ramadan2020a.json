@@ -147,7 +147,7 @@
 			"type": "text",
 			"instruction": false,
 			"required": true,
-			"text": "social.dilemma.q",
+			"text": "social.dilemma.q1",
 			"help": "",
 			"placeholder": "0 to 1000",
 			"pattern": ""
