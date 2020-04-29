@@ -76,7 +76,7 @@
 	
 	"tasks.intro":"Thanks. Our main questions and tasks begin next. Remember, the responses you give in different tasks are converted into bonus points. You get points based on your choices, response accuracy, and speed. These bonus points will be added to your compensation. Press next to begin the first task.",
 	
-	"bart.intro": "Great. So in the next task, you'll see a ball in the middle of the screen that grows bigger every time you press on it.<br /><br />You receive points for each pump, but only if the ball doesn't blow up. If the ball explodes, you lose all your points in that round.<br /><br />You can also select the ‘cash in’ button to save your points if you don’t want to pump the ball anymore.<br /><br />Press **Next** to begin.",
+	"bart.intro": "Great. So in the next task, you'll see a ball in the middle of the screen that grows bigger every time you press on it.<br /><br />You receive 12 points for each pump, but only if the ball doesn't blow up. If the ball explodes, you lose all your points in that round.<br /><br />You can also select the ‘cash in’ button to save your points if you don’t want to pump the ball anymore.<br /><br />Press **Next** to begin.",
 
 	"bart.cash": "Cash",
 	"bart.balloon_tooltip": "Touch to pump",
@@ -334,6 +334,8 @@
 	"social.dilemma.q4":"We know the total number of points is somewhere **between 375 and 625**, how many points do you request?<br /><br />(The rules are the same. Your request will be added to request by 4 other participants...).",
 	"social.dilemma.q5":"Last one: This time, we know **the total number of points is 500**. How many points do you request",
 
+	"p.id.intro":"Please enter your Prolifc ID here:",
+	
 	"submission.note": "Thanks! Your submission code is: **{{submissionCode}}**",
 	"submission.q_email": "Thank you for your participation. You can see your performance on the next page. Please write your email in the box below if you'd like to participate in similar studies."
 
