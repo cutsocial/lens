@@ -156,7 +156,7 @@
 			"required": true,
 			"text": "social.dilemma.q1",
 			"help": "",
-			"placeholder": "0 to 1000",
+			"placeholder": "",
 			"pattern": ""
         },    
         {
@@ -166,7 +166,7 @@
 			"required": true,
 			"text": "social.dilemma.q2",
 			"help": "",
-			"placeholder": "125 to 875",
+			"placeholder": "",
 			"pattern": ""
         },
         {
@@ -176,7 +176,7 @@
 			"required": true,
 			"text": "social.dilemma.q3",
 			"help": "",
-			"placeholder": "250 to 750",
+			"placeholder": "",
 			"pattern": ""
         },
 	{
@@ -186,7 +186,7 @@
 			"required": true,
 			"text": "social.dilemma.q3",
 			"help": "",
-			"placeholder": "375 to 625",
+			"placeholder": "",
 			"pattern": ""
         },
         {
@@ -196,7 +196,7 @@
 			"required": true,
 			"text": "social.dilemma.q4",
 			"help": "",
-			"placeholder": "up to 500",
+			"placeholder": "",
 			"pattern": ""
         },
 		{
@@ -208,10 +208,10 @@
 		{
 			"id": "bart",
 			"type": "bart",
-			"reward": 10,
+			"reward": 12,
 			"maxPumps": 20,
 			"safePumps": 1,
-			"trials": 10
+			"trials": 20
 		},
 		{
 			"id": "trust",
@@ -882,15 +882,15 @@
 			],
 			"questions": ["fasting.q"]
         }, 
-		{
-			"id": "email",
+	{
+			"id": "prolific ID",
 			"type": "text",
 			"instruction": false,
-			"required": false,
-			"text": "submission.q_email",
-			"help": "Example: support@cut.social",
-			"placeholder": "Email",
-			"pattern": "*@*.*"
-		}
+			"required": true,
+			"text": "p.id.intro",
+			"help": "",
+			"placeholder": "",
+			"pattern": ""
+        }
 	]
 }
