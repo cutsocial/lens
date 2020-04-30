@@ -104,8 +104,7 @@
 				"income.parent.c4",
 				"income.parent.c5",
 				"income.parent.c6",
-				"income.parent.c7",
-				"income.parent.c8"
+				"income.parent.c7"
 			],
 			"questions": ["income.parent.q"]
 		},
@@ -184,7 +183,7 @@
 			"type": "text",
 			"instruction": false,
 			"required": true,
-			"text": "social.dilemma.q3",
+			"text": "social.dilemma.q4",
 			"help": "",
 			"placeholder": "",
 			"pattern": ""
@@ -194,7 +193,7 @@
 			"type": "text",
 			"instruction": false,
 			"required": true,
-			"text": "social.dilemma.q4",
+			"text": "social.dilemma.q5",
 			"help": "",
 			"placeholder": "",
 			"pattern": ""
@@ -832,6 +831,12 @@
 			"feedbackDuration": 0,
 			"timeoutsBeforeReset": 10
         },
+	{
+			"id": "almost.done.statement",
+			"type": "text",
+			"instruction": true,
+			"text": "almost.done"
+	},
         {
 			"id": "diet",
 			"type": "matrix",
