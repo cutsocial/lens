@@ -1,7 +1,7 @@
 {
 	"language_selector.text": "Please select a language to continue",
 	"loading": "Loading...",
-	"next": "Next",
+	"next": "Next", 
 	"yes": "Yes",
 	"finish": "Finish",
 	"finish_and_redirect": "Continue",
@@ -302,6 +302,7 @@
 	"neg.recip.2": "How willing are you to punish someone who treats **you** unfairly, even if there may be costs for you?",
 	"neg.recip.3": "How willing are you to punish someone who treats **others** unfairly, even if there may be costs for you?",
 	"altruism": "How willing are you to give to good causes without expecting anything in return?",
+	"trust.falk":"I assume that people have only the best intentions.",
 	
 	"recip.c0":"not willing at all",
 	"recip.c1": "1",
