@@ -74,9 +74,8 @@
 	"risk.qual.c3": "moderate return and moderate risk",
 	"risk.qual.c4": "low return and no risk",
 	
-	"tasks.intro":"Thanks. Our main questions and tasks begin next. Remember, the responses you give in different tasks are converted into bonus points. You get points based on your choices, response accuracy, and speed. These bonus points will be added to your compensation. Press next to begin the first task.",
-	
-	"bart.intro": "Great. So in the next task, you'll see a ball in the middle of the screen that grows bigger every time you press on it.<br /><br />You receive **7 bonus points** for each pump, but only if the ball doesn't blow up. If the ball explodes, you lose all your points in that round.<br /><br />You can also select the ‘**CASH**’ button to save your points if you don’t want to pump the ball anymore.<br /><br />Press **Next** to begin.",
+	"tasks.intro":"Thanks. Our main questions and tasks begin next.<br /><br />Remember, the responses you give in different tasks are converted into bonus points. You get points based on your choices, response accuracy, and speed depending on the specific task. These bonus points will be converted and added to your compensation. Press next to begin the first task.",
+	"bart.intro": "Great. So in the next task, you'll see a ball in the middle of the screen that grows bigger every time you press on it.<br /><br />You receive **7 bonus points** for each pump, but only if the ball doesn't blow up. If the ball explodes, you lose all your points in that round.<br /><br />You can also select the ‘**CASH**’ button to save your bonus points if you don’t want to pump the ball anymore.<br /><br />Press **Next** to begin.",
 
 	"bart.cash": "Cash",
 	"bart.balloon_tooltip": "Touch to pump",
@@ -134,7 +133,7 @@
 	"ownership.c7": "12-14 hours ago",
 	"ownership.c8": "over 14 hours ago",
 
-	"gonogo.introduction": "Great. We're almost done.<br /><br />Next is Go-NoGo game. You'll briefly see the shape of a blue or yellow star on the left or on the right side of the screen. If you see a blue star, you should click/tap on it. <br /><br />If you see a yellow star, you should click/tap on the opposite side. You have 3 seconds to respond but faster and accurate responses will get you more points. <br /><br />Let's start round 1 with feedback.",
+	"gonogo.introduction": "Great. We're almost done.<br /><br />Next is Go-NoGo game. You'll briefly see the shape of a blue or yellow star on the left or on the right side of the screen. If you see a blue star, you should click/tap on it. <br /><br />If you see a yellow star, you should click/tap on the opposite side. You have 3 seconds to respond but faster and accurate responses will get you more bonus points. <br /><br />Let's start round 1 with feedback.",
 	"gonogo.are_you_ready": "Are you ready?",
 	"gonogo.too_many_timeouts": "You waited too long! Let's start over.",
 	"gonogo.restart": "Restart",
@@ -151,7 +150,7 @@
 	"colors.red": "Red",
 
 	"stroop_demo.rule": "What's the color of this text?",
-	"stroop.practice.introduction": "In the next task, you'll see color names written in different inks on the top: <span style='color:red'>*RED*</span>, <span style='color:green'>*GREEN*</span>, <span style='color:green'>*RED*</span>, or <span style='color:red'>*GREEN*</span>.<br /><br />You have two choices on the bottom left and right. You should select the one that matches the **color** of the text on top:\n- For <span style='color:red'>*GREEN*</span> or <span style='color:red'>*RED*</span>, the correct choices are <span style='color:red'>*RED*</span> or <span style='color:green'>*RED*</span>.\n- For <span style='color:green'>*RED*</span> or <span style='color:green'>*GREEN*</span>, the correct choices are <span style='color:red'>*GREEN*</span> or <span style='color:green'>*GREEN*</span>.\n\nPress next to begin the first round (you'll get feedback about your responses).",
+	"stroop.practice.introduction": "In the next task, you'll see color names written in different inks on the top: <span style='color:red'>*RED*</span>, <span style='color:green'>*GREEN*</span>, <span style='color:green'>*RED*</span>, or <span style='color:red'>*GREEN*</span>.<br /><br />You have two choices on the bottom left and right. You should select the one that matches the **color** of the text on top:\n- For <span style='color:red'>*GREEN*</span> or <span style='color:red'>*RED*</span>, the correct choices are <span style='color:red'>*RED*</span> or <span style='color:green'>*RED*</span>.\n- For <span style='color:green'>*RED*</span> or <span style='color:green'>*GREEN*</span>, the correct choices are <span style='color:red'>*GREEN*</span> or <span style='color:green'>*GREEN*</span>.\n\nAgain, accurate and quick responses get more bonus points. Press next to begin the first round (you'll get feedback about your responses).",
 	"stroop.main.introduction": "Now the second round begins. You will not receive feedback this time. Press next to continue.",
 
 	"trust.q": "How much you agree or disagree with the following statements:",
@@ -237,7 +236,6 @@
 	"hunger.c10": "10",
 	"hunger.c11": "extremely hungry",	
 	 
-	 
 	"religiosity.q": "How religious do you consider yourself?",
 	"religiosity.c0":"not religious at all",
 	"religiosity.c1":"1",
@@ -252,17 +250,13 @@
 	"religiosity.c10":"10",
 	"religiosity.c11":"very religious",	
 	 
-	 
 	"diet.q": "Are you on a special diet?",
 	"diet.c1": "Yes",
 	"diet.c2": "No",
 	 
-	 
 	"fasting.q": "Were you fasting while taking this survey?", 
 	"fasting.c1": "Yes",
 	"fasting.c2": "No",
-	 
-	 
 	 
 	"svo.q": "Please pick the option that you prefer:",
 	"svo.intro":"Great. So the next task is another a point allocation task. You get to decide how to split bonus points between yourself and another person. This person will be randomly selected from other participants in this experiment.<br /><br />Your points will be used to calculate your bonus. So, every point has value: the more points you receive, the better for you, and the more points the 'Other' receives, the better for him/her.<br /><br />There are no right or wrong answers -- choose the option that you, for whatever reason, prefer most. You'll play 9 rounds. Press 'Next' to begin",
@@ -320,7 +314,6 @@
 	"recip.c8": "8",
 	"recip.c9": "9",
 	"recip.c10": "10",
-	
 	"recip.c11": "very willing",
     
 	"soc.dilemma1":"375 and 625",
