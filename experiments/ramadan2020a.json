@@ -321,7 +321,31 @@
 				
 			],
 			"questions": ["religiosity.q"]
-		},   
+		},
+		{
+			"id": "trust.fehr",
+			"type": "matrix",
+			"text": "trust.q",
+			"slider": true,
+			"requiredQuestions": [
+				0,
+				1,
+				2
+			],
+			"direction": "vertical",
+			"choices": [
+				"trust.fehr.c1",
+				"trust.fehr.c2",
+				"trust.fehr.c3",
+				"trust.fehr.c4",
+				"trust.fehr.c5"
+			],
+			"questions": [
+				"trust.fehr.1",
+				"trust.fehr.2",
+				"trust.fehr.3"
+			]
+		},
 		{
 			"id": "svo.intro",
 			"type": "text",
