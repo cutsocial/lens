@@ -344,7 +344,7 @@
 	"trust.fehr.c5":"Always",
 
 	
-	"submission.note": "Thanks! Your submission code is: **{{submissionCode}}**",
+	"submission.note": "Thanks! We're done! Please press **Continue** to be redirected to the Prolific webpage.",
 	"submission.q_email": "Thank you for your participation. You can see your performance on the next page. Please write your email in the box below if you'd like to participate in similar studies."
 
 }
