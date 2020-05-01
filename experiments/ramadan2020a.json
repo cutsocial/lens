@@ -156,7 +156,7 @@
 			"text": "social.dilemma.q1",
 			"help": "",
 			"placeholder": "",
-			"pattern": ""
+			"pattern": "Points I request"
         },    
         {
 			"id": "social dilemma 2",
@@ -165,7 +165,7 @@
 			"required": true,
 			"text": "social.dilemma.q2",
 			"help": "",
-			"placeholder": "",
+			"placeholder": "Points I request",
 			"pattern": ""
         },
         {
@@ -175,7 +175,7 @@
 			"required": true,
 			"text": "social.dilemma.q3",
 			"help": "",
-			"placeholder": "",
+			"placeholder": "Points I request",
 			"pattern": ""
         },
 	{
@@ -185,7 +185,7 @@
 			"required": true,
 			"text": "social.dilemma.q4",
 			"help": "",
-			"placeholder": "",
+			"placeholder": "Points I request",
 			"pattern": ""
         },
         {
@@ -195,7 +195,7 @@
 			"required": true,
 			"text": "social.dilemma.q5",
 			"help": "",
-			"placeholder": "",
+			"placeholder": "Points I request",
 			"pattern": ""
         },
 		{
@@ -325,7 +325,7 @@
 		{
 			"id": "trust.fehr",
 			"type": "matrix",
-			"text": "trust.q",
+			"text": "",
 			"slider": true,
 			"requiredQuestions": [
 				0,
