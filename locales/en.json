@@ -74,7 +74,7 @@
 	"risk.qual.c3": "moderate return and moderate risk",
 	"risk.qual.c4": "low return and no risk",
 	
-	"tasks.intro":"Thanks. Our main questions and tasks begin next.<br /><br />Remember, the responses you give in different tasks are converted into bonus points. You get points based on your choices, response accuracy, and speed depending on the specific task. These bonus points will be converted and added to your compensation. Press next to begin the first task.",
+	"tasks.intro":"Thanks. Our main questions and tasks begin next.<br /><br />Remember, the responses you give in different tasks are converted into bonus points. You get points based on your choices, response accuracy, and speed on the specific task. These bonus points will be converted and added to your compensation.<br /><br />Press next to begin the first task.",
 	"bart.intro": "Great. So in the next task, you'll see a ball in the middle of the screen that grows bigger every time you press on it.<br /><br />You receive **7 bonus points** for each pump, but only if the ball doesn't blow up. If the ball explodes, you lose all your points in that round.<br /><br />You can also select the ‘**CASH**’ button to save your bonus points if you don’t want to pump the ball anymore.<br /><br />Press **Next** to begin.",
 
 	"bart.cash": "Cash",
@@ -150,7 +150,7 @@
 	"colors.red": "Red",
 
 	"stroop_demo.rule": "What's the color of this text?",
-	"stroop.practice.introduction": "In the next task, you'll see color names written in different inks on the top: <span style='color:red'>*RED*</span>, <span style='color:green'>*GREEN*</span>, <span style='color:green'>*RED*</span>, or <span style='color:red'>*GREEN*</span>.<br /><br />You have two choices on the bottom left and right. You should select the one that matches the **color** of the text on top:\n- For <span style='color:red'>*GREEN*</span> or <span style='color:red'>*RED*</span>, the correct choices are <span style='color:red'>*RED*</span> or <span style='color:green'>*RED*</span>.\n- For <span style='color:green'>*RED*</span> or <span style='color:green'>*GREEN*</span>, the correct choices are <span style='color:red'>*GREEN*</span> or <span style='color:green'>*GREEN*</span>.\n\nAgain, accurate and quick responses get more bonus points. Press next to begin the first round (you'll get feedback about your responses).",
+	"stroop.practice.introduction": "In the next task, you'll see color names written in different inks on top.<br /><br />You have two choices on the bottom left and right. You should select the **word** that matches the **color** of the text on top. So,\n- For <span style='color:red'>*GREEN*</span> or <span style='color:red'>*RED*</span>, you can choose <span style='color:red'>*RED*</span> or <span style='color:green'>*RED*</span>.\n- For <span style='color:green'>*RED*</span> or <span style='color:green'>*GREEN*</span>, you can choose <span style='color:red'>*GREEN*</span> or <span style='color:green'>*GREEN*</span>.\n\nAgain, accurate and quick responses get more bonus points. Press next to begin the first round (you'll get feedback about your responses).",
 	"stroop.main.introduction": "Now the second round begins. You will not receive feedback this time. Press next to continue.",
 
 	"trust.q": "How much you agree or disagree with the following statements:",
@@ -326,7 +326,7 @@
 
 	"social.dilemma.q1":"In this first task, you and 4 other participants in this study have to divide some bonus points. Each of you privately requests some of the points.<br /><br />Between **0 and 1000** points are available, but the exact number is unknown until you all make your requests.<br /><br />If the sum of requests by all of you is less than the number of available points, then you each receive the bonus points you requested. But if it is more than the available points, none of you gets anything.<br /><br />So larger requests could get you more bonus points, but you might also end up with nothing. Please indicate the number of points you'd like to receive:",
 	"social.dilemma.q2":"If the total number of available points is **more than 125 but less than 875**, how many points do you request?<br /><br />Again, your request will be added to requests by 4 other subjects. If the sum of requests is more than the number of available points, then none of you get any points.<br /><br />Please indicate the number of points you'd like to receive:",
-	"social.dilemma.q3":"And if the total number of points is somewhere **between 250 and 750**, how many points do you request?<br /><br />(The rules are the same. Your request will be added to request by 4 other participants...).",
+	"social.dilemma.q3":"And if the total number of points is somewhere **between 250 and 750**, how many points do you request?<br /><br />(The rules are the same. Your request will be added to request by 4 other participants and you get your requested points only if the sum is not more than the number of available points).",
 	"social.dilemma.q4":"We know the total number of points is somewhere **between 375 and 625**, how many points do you request?<br /><br />(The rules are the same. Your request will be added to request by 4 other participants...).",
 	"social.dilemma.q5":"Last one: This time, we know **the total number of points is 500**. How many points do you request",
 
@@ -338,9 +338,9 @@
 	"trust.fehr.3": "How often do you leave your door unlocked?",
 	
 	"trust.fehr.c1":"Never",
-	"trust.fehr.c2":"About half the time",
+	"trust.fehr.c2":"Rarely",
 	"trust.fehr.c3":"Sometimes",
-	"trust.fehr.c4":"Most of the time",
+	"trust.fehr.c4":"Often",
 	"trust.fehr.c5":"Always",
 
 	
