@@ -3,7 +3,7 @@
 	"loading": "Loading...",
 	"next": "Next", 
 	"yes": "Yes",
-	"finish": "Finish",
+	"finish": "Finish", 
 	"finish_and_redirect": "Continue",
 	"errors.required": "You must respond to proceed.",
 	"text.choose_a_country": "Choose a Country",
