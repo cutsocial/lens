@@ -150,7 +150,7 @@
 	"colors.red": "Red",
 
 	"stroop_demo.rule": "What's the color of this text?",
-	"stroop.practice.introduction": "In the next task, you'll see color names written in different inks on top.<br /><br />You have two choices on the bottom left and right. You should select the **word** that matches the **color** of the text on top. So,\n- For <span style='color:red'>*GREEN*</span> or <span style='color:red'>*RED*</span>, you can choose <span style='color:red'>*RED*</span> or <span style='color:green'>*RED*</span>.\n- For <span style='color:green'>*RED*</span> or <span style='color:green'>*GREEN*</span>, you can choose <span style='color:red'>*GREEN*</span> or <span style='color:green'>*GREEN*</span>.\n\nAgain, accurate and quick responses get more bonus points. Press next to begin the first round (you'll get feedback about your responses).",
+	"stroop.practice.introduction": "In the next task, you'll see color names written in different inks on top.<br /><br />You have two choices on the bottom. You should select the **word** that matches the **color** of the text on top. So,\n- For <span style='color:red'>*GREEN*</span> or <span style='color:red'>*RED*</span>, you can choose <span style='color:red'>*RED*</span> or <span style='color:green'>*RED*</span>.\n- For <span style='color:green'>*RED*</span> or <span style='color:green'>*GREEN*</span>, you can choose <span style='color:red'>*GREEN*</span> or <span style='color:green'>*GREEN*</span>.\n\nAgain, accurate and quick responses get more bonus points. Press next to begin the first round (you'll get feedback about your responses).",
 	"stroop.main.introduction": "Now the second round begins. You will not receive feedback this time. Press next to continue.",
 
 	"trust.q": "How much you agree or disagree with the following statements:",
@@ -344,7 +344,7 @@
 	"trust.fehr.c5":"Always",
 
 	
-	"submission.note": "Thanks! We're done! Please press **Continue** to be redirected to the Prolific webpage.",
+	"submission.note": "Thank you for your participation! Please press **Continue** to be redirected to the Prolific webpage.",
 	"submission.q_email": "Thank you for your participation. You can see your performance on the next page. Please write your email in the box below if you'd like to participate in similar studies."
 
 }
