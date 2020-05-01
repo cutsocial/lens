@@ -321,6 +321,8 @@
 	"soc.dilemma2":"250 and 750",
 	"soc.dilemma3":"125 and 875",
 	"soc.dilemma4":"500",
+	"fasting.ramadan.q":"Do you fast during Ramadan?",
+	
 
 	"social.dilemma.q1":"In this first task, you and 4 other participants in this study have to divide some bonus points. Each of you privately requests some of the points.<br /><br />Between **0 and 1000** points are available, but the exact number is unknown until you all make your requests.<br /><br />If the sum of requests by all of you is less than the number of available points, then you each receive the bonus points you requested. But if it is more than the available points, none of you gets anything.<br /><br />So larger requests could get you more bonus points, but you might also end up with nothing. Please indicate the number of points you'd like to receive:",
 	"social.dilemma.q2":"If the total number of available points is **more than 125 but less than 875**, how many points do you request?<br /><br />Again, your request will be added to requests by 4 other subjects. If the sum of requests is more than the number of available points, then none of you get any points.<br /><br />Please indicate the number of points you'd like to receive:",
