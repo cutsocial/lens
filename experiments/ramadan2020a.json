@@ -235,7 +235,8 @@
 				"trust.q2",
 				"trust.q3",
 				"trust.q4",
-				"trust.q5"
+				"trust.q5",
+				"trust.falk"
 			]
 		},
 		{
@@ -456,7 +457,7 @@
 	{
 			"id": "risk.falk",
 			"type": "matrix",
-			"text": "trust.q",
+			"text": "",
 			"slider": true,
 			"requiredQuestions": [
 				0,
@@ -484,14 +485,13 @@
 				"risk.falk.q3",
 				"risk.falk.q4",
 				"risk.falk.q5",
-				"risk.falk.q6",
-				"trust.falk"
+				"risk.falk.q6"
 			]
 	},  
 	{
 			"id": "recip",
 			"type": "matrix",
-			"text": "trust.q",
+			"text": "",
 			"slider": true,
 			"requiredQuestions": [
 				0,
@@ -942,6 +942,19 @@
 			],
 			"questions": ["hunger.q"]
 		},
+		{
+			"id": "fasting.ramadan",
+			"type": "matrix",
+			"text": "",
+			"slider": false,
+			"requiredQuestions": [0],
+			"direction": "vertical",
+			"choices": [
+				"fasting.c1",
+				"fasting.c2"				
+			],
+			"questions": ["fasting.ramadan.q"]
+        },   
 		{
 			"id": "fasting",
 			"type": "matrix",
