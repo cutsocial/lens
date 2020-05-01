@@ -344,7 +344,7 @@
 	"trust.fehr.c5":"Always",
 
 	
-	"trust.game.q": "We are giving you 1000 bonus points. They are yours to keep. We are also giving you a choice: Give some or all of these points back, we multiply it by **3**, and give it to another participant in this study. They can then decide to return some or all of the points back to you.<br /><br />It's entirely up to them to return anything. But it's enitrely up to you to take this chance and send some points over. You can keep all the points, give some, or all.<br /><br />How much would you like to give?",
+	"trust.game.q": "In this task, we are giving you 1000 bonus points. They are yours to keep.<br /><br />We are also giving you a choice: Give some or all of these points back, we multiply the number of points by **3**, and give it to another participant in this study. They can then decide to return some or all of the points back to you.<br /><br />It's entirely up to them to return anything. But it's enitrely up to you to take this chance and send some points over. You can keep all the points, give some, or all.<br /><br />How much would you like to send?",
 	"trust.game.c1":"Send Nothing",
         "trust.game.c2":"25",
         "trust.game.c3":"50",
