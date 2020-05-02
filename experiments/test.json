@@ -13,396 +13,136 @@
 			"text": "intro"
 		},
 		{
-			"id": "recip.alt",
-			"type": "matrix",
-			"text": "control.q",
-			"slider": true,
-			"requiredQuestions": [
-				0,
-				1,
-				2
-			],
-			"direction": "vertical",
-			"choices": [
-				"recip.c0",
-				"recip.c1",
-				"recip.c2",
-				"recip.c3",
-				"recip.c4",
-				"recip.c5",
-				"recip.c6",
-				"recip.c7",
-				"recip.c8",
-				"recip.c9",
-				"recip.c10",
-				"recip.c11"
-			],
-			"questions": [
-				"pos.reicp",
-				"neg.recip.1",
-				"neg.recip.2",
-				"neg.recip.3",
-				"altruism"
-			]
-		},
-		{
-			"id": "svo.intro",
-			"type": "text",
-			"instruction": true,
-			"text": "svo.intro"
-		},
-		{
-			"id": "svo.1",
-			"type": "matrix",
-			"text": "",
-			"slider": false,
-			"requiredQuestions": [0],
-			"direction": "vertical",
-			"choices": [
-				"svo.c1.a",
-				"svo.c1.b",
-				"svo.c1.c"	
-			],
-			"questions": ["svo.q"]
-		},	
-		{
-			"id": "svo.2",
-			"type": "matrix",
-			"text": "",
-			"slider": false,
-			"requiredQuestions": [0],
-			"direction": "vertical",
-			"choices": [
-				"svo.c2.a",
-				"svo.c2.b",
-				"svo.c2.c"	
-			],
-			"questions": ["svo.q"]
-		},
-		{
-			"id": "svo.3",
-			"type": "matrix",
-			"text": "",
-			"slider": false,
-			"requiredQuestions": [0],
-			"direction": "vertical",
-			"choices": [
-				"svo.c3.a",
-				"svo.c3.b",
-				"svo.c3.c"	
-			],
-			"questions": ["svo.q"]
-		},
-		{
-			"id": "svo.4",
-			"type": "matrix",
-			"text": "",
-			"slider": false,
-			"requiredQuestions": [0],
-			"direction": "vertical",
-			"choices": [
-				"svo.c4.a",
-				"svo.c4.b",
-				"svo.c4.c"	
-			],
-			"questions": ["svo.q"]
-		},
-		{
-			"id": "svo.5",
-			"type": "matrix",
-			"text": "",
-			"slider": false,
-			"requiredQuestions": [0],
-			"direction": "vertical",
-			"choices": [
-				"svo.c5.a",
-				"svo.c5.b",
-				"svo.c5.c"	
-			],
-			"questions": ["svo.q"]
-		},
-		{
-			"id": "svo.6",
-			"type": "matrix",
-			"text": "",
-			"slider": false,
-			"requiredQuestions": [0],
-			"direction": "vertical",
-			"choices": [
-				"svo.c6.a",
-				"svo.c6.b",
-				"svo.c6.c"	
-			],
-			"questions": ["svo.q"]
-		},
-		{
-			"id": "svo.7",
-			"type": "matrix",
-			"text": "",
-			"slider": false,
-			"requiredQuestions": [0],
-			"direction": "vertical",
-			"choices": [
-				"svo.c7.a",
-				"svo.c7.b",
-				"svo.c7.c"	
-			],
-			"questions": ["svo.q"]
-		},
-		{
-			"id": "svo.8",
-			"type": "matrix",
-			"text": "",
-			"slider": false,
-			"requiredQuestions": [0],
-			"direction": "vertical",
-			"choices": [
-				"svo.c8.a",
-				"svo.c8.b",
-				"svo.c8.c"	
-			],
-			"questions": ["svo.q"]
-		},
-		{
-			"id": "svo.9",
-			"type": "matrix",
-			"text": "",
-			"slider": false,
-			"requiredQuestions": [0],
-			"direction": "vertical",
-			"choices": [
-				"svo.c9.a",
-				"svo.c9.b",
-				"svo.c9.c"	
-			],
-			"questions": ["svo.q"]
-		}, 
-		{
-			"id": "patience",
-			"type": "matrix",
-			"text": "",
-			"slider": true,
-			"requiredQuestions": [0],
-			"direction": "vertical",
-			"choices": [
-				"patience.c0",
-				"patience.c1",
-				"patience.c2",
-				"patience.c3",
-				"patience.c4",
-				"patience.c5",
-				"patience.c6",
-				"patience.c7",
-				"patience.c8",
-				"patience.c9",
-				"patience.c10",
-				"patience.c11"
-				
-			],
-			"questions": ["patience.q"]
-		},
-		{
-			"id": "hunger",
-			"type": "matrix",
-			"text": "",
-			"slider": true,
-			"requiredQuestions": [0],
-			"direction": "vertical",
-			"choices": [
-				"hunger.c0",
-				"hunger.c1",
-				"hunger.c2",
-				"hunger.c3",
-				"hunger.c4",
-				"hunger.c5",
-				"hunger.c6",
-				"hunger.c7",
-				"hunger.c8",
-				"hunger.c9",
-				"hunger.c10",
-				"hunger.c11"
-				
-			],
-			"questions": ["hunger.q"]
-		},
-		{
-			"id": "religiosity",
-			"type": "matrix",
-			"text": "",
-			"slider": true,
-			"requiredQuestions": [0],
-			"direction": "vertical",
-			"choices": [
-				"religiosity.c0",
-				"religiosity.c1",
-				"religiosity.c2",
-				"religiosity.c3",
-				"religiosity.c4",
-				"religiosity.c5",
-				"religiosity.c6",
-				"religiosity.c7",
-				"religiosity.c8",
-				"religiosity.c9",
-				"religiosity.c10",
-				"religiosity.c11"
-				
-				
-			],
-			"questions": ["religiosity.q"]
-		},
-		{
-			"id": "diet",
-			"type": "matrix",
-			"text": "",
-			"slider": false,
-			"requiredQuestions": [0],
-			"direction": "vertical",
-			"choices": [
-				"diet.c1",
-				"diet.c2"				
-			],
-			"questions": ["diet.q"]
-		},
+			"id": "stroop.practice",
+			"type": "stroop",
+			"rule": "stroop_demo.rule",
+			"help": "stroop_demo.help",
+			"colors": {
+				"G": "#6cba47",
+				"R": "#d73636"
+			},
+			"words": {
+				"G": "colors.green",
+				"R": "colors.red"
+			},
+			"trials": [{
+					"stimulus": "GG",
+					"choices": [
+						"GG",
+						"RR"
+					]
+				},
 				{
-			"id": "fasting",
-			"type": "matrix",
-			"text": "",
-			"slider": false,
-			"requiredQuestions": [0],
-			"direction": "vertical",
-			"choices": [
-				"fasting.c1",
-				"fasting.c2"				
-			],
-			"questions": ["fasting.q"]
-		}, 
-		{
-			"id": "social dilemma",
-			"type": "text",
-			"instruction": false,
-			"required": true,
-			"text": "social.dilemma.q",
-			"help": "",
-			"placeholder": "$0 to $1000",
-			"pattern": ""
-		},
-		{
-			"id": "trust",
-			"type": "matrix",
-			"text": "trust.q",
-			"slider": true,
-			"requiredQuestions": [
-				0,
-				1,
-				2
-			],
-			"direction": "vertical",
-			"choices": [
-				"trust.c1",
-				"trust.c2",
-				"trust.c3",
-				"trust.c4",
-				"trust.c5"
-			],
-			"questions": [
-				"trust.q1",
-				"trust.q2",
-				"trust.q3",
-				"trust.q4",
-				"trust.q5"
-			]
-		},
-		{
-			"id": "control",
-			"type": "matrix",
-			"text": "control.q",
-			"slider": true,
-			"requiredQuestions": [
-				0,
-				1,
-				2
-			],
-			"direction": "vertical",
-			"choices": [
-				"risk.falk.c0",
-				"risk.falk.c1",
-				"risk.falk.c2",
-				"risk.falk.c3",
-				"risk.falk.c4",
-				"risk.falk.c5",
-				"risk.falk.c6",
-				"risk.falk.c7",
-				"risk.falk.c8",
-				"risk.falk.c9",
-				"risk.falk.c10",
-				"risk.falk.c11"
-			],
-			"questions": [
-				"risk.falk.q1",
-				"risk.falk.q2",
-				"risk.falk.q3",
-				"risk.falk.q4",
-				"risk.falk.q5",
-				"risk.falk.q5"
-			]
-		},
-		{
-			"id": "control",
-			"type": "matrix",
-			"text": "control.q",
-			"slider": true,
-			"requiredQuestions": [
-				0,
-				1,
-				2
-			],
-			"direction": "vertical",
-			"choices": [
-				"control.c1",
-				"control.c2",
-				"control.c3",
-				"control.c4",
-				"control.c5",
-				"control.c6",
-				"control.c7"
-			],
-			"questions": [
-				"control.q1",
-				"control.q2",
-				"control.q3",
-				"control.q4",
-				"control.q5",
-				"control.q6",
-				"control.q7",
-				"control.q8",
-				"control.q9",
-				"control.q10",
-				"control.q11"
-			]
-		},
-		{
-			"id": "patience",
-			"type": "matrix",
-			"text": "",
-			"slider": true,
-			"requiredQuestions": [0],
-			"direction": "vertical",
-			"choices": [
-				"patience.c0",
-				"patience.c1",
-				"patience.c2",
-				"patience.c3",
-				"patience.c4",
-				"patience.c5",
-				"patience.c6",
-				"patience.c7",
-				"patience.c8",
-				"patience.c9",
-				"patience.c10",
-				"patience.c11"
+					"stimulus": "RG",
+					"choices": [
+						"GG",
+						"RG"
+					]
+				},
+				{
+					"stimulus": "GG",
+					"choices": [
+						"GR",
+						"RG"
+					]
+				},
+				{
+					"stimulus": "RR",
+					"choices": [
+						"GG",
+						"RR"
+					]
+				},
+				{
+					"stimulus": "RG",
+					"choices": [
+						"GG",
+						"RR"
+					]
+				},
+				{
+					"stimulus": "RR",
+					"choices": [
+						"GG",
+						"RG"
+					]
+				},
+				{
+					"stimulus": "GR",
+					"choices": [
+						"GR",
+						"RR"
+					]
+				},
+				{
+					"stimulus": "RR",
+					"choices": [
+						"GR",
+						"RR"
+					]
+				},
 
+				{
+					"stimulus": "RG",
+					"choices": [
+						"GR",
+						"RR"
+					]
+				},
+				{
+					"stimulus": "RG",
+					"choices": [
+						"GR",
+						"RG"
+					]
+				},
+				{
+					"stimulus": "GR",
+					"choices": [
+						"GG",
+						"RR"
+					]
+				},
+				{
+					"stimulus": "RR",
+					"choices": [
+						"GR",
+						"RG"
+					]
+				},
+				{
+					"stimulus": "GR",
+					"choices": [
+						"GG",
+						"RG"
+					]
+				},
+				{
+					"stimulus": "GG",
+					"choices": [
+						"GR",
+						"RR"
+					]
+				},
+				{
+					"stimulus": "GR",
+					"choices": [
+						"GR",
+						"RG"
+					]
+				},
+				{
+					"stimulus": "GG",
+					"choices": [
+						"GG",
+						"RG"
+					]
+				}
 			],
-			"questions": ["patience.q"]
+			"stimulusDuration": 2000,
+			"fixationDuration": 1000,
+			"feedbackDuration": 1000,
+			"timeoutsBeforeReset": 10
 		}
 
 	]
