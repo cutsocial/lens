@@ -209,7 +209,7 @@
 	"risk.falk.q5": "In your career and social life, are you a person who takes risks (for example, switching jobs mid-career, disagreeing with your boss, moving to a city far from your family, etc.)?",
 	"risk.falk.q6": "Are you a person who takes risks with their safety and health (Walk alone at night in an unsafe part of town, not wear a seatbelt in a car or a helmet on a bike, etc.)?",
 
-	"risk.falk.c0": "not willing at all",
+	"risk.falk.c0": "not at all",
 	"risk.falk.c1": "1",
 	"risk.falk.c2": "2",
 	"risk.falk.c3": "3",
@@ -220,7 +220,7 @@
 	"risk.falk.c8": "8",
 	"risk.falk.c9": "9",
 	"risk.falk.c10": "10",
-	"risk.falk.c11": "very willing",
+	"risk.falk.c11": "very much",
 	 
 	"hunger.q": "How hungry are you right now?",
 	"hunger.c0":"not hungry at all",
@@ -259,7 +259,7 @@
 	"fasting.c2": "No",
 	 
 	"svo.q": "Please pick the option that you prefer:",
-	"svo.intro":"Great. So the next task is another a point allocation task. You get to decide how to split bonus points between yourself and another person. This person will be randomly selected from other participants in this experiment.<br /><br />Your points will be used to calculate your bonus. So, every point has value: the more points you receive, the better for you, and the more points the 'Other' receives, the better for him/her.<br /><br />There are no right or wrong answers -- choose the option that you, for whatever reason, prefer most. You'll play 9 rounds. Press 'Next' to begin",
+	"svo.intro":"Great. So the next task is another a point allocation task. You get to decide how to split bonus points between yourself and another person. This person will be randomly selected from other participants in this experiment.<br /><br />Your points will be used to calculate your bonus. So, every point has value: the more points you receive, the better for you, and the more points the 'Other' receives, the better for him/her.<br /><br />There are no right or wrong answers -- choose the option that you, for whatever reason, prefer most. You'll play 9 rounds. Press 'Next' to begin.",
 	 
 	"svo.c1.a":"480 for me, 80 for Other",
 	"svo.c1.b":"540 for me, 280 for Other",
@@ -324,11 +324,11 @@
 	"fasting.ramadan.q":"Do you fast during Ramadan?",
 	
 
-	"social.dilemma.q1":"In this first task, you and 4 other participants in this study have to divide some bonus points. Each of you privately requests some of the points.<br /><br />Between **0 and 1000** points are available, but the exact number is unknown until you all make your requests.<br /><br />If the sum of requests by all of you is less than the number of available points, then you each receive the bonus points you requested. But if it is more than the available points, none of you gets anything.<br /><br />So larger requests could get you more bonus points, but you might also end up with nothing. Please indicate the number of points do you request?",
+	"social.dilemma.q1":"In this first task, you and 4 other participants in this study have to divide some bonus points. Each of you privately requests some of the points.<br /><br />Between **0 and 1000** points are available, but the exact number is unknown until you all make your requests.<br /><br />If the sum of requests by all of you is less than the number of available points, then you each receive the bonus points you requested. But if the sum is more than the available points, none of you gets anything.<br /><br />So larger requests could get you more bonus points, but you might also end up with nothing. Please indicate the number of points do you request?",
 	"social.dilemma.q2":"Now we know the total number of available points is **more than 125 but less than 875**. How many points do you request?<br /><br />Again, your request will be added to requests by 4 other subjects. If the sum of requests is more than the number of available points, then none of you get any points.<br /><br />How many points do you request?",
 	"social.dilemma.q3":"This time, we know the total number of points is somewhere **between 250 and 750**. How many points do you request?<br /><br />(The rules are the same. Your request will be added to request by 4 other participants and you get your requested points only if the sum is not more than the number of available points).",
 	"social.dilemma.q4":"The total number of points is now somewhere **between 375 and 625**. How many points do you request?<br /><br />(The rules are the same. Your request will be added to request by 4 other participants and you get your requested points only if the sum is not more than the number of available points).",
-	"social.dilemma.q5":"Last one: This time, we know the exact number of points is 500**. How many points do you request?<br /><br />(The rules are the same. Your request will be added to request by 4 other participants and you get your requested points only if the sum is not more than the number of available points).",
+	"social.dilemma.q5":"Last one: This time, we know the exact number of available points is **500**. How many points do you request?<br /><br />(The rules are the same. Your request will be added to request by 4 other participants and you get your requested points only if the sum is not more than the number of available points).",
 
 	"p.id.intro":"Please enter your Prolifc ID here:",
 	"almost.done":"Thanks. Almost there, just a couple of questions about your diet and we'll be done for good.",
@@ -344,7 +344,7 @@
 	"trust.fehr.c5":"Always",
 
 	
-	"trust.game.q": "In this task, we are giving you 1000 bonus points. They are yours to keep.<br /><br />We are also giving you a choice: Give some or all of these points back, we multiply the number of points by **3**, and give it to another participant in this study. They can then decide to return some or all of the points back to you. The know there were 1000 points and you decided to send some over to them.<br /><br />It's entirely up to them to return anything. But it's entirely up to you to take this chance and send some points over. You can keep all the points, give some, or all.<br /><br />How much would you like to send?",
+	"trust.game.q": "In this task, we are giving you 1000 bonus points. They are yours to keep.<br /><br />We are also giving you a choice: Give some or all of these points back, we multiply the number of points by **3**, and give it to another participant in this study. They can then decide to return some or all of the points back to you (They know we gave you 1000 points and you decided to send some points over to them).<br /><br />It's entirely up to them to return anything. But it's entirely up to you to take this chance and send some points over. You can keep all the points, give some, or all.<br /><br />How much would you like to send?",
 	"trust.game.c1":"Send Nothing",
         "trust.game.c2":"25",
         "trust.game.c3":"50",
