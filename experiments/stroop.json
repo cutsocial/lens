@@ -33,8 +33,8 @@
       "fixationDuration": 1000, 
       "feedbackDuration": 0,
 			"timeoutsBeforeReset": 1,
-			"randomizeTrials": true,
-			"randomizeChoices": false
+			"randomizeTrials": false,
+			"randomizeChoices": true
     }
   ]
 }
