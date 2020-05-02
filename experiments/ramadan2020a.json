@@ -705,8 +705,8 @@
 			"rule": "stroop_demo.rule",
 			"help": "stroop_demo.help",
 			"colors": {
-				"G": "#009900",
-				"R": "#ff0000"
+				"G": "#6cba47",
+				"R": "#df6c75"
 			},
 			"words": {
 				"G": "colors.green",
@@ -850,8 +850,8 @@
 			"rule": "stroop_demo.rule",
 			"help": "stroop_demo.help",
 			"colors": {
-				"G": "#009900",
-				"R": "#ff0000"
+				"G": "#6cba47",
+				"R": "#df6c75"
 			},
 			"words": {
 				"G": "colors.green",

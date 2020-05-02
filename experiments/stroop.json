@@ -13,8 +13,8 @@
 			"rule":"stroop_demo.rule",
 			"help":"stroop_demo.help",
 			"colors": {
-				"G": "#008000",
-				"R": "#ff0000"
+				"G": "#6cba47",
+				"R": "#df6c75"
 			},
 			"words": {
 				"G": "colors.green",
