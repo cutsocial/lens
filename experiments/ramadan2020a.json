@@ -653,12 +653,12 @@
 			"text": "gonogo.instruction",
 			"help": "",
 			"trials": {
-				"total": 12,
-				"go": 6,
-				"left": 6,
-				"leftGo": 3
+				"total": 24,
+				"go": 12,
+				"left": 12,
+				"leftGo": 6
 			},
-			"stimuliDuration": 3000,
+			"stimuliDuration": 2000,
 			"fixationDuration": 1000,
 			"feedbackDuration": 1000,
 			"timeoutsBeforeReset": 10,
@@ -679,12 +679,12 @@
 			"text": "gonogo.instruction",
 			"help": "Press one of the images in less than three seconds.",
 			"trials": {
-				"total": 12,
-				"go": 6,
-				"left": 3,
-				"leftGo": 3
+				"total": 24,
+				"go": 12,
+				"left": 12,
+				"leftGo": 6
 			},
-			"stimuliDuration": 3000,
+			"stimuliDuration": 2000,
 			"fixationDuration": 1000,
 			"feedbackDuration": 0,
 			"timeoutsBeforeReset": 10,
