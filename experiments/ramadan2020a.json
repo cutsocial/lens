@@ -829,7 +829,7 @@
 			"stimulusDuration": 3000,
 			"fixationDuration": 1000,
 			"feedbackDuration": 1000,
-			"timeoutsBeforeReset": 10
+			"timeoutsBeforeReset": 10,
 			"randomizeTrials": true,
 			"randomizeChoices": false
 
@@ -970,7 +970,7 @@
 			"stimulusDuration": 3000,
 			"fixationDuration": 1000,
 			"feedbackDuration": 0,
-			"timeoutsBeforeReset": 10
+			"timeoutsBeforeReset": 10,
 			"randomizeTrials": true,
 			"randomizeChoices": false
 
