@@ -824,13 +824,6 @@
 						"GG",
 						"RG"
 					]
-				},
-				{
-					"stimulus": "GG",
-					"choices": [
-						"GG",
-						"RG"
-					]
 				}
 			],
 			"stimulusDuration": 2000,
@@ -960,6 +953,13 @@
 					"stimulus": "GR",
 					"choices": [
 						"GR",
+						"RG"
+					]
+				},
+				{
+					"stimulus": "GG",
+					"choices": [
+						"GG",
 						"RG"
 					]
 				}
