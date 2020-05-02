@@ -706,7 +706,7 @@
 			"help": "stroop_demo.help",
 			"colors": {
 				"G": "#6cba47",
-				"R": "#df6c75"
+				"R": "#d73636"
 			},
 			"words": {
 				"G": "colors.green",
@@ -851,7 +851,7 @@
 			"help": "stroop_demo.help",
 			"colors": {
 				"G": "#6cba47",
-				"R": "#df6c75"
+				"R": "#d73636"
 			},
 			"words": {
 				"G": "colors.green",
