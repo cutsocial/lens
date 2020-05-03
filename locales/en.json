@@ -159,11 +159,11 @@
 	"trust.q3": "Some people do not cooperate because they pursue only their own short-term self-interest. Thus, things that can be done well if people cooperate often fail because of these people.",
 	"trust.q4": "Most people are basically honest.",
 	"trust.q5": "There will be more people who will not work if the social security system is developed further.",
-	"trust.c1": "Strongly Disagree",
-	"trust.c2": "Disagree",
-	"trust.c3": "Neutral",
-	"trust.c4": "Agree",
-	"trust.c5": "Strongly agree",
+	"trust.c1": "strongly disagree",
+	"trust.c2": "disagree",
+	"trust.c3": "neutral",
+	"trust.c4": "agree",
+	"trust.c5": "strongly agree",
 	
 	"control.q": "How much you agree or disagree with the following statements:",
 	"control.q1": "I can do just about anything I really set my mind to.",
@@ -179,13 +179,13 @@
 	"control.q11": "There is really no way I can solve all the problems I have.",
 	"control.q12": "I sometimes feel I am being pushed around in my life.",
 	 
-	"control.c1": "Strongly disagree",
-	"control.c2": "Somewhat disagree",
-	"control.c3": "disgree",
-	"control.c4": "Neither agree nor disagree",
-	"control.c5": "Somewhat agree",
-	"control.c6": "Agree",
-	"control.c7": "Strongly agree",
+	"control.c1": "strongly disagree",
+	"control.c2": "somewhat disagree",
+	"control.c3": "disagree",
+	"control.c4": "neither agree nor disagree",
+	"control.c5": "somewhat agree",
+	"control.c6": "agree",
+	"control.c7": "strongly agree",
 
 	"patience.q": "How willing are you to give up something that is beneficial for you today in order to benefit more from that in the future?",
 	 
@@ -337,15 +337,15 @@
 	"trust.fehr.2": "How often do you lend you lend money to your friends?",
 	"trust.fehr.3": "How often do you leave your door unlocked?",
 	
-	"trust.fehr.c1":"Never",
-	"trust.fehr.c2":"Rarely",
-	"trust.fehr.c3":"Sometimes",
-	"trust.fehr.c4":"Often",
-	"trust.fehr.c5":"Always",
+	"trust.fehr.c1":"never",
+	"trust.fehr.c2":"rarely",
+	"trust.fehr.c3":"sometimes",
+	"trust.fehr.c4":"often",
+	"trust.fehr.c5":"always",
 
 	
 	"trust.game.q": "In this task, we are giving you 1000 bonus points. They are yours to keep.<br /><br />We are also giving you a choice: Give some or all of these points back, we multiply it by **3**, and give it to another participant in this study. They can then decide to return some or all of the points back to you (They know we gave you 1000 points and you decided to send some points over to them).<br /><br />It's entirely up to them to return anything. But it's entirely up to you to take this chance and send some points over. You can keep all the points, give some, or all. And, you'll remain anonymous to each other.<br /><br />How much would you like to send?",
-	"trust.game.c1":"Send Nothing",
+	"trust.game.c1":"send Nothing",
         "trust.game.c2":"25",
         "trust.game.c3":"50",
         "trust.game.c4":"75",
@@ -385,7 +385,7 @@
         "trust.game.c38":"925",
         "trust.game.c39":"950",
         "trust.game.c40":"975",
-        "trust.game.c41":"Send all",
+        "trust.game.c41":"send all",
 
 	
 	"submission.note": "Thank you for your participation! Please press **Continue** to be redirected to the Prolific webpage.",
