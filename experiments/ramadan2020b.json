@@ -831,7 +831,7 @@
 			"feedbackDuration": 1000,
 			"timeoutsBeforeReset": 10,
 			"randomizeTrials": true,
-			"randomizeChoices": false
+			"randomizeChoices": true
 
 		},
 		{
@@ -972,7 +972,7 @@
 			"feedbackDuration": 0,
 			"timeoutsBeforeReset": 10,
 			"randomizeTrials": true,
-			"randomizeChoices": false
+			"randomizeChoices": true
 
         },
 	{
