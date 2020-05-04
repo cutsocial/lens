@@ -1,15 +1,15 @@
 {
 	"language_selector.text": "Please select a language to continue",
 	"loading": "Loading...",
-	"next": "Next", 
+	"next": "Next",
 	"yes": "Yes",
-	"finish": "Finish", 
+	"finish": "Finish",
 	"finish_and_redirect": "Continue",
 	"errors.required": "You must respond to proceed.",
 	"text.choose_a_country": "Choose a Country",
 	"text.no_options": "No Options",
-    
-    	"intro": "**Welcome!**<br /><br />This study is part of a research project on decision making, conducted by researchers at the New School for Social Research.<br /><br />The entire study takes less than 15 minutes. And, we will follow up with you in a few weeks for the second study for which you will be paid seperately.<br /><br />For participating in they study, you receive a flat fee plus bonus points based on your responses in different tasks. **The bonus points can double your earnings**.<br /><br />The study does not require specific background knowledge. As long as you follow the instructions, your bonuses should be on the higher end. Your participation is, of course, voluntary. Your responses will be entirely anonymous.<br /><br />For any questions or comments, send them to the email address below: salam955@newschool.edu<br /><br />Press **Next** to begin.",
+
+	"intro": "**Welcome!**<br /><br />This study is part of a research project on decision making, conducted by researchers at the New School for Social Research.<br /><br />The entire study takes less than 15 minutes. And, we will follow up with you in a few weeks for the second study for which you will be paid seperately.<br /><br />For participating in they study, you receive a flat fee plus bonus points based on your responses in different tasks. **The bonus points can double your earnings**.<br /><br />The study does not require specific background knowledge. As long as you follow the instructions, your bonuses should be on the higher end. Your participation is, of course, voluntary. Your responses will be entirely anonymous.<br /><br />For any questions or comments, send them to the email address below: salam955@newschool.edu<br /><br />Press **Next** to begin.",
 
 	"intro.demographics": "First we need some information about you.",
 
@@ -23,7 +23,7 @@
 	"age.c5": "35-41",
 	"age.c6": "40-46",
 	"age.c7": "45-51",
-	"age.c8": "50-56", 
+	"age.c8": "50-56",
 	"age.c9": "55-61",
 	"age.c10": "over 61",
 
@@ -73,8 +73,8 @@
 	"risk.qual.c2": "high return and high risk",
 	"risk.qual.c3": "moderate return and moderate risk",
 	"risk.qual.c4": "low return and no risk",
-	
-	"tasks.intro":"Thanks. Our main questions and tasks begin next.<br /><br />Remember, the responses you give in different tasks are converted into bonus points. You get points based on your choices, response accuracy, and speed on the specific task. These bonus points will be converted and added to your compensation.<br /><br />Press next to begin the first task.",
+
+	"tasks.intro": "Thanks. Our main questions and tasks begin next.<br /><br />Remember, the responses you give in different tasks are converted into bonus points. You get points based on your choices, response accuracy, and speed on the specific task. These bonus points will be converted and added to your compensation.<br /><br />Press next to begin the first task.",
 	"bart.intro": "Great. So in the next task, you'll see a ball in the middle of the screen that grows bigger every time you press on it.<br /><br />You receive **7 bonus points** for each pump, but only if the ball doesn't blow up. If the ball explodes, you lose all your points in that round.<br /><br />You can also select the ‘**CASH**’ button to save your bonus points if you don’t want to pump the ball anymore.<br /><br />Press **Next** to begin.",
 
 	"bart.cash": "Cash",
@@ -164,7 +164,7 @@
 	"trust.c3": "neutral",
 	"trust.c4": "agree",
 	"trust.c5": "strongly agree",
-	
+
 	"control.q": "How much you agree or disagree with the following statements:",
 	"control.q1": "I can do just about anything I really set my mind to.",
 	"control.q2": "When I really want to do something, I usually find a way to succeed at it.",
@@ -172,13 +172,13 @@
 	"control.q4": "What happens to me in the future mostly depends on me.",
 	"control.q5": "Other people determine most of what I can and cannot do.",
 	"control.q6": "There is little I can do to change many of the important things in my life.",
-	"control.q7": "I often feel helpless in dealing with the problems of life.", 
-	"control.q8": "What happens in my life is often beyond my control.", 
+	"control.q7": "I often feel helpless in dealing with the problems of life.",
+	"control.q8": "What happens in my life is often beyond my control.",
 	"control.q9": "There are many things that interfere with what I want to do.",
 	"control.q10": "I have little control over the things that happen to me.",
 	"control.q11": "There is really no way I can solve all the problems I have.",
 	"control.q12": "I sometimes feel I am being pushed around in my life.",
-	 
+
 	"control.c1": "strongly disagree",
 	"control.c2": "somewhat disagree",
 	"control.c3": "disagree",
@@ -188,7 +188,7 @@
 	"control.c7": "strongly agree",
 
 	"patience.q": "How willing are you to give up something that is beneficial for you today in order to benefit more from that in the future?",
-	 
+
 	"patience.c0": "not willing at all",
 	"patience.c1": "1",
 	"patience.c2": "2",
@@ -201,7 +201,7 @@
 	"patience.c9": "9",
 	"patience.c10": "10",
 	"patience.c11": "very willing",
-	  
+
 	"risk.falk.q1": "How do you see yourself: are you generally a person who is fully prepared to take risks or do you try to avoid taking risks?",
 	"risk.falk.q2": "When driving a car, are you a person who takes risks or do you try to avoid taking risks as a driver?",
 	"risk.falk.q3": "In financial matters, are you a person who takes risks with money (for example, investing in speculative stocks)?",
@@ -221,90 +221,90 @@
 	"risk.falk.c9": "9",
 	"risk.falk.c10": "10",
 	"risk.falk.c11": "very much",
-	 
+
 	"hunger.q": "How hungry are you right now?",
-	"hunger.c0":"not hungry at all",
-	"hunger.c1":"1",
-	"hunger.c2":"2",
-	"hunger.c3":"3",
-	"hunger.c4":"4",
-	"hunger.c5":"5",
-	"hunger.c6":"6",
-	"hunger.c7":"7",
-	"hunger.c8":"8",	
-	"hunger.c9":"9",	
+	"hunger.c0": "not hungry at all",
+	"hunger.c1": "1",
+	"hunger.c2": "2",
+	"hunger.c3": "3",
+	"hunger.c4": "4",
+	"hunger.c5": "5",
+	"hunger.c6": "6",
+	"hunger.c7": "7",
+	"hunger.c8": "8",
+	"hunger.c9": "9",
 	"hunger.c10": "10",
-	"hunger.c11": "extremely hungry",	
-	 
+	"hunger.c11": "extremely hungry",
+
 	"religiosity.q": "How religious do you consider yourself?",
-	"religiosity.c0":"not religious at all",
-	"religiosity.c1":"1",
-	"religiosity.c2":"2",
-	"religiosity.c3":"3",
-	"religiosity.c4":"4",
-	"religiosity.c5":"5",
-	"religiosity.c6":"6",
-	"religiosity.c7":"7",
-	"religiosity.c8":"8",	
-	"religiosity.c9":"9",
-	"religiosity.c10":"10",
-	"religiosity.c11":"very religious",	
-	 
+	"religiosity.c0": "not religious at all",
+	"religiosity.c1": "1",
+	"religiosity.c2": "2",
+	"religiosity.c3": "3",
+	"religiosity.c4": "4",
+	"religiosity.c5": "5",
+	"religiosity.c6": "6",
+	"religiosity.c7": "7",
+	"religiosity.c8": "8",
+	"religiosity.c9": "9",
+	"religiosity.c10": "10",
+	"religiosity.c11": "very religious",
+
 	"diet.q": "Are you on a special diet?",
 	"diet.c1": "Yes",
 	"diet.c2": "No",
-	 
-	"fasting.q": "Were you fasting while taking this survey?", 
+
+	"fasting.q": "Were you fasting while taking this survey?",
 	"fasting.c1": "Yes",
 	"fasting.c2": "No",
-	 
+
 	"svo.q": "Please pick the option that you prefer:",
-	"svo.intro":"Great. So the next task is another a point allocation task. You get to decide how to split bonus points between yourself and another person. This person will be randomly selected from other participants in this experiment.<br /><br />Your points will be used to calculate your bonus. So, every point has value: the more points you receive, the better for you, and the more points the 'Other' receives, the better for him/her.<br /><br />There are no right or wrong answers -- choose the option that you, for whatever reason, prefer most. You'll play 9 rounds. Press 'Next' to begin.",
-	 
-	"svo.c1.a":"480 for me, 80 for Other",
-	"svo.c1.b":"540 for me, 280 for Other",
-	"svo.c1.c":"480 for me, 480 for Other",
-	 
-	"svo.c2.a":"560 for me, 300 for Other",
-	"svo.c2.b":"500 for me, 500 for Other",
-	"svo.c2.c":"500 for me, 100 for Other",
-	
-	"svo.c3.a":"520 for me, 520 for Other",
-	"svo.c3.b":"520 for me, 120 for Other",
-	"svo.c3.c":"580 for me, 320 for Other",
-	 
-	"svo.c4.a":"500 for me, 100 for Other",
-	"svo.c4.b":"560 for me, 300 for Other",
-	"svo.c4.c":"490 for me, 490 for Other",
-	 
-	"svo.c5.a":"560 for me, 300 for Other",
-	"svo.c5.b":"500 for me, 500 for Other",
-	"svo.c5.c":"490 for me, 90 for Other",
-	 
-	"svo.c6.a":"500 for me, 500 for Other",
-	"svo.c6.b":"500 for me, 100 for Other",
-	"svo.c6.c":"570 for me, 300 for Other",
-	
-	"svo.c7.a":"510 for me, 510 for Other",
-	"svo.c7.b":"560 for me, 300 for Other",
-	"svo.c7.c":"510 for me, 110 for Other",
-	 
-	"svo.c8.a":"550 for me, 300 for Other",
-	"svo.c8.b":"500 for me, 100 for Other",
-	"svo.c8.c":"500 for me, 500 for Other",
-	 
-	"svo.c9.a":"480 for me, 100 for Other",
-	"svo.c9.b":"490 for me, 490 for Other",
-	"svo.c9.c":"540 for me, 300 for Other",
-	 
+	"svo.intro": "Great. So the next task is another a point allocation task. You get to decide how to split bonus points between yourself and another person. This person will be randomly selected from other participants in this experiment.<br /><br />Your points will be used to calculate your bonus. So, every point has value: the more points you receive, the better for you, and the more points the 'Other' receives, the better for him/her.<br /><br />There are no right or wrong answers -- choose the option that you, for whatever reason, prefer most. You'll play 9 rounds. Press 'Next' to begin.",
+
+	"svo.c1.a": "480 for me, 80 for Other",
+	"svo.c1.b": "540 for me, 280 for Other",
+	"svo.c1.c": "480 for me, 480 for Other",
+
+	"svo.c2.a": "560 for me, 300 for Other",
+	"svo.c2.b": "500 for me, 500 for Other",
+	"svo.c2.c": "500 for me, 100 for Other",
+
+	"svo.c3.a": "520 for me, 520 for Other",
+	"svo.c3.b": "520 for me, 120 for Other",
+	"svo.c3.c": "580 for me, 320 for Other",
+
+	"svo.c4.a": "500 for me, 100 for Other",
+	"svo.c4.b": "560 for me, 300 for Other",
+	"svo.c4.c": "490 for me, 490 for Other",
+
+	"svo.c5.a": "560 for me, 300 for Other",
+	"svo.c5.b": "500 for me, 500 for Other",
+	"svo.c5.c": "490 for me, 90 for Other",
+
+	"svo.c6.a": "500 for me, 500 for Other",
+	"svo.c6.b": "500 for me, 100 for Other",
+	"svo.c6.c": "570 for me, 300 for Other",
+
+	"svo.c7.a": "510 for me, 510 for Other",
+	"svo.c7.b": "560 for me, 300 for Other",
+	"svo.c7.c": "510 for me, 110 for Other",
+
+	"svo.c8.a": "550 for me, 300 for Other",
+	"svo.c8.b": "500 for me, 100 for Other",
+	"svo.c8.c": "500 for me, 500 for Other",
+
+	"svo.c9.a": "480 for me, 100 for Other",
+	"svo.c9.b": "490 for me, 490 for Other",
+	"svo.c9.c": "540 for me, 300 for Other",
+
 	"pos.reicp": "When someone does me a favor I am willing to return it.",
 	"neg.recip.1": "If I am treated very unjustly, I will take revenge at the first occasion, even if there is a cost to do so.",
 	"neg.recip.2": "How willing are you to punish someone who treats **you** unfairly, even if there may be costs for you?",
 	"neg.recip.3": "How willing are you to punish someone who treats **others** unfairly, even if there may be costs for you?",
 	"altruism": "How willing are you to give to good causes without expecting anything in return?",
-	"trust.falk":"I assume that people have only the best intentions.",
-	
-	"recip.c0":"not willing at all",
+	"trust.falk": "I assume that people have only the best intentions.",
+
+	"recip.c0": "not willing at all",
 	"recip.c1": "1",
 	"recip.c2": "2",
 	"recip.c3": "3",
@@ -316,81 +316,81 @@
 	"recip.c9": "9",
 	"recip.c10": "10",
 	"recip.c11": "very willing",
-    
-	"soc.dilemma1":"375 and 625",
-	"soc.dilemma2":"250 and 750",
-	"soc.dilemma3":"125 and 875",
-	"soc.dilemma4":"500",
-	"fasting.ramadan.q":"Do you fast during Ramadan?",
-	
 
-	"social.dilemma.q1":"In this first task, you are randomly grouped with **4** other participants in this study. Your group is given some bonus points to share. You each privately choose to take some of these bonus points. None of you will know how much the others are taking and you cannot communicate with each other.<br /><br />Between 125 and 925 points are available, but the exact number is unknown until you all make your requests.<br /><br />We will add up the requests from all of you. If the total is less than the number of bonus points available, then you each receive the bonus points you requested. But if the total is more than the available points, none of you gets anything.<br /><br />So larger requests could get you more bonus points, but you might also end up with nothing. Please indicate the number of points you request:",
-	"social.dilemma.q2":"Now we know the total number of available points is **more than 200 but less than 850**. How many points do you request?<br /><br />Again, your request will be added to requests by 4 other subjects. If the sum of requests is more than the number of available points, then none of you get any points.<br /><br />How many points do you request?”,
-	"social.dilemma.q3":"This time, we know the total number of points is somewhere **between 275 and 775**. How many points do you request?<br /><br />(The rules are the same. Your request will be added to request by 4 other participants and you get your requested points only if the sum is not more than the number of available points).",
-	"social.dilemma.q4":"The total number of points is now somewhere **between 350 and 650**. How many points do you request?<br /><br />(The rules are the same. Your request will be added to request by 4 other participants and you get your requested points only if the sum is not more than the number of available points).",
-	"social.dilemma.q5":"Now we know the total number of points is now somewhere **between 425 and 575**. How many points do you request?<br /><br />(The rules are the same. Your request will be added to request by 4 other participants and you get your requested points only if the sum is not more than the number of available points).",
-	"social.dilemma.q6":"Last one: This time, we know the exact number of available points is **500**. How many points do you request?<br /><br />(The rules are the same. Your request will be added to request by 4 other participants and you get your requested points only if the sum is not more than the number of available points).",
+	"soc.dilemma1": "375 and 625",
+	"soc.dilemma2": "250 and 750",
+	"soc.dilemma3": "125 and 875",
+	"soc.dilemma4": "500",
+	"fasting.ramadan.q": "Do you fast during Ramadan?",
 
-	"p.id.intro":"Please enter your Prolifc ID here:",
-	"almost.done":"Thanks. Almost there, just a couple of questions about your diet and we'll be done for good.",
-	
+
+	"social.dilemma.q1": "In this first task, you are randomly grouped with **4** other participants in this study. Your group is given some bonus points to share. You each privately choose to take some of these bonus points. None of you will know how much the others are taking and you cannot communicate with each other.<br /><br />Between 125 and 925 points are available, but the exact number is unknown until you all make your requests.<br /><br />We will add up the requests from all of you. If the total is less than the number of bonus points available, then you each receive the bonus points you requested. But if the total is more than the available points, none of you gets anything.<br /><br />So larger requests could get you more bonus points, but you might also end up with nothing. Please indicate the number of points you request:",
+	"social.dilemma.q2": "Now we know the total number of available points is **more than 200 but less than 850**. How many points do you request?<br /><br />Again, your request will be added to requests by 4 other subjects. If the sum of requests is more than the number of available points, then none of you get any points.<br /><br />How many points do you request?",
+	"social.dilemma.q3": "This time, we know the total number of points is somewhere **between 275 and 775**. How many points do you request?<br /><br />(The rules are the same. Your request will be added to request by 4 other participants and you get your requested points only if the sum is not more than the number of available points).",
+	"social.dilemma.q4": "The total number of points is now somewhere **between 350 and 650**. How many points do you request?<br /><br />(The rules are the same. Your request will be added to request by 4 other participants and you get your requested points only if the sum is not more than the number of available points).",
+	"social.dilemma.q5": "Now we know the total number of points is now somewhere **between 425 and 575**. How many points do you request?<br /><br />(The rules are the same. Your request will be added to request by 4 other participants and you get your requested points only if the sum is not more than the number of available points).",
+	"social.dilemma.q6": "Last one: This time, we know the exact number of available points is **500**. How many points do you request?<br /><br />(The rules are the same. Your request will be added to request by 4 other participants and you get your requested points only if the sum is not more than the number of available points).",
+
+	"p.id.intro": "Please enter your Prolifc ID here:",
+	"almost.done": "Thanks. Almost there, just a couple of questions about your diet and we'll be done for good.",
+
 	"trust.fehr.1": "How often do you lend personal possessions to your friends (books, your car, bicycle etc.)?",
 	"trust.fehr.2": "How often do you lend you lend money to your friends?",
 	"trust.fehr.3": "How often do you leave your door unlocked?",
-	
+
 	"religion.q": "What is your religion?",
-	
-	"trust.fehr.c1":"never",
-	"trust.fehr.c2":"rarely",
-	"trust.fehr.c3":"sometimes",
-	"trust.fehr.c4":"often",
-	"trust.fehr.c5":"always",
 
-	
+	"trust.fehr.c1": "never",
+	"trust.fehr.c2": "rarely",
+	"trust.fehr.c3": "sometimes",
+	"trust.fehr.c4": "often",
+	"trust.fehr.c5": "always",
+
+
 	"trust.game.q": "In this task, we are giving you 1000 bonus points. They are yours to keep.<br /><br />We are also giving you a choice: Give some or all of these points back, we multiply it by **3**, and give it to another participant in this study. They can then decide to return some or all of the points back to you (They know we gave you 1000 points and you decided to send some points over to them).<br /><br />It's entirely up to them to return anything. But it's entirely up to you to take this chance and send some points over. You can keep all the points, give some, or all. And, you'll remain anonymous to each other.<br /><br />How much would you like to send?",
-	"trust.game.c1":"send nothing",
-        "trust.game.c2":"25",
-        "trust.game.c3":"50",
-        "trust.game.c4":"75",
-        "trust.game.c5":"100",
-        "trust.game.c6":"125",
-        "trust.game.c7":"150",
-        "trust.game.c8":"175",
-        "trust.game.c9":"200",
-        "trust.game.c10":"225",
-        "trust.game.c11":"250",
-        "trust.game.c12":"275",
-        "trust.game.c13":"300",
-        "trust.game.c14":"325",
-        "trust.game.c15":"350",
-        "trust.game.c16":"375",
-        "trust.game.c17":"400",
-        "trust.game.c18":"425",
-        "trust.game.c19":"450",
-        "trust.game.c20":"475",
-       	"trust.game.c21":"500",
-        "trust.game.c22":"525",
-        "trust.game.c23":"550",
-        "trust.game.c24":"575",
-        "trust.game.c25":"600",
-        "trust.game.c26":"625",
-        "trust.game.c27":"650",
-        "trust.game.c28":"675",
-	"trust.game.c29":"700",
-        "trust.game.c30":"725",
-        "trust.game.c31":"750",
-        "trust.game.c32":"775",
-        "trust.game.c33":"800",
-        "trust.game.c34":"825",
-        "trust.game.c35":"850",
-        "trust.game.c36":"875",
-        "trust.game.c37":"900",
-        "trust.game.c38":"925",
-        "trust.game.c39":"950",
-        "trust.game.c40":"975",
-        "trust.game.c41":"send all",
+	"trust.game.c1": "send nothing",
+	"trust.game.c2": "25",
+	"trust.game.c3": "50",
+	"trust.game.c4": "75",
+	"trust.game.c5": "100",
+	"trust.game.c6": "125",
+	"trust.game.c7": "150",
+	"trust.game.c8": "175",
+	"trust.game.c9": "200",
+	"trust.game.c10": "225",
+	"trust.game.c11": "250",
+	"trust.game.c12": "275",
+	"trust.game.c13": "300",
+	"trust.game.c14": "325",
+	"trust.game.c15": "350",
+	"trust.game.c16": "375",
+	"trust.game.c17": "400",
+	"trust.game.c18": "425",
+	"trust.game.c19": "450",
+	"trust.game.c20": "475",
+	"trust.game.c21": "500",
+	"trust.game.c22": "525",
+	"trust.game.c23": "550",
+	"trust.game.c24": "575",
+	"trust.game.c25": "600",
+	"trust.game.c26": "625",
+	"trust.game.c27": "650",
+	"trust.game.c28": "675",
+	"trust.game.c29": "700",
+	"trust.game.c30": "725",
+	"trust.game.c31": "750",
+	"trust.game.c32": "775",
+	"trust.game.c33": "800",
+	"trust.game.c34": "825",
+	"trust.game.c35": "850",
+	"trust.game.c36": "875",
+	"trust.game.c37": "900",
+	"trust.game.c38": "925",
+	"trust.game.c39": "950",
+	"trust.game.c40": "975",
+	"trust.game.c41": "send all",
 
-	
+
 	"submission.note": "Thank you for your participation! Please press **Continue** to be redirected to the Prolific webpage.",
 	"submission.q_email": "Thank you for your participation. You can see your performance on the next page. Please write your email in the box below if you'd like to participate in similar studies."
 
