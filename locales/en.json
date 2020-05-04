@@ -324,11 +324,12 @@
 	"fasting.ramadan.q":"Do you fast during Ramadan?",
 	
 
-	"social.dilemma.q1":"In this first task, you and 4 other participants in this study have to divide some bonus points. Each of you privately requests some of the points.<br /><br />Between **0 and 1000** points are available, but the exact number is unknown until you all make your requests.<br /><br />If the sum of requests by all of you is less than the number of available points, then you each receive the bonus points you requested. But if the sum is more than the available points, none of you gets anything.<br /><br />So larger requests could get you more bonus points, but you might also end up with nothing. Please indicate the number of points do you request?",
-	"social.dilemma.q2":"Now we know the total number of available points is **more than 125 but less than 875**. How many points do you request?<br /><br />Again, your request will be added to requests by 4 other subjects. If the sum of requests is more than the number of available points, then none of you get any points.<br /><br />How many points do you request?",
-	"social.dilemma.q3":"This time, we know the total number of points is somewhere **between 250 and 750**. How many points do you request?<br /><br />(The rules are the same. Your request will be added to request by 4 other participants and you get your requested points only if the sum is not more than the number of available points).",
-	"social.dilemma.q4":"The total number of points is now somewhere **between 375 and 625**. How many points do you request?<br /><br />(The rules are the same. Your request will be added to request by 4 other participants and you get your requested points only if the sum is not more than the number of available points).",
-	"social.dilemma.q5":"Last one: This time, we know the exact number of available points is **500**. How many points do you request?<br /><br />(The rules are the same. Your request will be added to request by 4 other participants and you get your requested points only if the sum is not more than the number of available points).",
+	"social.dilemma.q1":"In this first task, you are randomly grouped with **4** other participants in this study. Your group is given some bonus points to share. You each privately choose to take some of these bonus points. None of you will know how much the others are taking and you cannot communicate with each other.<br /><br />Between 125 and 925 points are available, but the exact number is unknown until you all make your requests.<br /><br />We will add up the requests from all of you. If the total is less than the number of bonus points available, then you each receive the bonus points you requested. But if the total is more than the available points, none of you gets anything.<br /><br />So larger requests could get you more bonus points, but you might also end up with nothing. Please indicate the number of points you request:",
+	"social.dilemma.q2":"Now we know the total number of available points is **more than 200 but less than 850**. How many points do you request?<br /><br />Again, your request will be added to requests by 4 other subjects. If the sum of requests is more than the number of available points, then none of you get any points.<br /><br />How many points do you request?”,
+	"social.dilemma.q3":"This time, we know the total number of points is somewhere **between 275 and 775**. How many points do you request?<br /><br />(The rules are the same. Your request will be added to request by 4 other participants and you get your requested points only if the sum is not more than the number of available points).",
+	"social.dilemma.q4":"The total number of points is now somewhere **between 350 and 650**. How many points do you request?<br /><br />(The rules are the same. Your request will be added to request by 4 other participants and you get your requested points only if the sum is not more than the number of available points).",
+	"social.dilemma.q5":"Now we know the total number of points is now somewhere **between 425 and 575**. How many points do you request?<br /><br />(The rules are the same. Your request will be added to request by 4 other participants and you get your requested points only if the sum is not more than the number of available points).",
+	"social.dilemma.q6":"Last one: This time, we know the exact number of available points is **500**. How many points do you request?<br /><br />(The rules are the same. Your request will be added to request by 4 other participants and you get your requested points only if the sum is not more than the number of available points).",
 
 	"p.id.intro":"Please enter your Prolifc ID here:",
 	"almost.done":"Thanks. Almost there, just a couple of questions about your diet and we'll be done for good.",
@@ -336,6 +337,8 @@
 	"trust.fehr.1": "How often do you lend personal possessions to your friends (books, your car, bicycle etc.)?",
 	"trust.fehr.2": "How often do you lend you lend money to your friends?",
 	"trust.fehr.3": "How often do you leave your door unlocked?",
+	
+	"religion.q": "What is your religion?",
 	
 	"trust.fehr.c1":"never",
 	"trust.fehr.c2":"rarely",
