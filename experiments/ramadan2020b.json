@@ -362,30 +362,6 @@
 			"questions": ["patience.q"]
 		},
 		{
-			"id": "religiosity",
-			"type": "matrix",
-			"text": "",
-			"slider": true,
-			"requiredQuestions": [0],
-			"direction": "vertical",
-			"choices": [
-				"religiosity.c0",
-				"religiosity.c1",
-				"religiosity.c2",
-				"religiosity.c3",
-				"religiosity.c4",
-				"religiosity.c5",
-				"religiosity.c6",
-				"religiosity.c7",
-				"religiosity.c8",
-				"religiosity.c9",
-				"religiosity.c10",
-				"religiosity.c11"
-				
-			],
-			"questions": ["religiosity.q"]
-		},
-		{
 			"id": "trust.fehr",
 			"type": "matrix",
 			"text": "",
@@ -1081,6 +1057,30 @@
 			"placeholder": "",
 			"pattern": ""
 	        }, 
+		{
+			"id": "religiosity",
+			"type": "matrix",
+			"text": "",
+			"slider": true,
+			"requiredQuestions": [0],
+			"direction": "vertical",
+			"choices": [
+				"religiosity.c0",
+				"religiosity.c1",
+				"religiosity.c2",
+				"religiosity.c3",
+				"religiosity.c4",
+				"religiosity.c5",
+				"religiosity.c6",
+				"religiosity.c7",
+				"religiosity.c8",
+				"religiosity.c9",
+				"religiosity.c10",
+				"religiosity.c11"
+				
+			],
+			"questions": ["religiosity.q"]
+		},
 		{
 			"id": "fasting.ramadan",
 			"type": "matrix",
