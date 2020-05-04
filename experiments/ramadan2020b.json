@@ -198,6 +198,16 @@
 			"placeholder": "Points I request",
 			"pattern": ""
         },
+	{
+			"id": "social dilemma 6",
+			"type": "text",
+			"instruction": false,
+			"required": true,
+			"text": "social.dilemma.q6",
+			"help": "",
+			"placeholder": "Points I request",
+			"pattern": ""
+        },
 		{
 			"id": "bart intro",
 			"type": "text",
@@ -1061,6 +1071,16 @@
 			],
 			"questions": ["hunger.q"]
 		},
+		{
+			"id": "religion",
+			"type": "text",
+			"instruction": false,
+			"required": true,
+			"text": "religion.q",
+			"help": "",
+			"placeholder": "",
+			"pattern": ""
+	        }, 
 		{
 			"id": "fasting.ramadan",
 			"type": "matrix",
