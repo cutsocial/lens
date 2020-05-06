@@ -14,11 +14,11 @@
 	"help":"Press one of the images in less than three seconds.",
       	"trials": {
         "total": 24,
-        "go": 12,
+        "go": 18,
         "left": 12,
-        "leftGo": 6
+        "leftGo": 9
       },
-      "stimuliDuration": 1000,
+      "stimuliDuration": 500,
       "fixationDuration": 1000, 
       "feedbackDuration": 1000,
       "timeoutsBeforeReset": 24,
