@@ -13,14 +13,14 @@
 	"text":"gonogo.instruction",
 	"help":"Press one of the images in less than three seconds.",
       	"trials": {
-        "total": 24,
-        "go": 18,
-        "left": 12,
-        "leftGo": 9
+        "total": 60,
+        "go": 45,
+        "left": 30,
+        "leftGo": 23
       },
       "stimuliDuration": 1000,
-      "fixationDuration": 1000, 
-      "feedbackDuration": 1000,
+      "fixationDuration": 500, 
+      "feedbackDuration": 800,
       "timeoutsBeforeReset": 24,
       "choices": {
         "go": "blue-star",
