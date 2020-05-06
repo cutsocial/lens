@@ -18,7 +18,7 @@
         "left": 12,
         "leftGo": 9
       },
-      "stimuliDuration": 800,
+      "stimuliDuration": 1000,
       "fixationDuration": 1000, 
       "feedbackDuration": 1000,
       "timeoutsBeforeReset": 24,
