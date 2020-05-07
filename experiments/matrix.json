@@ -10,11 +10,12 @@
     {
       "id": "sample-likerts",
       "type": "matrix",
-      "slider": true,
+			"slider": true,
+			"showMidMark": true,
       "text": "Choose the answer that reflects what you think?",
       "requiredQuestions": [0,2],
       "direction": "vertical",
-      "choices": [ "Never", "Almost never", "Neutral", "Sometimes", "Always" ],
+			"choices": [ "Never", "Almost never", "Neutral", "Sometimes", "Always" ],
       "questions": [
         "Question one",
         "Question two",
@@ -25,7 +26,8 @@
 			"id": "dospert",
 			"type": "matrix",
       "text": "dospert.intro",
-      "slider": true,
+			"slider": true,
+			"showMidMark": true,
 			"requiredQuestions": [
 				0,
 				1,
