@@ -42,6 +42,7 @@
 			"type": "matrix",
 			"text": "",
 			"slider": true,
+			"showMidMark": true,
 			"requiredQuestions": [0],
 			"direction": "vertical",
 			"choices": [
@@ -76,6 +77,7 @@
 			"id": "income.self",
 			"type": "matrix",
 			"text": "",
+			"showMidMark": true,
 			"slider": true,
 			"requiredQuestions": [0],
 			"direction": "vertical",
@@ -94,6 +96,7 @@
 			"id": "income.parents",
 			"type": "matrix",
 			"text": "",
+			"showMidMark": true,
 			"slider": true,
 			"requiredQuestions": [0],
 			"direction": "vertical",
@@ -227,6 +230,7 @@
 			"type": "matrix",
 			"text": "trust.q",
 			"slider": true,
+			"showMidMark": true,
 			"requiredQuestions": [
 				0,
 				1,
@@ -254,6 +258,7 @@
 			"type": "matrix",
 			"text": "control.q",
 			"slider": true,
+			"showMidMark": true,
 			"requiredQuestions": [
 				0,
 				1,
@@ -289,6 +294,7 @@
 			"type": "matrix",
 			"text": "",
 			"slider": true,
+			"showMidMark": true,
 			"requiredQuestions": [0],
 			"direction": "vertical",
 			"choices": [
@@ -342,6 +348,7 @@
 			"type": "matrix",
 			"text": "",
 			"slider": true,
+			"showMidMark": true,
 			"requiredQuestions": [0],
 			"direction": "vertical",
 			"choices": [
@@ -366,6 +373,7 @@
 			"type": "matrix",
 			"text": "",
 			"slider": true,
+			"showMidMark": true,
 			"requiredQuestions": [
 				0,
 				1,
@@ -522,6 +530,7 @@
 			"type": "matrix",
 			"text": "",
 			"slider": true,
+			"showMidMark": true,
 			"requiredQuestions": [
 				0,
 				1,
@@ -556,6 +565,7 @@
 			"type": "matrix",
 			"text": "",
 			"slider": true,
+			"showMidMark": true,
 			"requiredQuestions": [
 				0,
 				1,
@@ -985,6 +995,7 @@
 			"type": "matrix",
 			"text": "",
 			"slider": true,
+			"showMidMark": true,
 			"requiredQuestions": [0],
 			"direction": "vertical",
 			"choices": [
@@ -1019,6 +1030,7 @@
 			"type": "matrix",
 			"text": "",
 			"slider": true,
+			"showMidMark": true,
 			"requiredQuestions": [0],
 			"direction": "vertical",
 			"choices": [
