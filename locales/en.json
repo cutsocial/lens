@@ -133,12 +133,12 @@
 	"ownership.c7": "12-14 hours ago",
 	"ownership.c8": "over 14 hours ago",
 
-	"gonogo.introduction": "Great. We're almost done.<br /><br />Next is Go-NoGo game. For this task, you need to use the right (&#8594;) or left (&#8592;) keys on your keyboard. You'll briefly see the shape of a blue or yellow star on the left or on the right side of the screen. If you see a blue star, you should press the key that matches the **same** side as the star.<br /><br />If you see a yellow star, you should press the key that points at the opposite side. You have 1 second to respond but faster and accurate responses will get you more bonus points. <br /><br />Let's start round 1 with feedback.",
+	"gonogo.introduction": "Great. We're almost done.<br /><br />Next is Go-NoGo game. For this task, you need to use the right (&#8594;) or left (&#8592;) keys on your keyboard. You'll briefly see the shape of a blue or yellow star on the left or on the right side of the screen.<br /><br />If you see a blue star, you should press the key that matches the **same** side as the star. If you see a yellow star, you should press the key that points at the opposite side.<br /><br />You have 1 second to respond but faster and accurate responses will get you more bonus points. <br /><br />Let's start round 1 with feedback.",
 	"gonogo.are_you_ready": "Are you ready?",
 	"gonogo.too_many_timeouts": "You waited too long! Let's start over.",
 	"gonogo.restart": "Restart",
 	"gonogo.start": "Start",
-	"gonogo.instruction": "Tap on the blue stars. For yellow stars, tap on the opposite side.",
+	"gonogo.instruction": "Use (&#8594;) and (&#8592;). Same side for blue star, opposite side for yellow star.",
 	"gonogo.main.introduction": "Ok, so let's begin round 2. You will not receive feedback. Press next to begin.",
 
 	"ramadan2020.questions.email": "What is your email?",
@@ -161,9 +161,11 @@
 	"trust.q5": "There will be more people who will not work if the social security system is developed further.",
 	"trust.c1": "strongly disagree",
 	"trust.c2": "disagree",
-	"trust.c3": "neutral",
-	"trust.c4": "agree",
-	"trust.c5": "strongly agree",
+	"trust.c3": "somewhat disagree",
+	"trust.c4": "neutral",
+	"trust.c5": "somewhat agree",
+	"trust.c6": "agree",
+	"trust.c7": "strongly agree",
 
 	"control.q": "How much you agree or disagree with the following statements:",
 	"control.q1": "I can do just about anything I really set my mind to.",
@@ -189,7 +191,7 @@
 
 	"patience.q": "How willing are you to give up something that is beneficial for you today in order to benefit more from that in the future?",
 
-	"patience.c1": "not willing at all",
+	"patience.c1": "not willing at all (0)",
 	"patience.c2": "2",
 	"patience.c3": "3",
 	"patience.c4": "4",
@@ -199,7 +201,7 @@
 	"patience.c8": "8",
 	"patience.c9": "9",
 	"patience.c10": "10",
-	"patience.c11": "very willing",
+	"patience.c11": "very willing (11)",
 
 	"risk.falk.q1": "Do you see yourself generally as a person who is fully prepared to take risks or do you try to avoid taking risks?",
 	"risk.falk.q2": "When driving a car, are you a person who takes risks or do you try to avoid taking risks as a driver?",
@@ -209,7 +211,7 @@
 	"risk.falk.q6": "Are you a person who takes risks with their safety and health (Walk alone at night in an unsafe part of town, not wear a seatbelt in a car or a helmet on a bike, etc.)?",
 
 
-	"risk.falk.c1": "not at all",
+	"risk.falk.c1": "not at all (0)",
 	"risk.falk.c2": "2",
 	"risk.falk.c3": "3",
 	"risk.falk.c4": "4",
@@ -219,10 +221,10 @@
 	"risk.falk.c8": "8",
 	"risk.falk.c9": "9",
 	"risk.falk.c10": "10",
-	"risk.falk.c11": "very much",
+	"risk.falk.c11": "very much (11)",
 
 	"hunger.q": "How hungry are you right now?",
-	"hunger.c1": "not hungry at all",
+	"hunger.c1": "not hungry at all (0)",
 	"hunger.c2": "2",
 	"hunger.c3": "3",
 	"hunger.c4": "4",
@@ -232,10 +234,10 @@
 	"hunger.c8": "8",
 	"hunger.c9": "9",
 	"hunger.c10": "10",
-	"hunger.c11": "extremely hungry",
+	"hunger.c11": "extremely hungry (11)",
 
 	"religiosity.q": "How religious do you consider yourself?",
-	"religiosity.c1": "not religious at all",
+	"religiosity.c1": "not religious at all (0)",
 	"religiosity.c2": "2",
 	"religiosity.c3": "3",
 	"religiosity.c4": "4",
@@ -245,7 +247,7 @@
 	"religiosity.c8": "8",
 	"religiosity.c9": "9",
 	"religiosity.c10": "10",
-	"religiosity.c11": "very religious",
+	"religiosity.c11": "very religious (11)",
 
 	"diet.q": "Are you on a special diet?",
 	"diet.c1": "Yes",
