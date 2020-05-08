@@ -133,12 +133,12 @@
 	"ownership.c7": "12-14 hours ago",
 	"ownership.c8": "over 14 hours ago",
 
-	"gonogo.introduction": "Great. We're almost done.<br /><br />Next is Go-NoGo game. For this task, you need to use the right (&#8594;) or left (&#8592;) keys on your keyboard. You'll briefly see the shape of a blue or yellow star on the left or on the right side of the screen.<br /><br />If you see a blue star, you should press the key that matches the **same** side as the star. If you see a yellow star, you should press the key that points at the opposite side.<br /><br />You have 1 second to respond but faster and accurate responses will get you more bonus points. <br /><br />Let's start round 1 with feedback.",
+	"gonogo.introduction": "Great. We're almost done.<br /><br />Next is Go-NoGo game. For this task, you need to use the right (&#8594;) or left (&#8592;) keys on your keyboard. You'll briefly see the shape of a blue or yellow star on the left or on the right side of the screen.<br /><br />If you see a blue star, you should press the key that matches the **same** side as the star. If you see a yellow star, you should press the key that points at the **opposite** side.<br /><br />You have 1 second to respond but faster and accurate responses will get you more bonus points. <br /><br />Let's start round 1 with feedback.",
 	"gonogo.are_you_ready": "Place your fingers on the (&#8594;) and (&#8592;) keys. Press the space to begin.",
 	"gonogo.too_many_timeouts": "You waited too long! Let's start over.",
 	"gonogo.restart": "Restart",
 	"gonogo.start": "Start",
-	"gonogo.instruction": "Use (&#8594;) and (&#8592;) keys. Same side for blue star, opposite side for yellow star.",
+	"gonogo.instruction": "Use (&#8594;) and (&#8592;) keys. Same side for blue star, opposite side for yellow star. Be quick!",
 	"gonogo.main.introduction": "Ok, so let's begin round 2. You will not receive feedback. Press next to begin.",
 
 	"ramadan2020.questions.email": "What is your email?",
@@ -149,7 +149,7 @@
 	"colors.green": "Green",
 	"colors.red": "Red",
 
-	"stroop_demo.rule": "What's the color of this text?",
+	"stroop_demo.rule": "Quick, what's the color of this text?",
 	"stroop.practice.introduction": "In the next task, you'll see color names written in different inks on top.<br /><br />You have two choices on the bottom. Using the right (&#8594;) or left (&#8592;) keys on your keyboard, you should select the **word** that matches the **color** of the text on top. So,\n- For <span style='color:red'>*GREEN*</span> or <span style='color:red'>*RED*</span>, you can choose <span style='color:red'>*RED*</span> or <span style='color:green'>*RED*</span>.\n- For <span style='color:green'>*RED*</span> or <span style='color:green'>*GREEN*</span>, you can choose <span style='color:red'>*GREEN*</span> or <span style='color:green'>*GREEN*</span>.\n\nAgain, accurate and quick responses get more bonus points. Press next to begin the first round (you'll get feedback about your responses).",
 	"stroop.main.introduction": "Now the second round begins. You will not receive feedback this time. Press next to continue.",
 
