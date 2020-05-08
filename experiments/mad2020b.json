@@ -352,7 +352,6 @@
 			"requiredQuestions": [0],
 			"direction": "vertical",
 			"choices": [
-				"patience.c0",
 				"patience.c1",
 				"patience.c2",
 				"patience.c3",
@@ -538,7 +537,6 @@
 			],
 			"direction": "vertical",
 			"choices": [
-				"risk.falk.c0",
 				"risk.falk.c1",
 				"risk.falk.c2",
 				"risk.falk.c3",
@@ -573,7 +571,6 @@
 			],
 			"direction": "vertical",
 			"choices": [
-				"recip.c0",
 				"recip.c1",
 				"recip.c2",
 				"recip.c3",
@@ -1042,7 +1039,6 @@
 			"requiredQuestions": [0],
 			"direction": "vertical",
 			"choices": [
-				"hunger.c0",
 				"hunger.c1",
 				"hunger.c2",
 				"hunger.c3",
@@ -1076,7 +1072,6 @@
 			"requiredQuestions": [0],
 			"direction": "vertical",
 			"choices": [
-				"religiosity.c0",
 				"religiosity.c1",
 				"religiosity.c2",
 				"religiosity.c3",
