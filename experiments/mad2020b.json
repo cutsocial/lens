@@ -242,9 +242,7 @@
 				"trust.c2",
 				"trust.c3",
 				"trust.c4",
-				"trust.c5",
-				"trust.c6",
-				"trust.c7",
+				"trust.c5"
 			],
 			"questions": [
 				"trust.q1",
