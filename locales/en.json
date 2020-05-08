@@ -303,7 +303,7 @@
 	"altruism": "How willing are you to give to good causes without expecting anything in return?",
 	"trust.falk": "I assume that people have only the best intentions.",
 
-	"recip.c1": "not willing at all",
+	"recip.c1": "not willing at all (0)",
 	"recip.c2": "2",
 	"recip.c3": "3",
 	"recip.c4": "4",
@@ -313,7 +313,7 @@
 	"recip.c8": "8",
 	"recip.c9": "9",
 	"recip.c10": "10",
-	"recip.c11": "very willing",
+	"recip.c11": "very willing (11)",
 
 	"soc.dilemma1": "375 and 625",
 	"soc.dilemma2": "250 and 750",
