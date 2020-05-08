@@ -648,15 +648,15 @@
 			"text": "gonogo.instruction",
 			"help": "",
 			"trials": {
-				"total": 24,
-				"go": 12,
-				"left": 12,
-				"leftGo": 6
+				"total": 60,
+				"go": 45,
+				"left": 30,
+				"leftGo": 22
 			},
-			"stimuliDuration": 2000,
+			"stimuliDuration": 1000,
 			"fixationDuration": 1000,
 			"feedbackDuration": 1000,
-			"timeoutsBeforeReset": 10,
+			"timeoutsBeforeReset": 20,
 			"choices": {
 				"go": "blue-star",
 				"nogo": "star"
@@ -674,15 +674,15 @@
 			"text": "gonogo.instruction",
 			"help": "Press one of the images in less than three seconds.",
 			"trials": {
-				"total": 24,
-				"go": 12,
-				"left": 12,
-				"leftGo": 6
+				"total": 60,
+				"go": 45,
+				"left": 30,
+				"leftGo": 22
 			},
-			"stimuliDuration": 2000,
+			"stimuliDuration": 1000,
 			"fixationDuration": 1000,
 			"feedbackDuration": 0,
-			"timeoutsBeforeReset": 10,
+			"timeoutsBeforeReset": 20,
 			"choices": {
 				"go": "blue-star",
 				"nogo": "star"
