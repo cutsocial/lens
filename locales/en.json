@@ -134,7 +134,7 @@
 	"ownership.c8": "over 14 hours ago",
 
 	"gonogo.introduction": "Great. We're almost done.<br /><br />Next is Go-NoGo game. For this task, you need to use the right (&#8594;) or left (&#8592;) keys on your keyboard. You'll briefly see the shape of a blue or yellow star on the left or on the right side of the screen.<br /><br />If you see a blue star, you should press the key that matches the **same** side as the star. If you see a yellow star, you should press the key that points at the **opposite** side.<br /><br />You have 1 second to respond but faster and accurate responses will get you more bonus points. <br /><br />Let's start round 1 with feedback.",
-	"gonogo.are_you_ready": "Place your fingers on the (&#8594;) and (&#8592;) keys. Press the space to begin.",
+	"gonogo.are_you_ready": "Place your fingers on the (&#8594;) and (&#8592;) keys. Press the space bar to begin.",
 	"gonogo.too_many_timeouts": "You waited too long! Let's start over.",
 	"gonogo.restart": "Restart",
 	"gonogo.start": "Start",
@@ -144,7 +144,7 @@
 	"ramadan2020.questions.email": "What is your email?",
 	"ramadan2020.questions.email_placeholder": "Email",
 
-	"stroop.are_you_ready": "Place your fingers on the (&#8594;) and (&#8592;) keys. Press the space to begin.",
+	"stroop.are_you_ready": "Place your fingers on the (&#8594;) and (&#8592;) keys. Press the space bar to begin.",
 	"stroop.start": "Start",
 	"colors.green": "Green",
 	"colors.red": "Red",
