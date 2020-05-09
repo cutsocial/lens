@@ -223,7 +223,7 @@
 			"reward": 7,
 			"maxPumps": 20,
 			"safePumps": 1,
-			"trials": 20
+			"trials": 25
 		},
 		{
 			"id": "trust",
@@ -278,15 +278,16 @@
 			],
 			"questions": [
 				"control.q1",
-				"control.q2",
-				"control.q3",
-				"control.q4",
-				"control.q5",
 				"control.q6",
 				"control.q7",
 				"control.q8",
 				"control.q9",
+				"attention.check",
 				"control.q10",
+				"control.q2",
+				"control.q3",
+				"control.q4",
+				"control.q5",
 				"control.q11",
 				"control.q12"
 			]
@@ -590,6 +591,7 @@
 				"neg.recip.1",
 				"neg.recip.2",
 				"neg.recip.3",
+				"attention.check.2",
 				"altruism"
 			]
 		},
@@ -821,7 +823,7 @@
 					]
 				}
 			],
-			"stimulusDuration": 3000,
+			"stimulusDuration": 1000,
 			"fixationDuration": 1000,
 			"feedbackDuration": 1000,
 			"timeoutsBeforeReset": 10,
@@ -962,7 +964,7 @@
 					]
 				}
 			],
-			"stimulusDuration": 3000,
+			"stimulusDuration": 1000,
 			"fixationDuration": 1000,
 			"feedbackDuration": 0,
 			"timeoutsBeforeReset": 10,
