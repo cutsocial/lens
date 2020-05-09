@@ -9,7 +9,7 @@
 	"text.choose_a_country": "Choose a Country",
 	"text.no_options": "No Options",
 
-	"intro": "**Welcome!**<br /><br />This study is part of a research project on decision making, conducted by researchers at the New School for Social Research.<br /><br />The entire study takes less than 15 minutes. And, we will follow up with you in a few weeks for the second study for which you will be paid seperately.<br /><br />For participating in they study, you receive a flat fee plus bonus points based on your responses in different tasks. **The bonus points can double your earnings**.<br /><br />The study does not require specific background knowledge. As long as you follow the instructions, your bonuses should be on the higher end. Your participation is, of course, voluntary. Your responses will be entirely anonymous.<br /><br />For any questions or comments, send them to the email address below: salam955@newschool.edu<br /><br />Press **Next** to begin.",
+	"intro": "**Welcome!**<br /><br />This study is part of a research project on decision making, conducted by researchers at the New School for Social Research.<br /><br />The entire study takes less than 15 minutes.<br /><br />For participating in the study, you receive a flat fee plus bonus points based on your responses in different tasks. **Your bonus points determine your chances on a $50 raffle** More bonus points = higher chance of winning.<br /><br />The study does not require specific background knowledge. As long as you follow the instructions, your bonuses should be on the higher end. Your participation is, of course, voluntary. Your responses will be entirely anonymous.<br /><br />For any questions or comments, send them to the email address below: salam955@newschool.edu<br /><br />Press **Next** to begin.",
 
 	"intro.demographics": "First we need some information about you.",
 
@@ -74,7 +74,7 @@
 	"risk.qual.c3": "moderate return and moderate risk",
 	"risk.qual.c4": "low return and no risk",
 
-	"tasks.intro": "Thanks. Our main questions and tasks begin next.<br /><br />Remember, the responses you give in different tasks are converted into bonus points. You get points based on your choices, response accuracy, and speed on the specific task. These bonus points will be converted and added to your compensation.<br /><br />Press next to begin the first task.",
+	"tasks.intro": "Thanks. Our main questions and tasks begin next.<br /><br />Remember, the responses you give in different tasks are converted into bonus points that determine your chances in a $50 raffle. You get points based on your choices, response accuracy, and speed on the specific task.<br /><br />Press next to begin the first task.",
 	"bart.intro": "Great. So in the next task, you'll see a ball in the middle of the screen that grows bigger every time you press on it.<br /><br />You receive **7 bonus points** for each pump, but only if the ball doesn't blow up. If the ball explodes, you lose all your points in that round.<br /><br />You can also select the ‘**CASH**’ button to save your bonus points if you don’t want to pump the ball anymore.<br /><br />Press **Next** to begin.",
 
 	"bart.cash": "Cash",
@@ -258,7 +258,7 @@
 	"fasting.c2": "No",
 
 	"svo.q": "Please pick the option that you prefer:",
-	"svo.intro": "Great. So the next task is another a point allocation task. You get to decide how to split bonus points between yourself and another person. This person will be randomly selected from other participants in this experiment.<br /><br />Your points will be used to calculate your bonus. So, every point has value: the more points you receive, the better for you, and the more points the 'Other' receives, the better for him/her.<br /><br />There are no right or wrong answers -- choose the option that you, for whatever reason, prefer most. You'll play 9 rounds. Press 'Next' to begin.",
+	"svo.intro": "Great. So the next task is another point allocation task. You get to decide how to split bonus points between yourself and another person. This person will be randomly selected from other participants in this experiment.<br /><br />**Your bonus points determine your chances in a $50 raffle**. So, every point has value: the more points you receive, the better for you, and the more points the 'Other' receives, the better for him/her.<br /><br />There are no right or wrong answers -- choose the option that you, for whatever reason, prefer most. You'll play 9 rounds. Press 'Next' to begin.",
 
 	"svo.c1.a": "480 for me, 80 for Other",
 	"svo.c1.b": "540 for me, 280 for Other",
@@ -344,7 +344,7 @@
 	"trust.fehr.c4": "often",
 	"trust.fehr.c5": "always",
 
-	"trust.game.q": "In this task, we are giving you 1000 bonus points. They are yours to keep.<br /><br />We are also giving you a choice: Give some or all of these points back, we multiply it by **3**, and give it to another participant in this study. They can then decide to return some or all of the points back to you (They know we gave you 1000 points and you decided to send some points over to them).<br /><br />It's entirely up to them to return anything. But it's entirely up to you to take this chance and send some points over. You can keep all the points, give some, or all. And, you'll remain anonymous to each other.<br /><br />How much would you like to send?",
+	"trust.game.q": "In this task, we are giving you 1000 bonus points. They are yours to keep.<br /><br />We are also giving you a choice: Give some or all of these points back, we multiply it by **3**, and give it to another participant in this study. They can then decide to return some or all of the points back to you (They know we gave you 1000 points and you decided to send some points over to them).<br /><br />It's entirely up to them to return anything. But it's entirely up to you to take this chance and send some bonus points over. You can keep all the points, give some, or all. And, you'll remain anonymous to each other.<br /><br />How much would you like to send?",
 	"trust.game.c1": "send nothing",
 	"trust.game.c2": "25",
 	"trust.game.c3": "50",
@@ -387,7 +387,11 @@
 	"trust.game.c40": "975",
 	"trust.game.c41": "send all",
 
+	"attention.check.1": "This question is aimed to measure attentiveness. Please select I somewhat disagree for this question.",
+	"attention.check.2": "This question is aimed to measure attentiveness. Please select I somewhat the extreme right side of the scale for this question.",
 
+	
+	
 	"submission.note": "Thank you for your participation! Please press **Continue** to be redirected to the Prolific webpage.",
 	"submission.q_email": "Thank you for your participation. You can see your performance on the next page. Please write your email in the box below if you'd like to participate in similar studies."
 
