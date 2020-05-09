@@ -282,7 +282,7 @@
 				"control.q7",
 				"control.q8",
 				"control.q9",
-				"attention.check",
+				"attention.check.1",
 				"control.q10",
 				"control.q2",
 				"control.q3",
@@ -657,7 +657,7 @@
 			},
 			"stimuliDuration": 1000,
 			"fixationDuration": 1000,
-			"feedbackDuration": 1000,
+			"feedbackDuration": 500,
 			"timeoutsBeforeReset": 20,
 			"choices": {
 				"go": "blue-star",
@@ -1343,6 +1343,26 @@
 			],
 			"questions": ["fasting.q"]
 		},
+		{
+			"id": "fasted days",
+			"type": "text",
+			"instruction": false,
+			"required": true,
+			"text": "fasted.days",
+			"help": "",
+			"placeholder": "",
+			"pattern": ""
+		},  
+		{
+			"id": "fast time",
+			"type": "text",
+			"instruction": false,
+			"required": true,
+			"text": "fast.time",
+			"help": "",
+			"placeholder": "",
+			"pattern": ""
+		},    
 		{
 			"id": "prolific ID",
 			"type": "text",
