@@ -821,6 +821,119 @@
 						"GG",
 						"RG"
 					]
+				},
+				{
+					"stimulus": "GG",
+					"choices": [
+						"GG",
+						"RR"
+					]
+				},
+				{
+					"stimulus": "RG",
+					"choices": [
+						"GG",
+						"RG"
+					]
+				},
+				{
+					"stimulus": "GG",
+					"choices": [
+						"GR",
+						"RG"
+					]
+				},
+				{
+					"stimulus": "RR",
+					"choices": [
+						"GG",
+						"RR"
+					]
+				},
+				{
+					"stimulus": "RG",
+					"choices": [
+						"GG",
+						"RR"
+					]
+				},
+				{
+					"stimulus": "RR",
+					"choices": [
+						"GG",
+						"RG"
+					]
+				},
+				{
+					"stimulus": "GR",
+					"choices": [
+						"GR",
+						"RR"
+					]
+				},
+				{
+					"stimulus": "RR",
+					"choices": [
+						"GR",
+						"RR"
+					]
+				},
+
+				{
+					"stimulus": "RG",
+					"choices": [
+						"GR",
+						"RR"
+					]
+				},
+				{
+					"stimulus": "RG",
+					"choices": [
+						"GR",
+						"RG"
+					]
+				},
+				{
+					"stimulus": "GR",
+					"choices": [
+						"GG",
+						"RR"
+					]
+				},
+				{
+					"stimulus": "RR",
+					"choices": [
+						"GR",
+						"RG"
+					]
+				},
+				{
+					"stimulus": "GR",
+					"choices": [
+						"GG",
+						"RG"
+					]
+				},
+				{
+					"stimulus": "GG",
+					"choices": [
+						"GR",
+						"RR"
+					]
+				},
+				{
+					"stimulus": "GR",
+					"choices": [
+						"GR",
+						"RG"
+					]
+				},
+				{
+					"stimulus": "GG",
+					"choices": [
+						"GG",
+						"RG"
+					]
 				}
 			],
 			"stimulusDuration": 1000,
@@ -851,6 +964,119 @@
 				"R": "colors.red"
 			},
 			"trials": [{
+					"stimulus": "GG",
+					"choices": [
+						"GG",
+						"RR"
+					]
+				},
+				{
+					"stimulus": "RG",
+					"choices": [
+						"GG",
+						"RG"
+					]
+				},
+				{
+					"stimulus": "GG",
+					"choices": [
+						"GR",
+						"RG"
+					]
+				},
+				{
+					"stimulus": "RR",
+					"choices": [
+						"GG",
+						"RR"
+					]
+				},
+				{
+					"stimulus": "RG",
+					"choices": [
+						"GG",
+						"RR"
+					]
+				},
+				{
+					"stimulus": "RR",
+					"choices": [
+						"GG",
+						"RG"
+					]
+				},
+				{
+					"stimulus": "GR",
+					"choices": [
+						"GR",
+						"RR"
+					]
+				},
+				{
+					"stimulus": "RR",
+					"choices": [
+						"GR",
+						"RR"
+					]
+				},
+
+				{
+					"stimulus": "RG",
+					"choices": [
+						"GR",
+						"RR"
+					]
+				},
+				{
+					"stimulus": "RG",
+					"choices": [
+						"GR",
+						"RG"
+					]
+				},
+				{
+					"stimulus": "GR",
+					"choices": [
+						"GG",
+						"RR"
+					]
+				},
+				{
+					"stimulus": "RR",
+					"choices": [
+						"GR",
+						"RG"
+					]
+				},
+				{
+					"stimulus": "GR",
+					"choices": [
+						"GG",
+						"RG"
+					]
+				},
+				{
+					"stimulus": "GG",
+					"choices": [
+						"GR",
+						"RR"
+					]
+				},
+				{
+					"stimulus": "GR",
+					"choices": [
+						"GR",
+						"RG"
+					]
+				},
+				{
+					"stimulus": "GG",
+					"choices": [
+						"GG",
+						"RG"
+					]
+				},
+				{
 					"stimulus": "GG",
 					"choices": [
 						"GG",
