@@ -343,7 +343,7 @@
 	"trust.fehr.c4": "often",
 	"trust.fehr.c5": "always",
 
-	"trust.game.q": "In this task, we are giving you 1000 bonus points. They are yours to keep.<br /><br />We are also giving you a choice: Give some or all of these points back, we multiply it by **3**, and give it to another participant in this study. They can then decide to return some or all of the points back to you (They know we gave you 1000 points and you decided to send some points over to them). What they return will be added to the points you decided to keep.<br /><br />It's entirely up to them to return anything. But it's entirely up to you to take this chance and send some bonus points over. You can keep all the points, give some, or all. And, you'll remain anonymous to each other.<br /><br />How much would you like to send?",
+	"trust.game.q": "In this task, we are giving you 1000 bonus points. They are yours to keep.<br /><br />We are also giving you a choice: Give some or all of these points back, we multiply it by **3**, and give it to another participant in this study. They can then decide to return some or all of the points back to you (They know we gave you 1000 points and you decided to send some points over to them).<br /><br />It's entirely up to them to return anything. But it's entirely up to you to take this chance and send some bonus points over. You can keep all the points, give some, or all. What they return will be added to the points you decided to keep.<br /><br />How much would you like to send?",
 	"trust.game.c1": "send nothing",
 	"trust.game.c2": "25",
 	"trust.game.c3": "50",
