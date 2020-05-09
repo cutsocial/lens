@@ -9,7 +9,7 @@
 	"text.choose_a_country": "Choose a Country",
 	"text.no_options": "No Options",
 
-	"intro": "**Welcome!**<br /><br />This study is part of a research project on decision making, conducted by researchers at the New School for Social Research.<br /><br />The entire study takes less than 15 minutes.<br /><br />For participating in the study, you receive a flat fee plus bonus points based on your responses in different tasks. **Your bonus points determine your chances on a $50 raffle** More bonus points = higher chance of winning.<br /><br />The study does not require specific background knowledge. As long as you follow the instructions, your bonuses should be on the higher end. Your participation is, of course, voluntary. Your responses will be entirely anonymous.<br /><br />For any questions or comments, send them to the email address below: salam955@newschool.edu<br /><br />Press **Next** to begin.",
+	"intro": "**Welcome!**<br /><br />This study is part of a research project on decision making, conducted by researchers at the New School for Social Research.<br /><br />The entire study takes about 15 minutes.<br /><br />For participating in the study, you receive a flat fee plus bonus points based on your responses in different tasks. **Your bonus points determine your chances on a $50 raffle**. More bonus points = higher chance of winning.<br /><br />The study does not require specific background knowledge. As long as you follow the instructions, your bonuses should be on the higher end. Your participation is, of course, voluntary. Your responses will be entirely anonymous.<br /><br />For any questions or comments, send them to the email address below: salam955@newschool.edu<br /><br />Press **Next** to begin.",
 
 	"intro.demographics": "First we need some information about you.",
 
@@ -321,13 +321,12 @@
 	"soc.dilemma4": "500",
 	"fasting.ramadan.q": "Do you fast during Ramadan?",
 
-
-	"social.dilemma.q1": "In this first task, you are randomly grouped with **4** other participants in this study. Your group is given some bonus points to share. You each privately choose to take some of these bonus points. None of you will know how much the others are taking and you cannot communicate with each other.<br /><br />Between **125 and 925 points** are available, but the exact number is unknown until you all make your requests.<br /><br />We will add up the requests from all of you. If the total is less than the number of bonus points available, then you each receive the bonus points you requested. But if the total is more than the available points, none of you gets anything.<br /><br />So larger requests could get you more bonus points, but you might also end up with nothing. Please indicate the number of points you request:",
-	"social.dilemma.q2": "Now we know the total number of available points is **more than 200 but less than 850**. How many points do you request?<br /><br />Again, your request will be added to requests by 4 other subjects. If the sum of requests is more than the number of available points, then none of you get any points.<br /><br />How many points do you request?",
-	"social.dilemma.q3": "This time, we know the total number of points is somewhere **between 275 and 775**. How many points do you request?<br /><br />(The rules are the same. Your request will be added to request by 4 other participants and you get your requested points only if the sum is not more than the number of available points).",
-	"social.dilemma.q4": "The total number of points is now somewhere **between 350 and 650**. How many points do you request?<br /><br />(The rules are the same. Your request will be added to request by 4 other participants and you get your requested points only if the sum is not more than the number of available points).",
-	"social.dilemma.q5": "Now we know the total number of points is now somewhere **between 425 and 575**. How many points do you request?<br /><br />(The rules are the same. Your request will be added to request by 4 other participants and you get your requested points only if the sum is not more than the number of available points).",
-	"social.dilemma.q6": "Last one: This time, we know the exact number of available points is **500**. How many points do you request?<br /><br />(The rules are the same. Your request will be added to request by 4 other participants and you get your requested points only if the sum is not more than the number of available points).",
+	"social.dilemma.q1": "In this first task, you are randomly grouped with **4** other participants in this study. Your group is given some bonus points to share. You each privately request some of these points. You will not know how much the others are requesting and you cannot communicate with each other.<br /><br /> There are **500 points** available. <br /><br />We will add up the requests from all of you. If the total is less than the number of bonus points available, then you each receive the bonus points you requested. But if the sum of requests is more than the available points, none of you gets anything.<br /><br />So larger requests could get you more bonus points, but you might also end up with nothing if everyone makes large requests. How many points do you request?",
+	"social.dilemma.q2": "Now, we don’t know the exact number of points but we know it’s somewhere between **425 and 575 points**. How many points do you request now?<br /><br />Again, your request will be added to requests by 4 other subjects. If the sum of requests is more than the number of available points, then none of you get any points.<br /><br />How many points do you request?",
+	"social.dilemma.q3": "This time, we know the total number of points is **more than 350 but less than 650**. How many points do you request?<br /><br />(The rules are the same. Your request will be added to request by 4 other participants and you get your requested points only if the sum is not more than the number of available points).",
+	"social.dilemma.q4": "The total number of points is now somewhere **between 275 and 775**. How many points do you request?<br /><br />(The rules are the same. Your request will be added to request by 4 other participants and you get your requested points only if the sum is not more than the number of available points).",
+	"social.dilemma.q5": "Now we know the total number of points is now somewhere **between 200 and 850**. How many points do you request?<br /><br />(The rules are the same. Your request will be added to request by 4 other participants and you get your requested points only if the sum is not more than the number of available points).",
+	"social.dilemma.q6": "Last one: This time, we know the exact number of available points is **between 125 and 925 points**. How many points do you request?<br /><br />(The rules are the same. Your request will be added to request by 4 other participants and you get your requested points only if the sum is not more than the number of available points).",
 
 	"p.id.intro": "Please enter your Prolifc ID here:",
 	"almost.done": "Thanks. Almost there, just a couple of questions about your diet and we'll be done for good.",
@@ -344,7 +343,7 @@
 	"trust.fehr.c4": "often",
 	"trust.fehr.c5": "always",
 
-	"trust.game.q": "In this task, we are giving you 1000 bonus points. They are yours to keep.<br /><br />We are also giving you a choice: Give some or all of these points back, we multiply it by **3**, and give it to another participant in this study. They can then decide to return some or all of the points back to you (They know we gave you 1000 points and you decided to send some points over to them).<br /><br />It's entirely up to them to return anything. But it's entirely up to you to take this chance and send some bonus points over. You can keep all the points, give some, or all. And, you'll remain anonymous to each other.<br /><br />How much would you like to send?",
+	"trust.game.q": "In this task, we are giving you 1000 bonus points. They are yours to keep.<br /><br />We are also giving you a choice: Give some or all of these points back, we multiply it by **3**, and give it to another participant in this study. They can then decide to return some or all of the points back to you (They know we gave you 1000 points and you decided to send some points over to them). What they return will be added to the points you decided to keep.<br /><br />It's entirely up to them to return anything. But it's entirely up to you to take this chance and send some bonus points over. You can keep all the points, give some, or all. And, you'll remain anonymous to each other.<br /><br />How much would you like to send?",
 	"trust.game.c1": "send nothing",
 	"trust.game.c2": "25",
 	"trust.game.c3": "50",
@@ -388,9 +387,11 @@
 	"trust.game.c41": "send all",
 
 	"attention.check.1": "This question is aimed to measure attentiveness. Please select I somewhat disagree for this question.",
-	"attention.check.2": "This question is aimed to measure attentiveness. Please select I somewhat the extreme right side of the scale for this question.",
+	"attention.check.2": "This question is aimed to measure attentiveness. Please select the extreme right side of the scale for this question.",
 
-	
+	"fasted.days":"How many days have you fasted this Ramadan?",
+	"fast.time":"How many hours is the average day of fast where you live this Ramadan?",
+
 	
 	"submission.note": "Thank you for your participation! Please press **Continue** to be redirected to the Prolific webpage.",
 	"submission.q_email": "Thank you for your participation. You can see your performance on the next page. Please write your email in the box below if you'd like to participate in similar studies."
