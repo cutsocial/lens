@@ -149,7 +149,7 @@
 	"colors.green": "Green",
 	"colors.red": "Red",
 
-	"stroop_demo.rule": "Quick, what's the color of this text?",
+	"stroop_demo.rule": "Quick, what's the color of this text? (Use (&#8594;) and (&#8592;) keys)",
 	"stroop.practice.introduction": "In the next task, you'll see color names written in different inks on top.<br /><br />You have two choices on the bottom. Using the right (&#8594;) or left (&#8592;) keys on your keyboard, you should select the **word** that matches the **color** of the text on top. So,\n- For <span style='color:red'>*GREEN*</span> or <span style='color:red'>*RED*</span>, you can choose <span style='color:red'>*RED*</span> or <span style='color:green'>*RED*</span>.\n- For <span style='color:green'>*RED*</span> or <span style='color:green'>*GREEN*</span>, you can choose <span style='color:red'>*GREEN*</span> or <span style='color:green'>*GREEN*</span>.\n\nAgain, accurate and quick responses get more bonus points. Press next to begin the first round (you'll get feedback about your responses).",
 	"stroop.main.introduction": "Now the second round begins. You will not receive feedback this time. Press next to continue.",
 
@@ -326,7 +326,7 @@
 	"social.dilemma.q3": "This time, we know the total number of points is **more than 350 but less than 650**. How many points do you request?<br /><br />(The rules are the same. Your request will be added to request by 4 other participants and you get your requested points only if the sum is not more than the number of available points).",
 	"social.dilemma.q4": "The total number of points is now somewhere **between 275 and 775**. How many points do you request?<br /><br />(The rules are the same. Your request will be added to request by 4 other participants and you get your requested points only if the sum is not more than the number of available points).",
 	"social.dilemma.q5": "Now we know the total number of points is now somewhere **between 200 and 850**. How many points do you request?<br /><br />(The rules are the same. Your request will be added to request by 4 other participants and you get your requested points only if the sum is not more than the number of available points).",
-	"social.dilemma.q6": "Last one: This time, we know the exact number of available points is **between 125 and 925 points**. How many points do you request?<br /><br />(The rules are the same. Your request will be added to request by 4 other participants and you get your requested points only if the sum is not more than the number of available points).",
+	"social.dilemma.q6": "Last one: This time, we know the total number of available points is **between 125 and 925 points**. How many points do you request?<br /><br />(The rules are the same. Your request will be added to request by 4 other participants and you get your requested points only if the sum is not more than the number of available points).",
 
 	"p.id.intro": "Please enter your Prolifc ID here:",
 	"almost.done": "Thanks. Almost there, just a couple of questions about your diet and we'll be done for good.",
@@ -390,7 +390,7 @@
 	"attention.check.2": "This question is aimed to measure attentiveness. Please select the extreme right side of the scale for this question.",
 
 	"fasted.days":"How many days have you fasted this Ramadan?",
-	"fast.time":"How many hours is the average day of fast where you live this Ramadan?",
+	"fast.time":"How many hours is the average day of fast where you live?",
 
 	
 	"submission.note": "Thank you for your participation! Please press **Continue** to be redirected to the Prolific webpage.",
