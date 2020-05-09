@@ -22,12 +22,30 @@
 			},
       "trials": [
 				{"stimulus": "GG", "choices": ["GG", "RR"]},
-				
 				{"stimulus": "RR", "choices": ["GG", "RR"]},
-							
 				{"stimulus": "RG", "choices": ["GG", "RR"]},
-							
+	      			{"stimulus": "GG", "choices": ["GG", "RR"]},
+				{"stimulus": "RR", "choices": ["GG", "RR"]},
+				{"stimulus": "RG", "choices": ["GG", "RR"]},
+	      			{"stimulus": "GG", "choices": ["GG", "RR"]},
+				{"stimulus": "RR", "choices": ["GG", "RR"]},
+				{"stimulus": "RG", "choices": ["GG", "RR"]},
+	      			{"stimulus": "GG", "choices": ["GG", "RR"]},
+				{"stimulus": "RR", "choices": ["GG", "RR"]},
+				{"stimulus": "RG", "choices": ["GG", "RR"]},
+	      			{"stimulus": "GG", "choices": ["GG", "RR"]},
+				{"stimulus": "RR", "choices": ["GG", "RR"]},
+				{"stimulus": "RG", "choices": ["GG", "RR"]},
+	      			{"stimulus": "GG", "choices": ["GG", "RR"]},
+				{"stimulus": "RR", "choices": ["GG", "RR"]},
+				{"stimulus": "RG", "choices": ["GG", "RR"]},
+	      			{"stimulus": "GG", "choices": ["GG", "RR"]},
+				{"stimulus": "RR", "choices": ["GG", "RR"]},
+				{"stimulus": "RG", "choices": ["GG", "RR"]},
 				{"stimulus": "GR", "choices": ["GG", "RR"]}
+	      			{"stimulus": "GG", "choices": ["GG", "RR"]},
+				{"stimulus": "RR", "choices": ["GG", "RR"]},
+				{"stimulus": "RG", "choices": ["GG", "RR"]},
       ],
       "stimulusDuration": 3000,
       "fixationDuration": 1000, 
