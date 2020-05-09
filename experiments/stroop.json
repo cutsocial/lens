@@ -120,11 +120,11 @@
 				"choices": ["GG", "RR"]
 			}
 		],
-		"stimulusDuration": 3000,
+		"stimulusDuration": 1000,
 		"fixationDuration": 1000,
 		"feedbackDuration": 0,
 		"timeoutsBeforeReset": 1,
-		"randomizeTrials": false,
+		"randomizeTrials": true,
 		"randomizeChoices": true
 	}]
 }
