@@ -1330,25 +1330,13 @@
 			],
 			"questions": ["fasting.ramadan.q"]
 		},
-		{
-			"id": "fasting",
-			"type": "matrix",
-			"text": "",
-			"slider": false,
-			"requiredQuestions": [0],
-			"direction": "vertical",
-			"choices": [
-				"fasting.c1",
-				"fasting.c2"
-			],
-			"questions": ["fasting.q"]
-		},
+		
 		{
 			"id": "fasted days",
 			"type": "text",
 			"instruction": false,
 			"required": true,
-			"text": "fasted.days",
+			"text": "fasted.days.2",
 			"help": "",
 			"placeholder": "",
 			"pattern": ""
@@ -1358,7 +1346,7 @@
 			"type": "text",
 			"instruction": false,
 			"required": true,
-			"text": "fast.time",
+			"text": "fast.time.2",
 			"help": "",
 			"placeholder": "",
 			"pattern": ""
