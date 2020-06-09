@@ -390,7 +390,10 @@
 	"attention.check.2": "This question is aimed to measure attentiveness. Please select the extreme right side of the scale for this question.",
 
 	"fasted.days":"How many days have you fasted this Ramadan?",
+	"fasted.days.2":"How many days did you fast in the past Ramadan?",
+
 	"fast.time":"How many hours is the average day of fast where you live?",
+	"fast.time.2":"How many hours was the average day of fast where you live?",
 
 	
 	"submission.note": "Thank you for your participation! Please press **Continue** to be redirected to the Prolific webpage.",
