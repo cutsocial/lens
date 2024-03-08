@@ -1,7 +1,7 @@
 {
-	"studyId": "mad2023",
+	"studyId": "mad2024",
 	"conditon": "a", 
-	"redirectTo": "https://app.prolific.co/submissions/complete?cc=C1H9HHV2",
+	"redirectTo": "https://app.prolific.com/submissions/complete?cc=CRVDXQWE",
 	"submissionNote": "submission.note",
 	"metadata": {
 		"maintainer": "salarirad@gmail.com"
@@ -290,31 +290,6 @@
 			"questions": ["patience.q"]
 		},
 		{
-			"id": "trust.fehr",
-			"type": "matrix",
-			"text": "",
-			"slider": true,
-			"showMidMark": true,
-			"requiredQuestions": [
-				0,
-				1,
-				2
-			],
-			"direction": "vertical",
-			"choices": [
-				"trust.fehr.c1",
-				"trust.fehr.c2",
-				"trust.fehr.c3",
-				"trust.fehr.c4",
-				"trust.fehr.c5"
-			],
-			"questions": [
-				"trust.fehr.1",
-				"trust.fehr.2",
-				"trust.fehr.3"
-			]
-		},
-		{
 			"id": "svo.intro",
 			"type": "text",
 			"instruction": true,
@@ -478,46 +453,6 @@
 				"risk.falk.q4",
 				"risk.falk.q5",
 				"risk.falk.q6"
-			]
-		},
-		{
-			"id": "recip",
-			"type": "matrix",
-			"text": "",
-			"slider": true,
-			"showMidMark": true,
-			"requiredQuestions": [
-				0,
-				1,
-				2
-			],
-			"direction": "vertical",
-			"choices": [
-				"recip.c1",
-				"recip.c2",
-				"recip.c3",
-				"recip.c4",
-				"recip.c5",
-				"recip.c6",
-				"recip.c7",
-				"recip.c8",
-				"recip.c9",
-				"recip.c10",
-				"recip.c11"
-			],
-			"questions": [
-				"pos.reicp",
-				"neg.recip.1",
-				"neg.recip.2",
-				"neg.recip.3",
-				"attention.check.2",
-				"altruism",
-                "trust.q1",
-                "trust.q2",
-                "trust.q3",
-                "trust.q4",
-                "trust.q5"
-
 			]
 		},
 		{
@@ -746,181 +681,6 @@
 			],
 			"questions": ["religiosity.q"]
 		},
-		{
-			"id": "fasting.ramadan",
-			"type": "matrix",
-			"text": "",
-			"slider": false,
-			"requiredQuestions": [0],
-			"direction": "vertical",
-			"choices": [
-				"fasting.c1",
-				"fasting.c2"
-			],
-			"questions": ["fasting.ramadan.q"]
-		},
-		{
-			"id": "fasting.now",
-			"type": "matrix",
-			"text": "",
-			"slider": false,
-			"requiredQuestions": [0],
-			"direction": "vertical",
-			"choices": [
-				"fasting.c1",
-				"fasting.c2"
-			],
-			"questions": ["fasting.q"]
-		},
-		{
-			"id": "effort",
-			"type": "matrix",
-			"text": "",
-			"slider": true,
-			"showMidMark": true,
-			"requiredQuestions": [
-				0,
-				1
-			],
-			"direction": "vertical",
-			"choices": [
-				"motive.c1",
-				"motive.c2",
-				"motive.c3",
-				"motive.c4",
-				"motive.c5",
-				"motive.c6",
-				"motive.c7"
-			],
-			"questions": [
-				"effort.1",
-				"effort.2"
-			]
-		},   		
-		{
-			"id": "motive",
-			"type": "matrix",
-			"text": "motives.q",
-			"slider": true,
-			"showMidMark": true,
-			"requiredQuestions": [
-				0,
-				1,
-				2
-			],
-			"direction": "vertical",
-			"choices": [
-				"motive.c1",
-				"motive.c2",
-				"motive.c3",
-				"motive.c4",
-				"motive.c5",
-				"motive.c6",
-				"motive.c7"
-			],
-			"questions": [
-				"motive.external",
-				"motive.introjected",
-				"motive.identified",
-				"motive.intrinsic"
-			]
-		},
-        {
-			"id": "motive.others",
-			"type": "matrix",
-			"text": "motives.others.q",
-			"slider": true,
-			"showMidMark": true,
-			"requiredQuestions": [
-				0,
-				1,
-				2
-			],
-			"direction": "vertical",
-			"choices": [
-				"motive.c1",
-				"motive.c2",
-				"motive.c3",
-				"motive.c4",
-				"motive.c5",
-				"motive.c6",
-				"motive.c7"
-			],
-			"questions": [
-				"motive.others.external",
-				"motive.others.introjected",
-				"motive.others.identified",
-				"motive.others.intrinsic"
-			]
-		}, 
-		{
-			"id": "situation",
-			"type": "matrix",
-			"text": "situation.q",
-			"slider": true,
-			"showMidMark": true,
-			"requiredQuestions": [
-				0,
-				1,
-				2
-			],
-			"direction": "vertical",
-			"choices": [
-				"situation.c1",
-				"situation.c2",
-				"situation.c3",
-				"situation.c4",
-				"situation.c5"
-			],
-			"questions": [
-				"situation.1",
-				"situation.2",
-				"situation.3"
-			]
-		},   
-		{
-			"id": "context",
-			"type": "matrix",
-			"text": "context.fasting",
-			"slider": true,
-			"showMidMark": true,
-			"requiredQuestions": [
-				0,
-				1,
-				2
-			],
-			"direction": "vertical",
-			"choices": [
-				"context.c1",
-				"context.c2",
-				"context.c3",
-				"context.c4",
-				"context.c5"
-				
-			],
-			"questions": [
-				"context.1",
-				"context.2",
-				"context.3",
-				"context.4",
-				"context.5",
-				"context.6",
-				"context.7",
-				"context.8",
-				"context.9"
-
-			]
-		},  
-		{
-			"id": "fast time",
-			"type": "text",
-			"instruction": false,
-			"required": true,
-			"text": "fast.time",
-			"help": "",
-			"placeholder": "",
-			"pattern": ""
-		},  
 		{
 			"id": "done.statement",
 			"type": "text",
