@@ -180,7 +180,7 @@
 			"type": "dictator",
       "text" : "dictator.rule.text",
 			"trials": 5,
-      "tokens": 8,
+      "tokens": 7,
       "opponentTypes": ["occupied","female"],
       "useOpponentTypes": false,
       "personsPrefix" : "dictator.person",
