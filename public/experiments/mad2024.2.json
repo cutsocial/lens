@@ -585,40 +585,6 @@
 			"questions": ["hunger.q"]
 		},
 		{
-			"id": "religion",
-			"type": "text",
-			"instruction": false,
-			"required": true,
-			"text": "religion.q",
-			"help": "",
-			"placeholder": "",
-			"pattern": ""
-		},
-		{
-			"id": "religiosity",
-			"type": "matrix",
-			"text": "",
-			"slider": true,
-			"showMidMark": true,
-			"requiredQuestions": [0],
-			"direction": "vertical",
-			"choices": [
-				"religiosity.c1",
-				"religiosity.c2",
-				"religiosity.c3",
-				"religiosity.c4",
-				"religiosity.c5",
-				"religiosity.c6",
-				"religiosity.c7",
-				"religiosity.c8",
-				"religiosity.c9",
-				"religiosity.c10",
-				"religiosity.c11"
-
-			],
-			"questions": ["religiosity.q"]
-		},
-		{
 			"id": "done.statement",
 			"type": "text",
 			"instruction": true,
