@@ -1,0 +1,135 @@
+{
+  "studyId": "ultimatum-demo",
+  "conditon": "a",
+  "redirectTo": "https://cut.social",
+  "submissionNote": "submission.note",
+  "metadata": {
+    "maintainer": "radmanesh@gmail.com"
+  },
+  "views": [
+    {
+      "id": "prolific ID",
+      "type": "text",
+      "instruction": false,
+      "required": true,
+      "text": "p.id.intro",
+      "help": "",
+      "placeholder": "",
+      "pattern": ""
+    },
+    {
+			"id": "ultimatum.intro1",
+			"type": "text",
+			"instruction": true,
+			"text": "ultimatum.intro1.text"
+		},
+    {
+			"id": "ultimatum.intro2",
+			"type": "text",
+			"instruction": true,
+			"text": "ultimatum.intro2.text"
+		},
+    {
+			"id": "ultimatum.intro3",
+			"type": "text",
+			"instruction": true,
+			"text": "ultimatum.intro3.text"
+		},
+    {
+			"id": "ultimatum.intro4",
+			"type": "text",
+			"instruction": true,
+			"text": "ultimatum.intro4.text"
+		},
+    {
+			"id": "ultimatum.intro5",
+			"type": "text",
+			"instruction": true,
+			"text": "ultimatum.intro5.text"
+		},
+    {
+			"id": "ultimatum.intro6",
+			"type": "text",
+			"instruction": true,
+			"text": "ultimatum.intro6.text"
+		},
+    {
+			"id": "ultimatum.intro7",
+			"type": "text",
+			"instruction": true,
+			"text": "ultimatum.intro7.text"
+		},
+    {
+			"id": "ultimatum.demo.detailed",
+			"type": "ultimatum",
+      "text" : "ultimatum.rule.text",
+			"trials": 2,
+      "tokens": 3,
+      "opponentTypes": ["occupied","female"],
+      "useOpponentTypes": false,
+      "personsPrefix" : "detailed.set.p",
+      "dialogOptionalText" : "ultimatum.dialog_optional_text_default",
+      "persons": [
+        {
+          "id": 1,
+          "field1": "field1.content",
+          "field2": "field2.content",
+          "field3": "field3.content",
+          "field4": "field4.content",
+          "minAcceptable": 2,
+          "avatar": "marry-avatar.jpg",
+          "tags": ["occupied","single","female","young"]
+        },
+        {
+          "id": 2,
+          "field1": "field1.content",
+          "field3": "field3.content",
+          "minAcceptable": 0,
+          "tags": ["unemployed","married","male"]
+        },
+        {
+          "id": 3,
+          "field1": "field1.content",
+          "field2": "field2.content",
+          "field3": "field3.content",
+          "field4": "field4.content",
+          "avatar": "peter-avatar.jpg",
+          "minAcceptable": 1,
+          "tags": ["occupied","single","male","rich","young"]
+        }
+      ]
+		},
+    {
+			"id": "ultimatum-demo-anonymous",
+			"type": "ultimatum",
+      "text" : "ultimatum.rule.text",
+			"trials": 2,
+      "tokens": 3,
+      "useOpponentTypes": false,
+      "personsPrefix" : "anonymous.set.p",
+      "persons": [
+        {
+          "id": 1,
+          "field1": "field1.content",
+          "minAcceptable": 2
+        },
+        {
+          "id": 2,
+          "field1": "field1.content",
+          "minAcceptable": 0
+        },
+        {
+          "id": 3,
+          "field1": "field1.content",
+          "minAcceptable": 1
+        }
+      ]
+		},
+    {
+      "id": "done.statement",
+      "type": "text",
+      "instruction": true,
+      "text": "done"
+    }
+  ]
+}
