@@ -1,0 +1,83 @@
+{
+    "studyId": "ultimatum-demo",
+    "conditon": "a",
+    "redirectTo": "https://app.prolific.co/submissions/complete?cc=CWIHHG7D",
+    "submissionNote": "submission.note",
+    "metadata": {
+      "maintainer": "radmanesh@gmail.com"
+    },
+    "views": [
+        {
+                "id": "dictator.intro1",
+                "type": "text",
+                "instruction": true,
+                "text": "dictator.intro1.text"
+            },
+        {
+                "id": "dictator.intro2",
+                "type": "text",
+                "instruction": true,
+                "text": "dictator.intro3.text"
+            },
+        {
+                "id": "dictator.intro3",
+                "type": "text",
+                "instruction": true,
+                "text": "dictator.intro3.text"
+            },
+        {
+                "id": "dictator.intro4",
+                "type": "text",
+                "instruction": true,
+                "text": "dictator.intro3.text"
+            },
+        {
+                "id": "dictator.intro5",
+                "type": "text",
+                "instruction": true,
+                "text": "dictator.intro3.text"
+            },
+        {
+                "id": "dictatorDemo",
+                "type": "dictator",
+          "text" : "dictator.rule.text",
+                "trials": 5,
+          "tokens": 5,
+          "opponentTypes": ["occupied","female"],
+          "useOpponentTypes": false,
+          "personsPrefix" : "dictator.person",
+          "persons": [
+            {
+              "id": 1,
+              "field1": "field1.content",
+              "avatar": "",
+              "tags": ["occupied","single","female","young"]
+            },
+            {
+              "id": 2,
+              "field1": "field1.content",
+              "tags": ["unemployed","married","male"]
+            },
+            {
+              "id": 3,
+              "field1": "field1.content",
+              "avatar": "",
+              "tags": ["occupied","single","male","rich","young"]
+            },
+            {
+                "id": 4,
+                "field1": "field1.content",
+                "avatar": "",
+                "tags": ["occupied","single","male","rich","young"]
+            },
+            {
+                "id": 5,
+                "field1": "field1.content",
+                "avatar": "",
+                "tags": ["occupied","single","male","rich","young"]
+            }
+          ]
+            }
+    
+      ]  }
+  

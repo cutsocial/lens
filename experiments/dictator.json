@@ -1,0 +1,106 @@
+{
+  "studyId": "dictator-demo",
+  "conditon": "a",
+  "redirectTo": "https://cut.social",
+  "submissionNote": "submission.note",
+  "metadata": {
+    "maintainer": "radmanesh@gmail.com"
+  },
+  "views": [
+    {
+			"id": "dictator.intro1",
+			"type": "text",
+			"instruction": true,
+			"text": "dictator.intro1.text"
+		},
+    {
+			"id": "dictator.intro2",
+			"type": "text",
+			"instruction": true,
+			"text": "dictator.intro2.text"
+		},
+    {
+			"id": "dictator.intro3",
+			"type": "text",
+			"instruction": true,
+			"text": "dictator.intro3.text"
+		},
+    {
+			"id": "dictator.intro4",
+			"type": "text",
+			"instruction": true,
+			"text": "dictator.intro4.text"
+		},
+    {
+			"id": "dictator.intro5",
+			"type": "text",
+			"instruction": true,
+			"text": "dictator.intro5.text"
+		},
+    {
+			"id": "dictator.intro6",
+			"type": "text",
+			"instruction": true,
+			"text": "dictator.intro6.text"
+		},
+    {
+			"id": "dictator.demo.detailed",
+			"type": "dictator",
+      "text" : "dictator.rule.text",
+			"trials": 1,
+      "tokens": 3,
+      "opponentTypes": ["occupied","female"],
+      "useOpponentTypes": false,
+      "personsPrefix" : "detailed.set.p",
+      "persons": [
+        {
+          "id": 1,
+          "field1": "field1.content",
+          "field2": "field2.content",
+          "field3": "field3.content",
+          "field4": "field4.content",
+          "avatar": "marry-avatar.jpg",
+          "tags": ["occupied","single","female","young"]
+        },
+        {
+          "id": 2,
+          "field1": "field1.content",
+          "field3": "field3.content",
+          "tags": ["unemployed","married","male"]
+        },
+        {
+          "id": 3,
+          "field1": "field1.content",
+          "field2": "field2.content",
+          "field3": "field3.content",
+          "field4": "field4.content",
+          "avatar": "peter-avatar.jpg",
+          "tags": ["occupied","single","male","rich","young"]
+        }
+      ]
+		},
+    {
+			"id": "dictator.demo.anonymous",
+			"type": "dictator",
+      "text" : "dictator.rule.text",
+			"trials": 2,
+      "tokens": 3,
+      "useOpponentTypes": false,
+      "personsPrefix" : "anonymous.set.p",
+      "persons": [
+        {
+          "id": 1,
+          "field1": "field1.content"
+        },
+        {
+          "id": 2,
+          "field1": "field1.content"
+        },
+        {
+          "id": 3,
+          "field1": "field1.content"
+        }
+      ]
+		}
+  ]
+}
