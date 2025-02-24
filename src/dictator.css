@@ -5,6 +5,10 @@
 .margined-dialog {
   margin: 10%;
 }
+.MuiDialog-paper{
+  margin: 10%;
+}
+
 .max-height{
   height: 100%;
 }
