@@ -660,7 +660,7 @@
 	"dictator.total_points": "Your Total Tokens: {{score}}",
 	"dictator.box.total_label": "Total: {{amount}}",
 	"dictator.dialog_title": "Collected!",
-	"dictator.trial_score_report": "You got {{score}} number of points.",
+	"dictator.trial_score_report": "You got {{score}} points. ",
 	"dictator.total_score_report": "In total, you have {{score}} points. Press Next to continue.",
 	"dictator.next_trial": "Next Round",
 
