@@ -226,7 +226,7 @@ export default function Dictator({ content, onStore, onNotification }) {
   return (
     <Fragment>
       {state.dialogIsOpen && renderDialog() }
-      <Grid container direction='column' spacing={2} alignItems='stretch' justifyContent='flex-start' className='dictator-container'>
+      <Grid container direction='column' spacing={2} alignItems='stretch' justifyContent='flex-start' id='collect-dialog'>
         <Grid item>
           <Typography variant="body2">{t(text)}</Typography>
         </Grid>

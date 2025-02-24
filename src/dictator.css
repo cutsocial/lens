@@ -2,11 +2,8 @@
   padding: 0 24px 0 24px;
 }
 
-.margined-dialog {
-  margin: 10%;
-}
-.MuiDialog-paper{
-  margin: 10%;
+#collect-dialog{
+  height: 100vh;
 }
 
 .max-height{
