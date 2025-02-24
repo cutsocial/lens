@@ -193,6 +193,8 @@ export default function Dictator({ content, onStore, onNotification }) {
         onClose={() => setState({ ...state, dialogIsOpen: false })}
         disableEscapeKeyDown
         aria-labelledby="dialog-title"
+        className='margined-dialog'
+        class='margnined-dialog'
       >
         <DialogTitle id="dialog-title"><b>{t('dictator.dialog_title')}</b></DialogTitle>
         <DialogContent>
