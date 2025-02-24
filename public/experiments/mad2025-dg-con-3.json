@@ -1,12 +1,28 @@
 {
     "studyId": "ultimatum-demo",
     "conditon": "c",
-    "redirectTo": "https://app.prolific.co/submissions/complete?cc=CWIHHG7D",
+    "redirectTo": "https://app.prolific.com/submissions/complete?cc=COXO7DUX",
     "submissionNote": "submission.note",
     "metadata": {
         "maintainer": "radmanesh@gmail.com"
     },
     "views": [
+        {
+            "id": "prolific ID",
+            "type": "text",
+            "instruction": false,
+            "required": true,
+            "text": "p.id.intro",
+            "help": "",
+            "placeholder": "",
+            "pattern": ""
+        },
+        {
+            "id": "introduction",
+            "type": "text",
+            "instruction": true,
+            "text": "intro.ug"
+        },
         {
             "id": "dictator.intro1",
             "type": "text",
