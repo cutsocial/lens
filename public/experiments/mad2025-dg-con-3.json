@@ -77,8 +77,8 @@
             "id": "dictatorDemo",
             "type": "dictator",
             "text": "dictator.rule.text",
-            "trials": 5,
-            "tokens": 5,
+            "trials": 7,
+            "tokens": 7,
             "opponentTypes": [
                 "occupied",
                 "female"

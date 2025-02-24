@@ -664,12 +664,12 @@
 	"dictator.total_score_report": "In total, you have {{score}} points. Press Next to continue.",
 	"dictator.next_trial": "Next Round",
 
-	"dictator.intro1.text": "In this task, you're given some tokens. <br /> <br />You have the choice to give some of them to another participant in this study, picked at random. <br /> <br /> You can give them all of the tokens, or some, or none. <br /> <br />Press **Next** to see a step-by-step tutorial.",
-	"dictator.intro2.text": "In the beginning of each round, the tokens are placed in the middle. You can distribute them by dragging them from the middle box and dropping them either in the bottom box (your box) or the top box (other player's box). <br /> <br /> <img src='./images/dictatorgame1.png' width='100%' />", 
+	"dictator.intro1.text": "In this task, we place seve (7) token's in your hands. The tokens detemine your chances in the raffle.<br /> <br />You have the choice to give some of them to another participant in this study. <br /> <br /> You can give them all of the tokens, or some, or none. <br /> <br />Press **Next** to see a step-by-step tutorial.",
+	"dictator.intro2.text": "In the beginning of each round, the tokens are placed in the middle. You can drag them and drop them either in the bottom box (your box) or the top box (other player's box). <br /> <br /> <img src='./images/dictatorgame1.png' width='100%' />", 
 	"dictator.intro3.text": "When you drag a token, the color of target boxes changes.<br /> <br /> <img src='./images/dictatorgame2.png' width='100%' />",
 	"dictator.intro4.text": "And the box where you are about to drop the token turns green. <br /> <br /><img src='./images/dictatorgame3.png' width='100%' />",
 	"dictator.intro5.text": "After you've allocated all the tokens, press the **Collect** button to go to the next round.<br /> <br /> <img src='./images/dictatorgame4.png' width='100%' />",
-	"dictator.intro6.text": "The task begins now. <br /> <br /> You will complete this task **six** times (six different participants). Press next when you're ready. <br /> <br /> Remember:<br /> <br /> * Your total tokens determine your chances in the raffle. <br /> <br /> * You can allocate the tokens **however you like**. <br /> <br /> * You just have to allocate **all of them**.",
+	"dictator.intro6.text": "The task begins now. <br /> <br /> You will complete this task **six** times (six different participants). Press next when you're ready. <br /> <br /> Remember:<br /> <br /> * Your total tokens determine your and the other person's chances in the raffle. <br /> <br /> * You can allocate the tokens **as you like**. <br /> <br /> * You just have to allocate **all of them**.",
 	
 	"dictator.person1.field1.content": "Other player 1",
 	"dictator.person2.field1.content": "Other player 2",
