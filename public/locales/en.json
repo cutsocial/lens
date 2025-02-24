@@ -669,7 +669,7 @@
 	"dictator.intro3.text": "When you drag a token, the color of target boxes changes.<br /> <br /> <img src='./images/dictatorgame2.png' width='100%' />",
 	"dictator.intro4.text": "And the box where you are about to drop the token turns green. <br /> <br /><img src='./images/dictatorgame3.png' width='100%' />",
 	"dictator.intro5.text": "After you've allocated all the tokens, press the **Collect** button to go to the next round.<br /> <br /> <img src='./images/dictatorgame4.png' width='100%' />",
-	"dictator.intro6.text": "The task begins now. <br /> <br /> You will complete this task **five** times (five different participants). Press next when you're ready. <br /> <br /> Remember:<br /> <br /> * Your total tokens determine your chances in the raffle. <br /> <br /> * You can allocate the tokens **however you like**. <br /> <br /> * You just have to allocate **all of them**.",
+	"dictator.intro6.text": "The task begins now. <br /> <br /> You will complete this task **six** times (six different participants). Press next when you're ready. <br /> <br /> Remember:<br /> <br /> * Your total tokens determine your chances in the raffle. <br /> <br /> * You can allocate the tokens **however you like**. <br /> <br /> * You just have to allocate **all of them**.",
 	
 	"dictator.person1.field1.content": "Other player 1",
 	"dictator.person2.field1.content": "Other player 2",
@@ -731,6 +731,8 @@
 	"ultimatum.2023.cont.done2": "We will administer the second round of the study in a few weeks. Please wait until all results are in, and we‘ll update you about the raffle. Thanks again for your participation. <br /> <br /> Press Next to be redirected to the Prolific webpage.",
 	"mad2023-ultimatum-3cond-dialog-text": "Next you will be paired with the other participant",
 
+
+	"intro5.dg":"The task begins now. You can allocate points to **6 different participants** <br /> <br /> You roles have bene radnomly determined.<br /> <br /> Remember, your total points determine your chances in the raffle. <br /> <br /> Press next when you're ready.",
 
 
 	"mad2023-ultimatum.c-set.p1.field1.content":"No ID",
