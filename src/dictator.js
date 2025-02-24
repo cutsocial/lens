@@ -1,5 +1,5 @@
 import React, { useEffect, useState, Fragment, useCallback } from 'react';
-import { Typography, Button, Grid, Dialog, DialogTitle, DialogContent, 
+import { Typography, Button, Grid, Dialog, DialogTitle, DialogContent,
           DialogContentText, DialogActions } from '@material-ui/core';
 import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
@@ -58,10 +58,10 @@ export default function Dictator({ content, onStore, onNotification }) {
   }, [state, onStore, content]);
 
  /**
-   * Filters persons to return only the persons that have any of the given tags 
+   * Filters persons to return only the persons that have any of the given tags
    * @param {*persons} persons persons to be filtered by their tags
    * @param {*} tags tags used to select the persons which their tags has at least one the tags given
-   * @returns 
+   * @returns
    */
   const filterPersonsByTags = (persons, tags) => {
     if (useOpponentTypes !== true)
@@ -195,6 +195,7 @@ export default function Dictator({ content, onStore, onNotification }) {
         aria-labelledby="dialog-title"
         className='margined-dialog'
         class='margnined-dialog'
+        id='collect-dialog'
       >
         <DialogTitle id="dialog-title"><b>{t('dictator.dialog_title')}</b></DialogTitle>
         <DialogContent>
@@ -226,7 +227,7 @@ export default function Dictator({ content, onStore, onNotification }) {
   return (
     <Fragment>
       {state.dialogIsOpen && renderDialog() }
-      <Grid container direction='column' spacing={2} alignItems='stretch' justifyContent='flex-start' id='collect-dialog'>
+      <Grid container direction='column' spacing={2} alignItems='stretch' justifyContent='flex-start'>
         <Grid item>
           <Typography variant="body2">{t(text)}</Typography>
         </Grid>
