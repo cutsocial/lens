@@ -117,6 +117,18 @@
                     "field2": "field2.content"
                 }
             ]
+        },
+        {
+          "id": "done1",
+          "type": "text",
+          "instruction": true,
+          "text": "ultimatum.2023.cont.done1"
+        },
+        {
+          "id": "done2",
+          "type": "text",
+          "instruction": true,
+          "text": "ultimatum.2023.cont.done2"
         }
     ]
 }
