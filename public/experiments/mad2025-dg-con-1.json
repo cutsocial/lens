@@ -119,12 +119,6 @@
       ]
     },
     {
-      "id": "intro6.dg",
-      "type": "text",
-      "instruction": true,
-      "text": "dictator.intro6.text"
-    },
-    {
       "id": "done1",
       "type": "text",
       "instruction": true,
