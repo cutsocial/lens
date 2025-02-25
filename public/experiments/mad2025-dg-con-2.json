@@ -107,31 +107,10 @@
           "field2": "field2.content"
         },
         {
-          "id": "dictator.intro5",
-          "type": "text",
-          "instruction": true,
-          "text": "dictator.intro3.text"
-        },
-        {
-          "id": "intro2a",
-          "type": "text",
-          "instruction": false,
-          "text": "ultimatum.2023.cont.intro2a",
-          "required": true
-        },
-        {
-          "id": "intro4",
-          "type": "text",
-          "instruction": false,
-          "text": "ultimatum.2023.cont.intro4",
-          "required": false
-        },
-        {
-          "id": "intro5.dg",
-          "type": "text",
-          "instruction": true,
-          "text": "dictator.intro6.text"
-        },
+          "id": 5,
+          "field1": "field1.content",
+          "field2": "field2.content"
+        },    
         {
           "id": 6,
           "field1": "field1.content",
