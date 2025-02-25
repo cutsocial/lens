@@ -194,7 +194,6 @@ export default function Dictator({ content, onStore, onNotification }) {
         disableEscapeKeyDown
         aria-labelledby="dialog-title"
         className='margined-dialog'
-        class='margnined-dialog'
         id='collect-dialog'
       >
         <DialogTitle id="dialog-title"><b>{t('dictator.dialog_title')}</b></DialogTitle>

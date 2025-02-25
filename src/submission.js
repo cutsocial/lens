@@ -9,6 +9,7 @@ export default function Submission({submission, studyId, submissionNote}) {
 
   const {t} = useTranslation();
   const submissionApi = `https://server.cut.social/api/v1/${studyId}/responses`;
+  // const jamaspSumissionApi = `https://jamasp-fitbit-oauth-service-730427234084.us-central1.run.app/`;
 
   const [state, setState] = useState({
     submissionCode: undefined,
@@ -41,7 +42,7 @@ export default function Submission({submission, studyId, submissionNote}) {
       });
       fetch(submissionApi, {
         method: 'post',
-        //mode: 'no-cors',
+        mode: 'cors',
         body: JSON.stringify(submission),
         headers: {
           'Content-Type': 'application/json'
@@ -62,14 +63,14 @@ export default function Submission({submission, studyId, submissionNote}) {
 
   return (
     <Grid container direction='column' className='Text-container'>
-      
+
       {state.submissionCode &&
       <Grid item xs className="submission-container">
         <Markdown source={t(submissionNote, {submissionCode: state.submissionCode})} escapeHtml={false}  className='markdown-text' />
       </Grid>
       }
 
-      {state.debug && 
+      {state.debug &&
       <Grid item xs>
         <pre>{JSON.stringify(submission, null, 2)}</pre>
       </Grid>
