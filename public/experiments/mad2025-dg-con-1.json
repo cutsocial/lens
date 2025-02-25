@@ -117,6 +117,12 @@
           "field2": "field2.content"
         }
       ]
+    },
+    {
+      "id": "intro5.dg",
+      "type": "text",
+      "instruction": true,
+      "text": "dictator.intro6.text"
     }
   ]
 }
