@@ -205,7 +205,7 @@ export default function Dictator({ content, onStore, onNotification }) {
           <DialogContentText>
             {t('dictator.trial_score_report', { score: state.trialResponses[state.trialResponses.length - 1].playerShare })}
             {t('dictator.total_score_report', { score: state.trialResponses.map(r => r.playerShare).reduce((a, b) => a + b, 0) })}
-            <Container id="matchmaking-loading" style={{
+            <Container id="matchmaking-container" style={{
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',
