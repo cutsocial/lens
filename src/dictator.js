@@ -244,11 +244,13 @@ export default function Dictator({ content, onStore, onNotification }) {
                   <CircularProgress />
                 </Box>
                 <Box mt={2}>
-                  <Typography variant='body2'>{t('dictator.waiting_for_opponent')}</Typography>
+                  <Typography variant='body1'>{t('dictator.waiting_for_opponent')}</Typography>
                 </Box>
               </Box>
               <Box id="matchmaking-result" className={matchmakingCompleted ? '' : 'hide'}>
-                <Typography variant='body2'>{t('dictator.matchmaking_result')}</Typography>
+                <Typography variant='body1' style={{paddingBottom: '16px'}}>{t('dictator.matchmaking_result')}</Typography>
+                <Typography variant='body1' style={{paddingBottom: '16px'}}>{t('dictator.matchmaking_result_text')}</Typography>
+
               </Box>
             </Container>
           </DialogContentText>

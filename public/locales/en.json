@@ -402,7 +402,7 @@
 
 	"fast.time":"How many hours was the average day of fast where you live (this past Raamdan)?",
 	"fast.time.2":"How many hours was the average day of fast where you live?",
-	
+
 	"fast.plan":"Do you plan to fast in the upcoming Ramadan? (2022)",
 	"ramadan.knowledge":"Are you familiar with Ramadan and its constituent rituals?",
 	"ramadan.knowledge.c1":"not at all",
@@ -410,7 +410,7 @@
 	"ramadan.knowledge.c3":"moderately",
 	"ramadan.knowledge.c4":"largely",
 	"ramadan.knowledge.c5":"a lot",
-	
+
 	"flourishing.1":"Overall, how satisfied are you with life as a whole these days?",
 	"flourishing.2":"In general, how happy or unhappy do you usually feel?",
 	"flourishing.3":"In general, how would you rate your physical health?",
@@ -457,7 +457,7 @@
 	"t.selfcontrol.3":"When I have been working on a difficult mental activity, I feel energized and ready to tackle another challenging activity.",
 	"t.selfcontrol.4":"My mental stamina fuels itself. Even after doing something difficult, I can keep going.",
 	"t.selfcontrol.5":"When I have completed a strenuous mental activity, I can’t start another activity right away. I need to wait until my mental energy recovers.",
-	"t.selfcontrol.6":"After a demanding mental activity, I feel energized for more challenging activities.", 
+	"t.selfcontrol.6":"After a demanding mental activity, I feel energized for more challenging activities.",
 	"t.selfcontrol.7":"If I have already resisted one temptation, I am more vulnerable to the next temptation that comes along.",
 	"t.selfcontrol.8":"When I am faced with many temptations in a row, it gets more and more difficult to resist each temptation.",
 	"t.selfcontrol.9":"If I have just resisted a temptation, I feel strong and able to refuse any new temptation.",
@@ -473,7 +473,7 @@
 	"t.selfcontrol.c4": "slightly agree",
 	"t.selfcontrol.c5": "moderately agree",
 	"t.selfcontrol.c6": "strongly agree",
-	
+
 	"BSCS.1":"I am good at resisting temptation.",
 	"BSCS.2":"I have a hard time breaking bad habits.",
 	"BSCS.3":"I am lazy.",
@@ -494,16 +494,16 @@
 	"BSCS.c3": "3",
 	"BSCS.c4": "4",
 	"BSCS.c5": "very much (5)",
-	
+
 	"effort.1": "How difficult would you say fasting is for **you**?",
 	"effort.2": "How difficult would you say fasting is for **other people**?",
-    
+
 	"motives.q": "How well does each statement describe you?",
 	"motive.external": "I fast in Ramadan because others expect me to or because the situation demands it.",
 	"motive.introjected": "I fast in Ramadan because I would feel ashamed, guilty, or anxious if I didn't.",
 	"motive.identified": "I fast in Ramadan because I really believe it's important to who I am.",
 	"motive.intrinsic": "I fast in Ramadan because of the benefits and enjoyment that it provides me.",
-	
+
 	"motive.c1": "not at all (1)",
 	"motive.c2": "2",
 	"motive.c3": "3",
@@ -511,7 +511,7 @@
 	"motive.c5": "5",
 	"motive.c6": "6",
 	"motive.c7": "very much (7)",
-	
+
 	"motives.others.q": "To what extent do you believe each statement true?",
 	"motive.others.external": "People fast in Ramadan because others expect them to or because the situation demands it.",
 	"motive.others.introjected": "People fast in Ramadan because they would feel ashamed, guilty, or anxious if they didn't.",
@@ -535,7 +535,7 @@
 	"cos12": "When people get emotionally upset, I tend to avoid them.",
 	"cos13": "People should keep their troubles to themselves.",
 	"cos14": "When I have a need that others ignore, I'm hurt.",
-	
+
 	"cos.c1": "not at all like me (1)",
 	"cos.c2": "2",
 	"cos.c3": "3",
@@ -543,8 +543,8 @@
 	"cos.c5": "5",
 	"cos.c6": "6",
 	"cos.c7": "very much like me (7)",
-	
-	
+
+
 	"situation.control.q": "Consider how each of these aspects of your daily life change during Ramadan, where you live.",
 
 	"situation.control.c1": "not at all",
@@ -552,19 +552,19 @@
 	"situation.control.c3": "moderately",
 	"situation.control.c4": "largely",
 	"situation.control.c5": "a lot",
-	
-	
+
+
 	"situation.q": "Consider how each of these aspects of your daily life make fasting in Ramadan easier or more difficult.",
 	"situation.1": "The people who I spend the most time with",
 	"situation.2": "The situations/places where I spend the most time",
 	"situation.3": "The media that I see/hear most often",
-	
+
 	"situation.c1": "Makes much easier",
 	"situation.c2": "Makes slightly easier",
 	"situation.c3": "No effect",
 	"situation.c4": "Makes slightly more difficult",
 	"situation.c5": "Makes much more difficult",
-	
+
 	"context.fasting.control":"Please specify how many Ramadan fasters you know in each group. A rough estimate is sufficient.",
 
 	"context.fasting":"Please specify how many people fast in each group. A rough estimate is sufficient.",
@@ -577,19 +577,19 @@
 	"context.7":"People of the town you live in",
 	"context.8":"People of the province/region/state you live in",
 	"context.9":"People of the country you live in",
-  
+
 	"context.c1": "None",
 	"context.c2": "few",
-	"context.c3": "half", 
+	"context.c3": "half",
 	"context.c4": "most",
 	"context.c5": "all",
-	
+
 	"check.1": "This is an attenton check. Please select very much.",
 	"check.2": "This is an attenton check. Please select not at all like me.",
 	"check.3": "This is an attenton check. Please select moderately agree",
-	
+
 	"fasting.q.control": "Do you ever fast for religous or health reasons?",
-	
+
 	"submission.note": "Thank you for your participation! Please press **Continue** to be redirected to the Prolific webpage.",
 	"submission.q_email": "Thank you for your participation. You can see your performance on the next page. Please write your email in the box below if you'd like to participate in similar studies.",
 	"done": "And we're done! Thanks for your participation. Please press continue on the enxt page to be redirected back to the Prolific.co webpage.",
@@ -649,7 +649,7 @@
 	"anonymous.set.p1.field1.content": "Other player 1",
 	"anonymous.set.p2.field1.content": "Other player 2",
 	"anonymous.set.p3.field1.content": "Other player 3",
-	
+
 
 	"dictator.rule.text": "Please allocate **all** of the tokens however you like.",
 	"dictator.finish.button": "Collect",
@@ -661,16 +661,19 @@
 	"dictator.box.total_label": "Total: {{amount}}",
 	"dictator.dialog_title": "Collected!",
 	"dictator.trial_score_report": "You got {{score}} points. ",
-	"dictator.total_score_report": "In total, you have {{score}} points. Press Next to continue.",
+	"dictator.total_score_report": "In total, you have {{score}} points. Now you will be matched with another person.",
 	"dictator.next_trial": "Next Round",
+  "dictator.waiting_for_opponent": "Matching you with another person...",
+  "dictator.matchmaking_result": "Match found!",
+  "dictator.matchmaking_result_text": "Press Next to Continue.",
 
 	"dictator.intro1.text": "In this task, we place seven (7) tokens in your hands.<br /> <br />These tokens detemine your chances in the raffle.<br /> <br />You can give some of them to another participant in this study.<br /> <br />You can give all of the tokens, or some, or none to the other participant.<br /> <br />Press **Next** to see a step-by-step tutorial.",
-	"dictator.intro2.text": "In the beginning of each round, the tokens are placed in the middle. You can drag them and drop them in the bottom box that's yours, or the top box that is other player's box.<br /> <br /> <img src='./images/dictatorgame1.png' width='100%' />", 
+	"dictator.intro2.text": "In the beginning of each round, the tokens are placed in the middle. You can drag them and drop them in the bottom box that's yours, or the top box that is other player's box.<br /> <br /> <img src='./images/dictatorgame1.png' width='100%' />",
 	"dictator.intro3.text": "When you drag a token, the color of target boxes changes.<br /> <br /> <img src='./images/dictatorgame2.png' width='100%' />",
 	"dictator.intro4.text": "And the box where you are about to drop the token turns green. <br /> <br /><img src='./images/dictatorgame3.png' width='100%' />",
 	"dictator.intro5.text": "After you've allocated all the tokens, press the **Collect** button to get you share and go to the next round.<br /> <br /> <img src='./images/dictatorgame4.png' width='100%' />",
 	"dictator.intro6.text": "The task begins now. <br /> <br /> You will complete this task **six** times (six different participants). Press next when you're ready. <br /> <br /> Remember:<br /> <br /> * Your total tokens determine your and the other person's chances in the raffle. <br /> <br /> * You can allocate the tokens **as you like**. <br /> <br /> * You just have to allocate **all of them**.",
-	
+
 	"dictator.person1.field1.content": "Other player 1",
 	"dictator.person2.field1.content": "Other player 2",
 	"dictator.person3.field1.content": "Other player 3",
@@ -706,7 +709,7 @@
 	"gonogoalt.start": "Start",
 	"gonogoalt.instruction": "Use **Space** key or click on the symbol. When you see a vowel letter, click as fast as possible; Otherwise don't do anything",
 	"gonogoalt.help": "Press any key or click on symbol per instruction in less than three seconds.",
-	
+
 	"taskswitch.intro0.text":"Great. we're half way there! Press next to begin the next task.",
 	"taskswitch.intro1.text": "The next task requires your focus and attention.<br /> <br />In each trial, a star will appear in one of four boxes. It can be yellow or blue. <br /> <br />Press next to see how you should respond.",
 	"taskswitch.intro2.text": "For stars that appear in the **top** boxes, you should click on the BLUE stars:<br /><br /><img src='./images/taskswitch.top2.png' width='100%' /> <br />For YELLOW stars, click on the opposite side (the empty box next to it):<img src='./images/taskswitch.top1.png' width='100%' />",
@@ -777,7 +780,7 @@
 	"mad2025-dg-set1.p5.field2.content":"****9903398a230001ba****",
 	"mad2025-dg-set1.p6.field1.content":"Maria",
 	"mad2025-dg-set1.p6.field2.content":"****d903398a230001ba****",
-	
+
 	"mad2025-dg-set2.p1.field1.content":"Raj",
 	"mad2025-dg-set2.p1.field2.content":"****9903398a230001ba****",
 	"mad2025-dg-set2.p2.field1.content":"Keiko",
