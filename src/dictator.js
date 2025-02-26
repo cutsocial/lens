@@ -39,6 +39,8 @@ export default function Dictator({ content, onStore, onNotification }) {
     ]
   )
   const [shuffledPersons, setShuffledPersons] = useState(undefined);
+  const [matchmakingCompleted, setMatchmakingCompleted] = useState(false);
+  const [matchmakingTimer, setMatchmakingTimer] = useState(null);
 
   // on mount and unmount
   useEffect(() => {
@@ -60,6 +62,30 @@ export default function Dictator({ content, onStore, onNotification }) {
       }, true); // store + next
     }
   }, [state, onStore, content]);
+
+  useEffect(() => {
+    // When dialog opens, start the timer
+    if (state.dialogIsOpen) {
+      setMatchmakingCompleted(false);
+      const timer = setTimeout(() => {
+        setMatchmakingCompleted(true);
+      }, 5000);
+      setMatchmakingTimer(timer);
+    } else {
+      // When dialog closes, clear the timer and reset the state
+      if (matchmakingTimer) {
+        clearTimeout(matchmakingTimer);
+      }
+      setMatchmakingCompleted(false);
+    }
+
+    // Cleanup function
+    return () => {
+      if (matchmakingTimer) {
+        clearTimeout(matchmakingTimer);
+      }
+    };
+  }, [state.dialogIsOpen]); // Only run when dialog opens/closes
 
  /**
    * Filters persons to return only the persons that have any of the given tags
@@ -212,21 +238,23 @@ export default function Dictator({ content, onStore, onNotification }) {
               justifyContent: 'center',
               minHeight: '200px' // Gives some vertical space for centering
             }}>
-              <Box id="matchmaking-loading">
-                {/* Spinner and stating we are waiting for other person's action */}
-                <CircularProgress />
+              <Box id="matchmaking-loading" className={matchmakingCompleted ? 'hide' : ''}>
+                {/* Center the spinner horizontally using container styles */}
+                <Box display="flex" justifyContent="center" width="100%">
+                  <CircularProgress />
+                </Box>
                 <Box mt={2}>
                   <Typography variant='body2'>{t('dictator.waiting_for_opponent')}</Typography>
                 </Box>
               </Box>
-              <Box id="matchmaking-result" className='hide'>
+              <Box id="matchmaking-result" className={matchmakingCompleted ? '' : 'hide'}>
                 <Typography variant='body2'>{t('dictator.matchmaking_result')}</Typography>
               </Box>
             </Container>
           </DialogContentText>
         </DialogContent>
         <DialogActions>
-          <Button onClick={() => setState({ ...state, dialogIsOpen: false })} color="primary" autoFocus size='large'>
+          <Button onClick={() => setState({ ...state, dialogIsOpen: false })} disabled={!matchmakingCompleted} color="primary" autoFocus size='large'>
             {state.trial <= trials - 1 ? t('dictator.next_trial') : t('next')}
           </Button>
         </DialogActions>
