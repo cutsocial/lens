@@ -1,6 +1,9 @@
 import React, { useEffect, useState, Fragment, useCallback } from 'react';
 import { Typography, Button, Grid, Dialog, DialogTitle, DialogContent,
-          DialogContentText, DialogActions } from '@material-ui/core';
+          DialogContentText, DialogActions,
+          Container,
+          CircularProgress,
+          Box} from '@material-ui/core';
 import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 import { TouchBackend } from 'react-dnd-touch-backend';
@@ -26,6 +29,7 @@ export default function Dictator({ content, onStore, onNotification }) {
     dialogIsOpen: false,
     trialResponses: [],
     taskStartedAt: Date.now(),
+    collectionState: 0 // 0: not started, 1: started, 2: done
   });
   const [boxes, setBoxes] = useState(
     [
@@ -201,6 +205,24 @@ export default function Dictator({ content, onStore, onNotification }) {
           <DialogContentText>
             {t('dictator.trial_score_report', { score: state.trialResponses[state.trialResponses.length - 1].playerShare })}
             {t('dictator.total_score_report', { score: state.trialResponses.map(r => r.playerShare).reduce((a, b) => a + b, 0) })}
+            <Container id="matchmaking-loading" style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+              minHeight: '200px' // Gives some vertical space for centering
+            }}>
+              <Box id="matchmaking-loading">
+                {/* Spinner and stating we are waiting for other person's action */}
+                <CircularProgress />
+                <Box mt={2}>
+                  <Typography variant='body2'>{t('dictator.waiting_for_opponent')}</Typography>
+                </Box>
+              </Box>
+              <Box id="matchmaking-result" className='hide'>
+                <Typography variant='body2'>{t('dictator.matchmaking_result')}</Typography>
+              </Box>
+            </Container>
           </DialogContentText>
         </DialogContent>
         <DialogActions>

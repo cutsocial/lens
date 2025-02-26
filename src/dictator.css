@@ -1,12 +1,16 @@
 .dictator-container{
   padding: 0 24px 0 24px;
 }
-
-#collect-dialog{
-  height: 100vh;
+.hide{
+  display: none !important;
 }
-.MuiPaper-root.MuiDialog-paper.MuiDialog-paperScrollPaper.MuiDialog-paperWidthSm.MuiPaper-elevation24.MuiPaper-rounded{
+
+/* #collect-dialog{
   height: 100vh;
+} */
+
+.MuiPaper-root.MuiDialog-paper.MuiDialog-paperScrollPaper.MuiDialog-paperWidthSm.MuiPaper-elevation24.MuiPaper-rounded{
+   height: 80vh;
 }
 
 .max-height{
