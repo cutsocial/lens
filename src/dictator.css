@@ -3,11 +3,11 @@
 }
 
 #collect-dialog{
-  height: 100vh;
+  height: 80vh;
 }
-.MuiPaper-root.MuiDialog-paper.MuiDialog-paperScrollPaper.MuiDialog-paperWidthSm.MuiPaper-elevation24.MuiPaper-rounded{
+/* .MuiPaper-root.MuiDialog-paper.MuiDialog-paperScrollPaper.MuiDialog-paperWidthSm.MuiPaper-elevation24.MuiPaper-rounded{
   height: 100vh;
-}
+} */
 
 .max-height{
   height: 100%;
