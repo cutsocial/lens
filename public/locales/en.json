@@ -266,7 +266,7 @@
 	"fasting.c2": "No",
 
 	"svo.q": "Please pick the option that you prefer:",
-	"svo.intro": "Great. So the next task is a point allocation task. You get to decide how to split some money between yourself and another person. This person will be randomly selected from other participants in this experiment.<br /><br />**Your shares will be converted to bonus points that determine your chances in a $50 raffle**. So, every choice has value: the more points you receive, the better for you, and the more points the 'Other' receives, the better for him/her.<br /><br />There are no right or wrong answers -- choose the option that you, for whatever reason, prefer most. You'll play 9 rounds. Press 'Next' to begin.",
+	"svo.intro": "Great. So the last task is a point allocation task. You get to decide how to split some money between yourself and another person. This person will be randomly selected from other participants in this experiment.<br /><br />**Your shares will be converted to bonus points that determine your chances in a $50 raffle**. So, every choice has value: the more points you receive, the better for you, and the more points the 'Other' receives, the better for him/her.<br /><br />There are no right or wrong answers -- choose the option that you, for whatever reason, prefer most. You'll play 9 rounds. Press 'Next' to begin.",
 
 	"svo.c1.a": "$480 for me, $80 for other",
 	"svo.c1.b": "$540 for me, $280 for other",

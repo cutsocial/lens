@@ -116,32 +116,6 @@
             ]
         },
         {
-            "id": "gonogo.main.introduction",
-            "type": "text",
-            "instruction": true,
-            "text": "gonogo.main.introduction"
-        },
-        {
-            "id": "gonogo.practice",
-            "type": "gonogo",
-            "text": "gonogo.instruction",
-            "help": "Press one of the images in less than three seconds.",
-            "trials": {
-                "total": 60,
-                "go": 45,
-                "left": 30,
-                "leftGo": 22
-            },
-            "stimuliDuration": 1000,
-            "fixationDuration": 1000,
-            "feedbackDuration": 0,
-            "timeoutsBeforeReset": 20,
-            "choices": {
-                "go": "blue-star",
-                "nogo": "star"
-            }
-        },
-        {
             "id": "gonogo.practice.introduction",
             "type": "text",
             "instruction": true,
@@ -161,6 +135,32 @@
             "stimuliDuration": 1000,
             "fixationDuration": 1000,
             "feedbackDuration": 500,
+            "timeoutsBeforeReset": 20,
+            "choices": {
+                "go": "blue-star",
+                "nogo": "star"
+            }
+        },
+        {
+            "id": "gonogo.main.introduction",
+            "type": "text",
+            "instruction": true,
+            "text": "gonogo.main.introduction"
+        },
+        {
+            "id": "gonogo.practice",
+            "type": "gonogo",
+            "text": "gonogo.instruction",
+            "help": "Press one of the images in less than three seconds.",
+            "trials": {
+                "total": 60,
+                "go": 45,
+                "left": 30,
+                "leftGo": 22
+            },
+            "stimuliDuration": 1000,
+            "fixationDuration": 1000,
+            "feedbackDuration": 0,
             "timeoutsBeforeReset": 20,
             "choices": {
                 "go": "blue-star",
