@@ -1,7 +1,7 @@
 {
-    "studyId": "mad2024",
-    "conditon": "a",
-    "redirectTo": "https://app.prolific.com/submissions/complete?cc=CRVDXQWE",
+    "studyId": "mad2025",
+    "conditon": "none",
+    "redirectTo": "https://app.prolific.com/submissions/complete?cc=C178M6QI",
     "submissionNote": "submission.note",
     "metadata": {
         "maintainer": ""
@@ -21,65 +21,13 @@
             "id": "introduction",
             "type": "text",
             "instruction": true,
-            "text": "intro.4"
+            "text": "intro"
         },
         {
             "id": "demographics",
             "type": "text",
             "instruction": true,
             "text": "intro.demographics"
-        },
-        {
-            "id": "country",
-            "type": "text",
-            "instruction": false,
-            "text": "country.q",
-            "autoComplete": "countries",
-            "required": true
-        },
-        {
-            "id": "sex",
-            "type": "matrix",
-            "text": "",
-            "requiredQuestions": [
-                0
-            ],
-            "direction": "vertical",
-            "choices": [
-                "sex.c1",
-                "sex.c2",
-                "sex.c3",
-                "sex.c4"
-            ],
-            "questions": [
-                "sex.q"
-            ]
-        },
-        {
-            "id": "age",
-            "type": "matrix",
-            "text": "",
-            "slider": true,
-            "showMidMark": true,
-            "requiredQuestions": [
-                0
-            ],
-            "direction": "vertical",
-            "choices": [
-                "age.c1",
-                "age.c2",
-                "age.c3",
-                "age.c4",
-                "age.c5",
-                "age.c6",
-                "age.c7",
-                "age.c8",
-                "age.c9",
-                "age.c10"
-            ],
-            "questions": [
-                "age.q"
-            ]
         },
         {
             "id": "living",
