@@ -1,0 +1,134 @@
+{
+    "studyId": "ultimatum-demo",
+    "conditon": "c",
+    "redirectTo": "https://app.prolific.com/submissions/complete?cc=COXO7DUX",
+    "submissionNote": "submission.note",
+    "metadata": {
+        "maintainer": "radmanesh@gmail.com"
+    },
+    "views": [
+        {
+            "id": "prolific ID",
+            "type": "text",
+            "instruction": false,
+            "required": true,
+            "text": "p.id.intro",
+            "help": "",
+            "placeholder": "",
+            "pattern": ""
+        },
+        {
+            "id": "introduction",
+            "type": "text",
+            "instruction": true,
+            "text": "intro.ug"
+        },
+        {
+            "id": "dictator.intro1",
+            "type": "text",
+            "instruction": true,
+            "text": "dictator.intro1.text"
+        },
+        {
+            "id": "dictator.intro2",
+            "type": "text",
+            "instruction": true,
+            "text": "dictator.intro2.text"
+        },
+        {
+            "id": "dictator.intro3",
+            "type": "text",
+            "instruction": true,
+            "text": "dictator.intro3.text"
+        },
+        {
+            "id": "dictator.intro4",
+            "type": "text",
+            "instruction": true,
+            "text": "dictator.intro4.text"
+        },
+        {
+            "id": "dictator.intro5",
+            "type": "text",
+            "instruction": true,
+            "text": "dictator.intro5.text"
+        },
+        {
+            "id": "intro2a",
+            "type": "text",
+            "instruction": false,
+            "text": "ultimatum.2023.cont.intro2a",
+            "required": true
+        },
+        {
+            "id": "intro4",
+            "type": "text",
+            "instruction": false,
+            "text": "ultimatum.2023.cont.intro4",
+            "required": false
+        },
+        {
+            "id": "intro5.dg",
+            "type": "text",
+            "instruction": true,
+            "text": "dictator.intro6.text"
+        },
+        {
+            "id": "dictatorDemo",
+            "type": "dictator",
+            "text": "dictator.rule.text",
+            "trials": 6,
+            "tokens": 7,
+            "opponentTypes": [
+                "occupied",
+                "female"
+            ],
+            "useOpponentTypes": false,
+            "personsPrefix": "mad2025-dg-set3.p",
+            "persons": [
+                {
+                    "id": 1,
+                    "field1": "field1.content",
+                    "field2": "field2.content"
+                },
+                {
+                    "id": 2,
+                    "field1": "field1.content",
+                    "field2": "field2.content"
+                },
+                {
+                    "id": 3,
+                    "field1": "field1.content",
+                    "field2": "field2.content"
+                },
+                {
+                    "id": 4,
+                    "field1": "field1.content",
+                    "field2": "field2.content"
+                },
+                {
+                    "id": 5,
+                    "field1": "field1.content",
+                    "field2": "field2.content"
+                },
+                {
+                    "id": 6,
+                    "field1": "field1.content",
+                    "field2": "field2.content"
+                }
+            ]
+        },
+        {
+          "id": "done1",
+          "type": "text",
+          "instruction": true,
+          "text": "ultimatum.2023.cont.done1"
+        },
+        {
+          "id": "done2",
+          "type": "text",
+          "instruction": true,
+          "text": "ultimatum.2023.cont.done2"
+        }
+    ]
+}
