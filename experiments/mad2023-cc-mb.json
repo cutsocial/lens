@@ -1,0 +1,897 @@
+{
+	"studyId": "mad2023-cognitive-control-manupilative-b",
+	"conditon": "b",
+	"redirectTo": "https://app.prolific.co/submissions/complete?cc=C1L9GKYD",
+	"submissionNote": "submission.note",
+	"metadata": {
+		"maintainer": "radmanesh@gmail.com"
+	},
+	"views": 
+  [
+    {
+			"id": "prolific ID",
+			"type": "text",
+			"instruction": false,
+			"required": true,
+			"text": "p.id.intro",
+			"help": "",
+			"placeholder": "",
+			"pattern": ""
+		},
+		{
+			"id": "introduction",
+			"type": "text",
+			"instruction": true,
+			"text": "intro"
+		},
+    {
+      "id": "introduction1",
+      "type": "text",
+      "instruction": true,
+      "text": "transition.1b"
+    },
+		{
+			"id": "ownership",
+			"type": "matrix",
+			"text": "ownership.q.instruction",
+			"requiredQuestions": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+			"direction": "vertical",
+			"choices": [
+				"Yes",
+				"No"
+			],
+			"questions": [
+				"ownership.q.1",
+				"ownership.q.2",
+				"ownership.q.3",
+				"ownership.q.4",
+				"ownership.q.5",
+				"ownership.q.6",
+				"ownership.q.7",
+				"ownership.q.8",
+				"ownership.q.9",
+				"ownership.q.10"
+			]
+		},
+		{
+			"id": "phone.time",
+			"type": "matrix",
+			"text": "",
+			"requiredQuestions": [0],
+			"direction": "vertical",
+			"choices": [
+				"ownership.c1",
+				"ownership.c2",
+				"ownership.c3",
+				"ownership.c4",
+				"ownership.c5",
+				"ownership.c6",
+				"ownership.c7",
+				"ownership.c8"
+			],
+			"questions": [
+				"ownership.time.q"
+			]
+		},
+		{
+      "id": "2afc.introduction",
+      "type": "text",
+      "instruction": true,
+			"text": "gonogo.introduction.2"
+    },
+    {
+      "id": "2afc.practice",
+      "type": "gonogo",
+      "text": "gonogo.instruction",
+      "help": "",
+      "trials": {
+        "total": 60,
+        "go": 45,
+        "left": 30,
+        "leftGo": 22
+      },
+      "stimuliDuration": 1000,
+      "fixationDuration": 1000,
+      "feedbackDuration": 500,
+      "timeoutsBeforeReset": 10,
+      "choices": {
+        "go": "blue-star",
+        "nogo": "star"
+      }
+    },
+    {
+      "id": "2afc.main.introduction",
+      "type": "text",
+      "instruction": true,
+      "text": "gonogo.main.introduction"
+    },
+    {
+      "id": "2afc.main",
+      "type": "gonogo",
+      "text": "gonogo.instruction",
+      "help": "Press one of the images in less than three seconds.",
+      "trials": {
+        "total": 60,
+        "go": 45,
+        "left": 30,
+        "leftGo": 22
+      },
+      "stimuliDuration": 1000,
+      "fixationDuration": 1000,
+      "feedbackDuration": 0,
+      "timeoutsBeforeReset": 10,
+      "choices": {
+        "go": "blue-star",
+        "nogo": "star"
+      }
+    },
+    {
+      "id": "gonogo.numbers.intro1",
+      "type": "text",
+      "instruction": true,
+      "text": "gonogo.intro2.text"
+    },  
+    {
+      "id": "gonogo with numbers",
+      "type":"gonogoalt",
+      "text":"gonogoalt.instruction.2",
+      "help":"gonogoalt.help",
+      "trials": {
+        "total": 120,
+        "go": 96
+      },
+      "stimuliDuration": 2000,
+      "fixationDuration": 500, 
+      "feedbackDuration": 500,
+      "choices": {
+        "go": {
+          "type": "letter",
+          "names": ["1","2","3","4","5","6","8","9"]
+        },
+        "nogo": {
+          "type": "letter",
+          "names":["0","7"] 
+        }
+      }
+    },
+		{
+      "id": "taskswitch.intro1",
+      "type": "text",
+      "instruction": true,
+      "text": "taskswitch.intro1.text"
+    },
+    {
+      "id": "taskswitch.intro2",
+      "type": "text",
+      "instruction": true,
+      "text": "taskswitch.intro2.text"
+    },
+    {
+      "id": "taskswitch.intro3",
+      "type": "text",
+      "instruction": true,
+      "text": "taskswitch.intro3.text"
+    },
+    {
+      "id": "taskswitch.intro4",
+      "type": "text",
+      "instruction": true,
+      "text": "taskswitch.intro4.text"
+    },
+    {
+			"id": "taskswitch.check",
+			"type": "matrix",
+			"text": "",
+			"requiredQuestions": [
+				0
+			],
+			"direction": "vertical",
+			"choices": [
+				"taskswitch.check.c1",
+				"taskswitch.check.c2",
+				"taskswitch.check.c3"
+			],
+			"questions": ["taskswitch.check.text"]
+		},    
+    {
+      "id": "taskswitch.intro5",
+      "type": "text",
+      "instruction": true,
+      "text": "taskswitch.intro5.text"
+    },    
+    {
+      "id": "TaskSwitch Demo",
+      "type":"taskswitch",
+      "text":"taskswitch.instruction",
+      "help":"taskswitch.help",
+      "trials": {
+        "total": 80,
+        "top":{
+          "total": 40,
+          "go": 20,
+          "left": 20,
+          "leftGo": 10,
+          "choices": {
+            "go": "blue-star",
+            "nogo": "star"
+          }
+        },
+        "bottom":{
+          "total": 40,
+          "go": 20,
+          "left": 20,
+          "leftGo": 10,
+          "choices": {
+            "go": "star",
+            "nogo": "blue-star"
+          }
+        }
+
+      },
+      "stimuliDuration": 1000,
+      "fixationDuration": 1000, 
+      "feedbackDuration": 500,
+      "timeoutsBeforeReset": 20
+    },
+    {
+      "id": "introduction",
+      "type": "text",
+      "instruction": true,
+      "text": "transition.2"
+    },
+    {
+      "id": "stroop.practice.introduction",
+      "type": "text",
+      "instruction": true,
+      "text": "stroop.practice.introduction"
+    },
+    {
+      "id": "stroop.practice",
+      "type": "stroop",
+      "rule": "stroop_demo.rule",
+      "help": "stroop_demo.help",
+      "colors": {
+        "G": "#6cba47",
+        "R": "#d73636",
+        "W": "#fff"
+      },
+      "words": {
+        "G": "colors.green",
+        "R": "colors.red"
+      },
+      "trials": [
+        {
+          "stimulus": "GG",
+          "choices": [
+            "GW",
+            "RW"
+          ]
+        },
+        {
+          "stimulus": "RG",
+          "choices": [
+            "GW",
+            "RW"
+          ]
+        },
+        {
+          "stimulus": "GG",
+          "choices": [
+            "GW",
+            "RW"
+          ]
+        },
+        {
+          "stimulus": "RR",
+          "choices": [
+            "GW",
+            "RW"
+          ]
+        },
+        {
+          "stimulus": "RG",
+          "choices": [
+            "GW",
+            "RW"
+          ]
+        },
+        {
+          "stimulus": "RR",
+          "choices": [
+            "GW",
+            "RW"
+          ]
+        },
+        {
+          "stimulus": "GR",
+          "choices": [
+            "GW",
+            "RW"
+          ]
+        },
+        {
+          "stimulus": "RR",
+          "choices": [
+            "GW",
+            "RW"
+          ]
+        },
+        {
+          "stimulus": "RG",
+          "choices": [
+            "GW",
+            "RW"
+          ]
+        },
+        {
+          "stimulus": "RG",
+          "choices": [
+            "GW",
+            "RW"
+          ]
+        },
+        {
+          "stimulus": "GR",
+          "choices": [
+            "GW",
+            "RW"
+          ]
+        },
+        {
+          "stimulus": "RR",
+          "choices": [
+            "GW",
+            "RW"
+          ]
+        },
+        {
+          "stimulus": "GR",
+          "choices": [
+            "GW",
+            "RW"
+          ]
+        },
+        {
+          "stimulus": "GG",
+          "choices": [
+            "GW",
+            "RW"
+          ]
+        },
+        {
+          "stimulus": "GR",
+          "choices": [
+            "GW",
+            "RW"
+          ]
+        },
+        {
+          "stimulus": "GG",
+          "choices": [
+            "GW",
+            "RW"
+          ]
+        },
+        {
+          "stimulus": "GG",
+          "choices": [
+            "GW",
+            "RW"
+          ]
+        },
+        {
+          "stimulus": "RG",
+          "choices": [
+            "GW",
+            "RW"
+          ]
+        },
+        {
+          "stimulus": "GG",
+          "choices": [
+            "GW",
+            "RW"
+          ]
+        },
+        {
+          "stimulus": "RR",
+          "choices": [
+            "GW",
+            "RW"
+          ]
+        },
+        {
+          "stimulus": "RG",
+          "choices": [
+            "GW",
+            "RW"
+          ]
+        },
+        {
+          "stimulus": "RR",
+          "choices": [
+            "GW",
+            "RW"
+          ]
+        },
+        {
+          "stimulus": "GR",
+          "choices": [
+            "GW",
+            "RW"
+          ]
+        },
+        {
+          "stimulus": "RR",
+          "choices": [
+            "GW",
+            "RW"
+          ]
+        },
+
+        {
+          "stimulus": "RG",
+          "choices": [
+            "GW",
+            "RW"
+          ]
+        },
+        {
+          "stimulus": "RG",
+          "choices": [
+            "GW",
+            "RW"
+          ]
+        },
+        {
+          "stimulus": "GR",
+          "choices": [
+            "GW",
+            "RW"
+          ]
+        },
+        {
+          "stimulus": "RR",
+          "choices": [
+            "GW",
+            "RW"
+          ]
+        },
+        {
+          "stimulus": "GR",
+          "choices": [
+            "GW",
+            "RW"
+          ]
+        },
+        {
+          "stimulus": "GG",
+          "choices": [
+            "GW",
+            "RW"
+          ]
+        },
+        {
+          "stimulus": "GR",
+          "choices": [
+            "GW",
+            "RW"
+          ]
+        },
+        {
+          "stimulus": "GG",
+          "choices": [
+            "GW",
+            "RW"
+          ]
+        }
+      ],
+      "stimulusDuration": 1000,
+      "fixationDuration": 1000,
+      "feedbackDuration": 1000,
+      "timeoutsBeforeReset": 10,
+      "randomizeTrials": true,
+      "randomizeChoices": false
+    },
+    {
+      "id": "stroop.main.introduction",
+      "type": "text",
+      "instruction": true,
+      "text": "stroop.main.introduction"
+    },
+    {
+      "id": "stroop.main",
+      "type": "stroop",
+      "rule": "stroop_demo.rule",
+      "help": "stroop_demo.help",
+      "colors": {
+        "G": "#6cba47",
+        "R": "#d73636"
+      },
+      "words": {
+        "G": "colors.green",
+        "R": "colors.red"
+      },
+      "trials": [{
+          "stimulus": "GG",
+          "choices": [
+            "GW",
+            "RW"
+          ]
+        },
+        {
+          "stimulus": "RG",
+          "choices": [
+            "GW",
+            "RW"
+          ]
+        },
+        {
+          "stimulus": "GG",
+          "choices": [
+            "GW",
+            "RW"
+          ]
+        },
+        {
+          "stimulus": "RR",
+          "choices": [
+            "GW",
+            "RW"
+          ]
+        },
+        {
+          "stimulus": "RG",
+          "choices": [
+            "GW",
+            "RW"
+          ]
+        },
+        {
+          "stimulus": "RR",
+          "choices": [
+            "GW",
+            "RW"
+          ]
+        },
+        {
+          "stimulus": "GR",
+          "choices": [
+            "GW",
+            "RW"
+          ]
+        },
+        {
+          "stimulus": "RR",
+          "choices": [
+            "GW",
+            "RW"
+          ]
+        },
+        {
+          "stimulus": "RG",
+          "choices": [
+            "GW",
+            "RW"
+          ]
+        },
+        {
+          "stimulus": "RG",
+          "choices": [
+            "GW",
+            "RW"
+          ]
+        },
+        {
+          "stimulus": "GR",
+          "choices": [
+            "GW",
+            "RW"
+          ]
+        },
+        {
+          "stimulus": "RR",
+          "choices": [
+            "GW",
+            "RW"
+          ]
+        },
+        {
+          "stimulus": "GR",
+          "choices": [
+            "GW",
+            "RW"
+          ]
+        },
+        {
+          "stimulus": "GG",
+          "choices": [
+            "GW",
+            "RW"
+          ]
+        },
+        {
+          "stimulus": "GR",
+          "choices": [
+            "GW",
+            "RW"
+          ]
+        },
+        {
+          "stimulus": "GG",
+          "choices": [
+            "GW",
+            "RW"
+          ]
+        },
+        {
+          "stimulus": "GG",
+          "choices": [
+            "GW",
+            "RW"
+          ]
+        },
+        {
+          "stimulus": "RG",
+          "choices": [
+            "GW",
+            "RW"
+          ]
+        },
+        {
+          "stimulus": "GG",
+          "choices": [
+            "GW",
+            "RW"
+          ]
+        },
+        {
+          "stimulus": "RR",
+          "choices": [
+            "GW",
+            "RW"
+          ]
+        },
+        {
+          "stimulus": "RG",
+          "choices": [
+            "GW",
+            "RW"
+          ]
+        },
+        {
+          "stimulus": "RR",
+          "choices": [
+            "GW",
+            "RW"
+          ]
+        },
+        {
+          "stimulus": "GR",
+          "choices": [
+            "GW",
+            "RW"
+          ]
+        },
+        {
+          "stimulus": "RR",
+          "choices": [
+            "GW",
+            "RW"
+          ]
+        },
+
+        {
+          "stimulus": "RG",
+          "choices": [
+            "GW",
+            "RW"
+          ]
+        },
+        {
+          "stimulus": "RG",
+          "choices": [
+            "GW",
+            "RW"
+          ]
+        },
+        {
+          "stimulus": "GR",
+          "choices": [
+            "GW",
+            "RW"
+          ]
+        },
+        {
+          "stimulus": "RR",
+          "choices": [
+            "GW",
+            "RW"
+          ]
+        },
+        {
+          "stimulus": "GR",
+          "choices": [
+            "GW",
+            "RW"
+          ]
+        },
+        {
+          "stimulus": "GG",
+          "choices": [
+            "GW",
+            "RW"
+          ]
+        },
+        {
+          "stimulus": "GR",
+          "choices": [
+            "GW",
+            "RW"
+          ]
+        },
+        {
+          "stimulus": "GG",
+          "choices": [
+            "GW",
+            "RW"
+          ]
+        }
+      ],
+      "stimulusDuration": 1000,
+      "fixationDuration": 1000,
+      "feedbackDuration": 0,
+      "timeoutsBeforeReset": 10,
+      "randomizeTrials": true,
+      "randomizeChoices": true
+    },
+    {
+			"id": "nback.intro1",
+			"type": "text",
+			"instruction": true,
+			"text": "nback.intro1.text"
+		},
+		{
+			"id": "nback.check",
+			"type": "matrix",
+			"text": "nback.check.text",
+			"requiredQuestions": [0, 1, 2],
+			"direction": "vertical",
+			"choices": [
+				"nback.check.choice.1",
+				"nback.check.choice.2"
+			],
+			"questions": [
+				"nback.check.q.1",
+				"nback.check.q.2",
+				"nback.check.q.3"
+			]
+		},
+    {
+      "id": "NBack Practice",
+      "type": "nback",
+      "text": "nback.instruction",
+      "help": "nback.help",
+      "trials": 25,
+      "nback": 2,
+      "stimuli" : [
+        {
+          "type": "letter",
+          "name": "A",
+          "amount": 5
+        },
+        {
+          "type": "letter",
+          "name": "B",
+          "amount": 5
+        },
+        {
+          "type": "letter",
+          "name": "C",
+          "amount": 5
+        },
+        {
+          "type": "letter",
+          "name": "D",
+          "amount": 5
+        },
+        {
+          "type": "letter",
+          "name": "E",
+          "amount": 5
+        }
+      ],
+      "stimuliDuration": 2000,
+      "fixationDuration": 500,
+      "feedbackDuration": 500
+    },
+    {
+      "id": "NBack Main",
+      "type": "nback",
+      "text": "nback.instruction",
+      "help": "nback.help",
+      "trials": 25,
+      "nback": 2,
+      "stimuli" : [
+        {
+          "type": "letter",
+          "name": "A",
+          "amount": 5
+        },
+        {
+          "type": "letter",
+          "name": "B",
+          "amount": 5
+        },
+        {
+          "type": "letter",
+          "name": "C",
+          "amount": 5
+        },
+        {
+          "type": "letter",
+          "name": "D",
+          "amount": 5
+        },
+        {
+          "type": "letter",
+          "name": "E",
+          "amount": 5
+        }
+      ],
+      "stimuliDuration": 2000,
+      "fixationDuration": 500,
+      "feedbackDuration": 500
+    },
+		{
+			"id": "food.reminder.time",
+			"type": "matrix",
+			"text": "",
+			"requiredQuestions": [0],
+			"direction": "vertical",
+			"choices": [
+				"food.reminder.c1",
+				"food.reminder.c2",
+				"food.reminder.c3",
+				"food.reminder.c4",
+				"food.reminder.c5",
+				"food.reminder.c6",
+				"food.reminder.c7",
+				"food.reminder.c8"
+			],
+			"questions": [
+				"food.reminder.time.q"
+			]
+		},
+    {
+			"id": "hunger",
+			"type": "matrix",
+			"text": "",
+			"slider": true,
+			"showMidMark": true,
+			"requiredQuestions": [0],
+			"direction": "vertical",
+			"choices": [
+				"hunger.c1",
+				"hunger.c2",
+				"hunger.c3",
+				"hunger.c4",
+				"hunger.c5",
+				"hunger.c6",
+				"hunger.c7",
+				"hunger.c8",
+				"hunger.c9",
+				"hunger.c10",
+				"hunger.c11"
+
+			],
+			"questions": ["hunger.q"]
+		},
+    {
+      "id": "outro",
+      "type": "text",
+      "instruction": true,
+      "text": "mad2023-cc.outro"
+    }		
+  ]
+}
