@@ -137,7 +137,7 @@
 	"ownership.c7": "12-14 hours ago",
 	"ownership.c8": "over 14 hours ago",
 
-	"gonogo.introduction": "Ok, in the next task is Go-NoGo game. For this task, you need to use the right (&#8594;) or left (&#8592;) keys on your keyboard. You'll briefly see the shape of a blue or yellow star on the left or on the right side of the screen.<br /><br />If you see a blue star, you should press the key that matches the **same** side as the star. If you see a yellow star, you should press the key that points at the **opposite** side.<br /><br />You have 1 second to respond but faster and accurate responses will get you more points. <br /><br />Let's start round 1 with feedback.",
+	"gonogo.introduction": "For this task, you need to use the right (&#8594;) or left (&#8592;) keys on your keyboard. You'll briefly see the shape of a blue or yellow star on the left or on the right side of the screen.<br /><br />If you see a blue star, you should press the key that matches the **same** side as the star. If you see a yellow star, you should press the key that points at the **opposite** side.<br /><br />You have 1 second to respond but faster and accurate responses will get you more points. <br /><br />Let's start round 1 with feedback.",
 	"gonogo.introduction.2": "Great. <br /><br />In the first task, you'll briefly see the shape of a blue or yellow star on the left or on the right side of the screen.<br /><br />If you see a blue star, you should click on it. If you see a yellow star, you should click on the **opposite** side.<br /><br />You have 1 second to respond but faster and accurate responses will get you more bonus points.<br /><br />You can use your mouse, or the right (&#8594;) or left (&#8592;) keys on your keyboard.<br /><br />Let's start round 1 with feedback.",
 	"gonogo.are_you_ready": "Place your fingers on the &#8594; and &#8592; keys. Press the space bar to begin.",
 	"gonogo.too_many_timeouts": "You waited too long! Let's start over.",
@@ -593,7 +593,7 @@
 
 	"fasting.q.control": "Do you ever fast for religous or health reasons?",
 
-	"submission.note": "Thank you for your participation! Please press **Continue** to be redirected to the Prolific webpage.",
+	"submission.note": "Thank you for your participation! Please press **Continue** to be redirected to back to the study page.",
 	"submission.q_email": "Thank you for your participation. You can see your performance on the next page. Please write your email in the box below if you'd like to participate in similar studies.",
 	"done": "And we're done! Thanks for your participation. Please press continue on the enxt page to be redirected back to the Prolific.co webpage.",
 
