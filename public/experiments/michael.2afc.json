@@ -21,7 +21,7 @@
             "id": "gonogo.practice.introduction",
             "type": "text",
             "instruction": true,
-            "text": "gonogo.introduction"
+            "text": "gonogo.introduction.michael"
         },
         {
             "id": "gonogo.practice",
