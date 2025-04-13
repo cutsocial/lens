@@ -14,6 +14,7 @@
 	"intro.ug":"**Welcome!**<br /><br />This study is part of a research project on decision making.<br /><br />It takes about 6 minutes.<br /><br />For participating in the study, you receive a flat fee plus bonus points based on your perfromances in the task. **Your bonus points determine your chances on a $30 raffle**. More bonus points = higher chance of winning.<br /><br />No specific background knowledge is required. As long as you follow the instructions, your bonuses should be on the higher end.<br /><br />Press **Next** to begin.",
 	"intro.4":"You participated in a multi-round survey, and received $2.65 for each round of completion. You also earned points based on your responses and performance, which will determine your chances of winning a $50 lottery.<br /><br />This is a bonus round. You will get $2.8 for participating, and you will earn performance points<br /><br />This will take less than 13 minutes (based on previous records)!",
 
+
 	"intro.demographics": "First we need some information about you.",
 
 	"country.q": "Which **country** do you live in?",
@@ -136,7 +137,7 @@
 	"ownership.c7": "12-14 hours ago",
 	"ownership.c8": "over 14 hours ago",
 
-	"gonogo.introduction": "Ok, the first task is Go-NoGo game. For this task, you need to use the right (&#8594;) or left (&#8592;) keys on your keyboard. You'll briefly see the shape of a blue or yellow star on the left or on the right side of the screen.<br /><br />If you see a blue star, you should press the key that matches the **same** side as the star. If you see a yellow star, you should press the key that points at the **opposite** side.<br /><br />You have 1 second to respond but faster and accurate responses will get you more bonus points. <br /><br />Let's start round 1 with feedback.",
+	"gonogo.introduction": "Ok, in the next task is Go-NoGo game. For this task, you need to use the right (&#8594;) or left (&#8592;) keys on your keyboard. You'll briefly see the shape of a blue or yellow star on the left or on the right side of the screen.<br /><br />If you see a blue star, you should press the key that matches the **same** side as the star. If you see a yellow star, you should press the key that points at the **opposite** side.<br /><br />You have 1 second to respond but faster and accurate responses will get you more points. <br /><br />Let's start round 1 with feedback.",
 	"gonogo.introduction.2": "Great. <br /><br />In the first task, you'll briefly see the shape of a blue or yellow star on the left or on the right side of the screen.<br /><br />If you see a blue star, you should click on it. If you see a yellow star, you should click on the **opposite** side.<br /><br />You have 1 second to respond but faster and accurate responses will get you more bonus points.<br /><br />You can use your mouse, or the right (&#8594;) or left (&#8592;) keys on your keyboard.<br /><br />Let's start round 1 with feedback.",
 	"gonogo.are_you_ready": "Place your fingers on the &#8594; and &#8592; keys. Press the space bar to begin.",
 	"gonogo.too_many_timeouts": "You waited too long! Let's start over.",
@@ -337,6 +338,8 @@
 	"social.dilemma.q6": "Round 5 (Last one): The total number of available points available to you and your 4 group members is **between 125 and 875 points**. The exact number is unknown.<br /><br />How many points do you request?<br /><br />* The rules are the same: Requests will be added up. Only if the sum is not larger than the total number of available points, you each get your requested points. Otherwise none of you get anything.",
 
 	"p.id.intro": "Please enter your Prolifc ID here:",
+	"id.intro": "Please enter your ID here:",
+
 	"almost.done": "Thanks. Almost there, just a couple of questions about you and we'll be done for good.",
 
 	"trust.fehr.1": "How often do you lend personal possessions to your friends (books, your car, bicycle etc.)?",
