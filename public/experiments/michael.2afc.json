@@ -21,8 +21,20 @@
             "id": "gonogo.practice.introduction",
             "type": "text",
             "instruction": true,
-            "text": "gonogo.introduction.michael"
+            "text": "gonogo.introduction.michael.1"
         },
+        {
+            "id": "gonogo.practice.introduction",
+            "type": "text",
+            "instruction": true,
+            "text": "gonogo.introduction.michael.2"
+        },
+        {
+            "id": "gonogo.practice.introduction",
+            "type": "text",
+            "instruction": true,
+            "text": "gonogo.introduction.michael.3"
+        },        
         {
             "id": "gonogo.practice",
             "type": "gonogo",
