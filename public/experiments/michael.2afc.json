@@ -36,6 +36,12 @@
             "text": "gonogo.introduction.michael.3"
         },        
         {
+            "id": "gonogo.practice.introduction",
+            "type": "text",
+            "instruction": true,
+            "text": "gonogo.introduction.michael.4"
+        },        
+        {
             "id": "gonogo.practice",
             "type": "gonogo",
             "text": "gonogo.instruction",
