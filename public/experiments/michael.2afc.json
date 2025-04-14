@@ -123,12 +123,6 @@
                 "BSCS.13",
                 "BSCS.14"
             ]
-        },
-        {
-            "id": "done.statement",
-            "type": "text",
-            "instruction": true,
-            "text": "done.micheal"
         }
     ]
 }
