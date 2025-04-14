@@ -107,65 +107,10 @@
             ]
         },
         {
-            "id": "almost.done.statement",
-            "type": "text",
-            "instruction": true,
-            "text": "almost.done"
-        },
-        {
-            "id": "food.reminder.time",
-            "type": "matrix",
-            "text": "",
-            "requiredQuestions": [
-                0
-            ],
-            "direction": "vertical",
-            "choices": [
-                "food.reminder.c1",
-                "food.reminder.c2",
-                "food.reminder.c3",
-                "food.reminder.c4",
-                "food.reminder.c5",
-                "food.reminder.c6",
-                "food.reminder.c7",
-                "food.reminder.c8"
-            ],
-            "questions": [
-                "food.reminder.time.q"
-            ]
-        },
-        {
-            "id": "hunger",
-            "type": "matrix",
-            "text": "",
-            "slider": true,
-            "showMidMark": true,
-            "requiredQuestions": [
-                0
-            ],
-            "direction": "vertical",
-            "choices": [
-                "hunger.c1",
-                "hunger.c2",
-                "hunger.c3",
-                "hunger.c4",
-                "hunger.c5",
-                "hunger.c6",
-                "hunger.c7",
-                "hunger.c8",
-                "hunger.c9",
-                "hunger.c10",
-                "hunger.c11"
-            ],
-            "questions": [
-                "hunger.q"
-            ]
-        },
-        {
             "id": "done.statement",
             "type": "text",
             "instruction": true,
-            "text": "done"
+            "text": "done.micheal"
         }
     ]
 }
