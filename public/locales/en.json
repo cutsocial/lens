@@ -138,20 +138,20 @@
 	"ownership.c8": "over 14 hours ago",
 
 
-	"gonogo.introduction": "For this task, you need to use the right (&#8594;) or left (&#8592;) keys on your keyboard. You'll briefly see the shape of a blue or yellow star on the left or on the right side of the screen.<br /><br />If you see a blue star, you should press the key that matches the **same** side as the star. If you see a yellow star, you should press the key that points at the **opposite** side.<br /><br />You have 1 second to respond but faster and accurate responses will get you more points. <br /><br />Let's start round 1 with feedback.",
+	"gonogo.introduction": "Using your left or right hand, whichever hand is more comfortable for you, put your index and ring fingers on the LEFT and RIGHT arrow keys on your keyboard.<br /><br />A star will flash on the screen, in either BLUE or YELLOW. The star will appear on the left or right side of the screen.<br /><br /><img src='./images/2AFC.empty.png' width='100%' />",
 	"gonogo.introduction.michael.1":"For this task, use the LEFT and RIGHT arrow keys on your keyboard. Put two fingers on the LEFT and the RIGHT arrow keys (index finger, middle finger, or ring fingers).<br /><br />A star will flash on the screen, in either BLUE or YELLOW. The star will appear on the left or right side of the screen.<br /><br /><img src='./images/2AFC.empty.png' width='100%' />",
-	"gonogo.introduction.michael.2":"If the star is **BLUE**, press the key that **matches** the side on which the shape appears. For example, if the star is BLUE and appears on the <u>left side</u>, press the <u>left key</u>.<br /><br /><img src='./images/2AFC.blue.png' width='100%' />",
-	"gonogo.introduction.michael.3":"However, if the shape is YELLOW, do the **opposite** of this. For example, if the star is YELLOW and appears on the <u>right side</u>, press the <u>left key</u>.<br /><br /><img src='./images/2AFC.yellow.png' width='100%' />",
-	"gonogo.introduction.michael.4":"Try to be as accurate as you can. The more accurate you are, the more points you get..<br /><br />You'll have up to 1 second to respond, but faster responses will get you more points as well.<br /><br />We know this is a bit confusing. Let's do one practice round with feedback.",
+	"gonogo.introduction.michael.2":"If the star is **BLUE**, press the key that **matches** the side on which it appears.<br /><br />For example, if the star is BLUE and appears on the <u>left side</u>, press the <u>left key</u>.<br /><br /><img src='./images/2AFC.blue.png' width='100%' />",
+	"gonogo.introduction.michael.3":"However, if the star is YELLOW, do the **opposite** of this.<br /><br />For example, if the star is YELLOW and appears on the <u>right side</u>, press the <u>left key</u>.<br /><br /><img src='./images/2AFC.yellow.png' width='100%' />",
+	"gonogo.introduction.michael.4":"Try to be as accurate as you can. The more accurate you are, the more points you'll get.<br /><br />You'll have up to 1 second to respond. But respond as fast you can--faster responses will get you more points.<br /><br />Let's do one practice round with feedback.",
 
 
 	"gonogo.introduction.2": "Great. <br /><br />In the first task, you'll briefly see the shape of a blue or yellow star on the left or on the right side of the screen.<br /><br />If you see a blue star, you should click on it. If you see a yellow star, you should click on the **opposite** side.<br /><br />You have 1 second to respond but faster and accurate responses will get you more bonus points.<br /><br />You can use your mouse, or the right (&#8594;) or left (&#8592;) keys on your keyboard.<br /><br />Let's start round 1 with feedback.",
-	"gonogo.are_you_ready": "Place your fingers on the LEFT and RIGHT keys.<br /><br />Press the space bar to begin.",
+	"gonogo.are_you_ready": "Ready? Place your fingers on the LEFT and RIGHT keys.<br /><br />Press the space bar (or click the “START” button) to begin.",
 
-	"gonogo.too_many_timeouts": "You waited too long! Let's start over.",
+	"gonogo.too_many_timeouts": "You waited too long! Let's start over...",
 	"gonogo.restart": "Restart",
 	"gonogo.start": "Start",
-	"gonogo.instruction": "Use LEFT and RIGHT arrow keys. Same side for blue star, opposite side for yellow star. Be quick!",
+	"gonogo.instruction": "Use the LEFT and RIGHT arrow keys. Remember, same side for blue star, opposite side for yellow star. Be accurate and quick!!",
 	"gonogo.main.introduction": "Ok, so let's begin round 2. You will not receive feedback. Press next to begin.",
 
 	"gonogo.intro2.text":"Great. In the next task, we show you the numbers **0 to 9** briefly on the screen. You have to click on the numbers, except when for **0 and 7**.<br /><br />When you see **0 and 7**, don't do anything. Just wait. <br /><br />You can click on the numbers or press the space bar to respond. Faster responses get you more points. <br /><br />Press next to continue.",
