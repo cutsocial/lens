@@ -93,6 +93,7 @@
             "text": "trust.q",
             "slider": true,
             "showMidMark": true,
+            "requiredQuestions":[],
             "direction": "vertical",
             "choices": [
                 "BSCS.c1",
