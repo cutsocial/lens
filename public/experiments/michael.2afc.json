@@ -123,6 +123,12 @@
             "id": "done.statement",
             "type": "text",
             "instruction": true,
+            "text": "almost.done"
+        },
+        {
+            "id": "done.statement.2",
+            "type": "text",
+            "instruction": true,
             "text": "done.micheal"
         }
     ]
