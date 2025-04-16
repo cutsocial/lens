@@ -1,0 +1,48 @@
+{
+  "studyId": "test stuff",
+  "conditon": "a",
+  "redirectTo": "https://google.com?ID=123456",
+  "submissionNote": "submission.note",
+  "metadata": {
+    "maintainer": "ansarinia@me.com"
+  },
+  "views": [
+    	{
+			"id": "control",
+			"type": "matrix",
+			"text": "control.q",
+			"slider": true,
+			"showMidMark": true,
+			"requiredQuestions": [
+				0,
+				1,
+				2
+			],
+			"direction": "vertical",
+			"choices": [
+				"control.c1",
+				"control.c2",
+				"control.c3",
+				"control.c4",
+				"control.c5",
+				"control.c6",
+				"control.c7"
+			],
+			"questions": [
+				"control.q1",
+				"control.q6",
+				"control.q7",
+				"control.q8",
+				"control.q9",
+				"attention.check.1",
+				"control.q10",
+				"control.q2",
+				"control.q3",
+				"control.q4",
+				"control.q5",
+				"control.q11",
+				"control.q12"
+			]
+		}
+  ]
+}

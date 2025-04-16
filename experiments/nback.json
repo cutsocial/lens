@@ -1,0 +1,147 @@
+{
+  "studyId": "nback-demo",
+  "conditon": "a",
+  "redirectTo": "https://google.com?ID=123456",
+  "submissionNote": "submission.note",
+  "metadata": {
+    "maintainer": "radmanesh@gmail.com"
+  },
+  "views": [
+    {
+			"id": "nback.intro1",
+			"type": "text",
+			"instruction": true,
+			"text": "nback.intro1.text"
+		},
+		{
+			"id": "nback.check",
+			"type": "matrix",
+			"text": "nback.check.text",
+			"requiredQuestions": [0, 1, 2],
+			"direction": "vertical",
+			"choices": [
+				"nback.check.choice.1",
+				"nback.check.choice.2"
+			],
+			"questions": [
+				"nback.check.q.1",
+				"nback.check.q.2",
+				"nback.check.q.3"
+			]
+		},
+    {
+      "id": "NBack Practice",
+      "type": "nback",
+      "text": "nback.instruction",
+      "help": "nback.help",
+      "trials": 25,
+      "nback": 2,
+      "stimuli" : [
+        {
+          "type": "letter",
+          "name": "A",
+          "amount": 5
+        },
+        {
+          "type": "letter",
+          "name": "B",
+          "amount": 5
+        },
+        {
+          "type": "letter",
+          "name": "C",
+          "amount": 5
+        },
+        {
+          "type": "letter",
+          "name": "D",
+          "amount": 5
+        },
+        {
+          "type": "letter",
+          "name": "E",
+          "amount": 5
+        }
+      ],
+      "stimuliDuration": 2000,
+      "fixationDuration": 500,
+      "feedbackDuration": 500
+    },
+    {
+      "id": "NBack Test Demo Letters",
+      "type": "nback",
+      "text": "nback.instruction",
+      "help": "nback.help",
+      "trials": 12,
+      "nback": 2,
+      "stimuli" : [
+        {
+          "type": "letter",
+          "name": "1",
+          "amount": 1
+        },
+        {
+          "type": "letter",
+          "name": "2",
+          "amount": 5
+        },
+        {
+          "type": "letter",
+          "name": "3",
+          "amount": 5
+        },
+        {
+          "type": "letter",
+          "name": "4",
+          "amount": 1
+        },
+        {
+          "type": "letter",
+          "name": "5",
+          "amount": 1
+        }
+      ],
+      "stimuliDuration": 3000,
+      "fixationDuration": 500,
+      "feedbackDuration": 500
+    },
+    {
+      "id": "NBack Test Demo",
+      "type": "nback",
+      "text": "nback.instruction",
+      "help": "nback.help",
+      "trials": 12,
+      "nback": 2,
+      "stimuli" : [
+        {
+          "type": "icon",
+          "name": "circle",
+          "amount": 7
+        },
+        {
+          "type": "icon",
+          "name": "rectangle",
+          "amount": 2
+        },
+        {
+          "type": "icon",
+          "name": "cup",
+          "amount": 1
+        },
+        {
+          "type": "icon",
+          "name": "hand",
+          "amount": 1
+        },
+        {
+          "type": "icon",
+          "name": "school",
+          "amount": 1
+        }
+      ],
+      "stimuliDuration": 2000,
+      "fixationDuration": 500,
+      "feedbackDuration": 500
+    }
+  ]
+}
