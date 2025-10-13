@@ -26,3 +26,4 @@ We obtained funding from the New School and the Association for Psychological Sc
 * Rad, M. S., Ansarinia, M., & Shafir, E. (2023). Temporary self-deprivation can impair cognitive control: evidence from the Ramadan fast. Personality and social psychology bulletin, 49(3), 415-428. https://journals.sagepub.com/doi/full/10.1177/01461672211070385
 
 And more is on the way! This is an ongoing project so your feedback and suggesitons would be much appreciated. Thanks! :)
+
