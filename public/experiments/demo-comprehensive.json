@@ -95,7 +95,7 @@
 			"reward": 7,
 			"maxPumps": 20,
 			"safePumps": 1,
-			"trials": 25
+			"trials": 2
 		},
 		{
 			"id": "dictator-intro1",
@@ -170,24 +170,6 @@
 			"text": "ultimatum.intro3.text"
 		},
 		{
-			"id": "ultimatum-intro4",
-			"type": "text",
-			"instruction": true,
-			"text": "ultimatum.intro4.text"
-		},
-		{
-			"id": "ultimatum-intro5",
-			"type": "text",
-			"instruction": true,
-			"text": "ultimatum.intro5.text"
-		},
-		{
-			"id": "ultimatum-intro6",
-			"type": "text",
-			"instruction": true,
-			"text": "ultimatum.intro6.text"
-		},
-		{
 			"id": "ultimatum-intro7",
 			"type": "text",
 			"instruction": true,
@@ -197,7 +179,7 @@
 			"id": "ultimatum-1",
 			"type": "ultimatum",
 			"text": "ultimatum.rule.text",
-			"trials": 5,
+			"trials": 2,
 			"tokens": 8,
 			"opponentTypes": ["occupied", "female"],
 			"useOpponentTypes": false,
@@ -254,10 +236,10 @@
 			"text": "gonogo.instruction",
 			"help": "",
 			"trials": {
-				"total": 60,
-				"go": 45,
-				"left": 30,
-				"leftGo": 22
+				"total": 10,
+				"go": 5,
+				"left": 5,
+				"leftGo": 3
 			},
 			"stimuliDuration": 1000,
 			"fixationDuration": 1000,
@@ -278,12 +260,12 @@
 			"id": "gonogo-main",
 			"type": "gonogo",
 			"text": "gonogo.instruction",
-			"help": "Press one of the images in less than three seconds.",
+			"help": "",
 			"trials": {
-				"total": 60,
-				"go": 45,
-				"left": 30,
-				"leftGo": 22
+				"total": 10,
+				"go": 5,
+				"left": 5,
+				"leftGo": 3
 			},
 			"stimuliDuration": 1000,
 			"fixationDuration": 1000,
@@ -328,24 +310,24 @@
 			"id": "taskswitch-demo",
 			"type": "taskswitch",
 			"text": "taskswitch.instruction",
-			"help": "taskswitch.help",
+			"help": "",
 			"trials": {
-				"total": 24,
+				"total": 6,
 				"top": {
-					"total": 12,
-					"go": 6,
-					"left": 6,
-					"leftGo": 3,
+					"total": 3,
+					"go": 2,
+					"left": 2,
+					"leftGo": 1,
 					"choices": {
 						"go": "blue-star",
 						"nogo": "star"
 					}
 				},
 				"bottom": {
-					"total": 12,
-					"go": 6,
-					"left": 6,
-					"leftGo": 3,
+					"total": 3,
+					"go": 2,
+					"left": 2,
+					"leftGo": 1,
 					"choices": {
 						"go": "star",
 						"nogo": "blue-star"
@@ -367,7 +349,7 @@
 			"id": "stroop-practice",
 			"type": "stroop",
 			"rule": "stroop_demo.rule",
-			"help": "stroop_demo.help",
+			"help": "",
 			"colors": {
 				"G": "#6cba47",
 				"R": "#d73636"
@@ -388,74 +370,6 @@
 				{
 					"stimulus": "GG",
 					"choices": ["GR", "RG"]
-				},
-				{
-					"stimulus": "RR",
-					"choices": ["GG", "RR"]
-				},
-				{
-					"stimulus": "RG",
-					"choices": ["GG", "RR"]
-				},
-				{
-					"stimulus": "RR",
-					"choices": ["GG", "RG"]
-				},
-				{
-					"stimulus": "GR",
-					"choices": ["GR", "RR"]
-				},
-				{
-					"stimulus": "RR",
-					"choices": ["GR", "RR"]
-				},
-				{
-					"stimulus": "RG",
-					"choices": ["GR", "RR"]
-				},
-				{
-					"stimulus": "RG",
-					"choices": ["GR", "RG"]
-				},
-				{
-					"stimulus": "GR",
-					"choices": ["GG", "RR"]
-				},
-				{
-					"stimulus": "RR",
-					"choices": ["GR", "RG"]
-				},
-				{
-					"stimulus": "GR",
-					"choices": ["GG", "RG"]
-				},
-				{
-					"stimulus": "GG",
-					"choices": ["GR", "RR"]
-				},
-				{
-					"stimulus": "GR",
-					"choices": ["GR", "RG"]
-				},
-				{
-					"stimulus": "GG",
-					"choices": ["GG", "RG"]
-				},
-				{
-					"stimulus": "GG",
-					"choices": ["GG", "RR"]
-				},
-				{
-					"stimulus": "RG",
-					"choices": ["GG", "RG"]
-				},
-				{
-					"stimulus": "GG",
-					"choices": ["GR", "RG"]
-				},
-				{
-					"stimulus": "RR",
-					"choices": ["GG", "RR"]
 				}
 			],
 			"stimulusDuration": 1000,
@@ -475,7 +389,7 @@
 			"id": "stroop-main",
 			"type": "stroop",
 			"rule": "stroop_demo.rule",
-			"help": "stroop_demo.help",
+			"help": "",
 			"colors": {
 				"G": "#6cba47",
 				"R": "#d73636"
@@ -503,66 +417,6 @@
 				},
 				{
 					"stimulus": "RG",
-					"choices": ["GG", "RR"]
-				},
-				{
-					"stimulus": "RR",
-					"choices": ["GG", "RG"]
-				},
-				{
-					"stimulus": "GR",
-					"choices": ["GR", "RR"]
-				},
-				{
-					"stimulus": "RR",
-					"choices": ["GR", "RR"]
-				},
-				{
-					"stimulus": "RG",
-					"choices": ["GR", "RR"]
-				},
-				{
-					"stimulus": "RG",
-					"choices": ["GR", "RG"]
-				},
-				{
-					"stimulus": "GR",
-					"choices": ["GG", "RR"]
-				},
-				{
-					"stimulus": "RR",
-					"choices": ["GR", "RG"]
-				},
-				{
-					"stimulus": "GR",
-					"choices": ["GG", "RG"]
-				},
-				{
-					"stimulus": "GG",
-					"choices": ["GR", "RR"]
-				},
-				{
-					"stimulus": "GR",
-					"choices": ["GR", "RG"]
-				},
-				{
-					"stimulus": "GG",
-					"choices": ["GG", "RG"]
-				},
-				{
-					"stimulus": "GG",
-					"choices": ["GG", "RR"]
-				},
-				{
-					"stimulus": "RG",
-					"choices": ["GG", "RG"]
-				},
-				{
-					"stimulus": "GG",
-					"choices": ["GR", "RG"]
-				},
-				{
-					"stimulus": "RR",
 					"choices": ["GG", "RR"]
 				}
 			],
