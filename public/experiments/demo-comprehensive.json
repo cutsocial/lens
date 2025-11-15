@@ -6,18 +6,13 @@
 	"metadata": {
 		"maintainer": "radmanesh@gmail.com"
 	},
-	"views": [
+	"views":
+	[
 		{
 			"id": "introduction",
 			"type": "text",
 			"instruction": true,
 			"text": "intro"
-		},
-		{
-			"id": "demographics",
-			"type": "text",
-			"instruction": true,
-			"text": "intro.demographics"
 		},
 		{
 			"id": "country",
@@ -58,7 +53,7 @@
 			"reward": 7,
 			"maxPumps": 20,
 			"safePumps": 1,
-			"trials": 25
+			"trials": 5
 		},
 		{
 			"id": "gonogo.practice.introduction",
@@ -67,24 +62,56 @@
 			"text": "gonogo.introduction"
 		},
 		{
-			"id": "gonogo.practice",
-			"type": "gonogo",
-			"text": "gonogo.instruction",
-			"help": "",
+			"id": "GoNoGoAlt Demo",
+			"type":"gonogoalt",
+			"text":"gonogoalt.instruction",
+			"help":"gonogoalt.help",
 			"trials": {
-				"total": 60,
-				"go": 45,
-				"left": 30,
-				"leftGo": 22
+				"total": 12,
+				"go": 6
 			},
-			"stimuliDuration": 1000,
-			"fixationDuration": 1000,
-			"feedbackDuration": 500,
-			"timeoutsBeforeReset": 20,
+			"stimuliDuration": 2000,
+			"fixationDuration": 500,
+			"feedbackDuration": 1000,
 			"choices": {
-				"go": "blue-star",
-				"nogo": "star"
+				"go": {
+					"type": "letter",
+					"names": ["b","c","d","f","g","h"]
+				},
+				"nogo": {
+					"type": "letter",
+					"names":["a","e","i","o","u"]
+				}
 			}
+		},
+		{
+			"id": "gonogo with letters",
+			"type":"gonogoalt",
+			"text":"gonogoalt.instruction",
+			"help":"gonogoalt.help",
+			"trials": {
+				"total": 12,
+				"go": 6
+			},
+			"stimuliDuration": 2000,
+			"fixationDuration": 500,
+			"feedbackDuration": 500,
+			"choices": {
+				"go": {
+					"type": "letter",
+					"names": ["B","C","D","F","G","H","J","K","L","M","N","P","Q","R","S","T","V","W","X","Y","Z"]
+				},
+				"nogo": {
+					"type": "letter",
+					"names":["A","E","I","O","U"]
+				}
+			}
+		},
+		{
+			"id": "gonogo_demo.outro_text",
+			"type": "text",
+			"instruction": true,
+			"text": "Thanks!"
 		},
 		{
 			"id": "stroop.practice",
@@ -329,6 +356,18 @@
       "fixationDuration": 500,
       "feedbackDuration": 500
     },
+		{
+			"id": "taskswitch.intro1",
+			"type": "text",
+			"instruction": true,
+			"text": "taskswitch.intro1.text"
+		},
+    {
+			"id": "taskswitch.intro2",
+			"type": "text",
+			"instruction": true,
+			"text": "taskswitch.intro2.text"
+		},
 		{
 			"id": "taskswitch.intro3",
 			"type": "text",
