@@ -1,0 +1,584 @@
+{
+	"studyId": "demo-comprehensive",
+	"conditon": "demo",
+	"redirectTo": "https://cut.social",
+	"submissionNote": "submission.note",
+	"metadata": {
+		"maintainer": "demo@cut.social"
+	},
+	"views": [
+		{
+			"id": "introduction",
+			"type": "text",
+			"instruction": true,
+			"text": "intro"
+		},
+		{
+			"id": "text-question-autocomplete",
+			"type": "text",
+			"instruction": false,
+			"text": "country.q",
+			"autoComplete": "countries",
+			"required": true
+		},
+		{
+			"id": "matrix-vertical-no-slider",
+			"type": "matrix",
+			"text": "",
+			"requiredQuestions": [0],
+			"direction": "vertical",
+			"choices": [
+				"sex.c1",
+				"sex.c2",
+				"sex.c3",
+				"sex.c4"
+			],
+			"questions": ["sex.q"]
+		},
+		{
+			"id": "matrix-vertical-slider",
+			"type": "matrix",
+			"text": "",
+			"slider": true,
+			"showMidMark": true,
+			"requiredQuestions": [0],
+			"direction": "vertical",
+			"choices": [
+				"age.c1",
+				"age.c2",
+				"age.c3",
+				"age.c4",
+				"age.c5",
+				"age.c6",
+				"age.c7",
+				"age.c8",
+				"age.c9",
+				"age.c10"
+			],
+			"questions": ["age.q"]
+		},
+		{
+			"id": "matrix-multiple-questions",
+			"type": "matrix",
+			"text": "trust.q",
+			"slider": true,
+			"showMidMark": true,
+			"requiredQuestions": [0, 1, 2],
+			"direction": "vertical",
+			"choices": [
+				"trust.c1",
+				"trust.c2",
+				"trust.c3",
+				"trust.c4",
+				"trust.c5",
+				"trust.c6",
+				"trust.c7"
+			],
+			"questions": [
+				"trust.q1",
+				"trust.q2",
+				"trust.q3",
+				"trust.q4",
+				"trust.q5",
+				"trust.falk"
+			]
+		},
+		{
+			"id": "bart-intro",
+			"type": "text",
+			"instruction": true,
+			"text": "bart.intro"
+		},
+		{
+			"id": "bart",
+			"type": "bart",
+			"reward": 7,
+			"maxPumps": 20,
+			"safePumps": 1,
+			"trials": 25
+		},
+		{
+			"id": "dictator-intro1",
+			"type": "text",
+			"instruction": true,
+			"text": "dictator.intro1.text"
+		},
+		{
+			"id": "dictator-intro2",
+			"type": "text",
+			"instruction": true,
+			"text": "dictator.intro2.text"
+		},
+		{
+			"id": "dictator-intro3",
+			"type": "text",
+			"instruction": true,
+			"text": "dictator.intro3.text"
+		},
+		{
+			"id": "dictator-demo-detailed",
+			"type": "dictator",
+			"text": "dictator.rule.text",
+			"trials": 1,
+			"tokens": 3,
+			"opponentTypes": ["occupied", "female"],
+			"useOpponentTypes": false,
+			"personsPrefix": "detailed.set.p",
+			"persons": [
+				{
+					"id": 1,
+					"field1": "field1.content",
+					"field2": "field2.content",
+					"field3": "field3.content",
+					"field4": "field4.content",
+					"avatar": "marry-avatar.jpg",
+					"tags": ["occupied", "single", "female", "young"]
+				},
+				{
+					"id": 2,
+					"field1": "field1.content",
+					"field3": "field3.content",
+					"tags": ["unemployed", "married", "male"]
+				},
+				{
+					"id": 3,
+					"field1": "field1.content",
+					"field2": "field2.content",
+					"field3": "field3.content",
+					"field4": "field4.content",
+					"avatar": "peter-avatar.jpg",
+					"tags": ["occupied", "single", "male", "rich", "young"]
+				}
+			]
+		},
+		{
+			"id": "ultimatum-intro1",
+			"type": "text",
+			"instruction": true,
+			"text": "ultimatum.intro1.text"
+		},
+		{
+			"id": "ultimatum-intro2",
+			"type": "text",
+			"instruction": true,
+			"text": "ultimatum.intro2.text"
+		},
+		{
+			"id": "ultimatum-intro3",
+			"type": "text",
+			"instruction": true,
+			"text": "ultimatum.intro3.text"
+		},
+		{
+			"id": "ultimatum-intro4",
+			"type": "text",
+			"instruction": true,
+			"text": "ultimatum.intro4.text"
+		},
+		{
+			"id": "ultimatum-intro5",
+			"type": "text",
+			"instruction": true,
+			"text": "ultimatum.intro5.text"
+		},
+		{
+			"id": "ultimatum-intro6",
+			"type": "text",
+			"instruction": true,
+			"text": "ultimatum.intro6.text"
+		},
+		{
+			"id": "ultimatum-intro7",
+			"type": "text",
+			"instruction": true,
+			"text": "ultimatum.intro7.text"
+		},
+		{
+			"id": "ultimatum-1",
+			"type": "ultimatum",
+			"text": "ultimatum.rule.text",
+			"trials": 5,
+			"tokens": 8,
+			"opponentTypes": ["occupied", "female"],
+			"useOpponentTypes": false,
+			"personsPrefix": "ultimatum.person",
+			"persons": [
+				{
+					"id": 1,
+					"field1": "field1.content",
+					"field2": "",
+					"minAcceptable": 4,
+					"avatar": "",
+					"tags": ["occupied", "single", "female", "young"]
+				},
+				{
+					"id": 2,
+					"field1": "field1.content",
+					"field3": "",
+					"minAcceptable": 4,
+					"tags": ["unemployed", "married", "male"]
+				},
+				{
+					"id": 3,
+					"field1": "field1.content",
+					"field2": "",
+					"avatar": "",
+					"minAcceptable": 4,
+					"tags": ["occupied", "single", "male", "rich", "young"]
+				},
+				{
+					"id": 4,
+					"field1": "field1.content",
+					"field3": "",
+					"minAcceptable": 4,
+					"tags": ["unemployed", "married", "male"]
+				},
+				{
+					"id": 5,
+					"field1": "field1.content",
+					"field3": "",
+					"minAcceptable": 4,
+					"tags": ["unemployed", "married", "male"]
+				}
+			]
+		},
+		{
+			"id": "gonogo-practice-introduction",
+			"type": "text",
+			"instruction": true,
+			"text": "gonogo.introduction"
+		},
+		{
+			"id": "gonogo-practice",
+			"type": "gonogo",
+			"text": "gonogo.instruction",
+			"help": "",
+			"trials": {
+				"total": 60,
+				"go": 45,
+				"left": 30,
+				"leftGo": 22
+			},
+			"stimuliDuration": 1000,
+			"fixationDuration": 1000,
+			"feedbackDuration": 500,
+			"timeoutsBeforeReset": 20,
+			"choices": {
+				"go": "blue-star",
+				"nogo": "star"
+			}
+		},
+		{
+			"id": "gonogo-main-introduction",
+			"type": "text",
+			"instruction": true,
+			"text": "gonogo.main.introduction"
+		},
+		{
+			"id": "gonogo-main",
+			"type": "gonogo",
+			"text": "gonogo.instruction",
+			"help": "Press one of the images in less than three seconds.",
+			"trials": {
+				"total": 60,
+				"go": 45,
+				"left": 30,
+				"leftGo": 22
+			},
+			"stimuliDuration": 1000,
+			"fixationDuration": 1000,
+			"feedbackDuration": 0,
+			"timeoutsBeforeReset": 20,
+			"choices": {
+				"go": "blue-star",
+				"nogo": "star"
+			}
+		},
+		{
+			"id": "taskswitch-intro1",
+			"type": "text",
+			"instruction": true,
+			"text": "taskswitch.intro1.text"
+		},
+		{
+			"id": "taskswitch-intro2",
+			"type": "text",
+			"instruction": true,
+			"text": "taskswitch.intro2.text"
+		},
+		{
+			"id": "taskswitch-intro3",
+			"type": "text",
+			"instruction": true,
+			"text": "taskswitch.intro3.text"
+		},
+		{
+			"id": "taskswitch-intro4",
+			"type": "text",
+			"instruction": true,
+			"text": "taskswitch.intro4.text"
+		},
+		{
+			"id": "taskswitch-intro5",
+			"type": "text",
+			"instruction": true,
+			"text": "taskswitch.intro5.text"
+		},
+		{
+			"id": "taskswitch-demo",
+			"type": "taskswitch",
+			"text": "taskswitch.instruction",
+			"help": "taskswitch.help",
+			"trials": {
+				"total": 24,
+				"top": {
+					"total": 12,
+					"go": 6,
+					"left": 6,
+					"leftGo": 3,
+					"choices": {
+						"go": "blue-star",
+						"nogo": "star"
+					}
+				},
+				"bottom": {
+					"total": 12,
+					"go": 6,
+					"left": 6,
+					"leftGo": 3,
+					"choices": {
+						"go": "star",
+						"nogo": "blue-star"
+					}
+				}
+			},
+			"stimuliDuration": 2000,
+			"fixationDuration": 1000,
+			"feedbackDuration": 1000,
+			"timeoutsBeforeReset": 5
+		},
+		{
+			"id": "stroop-practice-introduction",
+			"type": "text",
+			"instruction": true,
+			"text": "stroop.practice.introduction"
+		},
+		{
+			"id": "stroop-practice",
+			"type": "stroop",
+			"rule": "stroop_demo.rule",
+			"help": "stroop_demo.help",
+			"colors": {
+				"G": "#6cba47",
+				"R": "#d73636"
+			},
+			"words": {
+				"G": "colors.green",
+				"R": "colors.red"
+			},
+			"trials": [
+				{
+					"stimulus": "GG",
+					"choices": ["GG", "RR"]
+				},
+				{
+					"stimulus": "RG",
+					"choices": ["GG", "RG"]
+				},
+				{
+					"stimulus": "GG",
+					"choices": ["GR", "RG"]
+				},
+				{
+					"stimulus": "RR",
+					"choices": ["GG", "RR"]
+				},
+				{
+					"stimulus": "RG",
+					"choices": ["GG", "RR"]
+				},
+				{
+					"stimulus": "RR",
+					"choices": ["GG", "RG"]
+				},
+				{
+					"stimulus": "GR",
+					"choices": ["GR", "RR"]
+				},
+				{
+					"stimulus": "RR",
+					"choices": ["GR", "RR"]
+				},
+				{
+					"stimulus": "RG",
+					"choices": ["GR", "RR"]
+				},
+				{
+					"stimulus": "RG",
+					"choices": ["GR", "RG"]
+				},
+				{
+					"stimulus": "GR",
+					"choices": ["GG", "RR"]
+				},
+				{
+					"stimulus": "RR",
+					"choices": ["GR", "RG"]
+				},
+				{
+					"stimulus": "GR",
+					"choices": ["GG", "RG"]
+				},
+				{
+					"stimulus": "GG",
+					"choices": ["GR", "RR"]
+				},
+				{
+					"stimulus": "GR",
+					"choices": ["GR", "RG"]
+				},
+				{
+					"stimulus": "GG",
+					"choices": ["GG", "RG"]
+				},
+				{
+					"stimulus": "GG",
+					"choices": ["GG", "RR"]
+				},
+				{
+					"stimulus": "RG",
+					"choices": ["GG", "RG"]
+				},
+				{
+					"stimulus": "GG",
+					"choices": ["GR", "RG"]
+				},
+				{
+					"stimulus": "RR",
+					"choices": ["GG", "RR"]
+				}
+			],
+			"stimulusDuration": 1000,
+			"fixationDuration": 1000,
+			"feedbackDuration": 1000,
+			"timeoutsBeforeReset": 10,
+			"randomizeTrials": true,
+			"randomizeChoices": true
+		},
+		{
+			"id": "stroop-main-introduction",
+			"type": "text",
+			"instruction": true,
+			"text": "stroop.main.introduction"
+		},
+		{
+			"id": "stroop-main",
+			"type": "stroop",
+			"rule": "stroop_demo.rule",
+			"help": "stroop_demo.help",
+			"colors": {
+				"G": "#6cba47",
+				"R": "#d73636"
+			},
+			"words": {
+				"G": "colors.green",
+				"R": "colors.red"
+			},
+			"trials": [
+				{
+					"stimulus": "GG",
+					"choices": ["GG", "RR"]
+				},
+				{
+					"stimulus": "RG",
+					"choices": ["GG", "RG"]
+				},
+				{
+					"stimulus": "GG",
+					"choices": ["GR", "RG"]
+				},
+				{
+					"stimulus": "RR",
+					"choices": ["GG", "RR"]
+				},
+				{
+					"stimulus": "RG",
+					"choices": ["GG", "RR"]
+				},
+				{
+					"stimulus": "RR",
+					"choices": ["GG", "RG"]
+				},
+				{
+					"stimulus": "GR",
+					"choices": ["GR", "RR"]
+				},
+				{
+					"stimulus": "RR",
+					"choices": ["GR", "RR"]
+				},
+				{
+					"stimulus": "RG",
+					"choices": ["GR", "RR"]
+				},
+				{
+					"stimulus": "RG",
+					"choices": ["GR", "RG"]
+				},
+				{
+					"stimulus": "GR",
+					"choices": ["GG", "RR"]
+				},
+				{
+					"stimulus": "RR",
+					"choices": ["GR", "RG"]
+				},
+				{
+					"stimulus": "GR",
+					"choices": ["GG", "RG"]
+				},
+				{
+					"stimulus": "GG",
+					"choices": ["GR", "RR"]
+				},
+				{
+					"stimulus": "GR",
+					"choices": ["GR", "RG"]
+				},
+				{
+					"stimulus": "GG",
+					"choices": ["GG", "RG"]
+				},
+				{
+					"stimulus": "GG",
+					"choices": ["GG", "RR"]
+				},
+				{
+					"stimulus": "RG",
+					"choices": ["GG", "RG"]
+				},
+				{
+					"stimulus": "GG",
+					"choices": ["GR", "RG"]
+				},
+				{
+					"stimulus": "RR",
+					"choices": ["GG", "RR"]
+				}
+			],
+			"stimulusDuration": 1000,
+			"fixationDuration": 1000,
+			"feedbackDuration": 0,
+			"timeoutsBeforeReset": 10,
+			"randomizeTrials": true,
+			"randomizeChoices": true
+		},
+		{
+			"id": "done-statement",
+			"type": "text",
+			"instruction": true,
+			"text": "done"
+		}
+	]
+}
+
