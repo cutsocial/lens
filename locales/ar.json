@@ -1,0 +1,22 @@
+{
+  "language_selector.text": "Please select a language to continue",
+  "loading": "Loading...",
+  "next": "البعدی",
+  "yes": "البعله",
+  "finish": "الپایان",
+  "errors.required": "You must respond to proceed.",
+  "bart.cash": "النقد",
+  "bart.balloon_tooltip": "الپمپ",
+  "bart.trial_label": "Round {{trial}} of {{trials}}",
+  "bart.exploded_title": "Exploded!",
+  "bart.next_reward": "Next Reward",
+  "bart.next_trial": "Next Round",
+  "bart.cashed_title": "Cashed!",
+  "bart.trial_score_report": "You scored {{score}} points in this round.",
+  "bart.total_score_report": "In total, you have {{score}} points.",
+  "bart.total_points": "Total Points",
+  "gonogo.ready_question": "Are you ready?",
+  "bart.trialCounter": "Trial {{trial}} of {{trials}}",
+  "ramadan2020.questions.email": "What is your email?",
+  "ramadan2020.questions.email_placeholder": "Email"
+}

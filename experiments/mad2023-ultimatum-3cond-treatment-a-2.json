@@ -1,0 +1,150 @@
+{
+	"studyId": "mad2023-ultmiatium-3cond-treatment-a",
+	"conditon": "a", 
+	"redirectTo": "https://app.prolific.co/submissions/complete?cc=CC9M2FZH",
+	"submissionNote": "submission.note",
+	"metadata": {
+		"maintainer": "salarirad@gmail.com"
+	},
+	"views": [
+    {
+			"id": "prolific ID",
+			"type": "text",
+			"instruction": false,
+			"required": true,
+			"text": "p.id.intro",
+			"help": "",
+			"placeholder": "",
+			"pattern": ""
+    },
+    {
+      "id": "intro1",
+      "type": "text",
+      "instruction": true,
+      "text": "ultimatum.2023.cont.intro1"
+    },
+    {
+      "id": "intro2",
+      "type": "text",
+      "instruction": true,
+      "text": "ultimatum.2023.cont.intro2"
+    },
+    {
+      "id": "tutorial1",
+      "type": "text",
+      "instruction": true,
+      "text": "ultimatum.intro1.text"
+    },
+    {
+      "id": "tutorial2",
+      "type": "text",
+      "instruction": true,
+      "text": "ultimatum.intro2.text"
+    },
+    {
+      "id": "tutorial3",
+      "type": "text",
+      "instruction": true,
+      "text": "ultimatum.intro3.text"
+    },
+    {
+      "id": "tutorial4",
+      "type": "text",
+      "instruction": true,
+      "text": "ultimatum.intro4.text"
+    },
+    {
+      "id": "tutorial5",
+      "type": "text",
+      "instruction": true,
+      "text": "ultimatum.intro5.text"
+    },
+    {
+      "id": "tutorial6",
+      "type": "text",
+      "instruction": true,
+      "text": "ultimatum.intro6.text"
+    },
+    {
+      "id": "intro2a",
+      "type": "text",
+      "instruction": false,
+      "text": "ultimatum.2023.cont.intro2a",
+      "required": true
+    },
+    {
+      "id": "intro3",
+      "type": "text",
+      "instruction": false,
+      "text": "ultimatum.2023.cont.intro3",
+      "required": true
+    },
+    {
+      "id": "intro4",
+      "type": "text",
+      "instruction": false,
+      "text": "ultimatum.2023.cont.intro4",
+      "required": false
+    },
+    {
+      "id": "intro5",
+      "type": "text",
+      "instruction": true,
+      "text": "ultimatum.2023.cont.intro5"
+    },
+    {
+			"id": "mad2023-ultimatum-3cond-treatment-b",
+			"type": "ultimatum",
+      "text" : "ultimatum.rule.text",
+			"trials": 5,
+      "tokens": 10,
+      "useOpponentTypes": false,
+      "dialogOptionalText" : "mad2023-ultimatum-3cond-dialog-text",
+      "personsPrefix" : "mad2023-ultimatum.ta-set.p",
+      "persons": [
+        {
+          "id": 1,
+          "field1": "field1.content",
+          "field2": "field2.content",
+          "minAcceptable": 5
+        },
+        {
+          "id": 2,
+          "field1": "field1.content",
+          "field2": "field2.content",
+          "minAcceptable": 5
+        },
+        {
+          "id": 3,
+          "field1": "field1.content",
+          "field2": "field2.content",
+          "minAcceptable": 5
+        },
+        {
+          "id": 4,
+          "field1": "field1.content",
+          "field2": "field2.content",
+          "minAcceptable": 5
+        },
+        {
+          "id": 5,
+          "field1": "field1.content",
+          "field2": "field2.content",
+          "minAcceptable": 5
+        }
+      ]
+		},
+    {
+      "id": "done1",
+      "type": "text",
+      "instruction": true,
+      "text": "ultimatum.2023.cont.done1"
+    },
+    {
+      "id": "done2",
+      "type": "text",
+      "instruction": true,
+      "text": "ultimatum.2023.cont.done2"
+    }
+  ]
+}

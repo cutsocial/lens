@@ -1,0 +1,27 @@
+{
+  "studyId": "prolific-demo",
+  "conditon": "a",
+  "submissionNote": "submission.note",
+  "metadata": {
+    "maintainer": "radmanesh@gmail.com"
+  },
+  "views": [
+    {
+      "id": "prolific-ID-demo",
+      "type": "prolific",
+      "instruction": false,
+      "required": true,
+      "text": "p.id.intro",
+      "help": "",
+      "placeholder": "Prolific ID",
+      "pattern": ""
+    },
+    {
+      "id": "done.statement",
+      "type": "text",
+      "instruction": true,
+      "text": "done"
+    }
+
+  ]
+}

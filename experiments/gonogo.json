@@ -1,0 +1,37 @@
+{
+  "studyId": "gonogo-demo",
+  "conditon": "a",
+  "redirectTo": "https://google.com?ID=123456",
+  "submissionNote": "submission.note",
+  "metadata": {
+    "maintainer": "ansarinia@me.com"
+  },
+  "views": [
+    {
+      "id": "Go/NoGo Demo",
+      "type": "gonogo",
+      "text": "gonogo.instruction",
+      "help": "Press one of the images in less than three seconds.",
+      "trials": {
+        "total": 24,
+        "go": 12,
+        "left": 12,
+        "leftGo": 6
+      },
+      "stimuliDuration": 2000,
+      "fixationDuration": 1000,
+      "feedbackDuration": 1000,
+      "timeoutsBeforeReset": 2,
+      "choices": {
+        "go": "blue-star",
+        "nogo": "star"
+      }
+    },
+    {
+      "id": "gonogo_demo.outro_text",
+      "type": "text",
+      "instruction": true,
+      "text": "Thanks!"
+    }
+  ]
+}
