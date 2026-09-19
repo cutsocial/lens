@@ -1,6 +1,7 @@
 import React, { useEffect, useState, Fragment } from 'react';
 import { Box, Button, Grid, Typography } from '@material-ui/core';
 import { useTranslation } from 'react-i18next';
+import { useStimulusOnset, responseTiming, timeoutTiming } from './utils/timing';
 import Markdown from 'react-markdown/with-html';
 import { 
   Star, 
@@ -59,6 +60,8 @@ export default function NBack({content, onStore, onNotification, onProgress}) {
     stimuli: null
   });
 
+  const stimulusOnset = useStimulusOnset(state.step === 'stimuli', state.trial);
+
   useEffect(() => {
     /**
      * callback to handle keypress events
@@ -77,7 +80,7 @@ export default function NBack({content, onStore, onNotification, onProgress}) {
         return;
 
       const current = state.stimuli[state.trial - 1];
-      handleResponse(current);
+      handleResponse(current, event);
     }
     window.addEventListener('keydown', handleKeyPress);
 
@@ -158,7 +161,8 @@ export default function NBack({content, onStore, onNotification, onProgress}) {
             'correct': _correct,
             'respondedAt': respondedAt,
             'trialStartedAt': state.trialStartedAt,
-            'rt': null
+            'rt': null,
+            ...timeoutTiming(stimulusOnset)
           }],
           step: (feedbackDuration > 0) ? 'feedback' : 'fixation'
         });
@@ -177,6 +181,7 @@ export default function NBack({content, onStore, onNotification, onProgress}) {
       response.taskStartedAt = state.taskStartedAt;
       response.taskFinishedAt = state.taskFinishedAt;
       response.taskDuration = state.taskFinishedAt - state.taskStartedAt;
+      response.timingVersion = 2;
       onStore({
         'view': content,
         'response': response
@@ -203,7 +208,7 @@ export default function NBack({content, onStore, onNotification, onProgress}) {
    * handles user response
    * @param {*} selected 
    */
-  const handleResponse = (selected) => {
+  const handleResponse = (selected, event) => {
     if(state.trial<=nback){
       return onNotification(t('nback.invalid.selection.notification'));
     }
@@ -228,7 +233,8 @@ export default function NBack({content, onStore, onNotification, onProgress}) {
         'correct': _correct,
         'respondedAt': respondedAt,
         'trialStartedAt': state.trialStartedAt,
-        'rt': respondedAt - state.trialStartedAt
+        'rt': respondedAt - state.trialStartedAt,
+        ...responseTiming(event, stimulusOnset)
       }],
       step: (feedbackDuration > 0) ? 'feedback' : 'fixation'
     });
@@ -254,7 +260,7 @@ export default function NBack({content, onStore, onNotification, onProgress}) {
         return(
           <Grid item container direction='row' justifyContent='space-around' alignItems='center'>
             <Fragment>
-              <Box onClick={() => handleResponse(stimulus)} className='single-stimulus single-stimulus-icon'>
+              <Box onClick={(e) => handleResponse(stimulus, e)} className='single-stimulus single-stimulus-icon'>
                 <Block fontSize='large' className='yellow single-stimulus-icon' />
               </Box>
             </Fragment>
@@ -264,7 +270,7 @@ export default function NBack({content, onStore, onNotification, onProgress}) {
       const FigureCompoentnt = iconFigures[stimulus.name];
       return(
         <Grid item container direction='row' justifyContent='space-around' alignItems='center'>
-          <Box onClick={() => handleResponse(stimulus)} className='single-stimulus single-stimulus-icon'>
+          <Box onClick={(e) => handleResponse(stimulus, e)} className='single-stimulus single-stimulus-icon'>
             <FigureCompoentnt fontSize='large' className='yellow single-stimulus-icon' />
           </Box>
         </Grid>
@@ -272,7 +278,7 @@ export default function NBack({content, onStore, onNotification, onProgress}) {
     }else if(stimulus.type==="letter"){
       return(
         <Grid item container direction='row' justifyContent='space-around' alignItems='center'>
-          <Box onClick={() => handleResponse(stimulus)} className='single-stimulus single-stimulus-letter' textAlign="center">
+          <Box onClick={(e) => handleResponse(stimulus, e)} className='single-stimulus single-stimulus-letter' textAlign="center">
             <Typography type='span' className='yellow single-stimuli-letter'> {stimulus.name} </Typography>
           </Box>
         </Grid>

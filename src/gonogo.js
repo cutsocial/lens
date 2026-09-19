@@ -15,6 +15,7 @@ import Markdown from 'react-markdown/with-html';
 
 import { shuffle } from './utils/random';
 import { useTranslation } from 'react-i18next';
+import { useStimulusOnset, responseTiming, timeoutTiming } from './utils/timing';
 
 import './gonogo.css';
 
@@ -67,9 +68,11 @@ export default function GoNoGo({content, onStore, onProgress}) {
 
     choice = go?choices.go:(empty?'empty':choices.nogo)
 
-    handleResponse(choice)
+    handleResponse(choice, event)
     
   }
+
+  const stimulusOnset = useStimulusOnset(state.step === 'stimuli', state.trial);
 
   useEffect(() => {
     window.addEventListener('keydown', handleKeyPress);
@@ -131,7 +134,8 @@ export default function GoNoGo({content, onStore, onProgress}) {
               'correct': null,
               'respondedAt': null,
               'trialStartedAt': state.trialStartedAt,
-              'rt': null
+              'rt': null,
+              ...timeoutTiming(stimulusOnset)
             }],
             timeouts: state.timeouts + 1,
             correct: false,
@@ -161,6 +165,7 @@ export default function GoNoGo({content, onStore, onProgress}) {
       response.taskStartedAt = state.taskStartedAt;
       response.taskFinishedAt = state.taskFinishedAt;
       response.taskDuration = state.taskFinishedAt - state.taskStartedAt;
+      response.timingVersion = 2;
       onStore({
         'view': content,
         'response': response
@@ -180,7 +185,7 @@ export default function GoNoGo({content, onStore, onProgress}) {
     })
   }
 
-  const handleResponse = (choice) => {
+  const handleResponse = (choice, event) => {
     const respondedAt = Date.now(); //timestamp
 
     clearTimeout(clock);
@@ -199,7 +204,8 @@ export default function GoNoGo({content, onStore, onProgress}) {
         'correct': _correct,
         'respondedAt': respondedAt,
         'trialStartedAt': state.trialStartedAt,
-        'rt': respondedAt - state.trialStartedAt
+        'rt': respondedAt - state.trialStartedAt,
+        ...responseTiming(event, stimulusOnset)
       }],
       step: (feedbackDuration>0)?'feedback':'fixation'
     })
@@ -208,11 +214,11 @@ export default function GoNoGo({content, onStore, onProgress}) {
   const renderStimulus = (stimulus) => {
     return (
       <Fragment>
-      {stimulus==='star' && <div onClick={() => handleResponse('star')} className='gng-stimulus'><Star fontSize='large' className='yellow' /></div>}
-      {stimulus==='empty' && <div onClick={() => handleResponse('empty')} className='gng-stimulus'> </div>}
-      {stimulus==='circle' && <div onClick={() => handleResponse('circle')} className='gng-stimulus'><Circle fontSize='large' className='blue' /></div>}
-      {stimulus==='blue-star' && <div onClick={() => handleResponse('blue-star')} className='gng-stimulus'><Star fontSize='large' className='blue' /></div>}
-      {stimulus==='yellow-circle' && <div onClick={() => handleResponse('yellow-circle')} className='gng-stimulus'><Star fontSize='large' className='yellow' /></div>}
+      {stimulus==='star' && <div onClick={(e) => handleResponse('star', e)} className='gng-stimulus'><Star fontSize='large' className='yellow' /></div>}
+      {stimulus==='empty' && <div onClick={(e) => handleResponse('empty', e)} className='gng-stimulus'> </div>}
+      {stimulus==='circle' && <div onClick={(e) => handleResponse('circle', e)} className='gng-stimulus'><Circle fontSize='large' className='blue' /></div>}
+      {stimulus==='blue-star' && <div onClick={(e) => handleResponse('blue-star', e)} className='gng-stimulus'><Star fontSize='large' className='blue' /></div>}
+      {stimulus==='yellow-circle' && <div onClick={(e) => handleResponse('yellow-circle', e)} className='gng-stimulus'><Star fontSize='large' className='yellow' /></div>}
       </Fragment>
     );
   }
