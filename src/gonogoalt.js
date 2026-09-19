@@ -23,6 +23,7 @@ import Markdown from 'react-markdown/with-html';
 
 import { sample, shuffle } from './utils/random';
 import { useTranslation } from 'react-i18next';
+import { useStimulusOnset, responseTiming, timeoutTiming } from './utils/timing';
 
 import './gonogoalt.css';
 
@@ -61,6 +62,8 @@ export default function GoNoGoAlt({content, onStore, onProgress, onNotification}
     correct: null
   })
 
+  const stimulusOnset = useStimulusOnset(state.step === 'stimuli', state.trial);
+
   useEffect(() => {
     /**
      * callback to handle keypress events
@@ -79,7 +82,7 @@ export default function GoNoGoAlt({content, onStore, onProgress, onNotification}
         return;
 
       const current = state.stimuli[state.trial - 1];
-      handleResponse(current);
+      handleResponse(current, event);
     }
     window.addEventListener('keydown', handleKeyPress);
 
@@ -143,7 +146,8 @@ export default function GoNoGoAlt({content, onStore, onProgress, onNotification}
             'correct': _correct,
             'respondedAt': respondedAt,
             'trialStartedAt': state.trialStartedAt,
-            'rt': null
+            'rt': null,
+            ...timeoutTiming(stimulusOnset)
           }],
           step: (feedbackDuration>0)?'feedback':'fixation'
         });
@@ -169,6 +173,7 @@ export default function GoNoGoAlt({content, onStore, onProgress, onNotification}
       response.taskStartedAt = state.taskStartedAt;
       response.taskFinishedAt = state.taskFinishedAt;
       response.taskDuration = state.taskFinishedAt - state.taskStartedAt;
+      response.timingVersion = 2;
       onStore({
         'view': content,
         'response': response
@@ -192,7 +197,7 @@ export default function GoNoGoAlt({content, onStore, onProgress, onNotification}
    * handles user response
    * @param {*} selected 
    */
-  const handleResponse = (selected) => {
+  const handleResponse = (selected, event) => {
     const respondedAt = Date.now(); //timestamp
     clearTimeout(clock);
 
@@ -209,7 +214,8 @@ export default function GoNoGoAlt({content, onStore, onProgress, onNotification}
         'correct': _correct,
         'respondedAt': respondedAt,
         'trialStartedAt': state.trialStartedAt,
-        'rt': respondedAt - state.trialStartedAt
+        'rt': respondedAt - state.trialStartedAt,
+        ...responseTiming(event, stimulusOnset)
       }],
       step: (feedbackDuration>0)?'feedback':'fixation'
     })
@@ -234,7 +240,7 @@ export default function GoNoGoAlt({content, onStore, onProgress, onNotification}
         return(
           <Grid item container direction='row' justifyContent='space-around' alignItems='center'>
             <Fragment>
-              <Box onClick={() => handleResponse(stimulus)} className='single-stimulus single-stimulus-icon'>
+              <Box onClick={(e) => handleResponse(stimulus, e)} className='single-stimulus single-stimulus-icon'>
                 <Block fontSize='large' className='yellow single-stimulus-icon' />
               </Box>
             </Fragment>
@@ -244,7 +250,7 @@ export default function GoNoGoAlt({content, onStore, onProgress, onNotification}
       const FigureCompoentnt = iconFigures[stimulus.name];
       return(
         <Grid item container direction='row' justifyContent='space-around' alignItems='center'>
-          <Box onClick={() => handleResponse(stimulus)} className='single-stimulus single-stimulus-icon'>
+          <Box onClick={(e) => handleResponse(stimulus, e)} className='single-stimulus single-stimulus-icon'>
             <FigureCompoentnt fontSize='large' className='yellow single-stimulus-icon' />
           </Box>
         </Grid>
@@ -252,7 +258,7 @@ export default function GoNoGoAlt({content, onStore, onProgress, onNotification}
     }else if(stimulus.type==="letter"){
       return(
         <Grid item container direction='row' justifyContent='space-around' alignItems='center'>
-          <Box onClick={() => handleResponse(stimulus)} className='single-stimulus single-stimulus-letter' textAlign="center">
+          <Box onClick={(e) => handleResponse(stimulus, e)} className='single-stimulus single-stimulus-letter' textAlign="center">
             <Typography type='span' className='yellow single-stimuli-letter'> {stimulus.name} </Typography>
           </Box>
         </Grid>

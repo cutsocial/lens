@@ -15,6 +15,7 @@ import Markdown from 'react-markdown/with-html';
 
 import { shuffle } from './utils/random';
 import { useTranslation } from 'react-i18next';
+import { useStimulusOnset, responseTiming, timeoutTiming } from './utils/timing';
 
 import './taskswitch.css';
 
@@ -42,6 +43,8 @@ export default function TaskSwitch({ content, onStore, onProgress }) {
     timeouts: 0
   })
 
+
+  const stimulusOnset = useStimulusOnset(state.step === 'stimuli', state.trial);
 
   useEffect(() => {
     /**
@@ -72,7 +75,7 @@ export default function TaskSwitch({ content, onStore, onProgress }) {
           (go?trials.top.choices.go : (empty?'empty':trials.top.choices.nogo) )
           :
           (go?trials.bottom.choices.go : (empty?'empty':trials.bottom.choices.nogo)) ;
-      handleResponse(choice)
+      handleResponse(choice, event)
     }
     
     window.addEventListener('keydown', handleKeyPress);
@@ -146,7 +149,8 @@ export default function TaskSwitch({ content, onStore, onProgress }) {
               'correct': null,
               'respondedAt': null,
               'trialStartedAt': state.trialStartedAt,
-              'rt': null
+              'rt': null,
+              ...timeoutTiming(stimulusOnset)
             }],
             timeouts: state.timeouts + 1,
             correct: false,
@@ -176,6 +180,7 @@ export default function TaskSwitch({ content, onStore, onProgress }) {
       response.taskStartedAt = state.taskStartedAt;
       response.taskFinishedAt = state.taskFinishedAt;
       response.taskDuration = state.taskFinishedAt - state.taskStartedAt;
+      response.timingVersion = 2;
       onStore({
         'view': content,
         'response': response
@@ -196,7 +201,7 @@ export default function TaskSwitch({ content, onStore, onProgress }) {
     })
   }
 
-  const handleResponse = (choice) => {
+  const handleResponse = (choice, event) => {
     const respondedAt = Date.now(); //timestamp
 
     clearTimeout(clock);
@@ -215,7 +220,8 @@ export default function TaskSwitch({ content, onStore, onProgress }) {
         'correct': _correct === choice,
         'respondedAt': respondedAt,
         'trialStartedAt': state.trialStartedAt,
-        'rt': respondedAt - state.trialStartedAt
+        'rt': respondedAt - state.trialStartedAt,
+        ...responseTiming(event, stimulusOnset)
       }],
       step: (feedbackDuration > 0) ? 'feedback' : 'fixation'
     })
@@ -229,12 +235,12 @@ export default function TaskSwitch({ content, onStore, onProgress }) {
   const renderStimulus = (stimulus, selectable = true) => {
     return (
       <Fragment>
-      {stimulus==='empty' && selectable && <div onClick={() => handleResponse('empty')} className='ts-stimulus'> </div>}
+      {stimulus==='empty' && selectable && <div onClick={(e) => handleResponse('empty', e)} className='ts-stimulus'> </div>}
       {stimulus==='empty' && !selectable && <div className='ts-stimulus ts-inactive'> </div>}
-      {stimulus==='star' && <div onClick={() => handleResponse('star')} className='ts-stimulus'><Star fontSize='large' className='yellow' /></div>}
-      {stimulus==='circle' && <div onClick={() => handleResponse('circle')} className='ts-stimulus'><Circle fontSize='large' className='blue' /></div>}
-      {stimulus==='blue-star' && <div onClick={() => handleResponse('blue-star')} className='ts-stimulus'><Star fontSize='large' className='blue' /></div>}
-      {stimulus==='yellow-circle' && <div onClick={() => handleResponse('yellow-circle')} className='ts-stimulus'><Star fontSize='large' className='yellow' /></div>}
+      {stimulus==='star' && <div onClick={(e) => handleResponse('star', e)} className='ts-stimulus'><Star fontSize='large' className='yellow' /></div>}
+      {stimulus==='circle' && <div onClick={(e) => handleResponse('circle', e)} className='ts-stimulus'><Circle fontSize='large' className='blue' /></div>}
+      {stimulus==='blue-star' && <div onClick={(e) => handleResponse('blue-star', e)} className='ts-stimulus'><Star fontSize='large' className='blue' /></div>}
+      {stimulus==='yellow-circle' && <div onClick={(e) => handleResponse('yellow-circle', e)} className='ts-stimulus'><Star fontSize='large' className='yellow' /></div>}
       </Fragment>
     );
   }

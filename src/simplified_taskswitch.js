@@ -15,6 +15,7 @@ import Markdown from 'react-markdown/with-html';
 
 import { shuffle } from './utils/random';
 import { useTranslation } from 'react-i18next';
+import { useStimulusOnset, responseTiming, timeoutTiming } from './utils/timing';
 
 import './simplified_taskswitch.css';
 
@@ -43,6 +44,8 @@ export default function SimplifiedTaskSwitch({ content, onStore, onProgress }) {
   })
 
 
+  const stimulusOnset = useStimulusOnset(state.step === 'stimuli', state.trial);
+
   useEffect(() => {
     console.log('useEffect -> before handleKeyPress, it has no dependency');
     /**
@@ -69,7 +72,7 @@ export default function SimplifiedTaskSwitch({ content, onStore, onProgress }) {
       if (key === 'ArrowRight')
         choice = current.pos > 1 ? 3 : 1;
 
-      handleResponse(choice)
+      handleResponse(choice, event)
 
     }
     window.addEventListener('keydown', handleKeyPress);
@@ -142,7 +145,8 @@ export default function SimplifiedTaskSwitch({ content, onStore, onProgress }) {
               'correct': null,
               'respondedAt': null,
               'trialStartedAt': state.trialStartedAt,
-              'rt': null
+              'rt': null,
+              ...timeoutTiming(stimulusOnset)
             }],
             timeouts: state.timeouts + 1,
             correct: false,
@@ -172,6 +176,7 @@ export default function SimplifiedTaskSwitch({ content, onStore, onProgress }) {
       response.taskStartedAt = state.taskStartedAt;
       response.taskFinishedAt = state.taskFinishedAt;
       response.taskDuration = state.taskFinishedAt - state.taskStartedAt;
+      response.timingVersion = 2;
       onStore({
         'view': content,
         'response': response
@@ -192,7 +197,7 @@ export default function SimplifiedTaskSwitch({ content, onStore, onProgress }) {
     })
   }
 
-  const handleResponse = (choice) => {
+  const handleResponse = (choice, event) => {
     const respondedAt = Date.now(); //timestamp
 
     clearTimeout(clock);
@@ -212,7 +217,8 @@ export default function SimplifiedTaskSwitch({ content, onStore, onProgress }) {
         'correct': _correct === choice,
         'respondedAt': respondedAt,
         'trialStartedAt': state.trialStartedAt,
-        'rt': respondedAt - state.trialStartedAt
+        'rt': respondedAt - state.trialStartedAt,
+        ...responseTiming(event, stimulusOnset)
       }],
       step: (feedbackDuration > 0) ? 'feedback' : 'fixation'
     })
@@ -234,7 +240,7 @@ export default function SimplifiedTaskSwitch({ content, onStore, onProgress }) {
   const renderStimulus = (stimulus, pos) => {
     return (
       <Fragment>
-        <div onClick={() => handleResponse(pos)} className='ts-stimulus'>
+        <div onClick={(e) => handleResponse(pos, e)} className='ts-stimulus'>
           {stimulus === '0-0' && <Star fontSize='large' className='yellow' />}
           {stimulus === '1-0' && <Circle fontSize='large' className='yellow' />}
           {stimulus === '0-1' && <Star fontSize='large' className='blue' />}

@@ -16,6 +16,7 @@ import Image from 'material-ui-image';
 import Markdown from 'react-markdown/with-html';
 
 import {useTranslation} from 'react-i18next';
+import { useStimulusOnset, responseTiming, timeoutTiming } from './utils/timing';
 
 import './stroop.css';
 
@@ -61,9 +62,11 @@ export default function Stroop({content, onStore}) {
 
     let choice = (key==='ArrowLeft')?choices[0]:choices[1]
 
-    handleResponse(choice, stimulus)
+    handleResponse(choice, stimulus, event)
     
   }
+
+  const stimulusOnset = useStimulusOnset(state.step === 'stimulus', state.trial);
 
   useEffect(() => {
     window.addEventListener('keydown', handleKeyPress);
@@ -129,7 +132,8 @@ export default function Stroop({content, onStore}) {
               correct: null,
               respondedAt: null,
               trialStartedAt: state.trialStartedAt,
-              rt: null}
+              rt: null,
+              ...timeoutTiming(stimulusOnset)}
             ],
             timeouts: state.timeouts + 1,
             correct: false
@@ -152,6 +156,7 @@ export default function Stroop({content, onStore}) {
       response.taskStartedAt = state.taskStartedAt;
       response.taskFinishedAt = state.taskFinishedAt;
       response.taskDuration = state.taskFinishedAt - state.taskStartedAt;
+      response.timingVersion = 2;
       onStore({
         'view': content,
         'response': response
@@ -171,7 +176,7 @@ export default function Stroop({content, onStore}) {
     });
   }
 
-  const handleResponse = (choice, stimulus) => {
+  const handleResponse = (choice, stimulus, event) => {
     let respondedAt = Date.now(); //timestamp
 
     clearTimeout(clock);
@@ -193,7 +198,8 @@ export default function Stroop({content, onStore}) {
         correct: correct,
         respondedAt: respondedAt,
         trialStartedAt: state.trialStartedAt,
-        rt: respondedAt - state.trialStartedAt
+        rt: respondedAt - state.trialStartedAt,
+        ...responseTiming(event, stimulusOnset)
       }]
     })
   }
@@ -218,7 +224,7 @@ export default function Stroop({content, onStore}) {
         let [word, color] = choice.split('')
         return (
           <Grid item xs key={i}>
-          <Button style={{color: colors[color]}} onClick={() => handleResponse(choice, stimulus)} size="large" fullWidth variant='outlined'>
+          <Button style={{color: colors[color]}} onClick={(e) => handleResponse(choice, stimulus, e)} size="large" fullWidth variant='outlined'>
             {t(words[word])}
           </Button>
           </Grid>
