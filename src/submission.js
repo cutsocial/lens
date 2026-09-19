@@ -1,76 +1,82 @@
-import React, { useEffect, useState } from 'react';
+// Replacement for src/submission.js in cutsocial/lens.
+// - retries with backoff if the save fails (2s, 4s, 8s, 16s)
+// - sends a submissionId so retries are never double-counted
+// - still shows the completion note if every attempt fails, so participants aren't stuck
+// - no participant data or Prolific IDs go to Google Analytics
+import React, { useEffect, useRef, useState } from 'react';
 
 import {Grid} from '@material-ui/core';
 import Markdown from 'react-markdown/with-html';
 import {useTranslation} from 'react-i18next';
 import ReactGA from "react-ga4";
 
+const API = 'https://server.cut.social/api/v1';
+const MAX_ATTEMPTS = 5;
+
+const newSubmissionId = () =>
+  (window.crypto && window.crypto.randomUUID)
+    ? window.crypto.randomUUID()
+    : Date.now().toString(36) + Math.random().toString(36).slice(2);
+
 export default function Submission({submission, studyId, submissionNote}) {
 
   const {t} = useTranslation();
-  const submissionApi = `https://server.cut.social/api/v1/${studyId}/responses`;
-  // const jamaspSumissionApi = `https://jamasp-fitbit-oauth-service-730427234084.us-central1.run.app/`;
+  const [status, setStatus] = useState('sending'); // sending | saved | failed
+  const [submissionCode, setSubmissionCode] = useState(undefined);
+  const started = useRef(false);
+  const debug = process.env.NODE_ENV !== 'production';
 
-  const [state, setState] = useState({
-    submissionCode: undefined,
-    debug: process.env.NODE_ENV !== 'production',
-  });
-
-  function isProlific(resp) {
-    if(resp && resp?.view?.id==="prolific ID")
-      return true;
-    return false;
-  }
-
-  const findProlificId = () => {
-    let pid = null;
-    const resps = submission.responses.filter(isProlific);
-    if(resps.length>0)
-      pid=resps[0].response;
-    return pid;
-  }
-
-  // submit and set submissionCode
   useEffect(() => {
-    if (state.submissionCode === undefined) {
-      const pid = findProlificId();
-      //console.log("pid:",pid);
-      ReactGA.event({
-        category: "info",
-        action: "submission_insert, pid : "+pid,
-        label: "info submission insert"
-      });
-      fetch(submissionApi, {
-        method: 'post',
-        mode: 'cors',
-        body: JSON.stringify(submission),
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      })
-        .then(resp => resp.json())
-        .then(respJson => setState({...state, submissionCode: respJson.submissionCode}))
-        .catch(error => {
-          ReactGA.event({
-            category: "error",
-            action: "submission_insert_error, pid : "+pid +'  error:' + error + '  stringify:'+ JSON.stringify(error),
-            label: "info submission insert: " + JSON.stringify(submission)
-          });
-          return console.error('Error:', error);
+    if (started.current) return;   // submit exactly once
+    started.current = true;
+
+    const submissionId = newSubmissionId();
+    const payload = JSON.stringify({...submission, submissionId});
+
+    const send = async (attempt) => {
+      try {
+        const resp = await fetch(`${API}/${studyId}/responses`, {
+          method: 'POST',
+          mode: 'cors',
+          body: payload,
+          headers: {'Content-Type': 'application/json'}
         });
-    }
-  },[state]);
+        if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+        const json = await resp.json();
+        setSubmissionCode(json.submissionCode);
+        setStatus('saved');
+      } catch (error) {
+        ReactGA.event({
+          category: 'error',
+          action: 'submission_failed',
+          label: `${studyId} attempt ${attempt}: ${error.message}`
+        });
+        if (attempt < MAX_ATTEMPTS) {
+          setTimeout(() => send(attempt + 1), 1000 * 2 ** attempt);
+        } else {
+          setSubmissionCode(submissionId.slice(0, 8).toUpperCase());
+          setStatus('failed');
+        }
+      }
+    };
+
+    send(1);
+  }, []);
 
   return (
     <Grid container direction='column' className='Text-container'>
 
-      {state.submissionCode &&
+      {status === 'sending' &&
+      <Grid item xs>{t('submitting', 'Saving your responses, please keep this page open…')}</Grid>
+      }
+
+      {status !== 'sending' &&
       <Grid item xs className="submission-container">
-        <Markdown source={t(submissionNote, {submissionCode: state.submissionCode})} escapeHtml={false}  className='markdown-text' />
+        <Markdown source={t(submissionNote, {submissionCode})} escapeHtml={false} className='markdown-text' />
       </Grid>
       }
 
-      {state.debug &&
+      {debug &&
       <Grid item xs>
         <pre>{JSON.stringify(submission, null, 2)}</pre>
       </Grid>
