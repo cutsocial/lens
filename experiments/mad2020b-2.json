@@ -1,0 +1,1365 @@
+{
+	"studyId": "mad2020",
+	"conditon": "b",
+	"redirectTo": "https://app.prolific.co/submissions/complete?cc=70C644D2",
+	"submissionNote": "submission.note",
+	"metadata": {
+		"maintainer": "salarirad@gmail.com"
+	},
+	"views": [{
+			"id": "introduction",
+			"type": "text",
+			"instruction": true,
+			"text": "intro.2"
+		},
+		{
+			"id": "demographics",
+			"type": "text",
+			"instruction": true,
+			"text": "intro.demographics"
+		},
+		{
+			"id": "country",
+			"type": "text",
+			"instruction": false,
+			"text": "country.q",
+			"autoComplete": "countries",
+			"required": true
+		},
+		{
+			"id": "sex",
+			"type": "matrix",
+			"text": "",
+			"requiredQuestions": [0],
+			"direction": "vertical",
+			"choices": [
+				"sex.c1", "sex.c2", "sex.c3", "sex.c4"
+			],
+			"questions": ["sex.q"]
+		},
+		{
+			"id": "age",
+			"type": "matrix",
+			"text": "",
+			"showMidMark": true,
+			"slider": true,
+			"requiredQuestions": [0],
+			"direction": "vertical",
+			"choices": [
+				"age.c1",
+				"age.c2",
+				"age.c3",
+				"age.c4",
+				"age.c5",
+				"age.c6",
+				"age.c7",
+				"age.c8",
+				"age.c9",
+				"age.c10"
+			],
+			"questions": ["age.q"]
+		},
+		{
+			"id": "living",
+			"type": "matrix",
+			"text": "",
+			"requiredQuestions": [0],
+			"direction": "vertical",
+			"choices": [
+				"living.c1",
+				"living.c2",
+				"living.c3",
+				"living.c4"
+			],
+			"questions": ["living.q"]
+		},
+		{
+			"id": "income.self",
+			"type": "matrix",
+			"text": "",
+			"slider": true,
+			"showMidMark": true,
+			"requiredQuestions": [0],
+			"direction": "vertical",
+			"choices": [
+				"income.self.c1",
+				"income.self.c2",
+				"income.self.c3",
+				"income.self.c4",
+				"income.self.c5",
+				"income.self.c6",
+				"income.self.c7"
+			],
+			"questions": ["income.self.q"]
+		},
+		{
+			"id": "income.parents",
+			"type": "matrix",
+			"text": "",
+			"slider": true,
+			"showMidMark": true,
+			"requiredQuestions": [0],
+			"direction": "vertical",
+			"choices": [
+				"income.parent.c1",
+				"income.parent.c2",
+				"income.parent.c3",
+				"income.parent.c4",
+				"income.parent.c5",
+				"income.parent.c6",
+				"income.parent.c7"
+			],
+			"questions": ["income.parent.q"]
+		},
+		{
+			"id": "education",
+			"type": "matrix",
+			"text": "",
+			"requiredQuestions": [0],
+			"direction": "vertical",
+			"choices": [
+				"education.c1",
+				"education.c2",
+				"education.c3",
+				"education.c4",
+				"education.c5",
+				"education.c6",
+				"education.c7",
+				"education.c8"
+			],
+			"questions": ["education.q"]
+		},
+		{
+			"id": "risk.qual",
+			"type": "matrix",
+			"text": "",
+			"requiredQuestions": [
+				0
+			],
+			"direction": "vertical",
+			"choices": [
+				"risk.qual.c1",
+				"risk.qual.c2",
+				"risk.qual.c3",
+				"risk.qual.c4"
+			],
+			"questions": ["risk.qual.q"]
+		},
+		{
+			"id": "tasks intro",
+			"type": "text",
+			"instruction": true,
+			"text": "tasks.intro"
+		},
+		{
+			"id": "social dilemma 1",
+			"type": "text",
+			"instruction": false,
+			"required": true,
+			"text": "social.dilemma.q1",
+			"help": "",
+			"placeholder": "Points I request",
+			"pattern": ""
+		},
+		{
+			"id": "social dilemma 2",
+			"type": "text",
+			"instruction": false,
+			"required": true,
+			"text": "social.dilemma.q2",
+			"help": "",
+			"placeholder": "Points I request",
+			"pattern": ""
+		},
+		{
+			"id": "social dilemma 3",
+			"type": "text",
+			"instruction": false,
+			"required": true,
+			"text": "social.dilemma.q3",
+			"help": "",
+			"placeholder": "Points I request",
+			"pattern": ""
+		},
+		{
+			"id": "social dilemma 4",
+			"type": "text",
+			"instruction": false,
+			"required": true,
+			"text": "social.dilemma.q4",
+			"help": "",
+			"placeholder": "Points I request",
+			"pattern": ""
+		},
+		{
+			"id": "social dilemma 5",
+			"type": "text",
+			"instruction": false,
+			"required": true,
+			"text": "social.dilemma.q5",
+			"help": "",
+			"placeholder": "Points I request",
+			"pattern": ""
+		},
+		{
+			"id": "social dilemma 6",
+			"type": "text",
+			"instruction": false,
+			"required": true,
+			"text": "social.dilemma.q6",
+			"help": "",
+			"placeholder": "Points I request",
+			"pattern": ""
+		},
+		{
+			"id": "bart intro",
+			"type": "text",
+			"instruction": true,
+			"text": "bart.intro"
+		},
+		{
+			"id": "bart",
+			"type": "bart",
+			"reward": 7,
+			"maxPumps": 20,
+			"safePumps": 1,
+			"trials": 25
+		},
+		{
+			"id": "trust",
+			"type": "matrix",
+			"text": "trust.q",
+			"slider": true,
+			"showMidMark": true,
+			"requiredQuestions": [
+				0,
+				1,
+				2
+			],
+			"direction": "vertical",
+			"choices": [
+				"trust.c1",
+				"trust.c2",
+				"trust.c3",
+				"trust.c4",
+				"trust.c5",
+				"trust.c6",
+				"trust.c7"
+			],
+			"questions": [
+				"trust.q1",
+				"trust.q2",
+				"trust.q3",
+				"trust.q4",
+				"trust.q5",
+				"trust.falk"
+			]
+		},
+		{
+			"id": "control",
+			"type": "matrix",
+			"text": "control.q",
+			"slider": true,
+			"showMidMark": true,
+			"requiredQuestions": [
+				0,
+				1,
+				2
+			],
+			"direction": "vertical",
+			"choices": [
+				"control.c1",
+				"control.c2",
+				"control.c3",
+				"control.c4",
+				"control.c5",
+				"control.c6",
+				"control.c7"
+			],
+			"questions": [
+				"control.q1",
+				"control.q6",
+				"control.q7",
+				"control.q8",
+				"control.q9",
+				"attention.check.1",
+				"control.q10",
+				"control.q2",
+				"control.q3",
+				"control.q4",
+				"control.q5",
+				"control.q11",
+				"control.q12"
+			]
+		},
+		{
+			"id": "trust.game",
+			"type": "matrix",
+			"text": "",
+			"slider": true,
+			"showMidMark": true,
+			"requiredQuestions": [0],
+			"direction": "vertical",
+			"choices": [
+				"trust.game.c1",
+				"trust.game.c2",
+				"trust.game.c3",
+				"trust.game.c4",
+				"trust.game.c5",
+				"trust.game.c6",
+				"trust.game.c7",
+				"trust.game.c8",
+				"trust.game.c9",
+				"trust.game.c10",
+				"trust.game.c11",
+				"trust.game.c12",
+				"trust.game.c13",
+				"trust.game.c14",
+				"trust.game.c15",
+				"trust.game.c16",
+				"trust.game.c17",
+				"trust.game.c18",
+				"trust.game.c19",
+				"trust.game.c20",
+				"trust.game.c21",
+				"trust.game.c22",
+				"trust.game.c23",
+				"trust.game.c24",
+				"trust.game.c25",
+				"trust.game.c26",
+				"trust.game.c27",
+				"trust.game.c28",
+				"trust.game.c29",
+				"trust.game.c30",
+				"trust.game.c31",
+				"trust.game.c32",
+				"trust.game.c33",
+				"trust.game.c34",
+				"trust.game.c35",
+				"trust.game.c36",
+				"trust.game.c37",
+				"trust.game.c38",
+				"trust.game.c39",
+				"trust.game.c40",
+				"trust.game.c41"
+
+			],
+			"questions": ["trust.game.q"]
+		},
+		{
+			"id": "patience",
+			"type": "matrix",
+			"text": "",
+			"slider": true,
+			"showMidMark": true,
+			"requiredQuestions": [0],
+			"direction": "vertical",
+			"choices": [
+				"patience.c1",
+				"patience.c2",
+				"patience.c3",
+				"patience.c4",
+				"patience.c5",
+				"patience.c6",
+				"patience.c7",
+				"patience.c8",
+				"patience.c9",
+				"patience.c10",
+				"patience.c11"
+
+			],
+			"questions": ["patience.q"]
+		},
+		{
+			"id": "trust.fehr",
+			"type": "matrix",
+			"text": "",
+			"slider": true,
+			"showMidMark": true,
+			"requiredQuestions": [
+				0,
+				1,
+				2
+			],
+			"direction": "vertical",
+			"choices": [
+				"trust.fehr.c1",
+				"trust.fehr.c2",
+				"trust.fehr.c3",
+				"trust.fehr.c4",
+				"trust.fehr.c5"
+			],
+			"questions": [
+				"trust.fehr.1",
+				"trust.fehr.2",
+				"trust.fehr.3"
+			]
+		},
+		{
+			"id": "svo.intro",
+			"type": "text",
+			"instruction": true,
+			"text": "svo.intro"
+		},
+		{
+			"id": "svo.1",
+			"type": "matrix",
+			"text": "",
+			"slider": false,
+			"requiredQuestions": [0],
+			"direction": "vertical",
+			"choices": [
+				"svo.c1.a",
+				"svo.c1.b",
+				"svo.c1.c"
+			],
+			"questions": ["svo.q"]
+		},
+		{
+			"id": "svo.2",
+			"type": "matrix",
+			"text": "",
+			"slider": false,
+			"requiredQuestions": [0],
+			"direction": "vertical",
+			"choices": [
+				"svo.c2.a",
+				"svo.c2.b",
+				"svo.c2.c"
+			],
+			"questions": ["svo.q"]
+		},
+		{
+			"id": "svo.3",
+			"type": "matrix",
+			"text": "",
+			"slider": false,
+			"requiredQuestions": [0],
+			"direction": "vertical",
+			"choices": [
+				"svo.c3.a",
+				"svo.c3.b",
+				"svo.c3.c"
+			],
+			"questions": ["svo.q"]
+		},
+		{
+			"id": "svo.4",
+			"type": "matrix",
+			"text": "",
+			"slider": false,
+			"requiredQuestions": [0],
+			"direction": "vertical",
+			"choices": [
+				"svo.c4.a",
+				"svo.c4.b",
+				"svo.c4.c"
+			],
+			"questions": ["svo.q"]
+		},
+		{
+			"id": "svo.5",
+			"type": "matrix",
+			"text": "",
+			"slider": false,
+			"requiredQuestions": [0],
+			"direction": "vertical",
+			"choices": [
+				"svo.c5.a",
+				"svo.c5.b",
+				"svo.c5.c"
+			],
+			"questions": ["svo.q"]
+		},
+		{
+			"id": "svo.6",
+			"type": "matrix",
+			"text": "",
+			"slider": false,
+			"requiredQuestions": [0],
+			"direction": "vertical",
+			"choices": [
+				"svo.c6.a",
+				"svo.c6.b",
+				"svo.c6.c"
+			],
+			"questions": ["svo.q"]
+		},
+		{
+			"id": "svo.7",
+			"type": "matrix",
+			"text": "",
+			"slider": false,
+			"requiredQuestions": [0],
+			"direction": "vertical",
+			"choices": [
+				"svo.c7.a",
+				"svo.c7.b",
+				"svo.c7.c"
+			],
+			"questions": ["svo.q"]
+		},
+		{
+			"id": "svo.8",
+			"type": "matrix",
+			"text": "",
+			"slider": false,
+			"requiredQuestions": [0],
+			"direction": "vertical",
+			"choices": [
+				"svo.c8.a",
+				"svo.c8.b",
+				"svo.c8.c"
+			],
+			"questions": ["svo.q"]
+		},
+		{
+			"id": "svo.9",
+			"type": "matrix",
+			"text": "",
+			"slider": false,
+			"requiredQuestions": [0],
+			"direction": "vertical",
+			"choices": [
+				"svo.c9.a",
+				"svo.c9.b",
+				"svo.c9.c"
+			],
+			"questions": ["svo.q"]
+		},
+		{
+			"id": "risk.falk",
+			"type": "matrix",
+			"text": "",
+			"slider": true,
+			"showMidMark": true,
+			"requiredQuestions": [
+				0,
+				1,
+				2
+			],
+			"direction": "vertical",
+			"choices": [
+				"risk.falk.c1",
+				"risk.falk.c2",
+				"risk.falk.c3",
+				"risk.falk.c4",
+				"risk.falk.c5",
+				"risk.falk.c6",
+				"risk.falk.c7",
+				"risk.falk.c8",
+				"risk.falk.c9",
+				"risk.falk.c10",
+				"risk.falk.c11"
+			],
+			"questions": [
+				"risk.falk.q1",
+				"risk.falk.q2",
+				"risk.falk.q3",
+				"risk.falk.q4",
+				"risk.falk.q5",
+				"risk.falk.q6"
+			]
+		},
+		{
+			"id": "recip",
+			"type": "matrix",
+			"text": "",
+			"slider": true,
+			"showMidMark": true,
+			"requiredQuestions": [
+				0,
+				1,
+				2
+			],
+			"direction": "vertical",
+			"choices": [
+				"recip.c1",
+				"recip.c2",
+				"recip.c3",
+				"recip.c4",
+				"recip.c5",
+				"recip.c6",
+				"recip.c7",
+				"recip.c8",
+				"recip.c9",
+				"recip.c10",
+				"recip.c11"
+			],
+			"questions": [
+				"pos.reicp",
+				"neg.recip.1",
+				"neg.recip.2",
+				"neg.recip.3",
+				"attention.check.2",
+				"altruism"
+			]
+		},
+		{
+			"id": "ownership",
+			"type": "matrix",
+			"text": "ownership.q.instruction",
+			"requiredQuestions": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+			"direction": "vertical",
+			"choices": [
+				"Yes",
+				"No"
+			],
+			"questions": [
+				"ownership.q.1",
+				"ownership.q.2",
+				"ownership.q.3",
+				"ownership.q.4",
+				"ownership.q.5",
+				"ownership.q.6",
+				"ownership.q.7",
+				"ownership.q.8",
+				"ownership.q.9",
+				"ownership.q.10"
+			]
+		},
+		{
+			"id": "phone.time",
+			"type": "matrix",
+			"text": "",
+			"requiredQuestions": [0],
+			"direction": "vertical",
+			"choices": [
+				"ownership.c1",
+				"ownership.c2",
+				"ownership.c3",
+				"ownership.c4",
+				"ownership.c5",
+				"ownership.c6",
+				"ownership.c7",
+				"ownership.c8"
+			],
+			"questions": [
+				"ownership.time.q"
+			]
+		},
+		{
+			"id": "gonogo.practice.introduction",
+			"type": "text",
+			"instruction": true,
+			"text": "gonogo.introduction"
+		},
+		{
+			"id": "gonogo.practice",
+			"type": "gonogo",
+			"text": "gonogo.instruction",
+			"help": "",
+			"trials": {
+				"total": 60,
+				"go": 45,
+				"left": 30,
+				"leftGo": 22
+			},
+			"stimuliDuration": 1000,
+			"fixationDuration": 1000,
+			"feedbackDuration": 500,
+			"timeoutsBeforeReset": 20,
+			"choices": {
+				"go": "blue-star",
+				"nogo": "star"
+			}
+		},
+		{
+			"id": "gonogo.main.introduction",
+			"type": "text",
+			"instruction": true,
+			"text": "gonogo.main.introduction"
+		},
+		{
+			"id": "gonogo.practice",
+			"type": "gonogo",
+			"text": "gonogo.instruction",
+			"help": "Press one of the images in less than three seconds.",
+			"trials": {
+				"total": 60,
+				"go": 45,
+				"left": 30,
+				"leftGo": 22
+			},
+			"stimuliDuration": 1000,
+			"fixationDuration": 1000,
+			"feedbackDuration": 0,
+			"timeoutsBeforeReset": 20,
+			"choices": {
+				"go": "blue-star",
+				"nogo": "star"
+			}
+		},
+		{
+			"id": "stroop.practice.introduction",
+			"type": "text",
+			"instruction": true,
+			"text": "stroop.practice.introduction"
+		},
+		{
+			"id": "stroop.practice",
+			"type": "stroop",
+			"rule": "stroop_demo.rule",
+			"help": "stroop_demo.help",
+			"colors": {
+				"G": "#6cba47",
+				"R": "#d73636"
+			},
+			"words": {
+				"G": "colors.green",
+				"R": "colors.red"
+			},
+			"trials": [{
+					"stimulus": "GG",
+					"choices": [
+						"GG",
+						"RR"
+					]
+				},
+				{
+					"stimulus": "RG",
+					"choices": [
+						"GG",
+						"RG"
+					]
+				},
+				{
+					"stimulus": "GG",
+					"choices": [
+						"GR",
+						"RG"
+					]
+				},
+				{
+					"stimulus": "RR",
+					"choices": [
+						"GG",
+						"RR"
+					]
+				},
+				{
+					"stimulus": "RG",
+					"choices": [
+						"GG",
+						"RR"
+					]
+				},
+				{
+					"stimulus": "RR",
+					"choices": [
+						"GG",
+						"RG"
+					]
+				},
+				{
+					"stimulus": "GR",
+					"choices": [
+						"GR",
+						"RR"
+					]
+				},
+				{
+					"stimulus": "RR",
+					"choices": [
+						"GR",
+						"RR"
+					]
+				},
+
+				{
+					"stimulus": "RG",
+					"choices": [
+						"GR",
+						"RR"
+					]
+				},
+				{
+					"stimulus": "RG",
+					"choices": [
+						"GR",
+						"RG"
+					]
+				},
+				{
+					"stimulus": "GR",
+					"choices": [
+						"GG",
+						"RR"
+					]
+				},
+				{
+					"stimulus": "RR",
+					"choices": [
+						"GR",
+						"RG"
+					]
+				},
+				{
+					"stimulus": "GR",
+					"choices": [
+						"GG",
+						"RG"
+					]
+				},
+				{
+					"stimulus": "GG",
+					"choices": [
+						"GR",
+						"RR"
+					]
+				},
+				{
+					"stimulus": "GR",
+					"choices": [
+						"GR",
+						"RG"
+					]
+				},
+				{
+					"stimulus": "GG",
+					"choices": [
+						"GG",
+						"RG"
+					]
+				},
+				{
+					"stimulus": "GG",
+					"choices": [
+						"GG",
+						"RR"
+					]
+				},
+				{
+					"stimulus": "RG",
+					"choices": [
+						"GG",
+						"RG"
+					]
+				},
+				{
+					"stimulus": "GG",
+					"choices": [
+						"GR",
+						"RG"
+					]
+				},
+				{
+					"stimulus": "RR",
+					"choices": [
+						"GG",
+						"RR"
+					]
+				},
+				{
+					"stimulus": "RG",
+					"choices": [
+						"GG",
+						"RR"
+					]
+				},
+				{
+					"stimulus": "RR",
+					"choices": [
+						"GG",
+						"RG"
+					]
+				},
+				{
+					"stimulus": "GR",
+					"choices": [
+						"GR",
+						"RR"
+					]
+				},
+				{
+					"stimulus": "RR",
+					"choices": [
+						"GR",
+						"RR"
+					]
+				},
+
+				{
+					"stimulus": "RG",
+					"choices": [
+						"GR",
+						"RR"
+					]
+				},
+				{
+					"stimulus": "RG",
+					"choices": [
+						"GR",
+						"RG"
+					]
+				},
+				{
+					"stimulus": "GR",
+					"choices": [
+						"GG",
+						"RR"
+					]
+				},
+				{
+					"stimulus": "RR",
+					"choices": [
+						"GR",
+						"RG"
+					]
+				},
+				{
+					"stimulus": "GR",
+					"choices": [
+						"GG",
+						"RG"
+					]
+				},
+				{
+					"stimulus": "GG",
+					"choices": [
+						"GR",
+						"RR"
+					]
+				},
+				{
+					"stimulus": "GR",
+					"choices": [
+						"GR",
+						"RG"
+					]
+				},
+				{
+					"stimulus": "GG",
+					"choices": [
+						"GG",
+						"RG"
+					]
+				}
+			],
+			"stimulusDuration": 1000,
+			"fixationDuration": 1000,
+			"feedbackDuration": 1000,
+			"timeoutsBeforeReset": 10,
+			"randomizeTrials": true,
+			"randomizeChoices": true
+
+		},
+		{
+			"id": "stroop.main.introduction",
+			"type": "text",
+			"instruction": true,
+			"text": "stroop.main.introduction"
+		},
+		{
+			"id": "stroop.main",
+			"type": "stroop",
+			"rule": "stroop_demo.rule",
+			"help": "stroop_demo.help",
+			"colors": {
+				"G": "#6cba47",
+				"R": "#d73636"
+			},
+			"words": {
+				"G": "colors.green",
+				"R": "colors.red"
+			},
+			"trials": [{
+					"stimulus": "GG",
+					"choices": [
+						"GG",
+						"RR"
+					]
+				},
+				{
+					"stimulus": "RG",
+					"choices": [
+						"GG",
+						"RG"
+					]
+				},
+				{
+					"stimulus": "GG",
+					"choices": [
+						"GR",
+						"RG"
+					]
+				},
+				{
+					"stimulus": "RR",
+					"choices": [
+						"GG",
+						"RR"
+					]
+				},
+				{
+					"stimulus": "RG",
+					"choices": [
+						"GG",
+						"RR"
+					]
+				},
+				{
+					"stimulus": "RR",
+					"choices": [
+						"GG",
+						"RG"
+					]
+				},
+				{
+					"stimulus": "GR",
+					"choices": [
+						"GR",
+						"RR"
+					]
+				},
+				{
+					"stimulus": "RR",
+					"choices": [
+						"GR",
+						"RR"
+					]
+				},
+
+				{
+					"stimulus": "RG",
+					"choices": [
+						"GR",
+						"RR"
+					]
+				},
+				{
+					"stimulus": "RG",
+					"choices": [
+						"GR",
+						"RG"
+					]
+				},
+				{
+					"stimulus": "GR",
+					"choices": [
+						"GG",
+						"RR"
+					]
+				},
+				{
+					"stimulus": "RR",
+					"choices": [
+						"GR",
+						"RG"
+					]
+				},
+				{
+					"stimulus": "GR",
+					"choices": [
+						"GG",
+						"RG"
+					]
+				},
+				{
+					"stimulus": "GG",
+					"choices": [
+						"GR",
+						"RR"
+					]
+				},
+				{
+					"stimulus": "GR",
+					"choices": [
+						"GR",
+						"RG"
+					]
+				},
+				{
+					"stimulus": "GG",
+					"choices": [
+						"GG",
+						"RG"
+					]
+				},
+				{
+					"stimulus": "GG",
+					"choices": [
+						"GG",
+						"RR"
+					]
+				},
+				{
+					"stimulus": "RG",
+					"choices": [
+						"GG",
+						"RG"
+					]
+				},
+				{
+					"stimulus": "GG",
+					"choices": [
+						"GR",
+						"RG"
+					]
+				},
+				{
+					"stimulus": "RR",
+					"choices": [
+						"GG",
+						"RR"
+					]
+				},
+				{
+					"stimulus": "RG",
+					"choices": [
+						"GG",
+						"RR"
+					]
+				},
+				{
+					"stimulus": "RR",
+					"choices": [
+						"GG",
+						"RG"
+					]
+				},
+				{
+					"stimulus": "GR",
+					"choices": [
+						"GR",
+						"RR"
+					]
+				},
+				{
+					"stimulus": "RR",
+					"choices": [
+						"GR",
+						"RR"
+					]
+				},
+
+				{
+					"stimulus": "RG",
+					"choices": [
+						"GR",
+						"RR"
+					]
+				},
+				{
+					"stimulus": "RG",
+					"choices": [
+						"GR",
+						"RG"
+					]
+				},
+				{
+					"stimulus": "GR",
+					"choices": [
+						"GG",
+						"RR"
+					]
+				},
+				{
+					"stimulus": "RR",
+					"choices": [
+						"GR",
+						"RG"
+					]
+				},
+				{
+					"stimulus": "GR",
+					"choices": [
+						"GG",
+						"RG"
+					]
+				},
+				{
+					"stimulus": "GG",
+					"choices": [
+						"GR",
+						"RR"
+					]
+				},
+				{
+					"stimulus": "GR",
+					"choices": [
+						"GR",
+						"RG"
+					]
+				},
+				{
+					"stimulus": "GG",
+					"choices": [
+						"GG",
+						"RG"
+					]
+				}
+			],
+			"stimulusDuration": 1000,
+			"fixationDuration": 1000,
+			"feedbackDuration": 0,
+			"timeoutsBeforeReset": 10,
+			"randomizeTrials": true,
+			"randomizeChoices": true
+
+		},
+		{
+			"id": "almost.done.statement",
+			"type": "text",
+			"instruction": true,
+			"text": "almost.done"
+		},
+		{
+			"id": "diet",
+			"type": "matrix",
+			"text": "",
+			"slider": false,
+			"requiredQuestions": [0],
+			"direction": "vertical",
+			"choices": [
+				"diet.c1",
+				"diet.c2"
+			],
+			"questions": ["diet.q"]
+		},
+		{
+			"id": "food.reminder",
+			"type": "matrix",
+			"text": "food.reminder.q.instruction",
+			"requiredQuestions": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+			"direction": "vertical",
+			"choices": [
+				"Yes",
+				"No"
+			],
+			"questions": [
+				"food.reminder.q.1",
+				"food.reminder.q.2",
+				"food.reminder.q.3",
+				"food.reminder.q.4",
+				"food.reminder.q.5",
+				"food.reminder.q.6",
+				"food.reminder.q.7",
+				"food.reminder.q.8",
+				"food.reminder.q.9",
+				"food.reminder.q.10"
+			]
+		},
+		{
+			"id": "food.reminder.time",
+			"type": "matrix",
+			"text": "",
+			"requiredQuestions": [0],
+			"direction": "vertical",
+			"choices": [
+				"food.reminder.c1",
+				"food.reminder.c2",
+				"food.reminder.c3",
+				"food.reminder.c4",
+				"food.reminder.c5",
+				"food.reminder.c6",
+				"food.reminder.c7",
+				"food.reminder.c8"
+			],
+			"questions": [
+				"food.reminder.time.q"
+			]
+		},
+		{
+			"id": "hunger",
+			"type": "matrix",
+			"text": "",
+			"slider": true,
+			"showMidMark": true,
+			"requiredQuestions": [0],
+			"direction": "vertical",
+			"choices": [
+				"hunger.c1",
+				"hunger.c2",
+				"hunger.c3",
+				"hunger.c4",
+				"hunger.c5",
+				"hunger.c6",
+				"hunger.c7",
+				"hunger.c8",
+				"hunger.c9",
+				"hunger.c10",
+				"hunger.c11"
+
+			],
+			"questions": ["hunger.q"]
+		},
+		{
+			"id": "religion",
+			"type": "text",
+			"instruction": false,
+			"required": true,
+			"text": "religion.q",
+			"help": "",
+			"placeholder": "",
+			"pattern": ""
+		},
+		{
+			"id": "religiosity",
+			"type": "matrix",
+			"text": "",
+			"slider": true,
+			"requiredQuestions": [0],
+			"direction": "vertical",
+			"choices": [
+				"religiosity.c1",
+				"religiosity.c2",
+				"religiosity.c3",
+				"religiosity.c4",
+				"religiosity.c5",
+				"religiosity.c6",
+				"religiosity.c7",
+				"religiosity.c8",
+				"religiosity.c9",
+				"religiosity.c10",
+				"religiosity.c11"
+
+			],
+			"questions": ["religiosity.q"]
+		},
+		{
+			"id": "fasting.ramadan",
+			"type": "matrix",
+			"text": "",
+			"slider": false,
+			"requiredQuestions": [0],
+			"direction": "vertical",
+			"choices": [
+				"fasting.c1",
+				"fasting.c2"
+			],
+			"questions": ["fasting.ramadan.q"]
+		},
+		
+		{
+			"id": "fasted days",
+			"type": "text",
+			"instruction": false,
+			"required": true,
+			"text": "fasted.days.2",
+			"help": "",
+			"placeholder": "",
+			"pattern": ""
+		},  
+		{
+			"id": "fast time",
+			"type": "text",
+			"instruction": false,
+			"required": true,
+			"text": "fast.time.2",
+			"help": "",
+			"placeholder": "",
+			"pattern": ""
+		},    
+		{
+			"id": "prolific ID",
+			"type": "text",
+			"instruction": false,
+			"required": true,
+			"text": "p.id.intro",
+			"help": "",
+			"placeholder": "",
+			"pattern": ""
+		}
+	]
+}

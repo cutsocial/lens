@@ -1,0 +1,63 @@
+{
+  "studyId": "GoNoGoAlt-demo",
+  "conditon": "a",
+  "redirectTo": "https://cut.social",
+  "submissionNote": "submission.note",
+  "metadata": {
+    "maintainer": "radmanesh@me.com"
+  },
+  "views": [
+    {
+      "id": "GoNoGoAlt Demo",
+      "type":"gonogoalt",
+      "text":"gonogoalt.instruction",
+      "help":"gonogoalt.help",
+      "trials": {
+        "total": 24,
+        "go": 12
+      },
+      "stimuliDuration": 2000,
+      "fixationDuration": 500, 
+      "feedbackDuration": 1000,
+      "choices": {
+        "go": {
+          "type": "letter",
+          "names": ["b","c","d","f","g","h"]
+        },
+        "nogo": {
+          "type": "letter",
+          "names":["a","e","i","o","u"] 
+        }
+      }
+    },
+    {
+      "id": "gonogo with letters",
+      "type":"gonogoalt",
+      "text":"gonogoalt.instruction",
+      "help":"gonogoalt.help",
+      "trials": {
+        "total": 120,
+        "go": 97
+      },
+      "stimuliDuration": 2000,
+      "fixationDuration": 500, 
+      "feedbackDuration": 500,
+      "choices": {
+        "go": {
+          "type": "letter",
+          "names": ["B","C","D","F","G","H","J","K","L","M","N","P","Q","R","S","T","V","W","X","Y","Z"]
+        },
+        "nogo": {
+          "type": "letter",
+          "names":["A","E","I","O","U"] 
+        }
+      }
+    },
+    {
+      "id": "gonogo_demo.outro_text",
+      "type": "text",
+      "instruction": true,
+      "text": "Thanks!"
+    }
+  ]
+}

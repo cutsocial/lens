@@ -1,0 +1,124 @@
+{
+    "studyId": "mad2025",
+    "conditon": "none",
+    "redirectTo": "https://ucsbltsc.qualtrics.com/jfe/form/SV_bJxHAzuKtYY6qnY",
+    "submissionNote": "submission.note",
+    "metadata": {
+        "maintainer": ""
+    },
+    "views": [
+        {
+            "id": "prolific ID",
+            "type": "text",
+            "instruction": false,
+            "required": true,
+            "text": "id.intro",
+            "help": "",
+            "placeholder": "",
+            "pattern": ""
+        },
+        {
+            "id": "gonogo.practice.introduction",
+            "type": "text",
+            "instruction": true,
+            "text": "gonogo.introduction.michael.1"
+        },
+        {
+            "id": "gonogo.practice.introduction",
+            "type": "text",
+            "instruction": true,
+            "text": "gonogo.introduction.michael.2"
+        },
+        {
+            "id": "gonogo.practice.introduction",
+            "type": "text",
+            "instruction": true,
+            "text": "gonogo.introduction.michael.3"
+        },        
+        {
+            "id": "gonogo.practice.introduction",
+            "type": "text",
+            "instruction": true,
+            "text": "gonogo.introduction.michael.4"
+        },        
+        {
+            "id": "gonogo.practice",
+            "type": "gonogo",
+            "text": "gonogo.instruction",
+            "help": "",
+            "trials": {
+                "total": 60,
+                "go": 45,
+                "left": 30,
+                "leftGo": 22
+            },
+            "stimuliDuration": 1000,
+            "fixationDuration": 1000,
+            "feedbackDuration": 500,
+            "timeoutsBeforeReset": 20,
+            "choices": {
+                "go": "blue-star",
+                "nogo": "star"
+            }
+        },
+        {
+            "id": "gonogo.main.introduction",
+            "type": "text",
+            "instruction": true,
+            "text": "gonogo.main.introduction"
+        },
+        {
+            "id": "gonogo.practice",
+            "type": "gonogo",
+            "text": "gonogo.instruction",
+            "help": "Press one of the images in less than three seconds.",
+            "trials": {
+                "total": 60,
+                "go": 45,
+                "left": 30,
+                "leftGo": 22
+            },
+            "stimuliDuration": 1000,
+            "fixationDuration": 1000,
+            "feedbackDuration": 0,
+            "timeoutsBeforeReset": 20,
+            "choices": {
+                "go": "blue-star",
+                "nogo": "star"
+            }
+        },
+        {
+            "id": "BSCS",
+            "type": "matrix",
+            "text": "trust.q",
+            "slider": true,
+            "showMidMark": true,
+            "requiredQuestions":[],
+            "direction": "vertical",
+            "choices": [
+                "BSCS.c1",
+                "BSCS.c2",
+                "BSCS.c3",
+                "BSCS.c4",
+                "BSCS.c5"
+            ],
+            "questions": [
+                "BSCS.1",
+                "BSCS.2",
+                "BSCS.3",
+                "BSCS.4",
+                "BSCS.5",
+                "BSCS.6",
+                "BSCS.7",
+                "BSCS.8",
+                "check.1",
+                "BSCS.9",
+                "BSCS.10",
+                "BSCS.11",
+                "BSCS.12",
+                "BSCS.13",
+                "BSCS.14"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,87 @@
+{
+  "studyId": "test-scroll",
+  "conditon": "a",
+  "submissionNote": "submission.note",
+  "metadata": {
+    "maintainer": "ansarinia@me.com"
+  },
+  "views": [
+    {
+      "id": "trust",
+      "type": "matrix",
+      "text": "trust.q",
+      "requiredQuestions": [
+        0,
+        1,
+        2
+      ],
+      "direction": "vertical",
+      "choices": [
+        "trust.c1",
+        "trust.c2",
+        "trust.c3",
+        "trust.c4",
+        "trust.c5"
+      ],
+      "questions": [
+        "trust.q1",
+        "trust.q2",
+        "trust.q3",
+        "trust.q4",
+        "trust.q5"
+      ]
+    },
+    {
+      "id": "dospert",
+      "type": "matrix",
+      "text": "dospert.intro",
+      "requiredQuestions": [
+        0,
+        1,
+        2
+      ],
+      "direction": "vertical",
+      "choices": [
+        "dospert.c1",
+        "dospert.c2",
+        "dospert.c3",
+        "dospert.c4",
+        "dospert.c5",
+        "dospert.c6",
+        "dospert.c7"
+      ],
+      "questions": [
+        "dospert.q1",
+        "dospert.q2",
+        "dospert.q3",
+        "dospert.q4",
+        "dospert.q5",
+        "dospert.q6",
+        "dospert.q7",
+        "dospert.q8",
+        "dospert.q9",
+        "dospert.q10",
+        "dospert.q11",
+        "dospert.q12",
+        "dospert.q13",
+        "dospert.q14",
+        "dospert.q15",
+        "dospert.q16",
+        "dospert.q17",
+        "dospert.q18",
+        "dospert.q19",
+        "dospert.q20",
+        "dospert.q21",
+        "dospert.q22",
+        "dospert.q23",
+        "dospert.q24",
+        "dospert.q25",
+        "dospert.q26",
+        "dospert.q27",
+        "dospert.q28",
+        "dospert.q29",
+        "dospert.q30"
+      ]
+    }
+  ]
+}
