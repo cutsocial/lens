@@ -249,6 +249,145 @@
       "startText": "lens2.single.start"
     },
     {
+      "id": "lens2.bart.intro",
+      "type": "text",
+      "instruction": true,
+      "text": "lens2.bart.intro"
+    },
+    {
+      "id": "bart2.demo",
+      "type": "bart2",
+      "reward": 7,
+      "maxPumps": 20,
+      "safePumps": 1,
+      "trials": 5
+    },
+    {
+      "id": "lens2.dictator.intro",
+      "type": "text",
+      "instruction": true,
+      "text": "lens2.dictator.intro"
+    },
+    {
+      "id": "dictator2.demo",
+      "type": "dictator2",
+      "text": "dictator.rule.text",
+      "trials": 2,
+      "tokens": 3,
+      "opponentTypes": [
+        "occupied",
+        "female"
+      ],
+      "useOpponentTypes": false,
+      "personsPrefix": "detailed.set.p",
+      "persons": [
+        {
+          "id": 1,
+          "field1": "field1.content",
+          "field2": "field2.content",
+          "field3": "field3.content",
+          "field4": "field4.content",
+          "avatar": "marry-avatar.jpg",
+          "tags": [
+            "occupied",
+            "single",
+            "female",
+            "young"
+          ]
+        },
+        {
+          "id": 2,
+          "field1": "field1.content",
+          "field3": "field3.content",
+          "tags": [
+            "unemployed",
+            "married",
+            "male"
+          ]
+        },
+        {
+          "id": 3,
+          "field1": "field1.content",
+          "field2": "field2.content",
+          "field3": "field3.content",
+          "field4": "field4.content",
+          "avatar": "peter-avatar.jpg",
+          "tags": [
+            "occupied",
+            "single",
+            "male",
+            "rich",
+            "young"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lens2.ultimatum.intro",
+      "type": "text",
+      "instruction": true,
+      "text": "lens2.ultimatum.intro"
+    },
+    {
+      "id": "ultimatum2.demo",
+      "type": "ultimatum2",
+      "text": "ultimatum.rule.text",
+      "trials": 2,
+      "tokens": 3,
+      "opponentTypes": [
+        "occupied",
+        "female"
+      ],
+      "useOpponentTypes": false,
+      "personsPrefix": "detailed.set.p",
+      "dialogOptionalText": "ultimatum.dialog_optional_text_default",
+      "persons": [
+        {
+          "id": 1,
+          "field1": "field1.content",
+          "field2": "field2.content",
+          "field3": "field3.content",
+          "field4": "field4.content",
+          "minAcceptable": 2,
+          "avatar": "marry-avatar.jpg",
+          "tags": [
+            "occupied",
+            "single",
+            "female",
+            "young"
+          ]
+        },
+        {
+          "id": 2,
+          "field1": "field1.content",
+          "field3": "field3.content",
+          "minAcceptable": 0,
+          "tags": [
+            "unemployed",
+            "married",
+            "male"
+          ]
+        },
+        {
+          "id": 3,
+          "field1": "field1.content",
+          "field2": "field2.content",
+          "field3": "field3.content",
+          "field4": "field4.content",
+          "avatar": "peter-avatar.jpg",
+          "minAcceptable": 1,
+          "tags": [
+            "occupied",
+            "single",
+            "male",
+            "rich",
+            "young"
+          ]
+        }
+      ],
+      "tapControls": true
+    },
+    {
       "id": "lens2.done",
       "type": "text",
       "instruction": true,

@@ -31,6 +31,8 @@ Lens supports the following experiment and question types:
 - `stroop2`: Stroop in the Lens 2 design. Same study-file options and data fields as `stroop`, plus `taskVersion: 2` in the response. Optional `"showFixation": true` shows a "+" during the fixation interval (classic leaves it blank). Demo: `/#/demo-lens2/en`.
 - `gonogoalt2`: letter/icon Go/No-Go in the Lens 2 design. Same options and data as `gonogoalt`; tap anywhere on the stage or press Space.
 - `nback2`: N-back in the Lens 2 design. Same options and data as `nback`; responses during the first `nback` trials are refused, as in classic.
+- `bart2`: BART in the Lens 2 design. Same options and data as `bart`. Optional `"ballScale"` (default 1) enlarges the balloon; the balloon is the orange ball from the Lens 2 design; `"stimulusStyle": "classic"` brings back the classic red bubble.
+- `dictator2`, `ultimatum2`: token games in the Lens 2 design. Same options and data as `dictator`/`ultimatum`. Optional `"tapControls": true` adds +/− buttons; dictator's `"matchmakingDelay"` (ms, default 5000) sets the "finding another person" wait.
 - All Lens 2 tasks accept an optional `"startText"` (an i18n key) for the start screen.
 
 ### Survey Elements

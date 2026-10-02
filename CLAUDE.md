@@ -50,7 +50,9 @@ Lens 2 tasks are new view types that sit next to the classic ones; classic types
 - Study page renders `LENS2_TYPES` without the classic card wrapper. Stimuli (colors, words, sizes) come from the study file or keep classic values; never restyle them through the design system.
 - Interface strings live under `lens2.*` keys in all three locale files.
 - `singleResponseTask.js`: shared component for one-response tasks (tap the stage or press Space; withholding is the other answer). Draws stimuli with the classic CSS classes from `nback.css`, so letters/icons/fixation look identical to classic.
-- Current Lens 2 types: `stroop2`, `gonogoalt2`, `nback2`. Demo: `/#/demo-lens2/en`.
+- `bart2.js`: BART with the classic explosion deck, balloon size and data; orange Lens 2 ball by default (`stimulusStyle: "classic"` for the red bubble); optional `ballScale`.
+- `tokenGame.js`: shared dictator/ultimatum screen (coin piles per person, pointer-event drag, optional `tapControls`, dictator `matchmakingDelay`).
+- Current Lens 2 types: `stroop2`, `gonogoalt2`, `nback2`, `bart2`, `dictator2`, `ultimatum2`. Demo: `/#/demo-lens2/en`.
 
 ## Experiments (`public/experiments/*.json`)
 
