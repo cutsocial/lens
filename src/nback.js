@@ -1,5 +1,5 @@
 import React, { useEffect, useState, Fragment } from 'react';
-import { Box, Button, Grid, Typography } from '@material-ui/core';
+import { Box, Button, Grid, Typography } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import { useStimulusOnset, responseTiming, timeoutTiming } from './utils/timing';
 import Markdown from 'react-markdown/with-html';
@@ -17,7 +17,7 @@ import {
   Check as Correct,
   Clear as Incorrect,
   Add
-} from '@material-ui/icons';
+} from '@mui/icons-material';
 import { shuffle } from './utils/random';
 
 //css

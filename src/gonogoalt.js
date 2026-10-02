@@ -1,7 +1,7 @@
 import React, {useState, useEffect, useCallback, Fragment, useRef} from 'react';
 
 
-import { Button, Grid, Typography, Divider, Box} from '@material-ui/core';
+import { Button, Grid, Typography, Divider, Box} from '@mui/material';
 
 import { 
   Star, 
@@ -17,7 +17,7 @@ import {
   Block,
   Check as Correct,
   Clear as Incorrect
-} from '@material-ui/icons';
+} from '@mui/icons-material';
 
 import Markdown from 'react-markdown/with-html';
 

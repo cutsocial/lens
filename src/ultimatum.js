@@ -1,6 +1,6 @@
 import React, { useEffect, useState, Fragment, useCallback, } from 'react';
 import { Typography, Button, Grid, Dialog, DialogTitle, 
-          DialogContent, DialogContentText, DialogActions } from '@material-ui/core';
+          DialogContent, DialogContentText, DialogActions } from '@mui/material';
 import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 import { TouchBackend } from 'react-dnd-touch-backend';
@@ -202,7 +202,7 @@ export default function Ultimatum({ content, onStore, onNotification }) {
         aria-labelledby="dialog-title"
       >
         {/* // fix error h6 is nested in h2 */}
-        <DialogTitle disableTypography id="dialog-title">
+        <DialogTitle id="dialog-title">
           <Typography variant='h6' color={state.trialResponses[state.trialResponses.length - 1].result==='accepted'?'primary':'error'}>
             <b>
             {state.trialResponses[state.trialResponses.length - 1].result==='accepted' ? 

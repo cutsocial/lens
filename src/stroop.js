@@ -1,17 +1,16 @@
 import React, {useState, useEffect, useRef} from 'react';
 
 
-import { Box, Button, Grid, Typography, Divider} from '@material-ui/core';
+import { Box, Button, Grid, Typography, Divider} from '@mui/material';
 
 import { 
   Add,
   Check as CorrectIcon,
   Clear as IncorrectIcon,
-} from '@material-ui/icons';
+} from '@mui/icons-material';
 
 import shuffle from './utils/shuffle';
 
-import Image from 'material-ui-image';
 
 import Markdown from 'react-markdown/with-html';
 
@@ -207,19 +206,18 @@ export default function Stroop({content, onStore}) {
   const renderStimulus = (stimulus) => {
     let [word, color] = stimulus.split('')
     return (
-      <Grid container item direction='column' alignItems='center' justify='flex-start'>
+      <Grid container item direction='column' alignItems='center' justifyContent='flex-start'>
       <Typography className='stroop-stimulus' variant='h1' style={{color: colors[color]}}>
         {t(words[word])}
       </Typography>
       </Grid>
-
     );
   }
 
   const renderChoices = (choices, stimulus) => {
     
     return (
-      <Grid container direction='row' justify='space-between' spacing={2} alignItems='stretch' className='stroop-choices'>
+      <Grid container direction='row' justifyContent='space-between' spacing={2} alignItems='stretch' className='stroop-choices'>
       {choices.map((choice,i) => {
         let [word, color] = choice.split('')
         return (
@@ -231,16 +229,16 @@ export default function Stroop({content, onStore}) {
         );
       })}
       </Grid>
-    )
+    );
   }
 
   const renderFeedback = () => {
     return (
-      <Grid item container direction='row' justify='space-around' alignItems='center'>
+      <Grid item container direction='row' justifyContent='space-around' alignItems='center'>
         {state.correct && <CorrectIcon fontSize='large' className='correct gng-icon' />}
         {!state.correct && <IncorrectIcon fontSize='large' className='incorrect gng-icon' />}
       </Grid>
-    )
+    );
 
   }
 
@@ -258,13 +256,13 @@ export default function Stroop({content, onStore}) {
 
   const renderResetScreen = () => {
     return (
-      <Grid container direction='column' spacing={2} alignItems='center' justify='flex-start' className='Text-container'>
+      <Grid container direction='column' spacing={2} alignItems='center' justifyContent='flex-start' className='Text-container'>
         <Grid item><Markdown source={t('stroop.too_many_timeouts')} escapeHtml={false} className='markdown-text' /></Grid>
         <Grid item>
           <Button variant='outlined' color='secondary' onClick={() => startTask()}>{t('stroop.restart')}</Button>
         </Grid>
       </Grid>
-    )
+    );
   }
 
   // show reset screen on timeouts reaching a threshold
@@ -279,29 +277,28 @@ export default function Stroop({content, onStore}) {
   
   //const render = () => {
     return (
-        <Grid item container direction='column' spacing={2} alignItems='stretch' justify='flex-start' className='stroop-container stroop-board'>
-          <Grid item>
-            <Markdown source={t(rule)} escapeHtml={false} className='markdown-text' />
-          </Grid>
-
-          {state.trial<=trials.length && 
-            state.step === 'stimulus' && 
-            renderStimulus(state.stimuli[state.trial-1].stimulus) }
-            
-          {state.trial<=trials.length && 
-            state.step === 'stimulus' && 
-            renderChoices(state.stimuli[state.trial-1].choices, state.stimuli[state.trial-1].stimulus) }
-
-          {state.step === 'feedback' && renderFeedback(state.correct)}
-
-          {state.step === 'fixation' && 
-            <Grid item container direction="row" justify="space-around" alignItems="center">
-              <Add fontSize='large' className='fixation gng-icon' />
-            </Grid>
-          }
-
+      <Grid item container direction='column' spacing={2} alignItems='stretch' justifyContent='flex-start' className='stroop-container stroop-board'>
+        <Grid item>
+          <Markdown source={t(rule)} escapeHtml={false} className='markdown-text' />
         </Grid>
 
+        {state.trial<=trials.length && 
+          state.step === 'stimulus' && 
+          renderStimulus(state.stimuli[state.trial-1].stimulus) }
+          
+        {state.trial<=trials.length && 
+          state.step === 'stimulus' && 
+          renderChoices(state.stimuli[state.trial-1].choices, state.stimuli[state.trial-1].stimulus) }
+
+        {state.step === 'feedback' && renderFeedback(state.correct)}
+
+        {state.step === 'fixation' && 
+          <Grid item container direction="row" justifyContent="space-around" alignItems="center">
+            <Add fontSize='large' className='fixation gng-icon' />
+          </Grid>
+        }
+
+      </Grid>
     );
   //} //.render()
 

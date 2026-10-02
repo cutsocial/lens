@@ -2,10 +2,9 @@ import React, { Fragment, memo } from 'react';
 import { useDrag, useDrop, DragPreviewImage } from 'react-dnd';
 import { useTranslation } from 'react-i18next';
 import { languages } from '../utils/i18n';
-import MonetizationOnIcon from "@material-ui/icons/MonetizationOn";
-import { ltrTheme, rtlTheme } from '../utils/theme';
-import { grey, teal, blueGrey } from '@material-ui/core/colors';
-import { Avatar, Grid, makeStyles, Paper, Typography } from '@material-ui/core';
+import MonetizationOnIcon from "@mui/icons-material/MonetizationOn";
+import { grey, blueGrey } from '@mui/material/colors';
+import { Avatar, Grid, Paper, Typography } from '@mui/material';
 import { useParams } from 'react-router-dom';
 
 // Item types of draggable components
@@ -15,37 +14,11 @@ export const ItemTypes = {
   PLAYER: 'player',
 }
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 0,
-  },
-  paper: {
-    padding: theme.spacing(2),
-  },
-  medium: {
-    width: theme.spacing(3),
-    height: theme.spacing(3),
-  },
-  large: {
-    width: theme.spacing(4),
-    height: theme.spacing(4),
-  },
-  grey: {
-    color: theme.palette.getContrastText(grey[400]),
-    backgroundColor: grey[400],
-  },
-  tealDark: {
-    color: theme.palette.getContrastText(teal[800]),
-    backgroundColor: teal[800],
-  },
-  blueG: {
-    color: theme.palette.getContrastText(blueGrey[800]),
-    backgroundColor: blueGrey[800],
-  },
-  height100: {
-    height: '100%',
-  }
-}));
+// Styles formerly built with makeStyles (removed in MUI v5); same values as sx objects.
+// theme.spacing(n) is n*8px.
+const sxLarge = { width: 32, height: 32 };
+const sxCountAvatar = (theme) => ({ ...sxLarge, color: theme.palette.getContrastText(grey[400]), bgcolor: grey[400] });
+
 
 var language = undefined;
 var personsLangPrefix = undefined;
@@ -67,8 +40,6 @@ export const RepositoryBox = memo(function RepositoryBox({
   personsLangPrefix = personsPrefix;
   console.log(personsLangPrefix);
   const { t } = useTranslation();
-  const theme = (languages[language].direction === 'rtl') ? rtlTheme : ltrTheme;
-  const classes = useStyles(theme);
   const style = {
     height: '128px',
   }
@@ -98,8 +69,8 @@ export const RepositoryBox = memo(function RepositoryBox({
 
   return (
     <Grid item xs={12}>
-      <Paper ref={drop} className={classes.paper} style={{ ...style, backgroundColor }} elevation={3} >
-        <Grid container alignItems="center" direction="row" className={classes.height100}>
+      <Paper ref={drop} sx={{ p: 2 }} style={{ ...style, backgroundColor }} elevation={3} >
+        <Grid container alignItems="center" direction="row" sx={{ height: '100%' }}>
           <Grid item xs={4}>
             {name === ItemTypes.OPPONENT &&
               <OpponentInfoBar person={person} />
@@ -115,7 +86,7 @@ export const RepositoryBox = memo(function RepositoryBox({
           </Grid>
           <Grid item xs={1}>
             <Grid container direction="column" justifyContent="center" alignItems="center">
-              <Avatar className={`${classes.grey} ${classes.large}`}>{amount}</Avatar>
+              <Avatar sx={sxCountAvatar}>{amount}</Avatar>
             </Grid>
           </Grid>
         </Grid>
@@ -135,15 +106,13 @@ function getPersonKey(key, id) {
 
 const OpponentInfoBar = memo(function OpponentInfoBar({ person }) {
   const { t } = useTranslation();
-  const theme = (languages[language].direction === 'rtl') ? rtlTheme : ltrTheme;
-  const classes = useStyles(theme);
   return (
     <>
       {person?.avatar &&
-        <Avatar alt={t(getPersonKey(person.field1, person.id))} src={process.env.PUBLIC_URL + "/images/" + person.avatar} className={classes.large} />
+        <Avatar alt={t(getPersonKey(person.field1, person.id))} src={process.env.PUBLIC_URL + "/images/" + person.avatar} sx={sxLarge} />
       }
       {!person?.avatar &&
-        <Avatar className={classes.large} />
+        <Avatar sx={sxLarge} />
       }
       <Typography variant="body1" color="textPrimary" component="p">
         {person?.field1 && t(getPersonKey(person.field1, person.id))}

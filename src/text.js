@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState, Fragment } from 'react';
-import { TextField, Grid } from '@material-ui/core';
-import Autocomplete from '@material-ui/lab/Autocomplete';
+import { TextField, Grid } from '@mui/material';
+import Autocomplete from '@mui/material/Autocomplete';
 import { useTranslation } from 'react-i18next';
 import Markdown from 'react-markdown/with-html';
 

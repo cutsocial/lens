@@ -1,6 +1,6 @@
 import React, {useEffect, useRef} from 'react';
 
-import {Grid, Radio, Tooltip, RadioGroup, FormControlLabel, Divider, Slider} from '@material-ui/core';
+import {Grid, Radio, Tooltip, RadioGroup, FormControlLabel, Divider, Slider} from '@mui/material';
 
 import Markdown from 'react-markdown/with-html';
 import {useTranslation} from 'react-i18next';
@@ -52,14 +52,14 @@ export default function Matrix({content, onStore, onValidate}) {
           max={choices.length}
           valueLabelDisplay="on"
         />
-        <Grid container direction='row' alignItems='stretch' justify='space-between'>
+        <Grid container direction='row' alignItems='stretch' justifyContent='space-between'>
           <Grid item className='mark'><em>{t(choices[0])}</em></Grid>
           {showMidMark && <Grid item className='mark'><em>{t(choices[Math.floor(choices.length/2)])}</em></Grid>}
           <Grid item className='mark'><em>{t(choices[choices.length-1])}</em></Grid>
         </Grid>
 
       </Grid>
-    )
+    );
   }
 
   const renderChoice = (c, index) => {
@@ -97,13 +97,13 @@ export default function Matrix({content, onStore, onValidate}) {
         <Grid container 
           direction={direction==='vertical'?'column':'row'} 
           alignItems='flex-start' 
-          justify="space-between">
+          justifyContent="space-between">
           {choices.map((c, j) => renderChoice(c, j))}
         </Grid>
         </RadioGroup>
       }
       </Grid>
-    ) 
+    ); 
   }
 
   return (

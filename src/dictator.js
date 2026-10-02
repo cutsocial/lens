@@ -3,7 +3,7 @@ import { Typography, Button, Grid, Dialog, DialogTitle, DialogContent,
           DialogContentText, DialogActions,
           Container,
           CircularProgress,
-          Box} from '@material-ui/core';
+          Box} from '@mui/material';
 import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 import { TouchBackend } from 'react-dnd-touch-backend';
