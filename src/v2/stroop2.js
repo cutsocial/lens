@@ -12,6 +12,9 @@
  *  - the fixation interval is blank (classic hid its cross); set "showFixation": true for a "+"
  *  - after a timeout, "incorrect" feedback is shown (when feedback is on)
  *
+ * Optional: "startText" (an i18n key) replaces the start-screen instructions,
+ * which classic hard-codes as "stroop.are_you_ready".
+ *
  * Changed on purpose:
  *  - the two choices stay in the same place between trials (empty while hidden), so the layout doesn't jump
  *  - the choice row is always left-to-right, so in Persian/Arabic the left key matches the left button
@@ -34,7 +37,7 @@ export default function Stroop2({ content, onStore }) {
     rule, colors, words, trials,
     randomizeTrials, randomizeChoices,
     stimulusDuration, fixationDuration, feedbackDuration, timeoutsBeforeReset,
-    showFixation,
+    showFixation, startText,
   } = content;
   const { t } = useTranslation();
   const { lang } = useParams();
@@ -75,7 +78,7 @@ export default function Stroop2({ content, onStore }) {
       <L2Root dir={dir}>
         <StartCard
           keys={['←', '→']}
-          instructions={t('stroop.are_you_ready')}
+          instructions={t(startText || 'stroop.are_you_ready')}
           spaceLabel={t('lens2.space')}
           startLabel={t('lens2.start')}
           hint={t('lens2.tap_start_hint')}

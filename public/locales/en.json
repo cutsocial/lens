@@ -860,5 +860,11 @@
 	"lens2.start": "Start",
 	"lens2.restart": "Start again",
 	"lens2.too_many_timeouts": "**You waited too long.** Let's start this part over.",
-	"lens2.tap_start_hint": "On a phone or tablet, tap Start instead."
+	"lens2.tap_start_hint": "On a phone or tablet, tap Start instead.",
+	"lens2.stroop.intro": "In this task, you'll see the name of a color written in a colored ink.\n\nChoose the answer that names the **ink color**, not the word. For example, if you see the word *GREEN* written in red ink, choose **RED**.\n\nUse the ← and → keys, or tap an answer. Be quick and accurate. In this practice round you'll see whether each answer was correct.",
+	"lens2.stroop.rule": "Quick: what's the **ink color** of the word?",
+	"lens2.stroop.start": "Place your fingers on the ← and → keys. Press the space bar to begin.",
+	"lens2.stroop.main_intro": "Now the main round begins. This time you won't see whether your answers were correct.",
+	"stroop.too_many_timeouts": "You waited too long! Let's start over.",
+	"stroop.restart": "Start again"
 }

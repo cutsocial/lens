@@ -11,13 +11,12 @@
       "id": "lens2.intro",
       "type": "text",
       "instruction": true,
-      "text": "stroop.practice.introduction"
+      "text": "lens2.stroop.intro"
     },
     {
       "id": "stroop2.practice",
       "type": "stroop2",
-      "rule": "stroop_demo.rule",
-      "help": "stroop_demo.help",
+      "rule": "lens2.stroop.rule",
       "colors": {
         "G": "#6cba47",
         "R": "#d73636"
@@ -68,13 +67,19 @@
       "feedbackDuration": 1000,
       "timeoutsBeforeReset": 10,
       "randomizeTrials": true,
-      "randomizeChoices": true
+      "randomizeChoices": true,
+      "startText": "lens2.stroop.start"
+    },
+    {
+      "id": "lens2.stroop.main_intro",
+      "type": "text",
+      "instruction": true,
+      "text": "lens2.stroop.main_intro"
     },
     {
       "id": "stroop2.main",
       "type": "stroop2",
-      "rule": "stroop_demo.rule",
-      "help": "stroop_demo.help",
+      "rule": "lens2.stroop.rule",
       "colors": {
         "G": "#6cba47",
         "R": "#d73636"
@@ -139,7 +144,8 @@
       "feedbackDuration": 0,
       "timeoutsBeforeReset": 10,
       "randomizeTrials": true,
-      "randomizeChoices": true
+      "randomizeChoices": true,
+      "startText": "lens2.stroop.start"
     },
     {
       "id": "lens2.done",
