@@ -39,6 +39,18 @@ Every stored entry is `{view, response}`. The full `view` config is echoed into 
 
 Tasks are large single-file components (200–340 lines) with a paired `.css`, and hold the trial logic, timers, and key handlers inline. There is little shared code: `src/utils/` has `random.js`/`shuffle.js`, `hooks.js` (`useTimeout`), `countries.js`, and `src/components/allotmentBox.js`. Tasks share similar structure but are copy-adapted, so a fix in one (e.g. `gonogo.js` vs `gonogoalt.js`, `taskswitch.js` vs `simplified_taskswitch.js`) usually needs checking in its sibling.
 
+## Lens 2 (`src/v2/`)
+
+Lens 2 tasks are new view types that sit next to the classic ones; classic types are frozen so existing studies and their data stay comparable (classic = release tag `v1.0`).
+
+- `lens2.css`: design tokens ("Quiet Instrument") as CSS variables on `.l2`, plus shared classes. Logical CSS properties, so RTL works from `dir`.
+- `components.js`: `L2Root`, `Header`, `StartCard`, `NoticeCard`, `Feedback`, `Button`, `Keys`. Fonts are bundled (`@fontsource/atkinson-hyperlegible-*`), not loaded from Google.
+- `useTrialRunner.js`: the shared trial engine (fixation, stimulus, feedback, reset). It deliberately reproduces classic semantics: timeouts counted over the whole run, reset clears responses but keeps trial order, one fixation interval after the last trial before finishing. Records carry the classic fields plus timingVersion 2 fields.
+- A Lens 2 task's response = the classic task's response fields + `taskVersion: 2`. Verify any new task against its classic sibling with identical scripted sessions before shipping.
+- Study page renders `LENS2_TYPES` without the classic card wrapper. Stimuli (colors, words, sizes) come from the study file or keep classic values; never restyle them through the design system.
+- Interface strings live under `lens2.*` keys in all three locale files.
+- Current Lens 2 types: `stroop2`. Demo: `/#/demo-lens2/en`.
+
 ## Experiments (`public/experiments/*.json`)
 
 Each file is a study. Top-level keys: `studyId`, `condition`, `redirectTo`, `submissionNote` (an i18n key; receives `{{submissionCode}}`), `metadata`, `views[]`. `public/experiments/demo-comprehensive.json` exercises every view type and is the best schema reference; `README.md` lists the types. Many `mad*.json` files are real published studies, so avoid changing them unless asked.

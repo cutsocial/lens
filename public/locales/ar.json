@@ -18,5 +18,16 @@
   "gonogo.ready_question": "Are you ready?",
   "bart.trialCounter": "Trial {{trial}} of {{trials}}",
   "ramadan2020.questions.email": "What is your email?",
-  "ramadan2020.questions.email_placeholder": "Email"
+  "ramadan2020.questions.email_placeholder": "Email",
+
+  "lens2.trial_counter": "المحاولة {{trial}} من {{trials}}",
+  "lens2.correct": "صحيح",
+  "lens2.incorrect": "خطأ",
+  "lens2.key_left": "مفتاح ←",
+  "lens2.key_right": "مفتاح →",
+  "lens2.space": "مسافة (SPACE)",
+  "lens2.start": "ابدأ",
+  "lens2.restart": "ابدأ من جديد",
+  "lens2.too_many_timeouts": "**انتظرت طويلًا.** لنبدأ هذا الجزء من جديد.",
+  "lens2.tap_start_hint": "على الهاتف أو الجهاز اللوحي، المس «ابدأ»."
 }

@@ -1,0 +1,246 @@
+/*
+ * Lens 2 "Quiet Instrument" design system.
+ * Tokens are CSS variables on .l2; every Lens 2 view renders inside .l2.
+ * Layout uses flex and logical properties, so right-to-left languages flip
+ * correctly from the dir attribute alone.
+ *
+ * Stimuli are never styled here: stimulus colors, sizes and fonts come from
+ * the study file or keep the classic task's values.
+ */
+
+body[data-ui='2'] {
+  background: #16171b;
+}
+
+.l2 {
+  --l2-ground: #16171b;
+  --l2-surface: #212329;
+  --l2-raised: #2b2e35;
+  --l2-tray: #1b1c21;
+  --l2-hairline: rgba(255, 255, 255, 0.1);
+  --l2-text: #f3f4f6;
+  --l2-muted: #a6acb8;
+  --l2-accent: #5aa9ff;
+  --l2-on-accent: #0b1526;
+  --l2-caution: #ff9f5a;
+  --l2-caution-soft: rgba(255, 159, 90, 0.12);
+  --l2-accent-soft: rgba(90, 169, 255, 0.14);
+  --l2-radius-card: 16px;
+  --l2-radius-stage: 20px;
+  --l2-radius-control: 12px;
+  --l2-font: 'Atkinson Hyperlegible Next', -apple-system, BlinkMacSystemFont, 'Segoe UI', Vazir, sans-serif;
+  --l2-mono: 'Atkinson Hyperlegible Mono', ui-monospace, monospace;
+
+  color: var(--l2-text);
+  font-family: var(--l2-font);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-height: calc(100vh - 2vh - 40px);
+  padding-block: 8px 16px;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.l2[dir='rtl'] {
+  --l2-font: Vazir, 'Atkinson Hyperlegible Next', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.l2 *, .l2 *::before, .l2 *::after {
+  box-sizing: border-box;
+}
+
+/* Header: trial counter and rule reminder */
+.l2-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  color: var(--l2-muted);
+  min-height: 28px;
+}
+
+.l2-rule {
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--l2-muted);
+}
+.l2-rule p { margin: 0; }
+.l2-rule strong { color: var(--l2-text); }
+
+/* Stage: where the stimulus appears. Fixed share of the screen so nothing
+   jumps between fixation, stimulus and feedback. */
+.l2-stage {
+  flex-grow: 1;
+  min-height: 300px;
+  background: var(--l2-surface);
+  border-radius: var(--l2-radius-stage);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  position: relative;
+  border: 0;
+  padding: 16px;
+  color: inherit;
+  font: inherit;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Cards */
+.l2-card {
+  background: var(--l2-surface);
+  border-radius: var(--l2-radius-card);
+  padding: 28px 22px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px;
+  text-align: center;
+}
+.l2-card-title {
+  margin: 0;
+  font-size: 22px;
+  line-height: 30px;
+  font-weight: 700;
+}
+.l2-body {
+  font-size: 18px;
+  line-height: 28px;
+}
+.l2-body p { margin: 0; }
+.l2-hint {
+  margin: 0;
+  text-align: center;
+  font-size: 14px;
+  color: var(--l2-muted);
+}
+
+/* Keycaps */
+.l2-keys {
+  display: flex;
+  gap: 10px;
+  align-items: flex-end;
+  justify-content: center;
+}
+.l2-key {
+  min-width: 52px;
+  height: 52px;
+  padding-inline: 14px;
+  border-radius: 10px;
+  background: var(--l2-raised);
+  box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.35), inset 0 0 0 1px var(--l2-hairline);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  font-weight: 700;
+}
+.l2-key-wide {
+  min-width: 188px;
+  height: 40px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--l2-muted);
+}
+
+/* Buttons */
+.l2-btn {
+  min-height: 56px;
+  border: 0;
+  border-radius: var(--l2-radius-control);
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  padding-inline: 20px;
+  width: 100%;
+  touch-action: manipulation;
+}
+.l2-btn:focus-visible, .l2-choice:focus-visible {
+  outline: 3px solid var(--l2-accent);
+  outline-offset: 2px;
+}
+.l2-btn-primary {
+  background: var(--l2-accent);
+  color: var(--l2-on-accent);
+}
+.l2-btn-secondary {
+  background: var(--l2-raised);
+  color: var(--l2-text);
+  box-shadow: inset 0 0 0 1px var(--l2-hairline);
+}
+.l2-btn-quiet {
+  background: transparent;
+  color: var(--l2-accent);
+}
+
+/* Response choices (two-alternative tasks). The row is forced left-to-right
+   so the left arrow key always means the left button, in every language. */
+.l2-choices {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+.l2-choice {
+  min-height: 88px;
+  border: 0;
+  border-radius: var(--l2-radius-card);
+  background: var(--l2-raised);
+  box-shadow: inset 0 0 0 1px var(--l2-hairline);
+  font-family: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  cursor: pointer;
+  padding: 8px;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.l2-choice:disabled {
+  cursor: default;
+}
+.l2-choice-label {
+  font-size: 22px;
+  font-weight: 700;
+}
+.l2-choice-key {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--l2-muted);
+}
+
+/* Feedback shown on the stage between trials */
+.l2-feedback {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+  font-weight: 700;
+}
+.l2-feedback-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.l2-feedback-correct .l2-feedback-icon { background: var(--l2-accent-soft); color: var(--l2-accent); }
+.l2-feedback-correct { color: var(--l2-accent); }
+.l2-feedback-incorrect .l2-feedback-icon { background: var(--l2-caution-soft); color: var(--l2-caution); }
+.l2-feedback-incorrect { color: var(--l2-caution); }
+
+.l2-fixation {
+  font-size: 56px;
+  line-height: 1;
+  color: var(--l2-muted);
+}

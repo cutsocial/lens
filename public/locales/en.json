@@ -849,6 +849,16 @@
 	"eating.c3":"Mostly True",
 	"eating.c4":"Definitely True",
 
-	"eating.instruction":"To what extent does each statement describe you?"
+	"eating.instruction":"To what extent does each statement describe you?",
 
+	"lens2.trial_counter": "Trial {{trial}} of {{trials}}",
+	"lens2.correct": "Correct",
+	"lens2.incorrect": "Incorrect",
+	"lens2.key_left": "← key",
+	"lens2.key_right": "→ key",
+	"lens2.space": "SPACE",
+	"lens2.start": "Start",
+	"lens2.restart": "Start again",
+	"lens2.too_many_timeouts": "**You waited too long.** Let's start this part over.",
+	"lens2.tap_start_hint": "On a phone or tablet, tap Start instead."
 }
