@@ -28,9 +28,14 @@ import NBack2 from './v2/nback2';
 import Bart2 from './v2/bart2';
 import Dictator2 from './v2/dictator2';
 import Ultimatum2 from './v2/ultimatum2';
+import Text2 from './v2/text2';
+import Matrix2 from './v2/matrix2';
+import Prolific2 from './v2/prolific2';
 
-// Lens 2 view types draw their own surfaces, so the study page doesn't wrap them in a card.
-const LENS2_TYPES = ['stroop2', 'gonogoalt2', 'nback2', 'bart2', 'dictator2', 'ultimatum2'];
+// Lens 2 view types draw their own surfaces and Next buttons, so the study page
+// doesn't wrap them in a card or add the shared Navigation.
+const LENS2_SURVEY_TYPES = ['text2', 'matrix2', 'prolific2'];
+const LENS2_TYPES = ['stroop2', 'gonogoalt2', 'nback2', 'bart2', 'dictator2', 'ultimatum2', ...LENS2_SURVEY_TYPES];
 import BART from './bart';
 import GoNoGo from './gonogo';
 import Stroop from './stroop';
@@ -106,7 +111,9 @@ export default function Study(props) {
 
   const onNext = () => {
 
-    if ((state.view.required || state.view.requiredQuestions?.length>0) && !responseIsValid.current) {
+    // Lens 2 views check their own required answers before storing and advancing.
+    if (!LENS2_TYPES.includes(state.view.type) &&
+        (state.view.required || state.view.requiredQuestions?.length>0) && !responseIsValid.current) {
       setNotification(t('errors.required'))
       return;
     }
@@ -173,6 +180,12 @@ export default function Study(props) {
         return <Dictator2 onStore={storeData} content={view} key={view.id} />;
       case 'ultimatum2':
         return <Ultimatum2 onStore={storeData} content={view} key={view.id} />;
+      case 'text2':
+        return <Text2 onStore={storeData} content={view} key={view.id} />;
+      case 'matrix2':
+        return <Matrix2 onStore={storeData} content={view} key={view.id} />;
+      case 'prolific2':
+        return <Prolific2 onStore={storeData} content={view} key={view.id} />;
       case 'matrix':
         return <Matrix onStore={storeData} content={view} key={view.id} onValidate={(r) => responseIsValid.current = r} />
       case 'ultimatum':
@@ -217,7 +230,7 @@ export default function Study(props) {
   // stay exactly as designed. All MUI text is sized in rem, so the root font
   // size scales it in one place.
   const fontScale = Number(state.experiment && state.experiment.fontScale) || 1;
-  const isSurveyView = ['text', 'matrix', 'prolific'].includes(state.view && state.view.type);
+  const isSurveyView = ['text', 'matrix', 'prolific', ...LENS2_SURVEY_TYPES].includes(state.view && state.view.type);
   useEffect(() => {
     document.documentElement.style.fontSize = (isSurveyView && fontScale !== 1) ? `${fontScale * 100}%` : '';
     return () => { document.documentElement.style.fontSize = ''; };

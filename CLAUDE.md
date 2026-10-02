@@ -52,7 +52,8 @@ Lens 2 tasks are new view types that sit next to the classic ones; classic types
 - `singleResponseTask.js`: shared component for one-response tasks (tap the stage or press Space; withholding is the other answer). Draws stimuli with the classic CSS classes from `nback.css`, so letters/icons/fixation look identical to classic.
 - `bart2.js`: BART with the classic explosion deck, balloon size and data; orange Lens 2 ball by default (`stimulusStyle: "classic"` for the red bubble); optional `ballScale`.
 - `tokenGame.js`: shared dictator/ultimatum screen (coin piles per person, pointer-event drag, optional `tapControls`, dictator `matchmakingDelay`).
-- Current Lens 2 types: `stroop2`, `gonogoalt2`, `nback2`, `bart2`, `dictator2`, `ultimatum2`. Demo: `/#/demo-lens2/en`.
+- `survey.js`: survey page shell (Next button, inline required message), `ScaleSlider`, `CountryPicker`. `text2.js`, `matrix2.js`, `prolific2.js` use it. Survey views store on Next with `onStore(data, true)` (not in an unmount cleanup), so `Study.onNext` skips its required check for Lens 2 types; survey CSS is in rem so `fontScale` applies.
+- Current Lens 2 types: `stroop2`, `gonogoalt2`, `nback2`, `bart2`, `dictator2`, `ultimatum2`, `text2`, `matrix2`, `prolific2`. Demo: `/#/demo-lens2/en`.
 
 ## Experiments (`public/experiments/*.json`)
 

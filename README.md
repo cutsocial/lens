@@ -34,6 +34,7 @@ Lens supports the following experiment and question types:
 - `bart2`: BART in the Lens 2 design. Same options and data as `bart`. Optional `"ballScale"` (default 1) enlarges the balloon; the balloon is the orange ball from the Lens 2 design; `"stimulusStyle": "classic"` brings back the classic red bubble.
 - `dictator2`, `ultimatum2`: token games in the Lens 2 design. Same options and data as `dictator`/`ultimatum`. Optional `"tapControls": true` adds +/− buttons; dictator's `"matchmakingDelay"` (ms, default 5000) sets the "finding another person" wait.
 - All Lens 2 tasks accept an optional `"startText"` (an i18n key) for the start screen.
+- `text2`, `matrix2`, `prolific2`: survey pages in the Lens 2 design. Same options and responses as `text`, `matrix`, `prolific`. The answer is stored when Next is pressed (so a question on a study's last page is saved), missing answers show under the question, and horizontal choices stack into rows on phones. `prolific2` stores a prefilled value without the participant editing it.
 
 ### Survey Elements
 - **`text`** - Text display and input: Supports instruction pages, text questions, and autocomplete fields
