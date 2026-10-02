@@ -2,10 +2,19 @@ import React, {useRef, useState, useEffect} from 'react';
 
 import {useParams,useLocation} from 'react-router-dom';
 
-import {Container, ThemeProvider, CssBaseline, LinearProgress, Grid, Paper, Snackbar} from '@material-ui/core';
-import {Alert} from '@material-ui/lab';
+import {
+  Container,
+  ThemeProvider,
+  CssBaseline,
+  LinearProgress,
+  Grid,
+  Paper,
+  Snackbar,
+} from '@mui/material';
+import { Alert } from '@mui/material';
+import { CacheProvider } from '@emotion/react';
 
-import {ltrTheme, rtlTheme} from './utils/theme';
+import {ltrTheme, rtlTheme, ltrCache, rtlCache} from './utils/theme';
 import {languages} from './utils/i18n';
 
 import Navigation from './navigation';
@@ -38,7 +47,8 @@ export default function Study(props) {
   // prolific shits
   let query = useQuery();
 
-  const theme = (languages[lang].direction === 'rtl')?rtlTheme:ltrTheme;
+  const isRtl = languages[lang].direction === 'rtl';
+  const theme = isRtl?rtlTheme:ltrTheme;
   const responseIsValid = useRef(false);
 
   const [state, setState] = useState({
@@ -181,6 +191,17 @@ export default function Study(props) {
 
   }
 
+  // Optional study-level text size, e.g. "fontScale": 1.2 in the study JSON.
+  // Applied only on survey views; reset on interactive tasks so stimulus sizes
+  // stay exactly as designed. All MUI text is sized in rem, so the root font
+  // size scales it in one place.
+  const fontScale = Number(state.experiment && state.experiment.fontScale) || 1;
+  const isSurveyView = ['text', 'matrix', 'prolific'].includes(state.view && state.view.type);
+  useEffect(() => {
+    document.documentElement.style.fontSize = (isSurveyView && fontScale !== 1) ? `${fontScale * 100}%` : '';
+    return () => { document.documentElement.style.fontSize = ''; };
+  }, [isSurveyView, fontScale]);
+
   //load experiment
   useEffect(() => {
     i18n.changeLanguage(lang);
@@ -191,43 +212,44 @@ export default function Study(props) {
 
   //render
   return (
+    <CacheProvider value={isRtl?rtlCache:ltrCache}>
+      <ThemeProvider theme={theme}>
+        <div dir={languages[lang].direction}>
+          <CssBaseline />
 
-    <ThemeProvider theme={theme}>
-      <div dir={languages[lang].direction}>
-        <CssBaseline />
+          <LinearProgress variant="determinate" value={state.progress} />
 
-        <LinearProgress variant="determinate" value={state.progress} />
-
-        <Container maxWidth="sm" className='study-container'>
-          <Grid container
-            spacing={2}
-            direction="column"
-            justifyContent="flex-start"
-            alignItems="stretch"
-            className='study-grid-container'
-          >
-            <Snackbar 
-              open={notification !== undefined} 
-              autoHideDuration={5000} 
-              onClose={() => setNotification(undefined)}
+          <Container maxWidth="sm" className='study-container'>
+            <Grid container
+              spacing={2}
+              direction="column"
+              justifyContent="flex-start"
+              alignItems="stretch"
+              className='study-grid-container'
             >
-              <Alert onClose={() => setNotification(undefined)} severity="error">{t(notification)}</Alert>
-            </Snackbar>
+              <Snackbar 
+                open={notification !== undefined} 
+                autoHideDuration={5000} 
+                onClose={() => setNotification(undefined)}
+              >
+                <Alert onClose={() => setNotification(undefined)} severity="error">{t(notification)}</Alert>
+              </Snackbar>
 
-            <Grid item>
-              <Paper className='view-container'>
-              {!state.finished && state.loading && <div>{t('loading')}</div>}
-              {!state.loading && renderView(state.view)}
-              </Paper>
+              <Grid item>
+                <Paper className='view-container'>
+                {!state.finished && state.loading && <div>{t('loading')}</div>}
+                {!state.loading && renderView(state.view)}
+                </Paper>
+              </Grid>
+              {!['gonogo','bart','stroop','ultimatum','dictator','taskswitch','simplified_taskswitch','nback','gonogoalt'].includes(state.view.type) && !state.loading &&
+              <Grid item>
+                <Navigation onNext={onNext} finished={state.finished} redirectTo={state.experiment.redirectTo} />
+              </Grid>
+              }
             </Grid>
-            {!['gonogo','bart','stroop','ultimatum','dictator','taskswitch','simplified_taskswitch','nback','gonogoalt'].includes(state.view.type) && !state.loading &&
-            <Grid item>
-              <Navigation onNext={onNext} finished={state.finished} redirectTo={state.experiment.redirectTo} />
-            </Grid>
-            }
-          </Grid>
-        </Container>
-      </div>
-    </ThemeProvider>
+          </Container>
+        </div>
+      </ThemeProvider>
+    </CacheProvider>
   );
 }

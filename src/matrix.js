@@ -1,6 +1,6 @@
 import React, {useEffect, useRef} from 'react';
 
-import {Grid, Radio, Tooltip, RadioGroup, FormControlLabel, Divider, Slider} from '@material-ui/core';
+import {Grid, Radio, Tooltip, RadioGroup, FormControlLabel, Divider, Slider} from '@mui/material';
 
 import Markdown from 'react-markdown/with-html';
 import {useTranslation} from 'react-i18next';
@@ -45,21 +45,23 @@ export default function Matrix({content, onStore, onValidate}) {
           value={response.current.values[index]}
           valueLabelFormat={(v) => t(choices[v-1])}
           aria-labelledby={"question"+index}
-          ValueLabelComponent={ValueLabelComponent}
+          components={{ ValueLabel: ValueLabelComponent }}
           onChangeCommitted={(e, value) => handleChange(e, index, value)}
           step={1}
           min={1}
           max={choices.length}
-          valueLabelDisplay="on"
+          // v4 showed no label until the participant chose a value; v5 would label
+          // the untouched thumb with the first choice, which looks preselected.
+          valueLabelDisplay={response.current.values[index] === undefined ? 'off' : 'on'}
         />
-        <Grid container direction='row' alignItems='stretch' justify='space-between'>
+        <Grid container direction='row' alignItems='stretch' justifyContent='space-between'>
           <Grid item className='mark'><em>{t(choices[0])}</em></Grid>
           {showMidMark && <Grid item className='mark'><em>{t(choices[Math.floor(choices.length/2)])}</em></Grid>}
           <Grid item className='mark'><em>{t(choices[choices.length-1])}</em></Grid>
         </Grid>
 
       </Grid>
-    )
+    );
   }
 
   const renderChoice = (c, index) => {
@@ -76,7 +78,10 @@ export default function Matrix({content, onStore, onValidate}) {
   }
 
   const handleChange = (e, index, value) => {
-    response.current.values[index] = e.target.value || value;
+    // Sliders pass the numeric value; radios pass only the event. MUI v5's slider
+    // event can carry the hidden input's value as a string, so the explicit value
+    // must win to keep storing numbers, as v4 did.
+    response.current.values[index] = (value !== undefined) ? value : e.target.value;
 
     console.log(response.current.values[index]);
     const n_null = response.current.values.filter((v,i) => {
@@ -97,13 +102,13 @@ export default function Matrix({content, onStore, onValidate}) {
         <Grid container 
           direction={direction==='vertical'?'column':'row'} 
           alignItems='flex-start' 
-          justify="space-between">
+          justifyContent="space-between">
           {choices.map((c, j) => renderChoice(c, j))}
         </Grid>
         </RadioGroup>
       }
       </Grid>
-    ) 
+    ); 
   }
 
   return (

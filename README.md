@@ -35,7 +35,7 @@ Lens supports the following experiment and question types:
 
 ### Prerequisites
 
-- Node.js (version 16.x recommended)
+- Node.js 20 or newer (see `.nvmrc`)
 - npm or yarn
 
 ### Installation
@@ -56,11 +56,6 @@ npm install
 Start the development server:
 ```bash
 npm start
-```
-
-For systems with OpenSSL legacy provider issues:
-```bash
-npm run devstart
 ```
 
 The application will open at `http://localhost:3000` in your browser.
@@ -104,6 +99,7 @@ Examples:
    - `redirectTo`: URL to redirect after completion
    - `submissionNote`: Translation key for submission message
    - `metadata`: Study metadata (e.g., maintainer email)
+   - `fontScale` (optional): Text size on survey pages, e.g. `1.2` for 20% larger. Interactive tasks are never scaled, so stimulus sizes stay as designed. Default `1`.
    - `views`: Array of experiment views/tasks
 
 3. See `public/experiments/demo-comprehensive.json` for a comprehensive example with all experiment types

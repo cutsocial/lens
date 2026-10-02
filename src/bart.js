@@ -1,8 +1,8 @@
 import React, {useState, useEffect, Fragment, useRef} from 'react';
 
-import {Button, Fab, Grid, Typography, Divider, Tooltip} from '@material-ui/core';
+import {Button, Fab, Grid, Typography, Divider, Tooltip} from '@mui/material';
 
-import {Dialog, DialogActions, DialogTitle, DialogContentText, DialogContent} from '@material-ui/core';
+import {Dialog, DialogActions, DialogTitle, DialogContentText, DialogContent} from '@mui/material';
 
 import { useTranslation } from 'react-i18next';
 
@@ -121,26 +121,25 @@ export default function BART({content, onStore}) {
    */
   const renderDialog = () => {
     return (
-    <Dialog
-      open={state.dialogIsOpen}
-      onClose={() => setState({...state, dialogIsOpen: false})}
-      disableBackdropClick
-      disableEscapeKeyDown
-      aria-labelledby="dialog-title"
-    >
-        <DialogTitle id="dialog-title"><b>{state.trialResponses[state.trialResponses.length - 1].result==='cashed'?t('bart.cashed_title'):t('bart.exploded_title')}</b></DialogTitle>
-        <DialogContent>
-          <DialogContentText>
-          {t('bart.trial_score_report', {score: state.trialResponses[state.trialResponses.length - 1].score})}
-          {t('bart.total_score_report', {score: state.trialResponses.map(r => r.score).reduce((a,b) => a+b, 0)})}
-          </DialogContentText>
-        </DialogContent>
-        <DialogActions>
-          <Button onClick={() => setState({...state, dialogIsOpen: false})} color="primary" autoFocus size='large'>
-            {state.trial<=trials?t('bart.next_trial'):t('next')}
-          </Button>
-        </DialogActions>
-      </Dialog>);
+      <Dialog
+        open={state.dialogIsOpen}
+        onClose={(event, reason) => { if (reason !== 'backdropClick') setState({...state, dialogIsOpen: false}); }}
+        disableEscapeKeyDown
+        aria-labelledby="dialog-title">
+          <DialogTitle id="dialog-title"><b>{state.trialResponses[state.trialResponses.length - 1].result==='cashed'?t('bart.cashed_title'):t('bart.exploded_title')}</b></DialogTitle>
+          <DialogContent>
+            <DialogContentText>
+            {t('bart.trial_score_report', {score: state.trialResponses[state.trialResponses.length - 1].score})}
+            {t('bart.total_score_report', {score: state.trialResponses.map(r => r.score).reduce((a,b) => a+b, 0)})}
+            </DialogContentText>
+          </DialogContent>
+          <DialogActions>
+            <Button onClick={() => setState({...state, dialogIsOpen: false})} color="primary" autoFocus size='large'>
+              {state.trial<=trials?t('bart.next_trial'):t('next')}
+            </Button>
+          </DialogActions>
+        </Dialog>
+    );
   }
 
   const balloonSize = (pumps, maxPumps) => {
@@ -159,23 +158,23 @@ export default function BART({content, onStore}) {
       <Fragment>
         {state.dialogIsOpen && renderDialog()}
   
-        <Grid container direction='column' spacing={2} justify="space-between" alignItems='stretch' className='bart-container'>
+        <Grid container direction='column' spacing={2} justifyContent="space-between" alignItems='stretch' className='bart-container'>
   
-        <Grid item container direction='row' justify="space-around" alignItems='center'>
+        <Grid item container direction='row' justifyContent="space-around" alignItems='center'>
   
           {state.trial<=trials && 
-            <Grid item><Grid container direction='column' justify="space-around" alignItems='center'>
+            <Grid item><Grid container direction='column' justifyContent="space-around" alignItems='center'>
               {t('bart.next_reward')}<Typography variant="h4">{state.pumps * reward}</Typography>
             </Grid></Grid>
           }
   
           {state.trial<=trials && 
-            <Grid item><Grid container direction='column' justify="space-around" alignItems='center'>
+            <Grid item><Grid container direction='column' justifyContent="space-around" alignItems='center'>
                 <Typography color='textSecondary' variant='caption'>{t('bart.trial_label',{trial:state.trial, trials:trials})}</Typography>
             </Grid></Grid>
           }
   
-            <Grid item><Grid container direction='column' justify="space-around" alignItems='center'>
+            <Grid item><Grid container direction='column' justifyContent="space-around" alignItems='center'>
               {t('bart.total_points')}<Typography variant="h4">{state.totalScore}</Typography>
             </Grid></Grid>
         </Grid>
@@ -197,14 +196,13 @@ export default function BART({content, onStore}) {
           </Tooltip>
         </Grid>
   
-        <Grid item container direction="row" justify="space-around" alignItems='center'>
+        <Grid item container direction="row" justifyContent="space-around" alignItems='center'>
           <Button size='large' color='primary' variant='outlined' onClick={onCashIn}>{t('bart.cash')}</Button>
         </Grid>
 
   
         </Grid>
       </Fragment>
-  
     );
   //} //.render()
 

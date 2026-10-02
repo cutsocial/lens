@@ -33,7 +33,8 @@ span.required {
 }
 
 .markdown-text {
-  font-size: 1rem;
+  font-size: 1.125rem;
+  line-height: 1.6;
 }
 
 .country-select {
@@ -41,9 +42,8 @@ span.required {
 }
 
 .matrix-slider .mark {
-  color: red;
-  font-size: 0.85rem;
-  color: #ffffffbb;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.87);
 }
 
 .matrix-slider {
@@ -51,5 +51,9 @@ span.required {
 }
 
 .MuiTooltip-tooltip {
-  font-size: .85rem !important;
+  font-size: .95rem !important;
+}
+/* Rule text above the token boxes (dictator, ultimatum) is markdown; keep its old spacing. */
+.rule-text p {
+  margin: 0;
 }

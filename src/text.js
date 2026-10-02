@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState, Fragment } from 'react';
-import { TextField, Grid } from '@material-ui/core';
-import Autocomplete from '@material-ui/lab/Autocomplete';
+import { TextField, Grid } from '@mui/material';
+import Autocomplete from '@mui/material/Autocomplete';
 import { useTranslation } from 'react-i18next';
 import Markdown from 'react-markdown/with-html';
 
@@ -66,10 +66,10 @@ export default function Text({content, onStore, onValidate}) {
         value={state.value}
         getOptionLabel={(option) => option.label}
         noOptionsText={t('text.no_options')}
-        renderOption={(option) => (
-          <Fragment>
-            <span>{countryToFlag(option.code)}</span> {option.label}
-          </Fragment>
+        renderOption={(props, option) => (
+          <li {...props} key={option.code}>
+            <span>{countryToFlag(option.code)}</span>&nbsp;{option.label}
+          </li>
         )}
         renderInput={(params) => (
           <TextField

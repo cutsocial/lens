@@ -5,7 +5,7 @@
 // - no participant data or Prolific IDs go to Google Analytics
 import React, { useEffect, useRef, useState } from 'react';
 
-import {Grid} from '@material-ui/core';
+import {Grid} from '@mui/material';
 import Markdown from 'react-markdown/with-html';
 import {useTranslation} from 'react-i18next';
 import ReactGA from "react-ga4";
