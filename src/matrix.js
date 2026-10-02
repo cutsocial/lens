@@ -45,7 +45,7 @@ export default function Matrix({content, onStore, onValidate}) {
           value={response.current.values[index]}
           valueLabelFormat={(v) => t(choices[v-1])}
           aria-labelledby={"question"+index}
-          ValueLabelComponent={ValueLabelComponent}
+          components={{ ValueLabel: ValueLabelComponent }}
           onChangeCommitted={(e, value) => handleChange(e, index, value)}
           step={1}
           min={1}
@@ -76,7 +76,10 @@ export default function Matrix({content, onStore, onValidate}) {
   }
 
   const handleChange = (e, index, value) => {
-    response.current.values[index] = e.target.value || value;
+    // Sliders pass the numeric value; radios pass only the event. MUI v5's slider
+    // event can carry the hidden input's value as a string, so the explicit value
+    // must win to keep storing numbers, as v4 did.
+    response.current.values[index] = (value !== undefined) ? value : e.target.value;
 
     console.log(response.current.values[index]);
     const n_null = response.current.values.filter((v,i) => {

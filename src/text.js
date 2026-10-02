@@ -66,10 +66,10 @@ export default function Text({content, onStore, onValidate}) {
         value={state.value}
         getOptionLabel={(option) => option.label}
         noOptionsText={t('text.no_options')}
-        renderOption={(option) => (
-          <Fragment>
-            <span>{countryToFlag(option.code)}</span> {option.label}
-          </Fragment>
+        renderOption={(props, option) => (
+          <li {...props} key={option.code}>
+            <span>{countryToFlag(option.code)}</span>&nbsp;{option.label}
+          </li>
         )}
         renderInput={(params) => (
           <TextField
