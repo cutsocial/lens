@@ -9,7 +9,8 @@
  * comparable:
  *  - timeouts are counted over the whole run (not consecutively); once
  *    `timeoutsBeforeReset` is reached, the next trial shows the reset notice
- *    and starting again clears the run's responses (trial order is kept)
+ *    and starting again clears the run's responses (trial order is kept).
+ *    Tasks without that setting never reset.
  *  - feedback is shown only when feedbackDuration > 0
  *  - after the last trial, one more fixation interval passes before the task
  *    finishes, so taskFinishedAt/taskDuration match the classic tasks
@@ -69,9 +70,11 @@ function reducer(state, action) {
  * @param {number} opts.stimulusDuration  ms before a trial times out
  * @param {number} opts.feedbackDuration  ms; 0 skips feedback
  * @param {number} opts.timeoutsBeforeReset  defaults to no reset
- * @param {(spec) => object} opts.timeoutFields  task fields for a timed-out trial
- * @param {(key, spec) => object|null} opts.keyResponse  task fields for a key, or null to ignore it
+ * @param {(spec, trial, now) => object} opts.timeoutFields  task fields for a timed-out trial,
+ *        including `correct`; may set `respondedAt` (some classic tasks stamp timeouts)
+ * @param {(key, spec, trial) => object|null} opts.keyResponse  task fields for a key, or null to ignore it
  * @param {(response) => void} opts.onFinish  receives the finished response object
+ * @param {(percent) => void} [opts.onProgress]  drives the study's top progress bar, as classic tasks do
  */
 export default function useTrialRunner({
   trials,
@@ -82,6 +85,7 @@ export default function useTrialRunner({
   timeoutFields,
   keyResponse,
   onFinish,
+  onProgress,
 }) {
   const [state, dispatch] = useReducer(reducer, initialState);
   const total = trials.length;
@@ -130,16 +134,18 @@ export default function useTrialRunner({
         const { state: s, trials: ts, timeoutFields: tf } = latest.current;
         if (answered.current === trial) return;
         answered.current = trial;
+        const { respondedAt = null, ...fields } = tf(ts[trial - 1], trial, Date.now());
         const record = {
           trial,
-          ...tf(ts[trial - 1]),
-          respondedAt: null,
+          ...fields,
+          respondedAt,
           trialStartedAt: s.trialStartedAt,
           rt: null,
           ...timeoutTiming(stimulusOnset),
         };
-        // Classic tasks show "incorrect" feedback after a timeout.
-        dispatch({ type: 'record', trial, record, correct: false, feedback: withFeedback, timedOut: true });
+        // Feedback after a timeout follows the task's scoring: Stroop scores a
+        // timeout null (shown as incorrect); in Go/No-Go a withheld no-go is correct.
+        dispatch({ type: 'record', trial, record, correct: fields.correct === true, feedback: withFeedback, timedOut: true });
       }, stimulusDuration);
     } else if (state.phase === 'feedback') {
       id = setTimeout(() => dispatch({ type: 'feedbackDone' }), feedbackDuration);
@@ -161,6 +167,13 @@ export default function useTrialRunner({
     });
   }, [state.phase]); // eslint-disable-line react-hooks/exhaustive-deps
 
+  // Progress bar, as the classic tasks report it
+  useEffect(() => {
+    if (!onProgress) return;
+    if (state.phase === 'done') onProgress(100);
+    else onProgress(state.trial ? Math.min(100, (100 * state.trial) / total) : 0);
+  }, [state.trial, state.phase]); // eslint-disable-line react-hooks/exhaustive-deps
+
   // Keyboard: Space starts; during a stimulus the task maps keys to responses.
   useEffect(() => {
     const onKeyDown = (event) => {
@@ -171,7 +184,7 @@ export default function useTrialRunner({
         return;
       }
       if (s.phase !== 'stimulus' || !kr) return;
-      const fields = kr(event.key, ts[s.trial - 1]);
+      const fields = kr(event.key, ts[s.trial - 1], s.trial);
       if (fields) {
         event.preventDefault();
         respond(fields, event);

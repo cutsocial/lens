@@ -244,3 +244,25 @@ body[data-ui='2'] {
   line-height: 1;
   color: var(--l2-muted);
 }
+
+/* Single-response tasks: the whole stage is the tap target. It looks and
+   reacts the same on every trial (no press highlight), so it never hints
+   at the answer. */
+.l2-stage-tap {
+  cursor: pointer;
+  touch-action: manipulation;
+  overflow: hidden;
+}
+.l2-stage-tap:focus { outline: none; }
+.l2-stage-tap:focus-visible { outline: 3px solid var(--l2-accent); outline-offset: 2px; }
+
+.l2-hint {
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.l2-hint-caution {
+  color: var(--l2-caution);
+  font-weight: 600;
+}

@@ -148,6 +148,107 @@
       "startText": "lens2.stroop.start"
     },
     {
+      "id": "lens2.gonogo.intro",
+      "type": "text",
+      "instruction": true,
+      "text": "lens2.gonogo.intro"
+    },
+    {
+      "id": "gonogoalt2.demo",
+      "type": "gonogoalt2",
+      "text": "lens2.gonogo.rule",
+      "trials": {
+        "total": 12,
+        "go": 6
+      },
+      "stimuliDuration": 2000,
+      "fixationDuration": 500,
+      "feedbackDuration": 500,
+      "choices": {
+        "go": {
+          "type": "letter",
+          "names": [
+            "B",
+            "C",
+            "D",
+            "F",
+            "G",
+            "H",
+            "J",
+            "K",
+            "L",
+            "M",
+            "N",
+            "P",
+            "Q",
+            "R",
+            "S",
+            "T",
+            "V",
+            "W",
+            "X",
+            "Y",
+            "Z"
+          ]
+        },
+        "nogo": {
+          "type": "letter",
+          "names": [
+            "A",
+            "E",
+            "I",
+            "O",
+            "U"
+          ]
+        }
+      },
+      "startText": "lens2.single.start"
+    },
+    {
+      "id": "lens2.nback.intro",
+      "type": "text",
+      "instruction": true,
+      "text": "lens2.nback.intro"
+    },
+    {
+      "id": "nback2.demo",
+      "type": "nback2",
+      "text": "lens2.nback.rule",
+      "trials": 10,
+      "nback": 2,
+      "stimuli": [
+        {
+          "type": "letter",
+          "name": "A",
+          "amount": 5
+        },
+        {
+          "type": "letter",
+          "name": "B",
+          "amount": 5
+        },
+        {
+          "type": "letter",
+          "name": "C",
+          "amount": 5
+        },
+        {
+          "type": "letter",
+          "name": "D",
+          "amount": 5
+        },
+        {
+          "type": "letter",
+          "name": "E",
+          "amount": 5
+        }
+      ],
+      "stimuliDuration": 2000,
+      "fixationDuration": 500,
+      "feedbackDuration": 500,
+      "startText": "lens2.single.start"
+    },
+    {
       "id": "lens2.done",
       "type": "text",
       "instruction": true,
