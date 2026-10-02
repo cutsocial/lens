@@ -50,7 +50,9 @@ export default function Matrix({content, onStore, onValidate}) {
           step={1}
           min={1}
           max={choices.length}
-          valueLabelDisplay="on"
+          // v4 showed no label until the participant chose a value; v5 would label
+          // the untouched thumb with the first choice, which looks preselected.
+          valueLabelDisplay={response.current.values[index] === undefined ? 'off' : 'on'}
         />
         <Grid container direction='row' alignItems='stretch' justifyContent='space-between'>
           <Grid item className='mark'><em>{t(choices[0])}</em></Grid>

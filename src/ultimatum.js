@@ -269,7 +269,7 @@ export default function Ultimatum({ content, onStore, onNotification }) {
           </Grid></Grid>
 
           <Grid item xs={4}><Grid container direction='column' justifyContent="space-around" alignItems='center'>
-            <Button size='large' color={canFinishTrial()?'primary':'default'} variant={canFinishTrial()?'contained':'outlined'} onClick={finishTrialAction}>{t('ultimatum.finish.button')}</Button>
+            <Button size='large' color={canFinishTrial()?'primary':'inherit'} variant={canFinishTrial()?'contained':'outlined'} onClick={finishTrialAction}>{t('ultimatum.finish.button')}</Button>
           </Grid></Grid>
 
           <Grid item xs={4}><Grid container direction='column' justifyContent="space-around" alignItems='center'>

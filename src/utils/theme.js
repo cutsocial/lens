@@ -29,6 +29,8 @@ const makeTheme = (direction) => responsiveFontSizes(createTheme({
     // Default dark-mode secondary text is 70% white, which reads as dim grey
     // on small labels. Raised for legibility.
     text: { secondary: 'rgba(255, 255, 255, 0.82)' },
+    // v4's dark-mode surfaces; v5 defaults to near-black #121212.
+    background: { default: '#303030', paper: '#424242' },
   },
   typography: {
     fontFamily: direction === 'rtl' ? rtlFontFamily : ltrFontFamily,
@@ -39,6 +41,12 @@ const makeTheme = (direction) => responsiveFontSizes(createTheme({
   components: {
     // MUI v5 lightens dark-mode Paper by elevation; v4 did not. Keep the v4 look.
     MuiPaper: { styleOverrides: { root: { backgroundImage: 'none' } } },
+    // v4 buttons without a color prop were neutral ("default"); v5 makes them
+    // primary blue. Keep the neutral look and v4's subtle outline.
+    MuiButton: {
+      defaultProps: { color: 'inherit' },
+      styleOverrides: { outlinedInherit: { borderColor: 'rgba(255, 255, 255, 0.23)' } },
+    },
   },
 }));
 
@@ -47,5 +55,8 @@ export const rtlTheme = makeTheme('rtl');
 
 // Style caches for MUI's styling engine. The RTL cache mirrors component
 // styles (margins, padding, alignment) for Persian and Arabic.
-export const ltrCache = createCache({ key: 'mui', prepend: true });
-export const rtlCache = createCache({ key: 'muirtl', stylisPlugins: [prefixer, rtlPlugin], prepend: true });
+// prepend: false injects MUI styles after Lens's own CSS, as MUI v4 did, so
+// existing CSS keeps losing ties to MUI exactly as before (e.g. Container
+// centering beats `.study-container { margin: 2vh }`).
+export const ltrCache = createCache({ key: 'mui', prepend: false });
+export const rtlCache = createCache({ key: 'muirtl', stylisPlugins: [prefixer, rtlPlugin], prepend: false });
