@@ -29,6 +29,9 @@ Lens supports the following experiment and question types:
 ### Lens 2 tasks (new design, same data)
 
 - `stroop2`: Stroop in the Lens 2 design. Same study-file options and data fields as `stroop`, plus `taskVersion: 2` in the response. Optional `"showFixation": true` shows a "+" during the fixation interval (classic leaves it blank). Demo: `/#/demo-lens2/en`.
+- `gonogoalt2`: letter/icon Go/No-Go in the Lens 2 design. Same options and data as `gonogoalt`; tap anywhere on the stage or press Space.
+- `nback2`: N-back in the Lens 2 design. Same options and data as `nback`; responses during the first `nback` trials are refused, as in classic.
+- All Lens 2 tasks accept an optional `"startText"` (an i18n key) for the start screen.
 
 ### Survey Elements
 - **`text`** - Text display and input: Supports instruction pages, text questions, and autocomplete fields

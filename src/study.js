@@ -23,9 +23,11 @@ import Prolific from './prolific'
 import Matrix from './matrix';
 import Submission from './submission';
 import Stroop2 from './v2/stroop2';
+import GoNoGoAlt2 from './v2/gonogoalt2';
+import NBack2 from './v2/nback2';
 
 // Lens 2 view types draw their own surfaces, so the study page doesn't wrap them in a card.
-const LENS2_TYPES = ['stroop2'];
+const LENS2_TYPES = ['stroop2', 'gonogoalt2', 'nback2'];
 import BART from './bart';
 import GoNoGo from './gonogo';
 import Stroop from './stroop';
@@ -158,6 +160,10 @@ export default function Study(props) {
         return <Stroop onStore={storeData} content={view} key={view.id} />;
       case 'stroop2':
         return <Stroop2 onStore={storeData} content={view} key={view.id} />;
+      case 'gonogoalt2':
+        return <GoNoGoAlt2 onStore={storeData} onProgress={updateViewProgress} content={view} key={view.id} />;
+      case 'nback2':
+        return <NBack2 onStore={storeData} onProgress={updateViewProgress} content={view} key={view.id} />;
       case 'matrix':
         return <Matrix onStore={storeData} content={view} key={view.id} onValidate={(r) => responseIsValid.current = r} />
       case 'ultimatum':

@@ -866,5 +866,12 @@
 	"lens2.stroop.start": "Place your fingers on the ← and → keys. Press the space bar to begin.",
 	"lens2.stroop.main_intro": "Now the main round begins. This time you won't see whether your answers were correct.",
 	"stroop.too_many_timeouts": "You waited too long! Let's start over.",
-	"stroop.restart": "Start again"
+	"stroop.restart": "Start again",
+	"lens2.respond": "Respond",
+	"lens2.tap_or_space": "Tap the screen or press Space",
+	"lens2.gonogo.intro": "In this task, letters appear one at a time.\n\nWhen you see a **consonant** (like B or K), respond as fast as you can: tap the screen or press **Space**.\n\nWhen you see a **vowel** (A, E, I, O, U), do nothing and wait for the next letter.",
+	"lens2.gonogo.rule": "**Consonant:** respond. **Vowel:** do nothing.",
+	"lens2.single.start": "Place a finger on the **Space** key, or get ready to tap the screen. Press Space or tap Start to begin.",
+	"lens2.nback.intro": "In this task, letters appear one at a time.\n\nRespond when a letter is the **same as the one 2 letters before it**: tap the screen or press **Space**. For example, in A → B → **A**, respond to the second A.\n\nOtherwise, do nothing and wait. The first two letters have nothing to compare with, so just watch them.",
+	"lens2.nback.rule": "Same as **2 letters ago**? Respond. Otherwise, wait."
 }

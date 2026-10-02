@@ -45,11 +45,12 @@ Lens 2 tasks are new view types that sit next to the classic ones; classic types
 
 - `lens2.css`: design tokens ("Quiet Instrument") as CSS variables on `.l2`, plus shared classes. Logical CSS properties, so RTL works from `dir`.
 - `components.js`: `L2Root`, `Header`, `StartCard`, `NoticeCard`, `Feedback`, `Button`, `Keys`. Fonts are bundled (`@fontsource/atkinson-hyperlegible-*`), not loaded from Google.
-- `useTrialRunner.js`: the shared trial engine (fixation, stimulus, feedback, reset). It deliberately reproduces classic semantics: timeouts counted over the whole run, reset clears responses but keeps trial order, one fixation interval after the last trial before finishing. Records carry the classic fields plus timingVersion 2 fields.
+- `useTrialRunner.js`: the shared trial engine (tasks supply timeout scoring, key mapping and optional progress reporting) (fixation, stimulus, feedback, reset). It deliberately reproduces classic semantics: timeouts counted over the whole run, reset clears responses but keeps trial order, one fixation interval after the last trial before finishing. Records carry the classic fields plus timingVersion 2 fields.
 - A Lens 2 task's response = the classic task's response fields + `taskVersion: 2`. Verify any new task against its classic sibling with identical scripted sessions before shipping.
 - Study page renders `LENS2_TYPES` without the classic card wrapper. Stimuli (colors, words, sizes) come from the study file or keep classic values; never restyle them through the design system.
 - Interface strings live under `lens2.*` keys in all three locale files.
-- Current Lens 2 types: `stroop2`. Demo: `/#/demo-lens2/en`.
+- `singleResponseTask.js`: shared component for one-response tasks (tap the stage or press Space; withholding is the other answer). Draws stimuli with the classic CSS classes from `nback.css`, so letters/icons/fixation look identical to classic.
+- Current Lens 2 types: `stroop2`, `gonogoalt2`, `nback2`. Demo: `/#/demo-lens2/en`.
 
 ## Experiments (`public/experiments/*.json`)
 
