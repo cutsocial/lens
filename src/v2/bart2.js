@@ -8,7 +8,7 @@
  *  - explosion: each balloon has a shuffled deck 1..maxPumps; every pump draws
  *    one card at random and the balloon explodes on card 1. The first
  *    `safePumps` pumps draw nothing (but still use a random number, as classic)
- *  - balloon look (the classic translucent bubble) and size:
+ *  - balloon size:
  *    diameter = ceil(2 * sqrt((pumps + 1) * 500 / pi)) px, times `ballScale`
  *  - score = pumps x reward when cashed, 0 when exploded
  *  - records: {trial, pumps, score, result}; taskStartedAt when the task
@@ -19,12 +19,14 @@
  *  - the whole stage pumps, not only the balloon (it starts ~26px wide)
  *  - "Next Reward" is labelled "This round": it always showed points banked
  *  - results rise as a sheet inside the task instead of a full-height dialog
+ *  - the balloon is a solid orange ball (the Lens 2 design), not the classic
+ *    translucent red bubble
  *
  * Optional, for new studies (both change what participants see, and both are
  * recorded in the echoed view):
  *  - "ballScale" (default 1) enlarges the balloon
- *  - "stimulusStyle": "lens2" draws the balloon as a solid orange ball (the
- *    Lens 2 design) instead of the classic translucent red bubble
+ *  - "stimulusStyle": "classic" draws the classic translucent red bubble
+ *    instead of the orange ball
  */
 import React, { useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -47,7 +49,7 @@ const balloonSize = (pumps, scale) => Math.ceil(2 * Math.sqrt(((pumps + 1) * 500
 
 export default function Bart2({ content, onStore }) {
   const { reward, maxPumps, safePumps, trials, ballScale, stimulusStyle } = content;
-  const lens2Ball = stimulusStyle === 'lens2';
+  const lens2Ball = stimulusStyle !== 'classic';
   const scale = Number(ballScale) > 0 ? Number(ballScale) : 1;
   const { t } = useTranslation();
   const { lang } = useParams();
