@@ -8,10 +8,10 @@ import {useTranslation} from 'react-i18next';
 
 import useSubmission from './utils/useSubmission';
 
-export default function Submission({submission, studyId, submissionNote}) {
+export default function Submission({submission, studyId, submissionNote, submissionId}) {
 
   const {t} = useTranslation();
-  const {status, submissionCode} = useSubmission(submission, studyId);
+  const {status, submissionCode} = useSubmission(submission, studyId, submissionId);
   const debug = process.env.NODE_ENV !== 'production';
 
   return (

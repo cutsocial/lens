@@ -26,6 +26,11 @@ Lens supports the following experiment and question types:
 - **`ultimatum`** - Ultimatum Game: Economic game measuring fairness and negotiation behavior
 - **`dictator`** - Dictator Game: Economic game measuring altruism and fairness
 
+### Saving as participants go, and balanced conditions
+
+- `"saveProgress": true` (top level of a study file) saves each page to the server as soon as it is stored, one row per page in the `<studyId>.partial` collection (same `submissionId` as the final document, plus `index`, `viewId`, `viewType`, `view`, `response`, Prolific IDs, `savedAt`). The final document in `<studyId>` is unchanged. Use it to see where people dropped out, or to recover data if the final save fails. Off by default: check that your consent form allows keeping data from people who stop partway.
+- Balanced assignment: link participants to `https://server.cut.social/assign?studies=studyA/en,studyB/en` (add Prolific's `&PROLIFIC_PID={{%PROLIFIC_PID%}}&STUDY_ID={{%STUDY_ID%}}&SESSION_ID={{%SESSION_ID%}}`). Each arrival goes to the condition with the fewest participants, counting completions plus starts from the last `hold` minutes (`&hold=60` by default), so dropouts free their slot. A returning Prolific ID keeps its condition. Lens sends the assignment back with the final submission (`ASSIGNMENT_ID`, only in assigned sessions). Counts so far: `https://server.cut.social/assign/status?studies=studyA/en,studyB/en`. The old `/randomize` links keep picking at random.
+
 ### Lens 2 tasks (new design, same data)
 
 - `stroop2`: Stroop in the Lens 2 design. Same study-file options and data fields as `stroop`, plus `taskVersion: 2` in the response. Optional `"showFixation": true` shows a "+" during the fixation interval (classic leaves it blank). Demo: `/#/demo-lens2/en`.

@@ -49,10 +49,10 @@ function Ring({ progress, tone, closing, done }) {
   );
 }
 
-export default function Submission2({ submission, studyId, experiment }) {
+export default function Submission2({ submission, studyId, experiment, submissionId }) {
   const { t } = useTranslation();
   const dir = useDir();
-  const { status, submissionCode } = useSubmission(submission, studyId);
+  const { status, submissionCode } = useSubmission(submission, studyId, submissionId);
   const { submissionNote, redirectTo, redirectText, redirectLabel } = experiment;
   const debug = process.env.NODE_ENV !== 'production';
 

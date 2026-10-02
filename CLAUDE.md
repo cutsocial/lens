@@ -60,7 +60,9 @@ Lens 2 tasks are new view types that sit next to the classic ones; classic types
 
 Each file is a study. Top-level keys: `studyId`, `condition`, `redirectTo`, `submissionNote` (an i18n key; receives `{{submissionCode}}`), `metadata`, `views[]`. `public/experiments/demo-comprehensive.json` exercises every view type and is the best schema reference; `README.md` lists the types. Many `mad*.json` files are real published studies, so avoid changing them unless asked.
 
-Prolific integration: `PROLIFIC_PID`, `STUDY_ID`, `SESSION_ID` are read from the URL query string in `Study` and sent with the submission.
+Prolific integration: `PROLIFIC_PID`, `STUDY_ID`, `SESSION_ID` are read from the URL query string in `Study` and sent with the submission. `ASSIGNMENT_ID` (set by the server's `/assign`) is sent too, only when present.
+
+Per-page save: with `"saveProgress": true`, `Study.storeData` calls `saveView` (`src/utils/api.js`) for every stored entry, in the background, with the submission id created at study start (the final submission reuses it). It reads only refs because classic survey views call a stale `storeData` from their unmount cleanup. `VITE_SUBMISSION_API` overrides the server address for local testing.
 
 Google Analytics (`react-ga4`, ID hard-coded in `src/index.js` and `src/study.js`) is used only for pageviews and submission-failure events.
 
@@ -75,8 +77,8 @@ Planned work, in this order:
 
 1. ~~Restrict the deploy workflow to `master`.~~ Done.
 2. ~~Fix reaction-time measurement (`performance.now()`, stimulus onset).~~ Done.
-3. Save data per view instead of only once at the end.
-4. Balanced randomization.
+3. ~~Save data per view instead of only once at the end.~~ Done as opt-in `saveProgress` (rows in `<studyId>.partial`; final document unchanged).
+4. ~~Balanced randomization.~~ Done on the server: `/assign` (balanced by completes + active holds); `/randomize` unchanged.
 5. JSON schema validation for study definitions in `public/experiments/`.
 6. ~~Migrate to Vite, React 18 and MUI v5.~~ Done (branch `upgrade-vite-react18-mui5`).
 

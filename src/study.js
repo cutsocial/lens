@@ -48,6 +48,7 @@ import SimplifiedTaskSwitch from './simplified_taskswitch';
 import NBack from './nback';
 import GoNoGoAlt from './gonogoalt';
 import ReactGA from "react-ga4";
+import { newSubmissionId, saveView } from './utils/api';
 
 function useQuery() {
   return new URLSearchParams(useLocation().search);
@@ -80,8 +81,20 @@ export default function Study(props) {
 
   const [notification, setNotification] = useState(undefined);
 
+  // Per-page save ("saveProgress": true in the study file). Classic survey views
+  // store from an unmount cleanup that captured an old storeData, so everything
+  // it needs is read from refs, not state.
+  const submissionId = useRef(newSubmissionId());
+  const storedCount = useRef(0);
+  const progressMeta = useRef(null);   // set when the study starts
+
   const storeData = (data, autoNext=false) => {
     console.log('study.storeData', data);
+
+    const index = storedCount.current++;
+    if (progressMeta.current) {
+      saveView(studyId, submissionId.current, index, data, progressMeta.current);
+    }
 
     if (autoNext) {
       onNext();
@@ -157,12 +170,14 @@ export default function Study(props) {
         PROLIFIC_PID: query.get('PROLIFIC_PID'),
         STUDY_ID: query.get('STUDY_ID'),
         SESSION_ID: query.get('SESSION_ID'),
+        // only present when the participant came through /assign
+        ...(query.get('ASSIGNMENT_ID') ? {ASSIGNMENT_ID: query.get('ASSIGNMENT_ID')} : {}),
         startedAt: state.startedAt,
         responses: state.responses};
       if (usesLens2FinalPage)
-        return <Submission2 submission={submission} studyId={studyId} experiment={state.experiment} />;
+        return <Submission2 submission={submission} studyId={studyId} experiment={state.experiment} submissionId={submissionId.current} />;
       return (
-        <Submission submission={submission}
+        <Submission submission={submission} submissionId={submissionId.current}
           studyId={studyId} submissionNote={state.experiment.submissionNote} />
       );
     }
@@ -219,10 +234,20 @@ export default function Study(props) {
   const startExperiment = (experiment) => {
     console.log("starting experiment", experiment);
     console.log("prolific pid : ",query.get('PROLIFIC_PID'))
+    const startedAt = Date.now();
+    if (experiment.saveProgress === true) {
+      progressMeta.current = {
+        PROLIFIC_PID: query.get('PROLIFIC_PID'),
+        STUDY_ID: query.get('STUDY_ID'),
+        SESSION_ID: query.get('SESSION_ID'),
+        ...(query.get('ASSIGNMENT_ID') ? {ASSIGNMENT_ID: query.get('ASSIGNMENT_ID')} : {}),
+        startedAt,
+      };
+    }
     setState(prev => {
       return {
         ...prev,
-        startedAt: Date.now(),
+        startedAt,
         experiment: experiment,
         currentViewIndex: 0,
         view: experiment.views[0]
