@@ -10,7 +10,9 @@
  *
  * Changed on purpose:
  *  - each question sits on its own card; horizontal choices stack into rows
- *    on narrow screens so every option stays a full-width tap target
+ *    on narrow screens so every option stays a full-width tap target.
+ *    `"mobileLayout": "row"` keeps them in one row on phones too (default
+ *    "stack"); it is echoed with the view, so the layout is in the data
  *  - the slider shows nothing selected until it is touched (as classic), and
  *    shows the chosen label above the line instead of in a tooltip
  *  - missing answers show inline under each question, and Next scrolls to
@@ -61,6 +63,7 @@ export default function Matrix2({ content, onStore }) {
   };
 
   const horizontal = direction !== 'vertical';
+  const rowOnPhones = content.mobileLayout === 'row';
 
   const renderQuestion = (q, i) => {
     const qid = `${uid}-q${i}`;
@@ -88,7 +91,7 @@ export default function Matrix2({ content, onStore }) {
             role="radiogroup"
             aria-labelledby={qid}
             aria-describedby={showError ? eid : undefined}
-            className={`l2-options ${horizontal ? 'l2-options-row' : ''}`}
+            className={`l2-options ${horizontal ? 'l2-options-row' : ''} ${horizontal && rowOnPhones ? 'l2-options-row-always' : ''}`}
             style={horizontal ? { '--l2-n': choices.length } : undefined}
           >
             {choices.map((c, j) => {

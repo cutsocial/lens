@@ -642,6 +642,25 @@ body[data-ui='2'] {
 }
 .l2-option.is-on { background: var(--l2-accent-soft); box-shadow: inset 0 0 0 2px var(--l2-accent); }
 .l2-option:has(input:focus-visible) { outline: 3px solid var(--l2-accent); outline-offset: 2px; }
+/* "mobileLayout": "row": a compact row of cells on phones too */
+.l2-options-row-always {
+  display: grid;
+  grid-template-columns: repeat(var(--l2-n), minmax(0, 1fr));
+  gap: 4px;
+}
+.l2-options-row-always .l2-option {
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 6px;
+  min-height: 72px;
+  padding: 10px 0;
+  text-align: center;
+  font-size: 0.8125rem;
+  line-height: 1.0625rem;
+  overflow-wrap: break-word;
+  word-break: normal;
+}
+.l2-options-row-always .l2-option span { max-width: 100%; }
 @media (min-width: 560px) {
   .l2-options-row {
     display: grid;
