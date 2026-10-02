@@ -4,12 +4,13 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Commands
 
-Create React App (`react-scripts` 4.0.3, React 16, Material-UI v4, Node 16 per `.nvmrc`). No linter beyond CRA's built-in `eslintConfig`, and there are currently no tests in `src/`.
+Vite 6, React 18, MUI v5, Node 20 per `.nvmrc`. No linter, and there are currently no tests in `src/`. Source files keep JSX in `.js` files; `vite.config.js` tells esbuild to parse them as JSX.
 
-- `npm start` — dev server at http://localhost:3000. On newer Node versions that fail with an OpenSSL error, use `npm run devstart` (adds `--openssl-legacy-provider`).
-- `npm run build` — production build into `build/` (`CI=false` so ESLint warnings don't fail it).
-- `npm test` — Jest via react-scripts (watch mode). Single test: `npm test -- -t "name"` or pass a file path.
-- `npm run deploy` — builds and publishes `build/` to `gh-pages`. CI (`.github/workflows/`) also builds and deploys to GitHub Pages on push to `master`, `mirror`, `develop`. Site is served at `lens.cut.social` (`public/CNAME`).
+- `npm start` — Vite dev server at http://localhost:3000.
+- `npm run build` — production build into `build/`. `npm run preview` serves it locally.
+- `npm run deploy` — builds and publishes `build/` to `gh-pages`. CI (`.github/workflows/deploy_pages.yml`) builds and deploys to GitHub Pages on push to `master`. Site is served at `lens.cut.social` (`public/CNAME`).
+- No `<React.StrictMode>`: in development it runs effect cleanups twice, and survey views store responses in a cleanup.
+- `src/polyfills.js` and the `path` alias in `vite.config.js` exist only for react-markdown v4 (via vfile). Remove both if react-markdown is upgraded.
 
 ## Architecture
 
@@ -48,19 +49,19 @@ Google Analytics (`react-ga4`, ID hard-coded in `src/index.js` and `src/study.js
 
 ## Backend and infrastructure
 
-- Submissions go to a Cloud Run server at `server.cut.social` (GCP project `jamasp-gcp-project`), which writes to MongoDB Atlas. The server code is not in this repo.
+- Submissions go to a Cloud Run server at `server.cut.social` (GCP project `jamasp-gcp-project`), which writes to MongoDB Atlas. Its code is in the private repo `cutsocial/submission-server`. It does not store participant IP addresses (`STORE_IP` is off).
 - Heroku is no longer used. If you come across a Heroku reference (URLs, config, docs, comments), flag it to the user. As of the last check there were none in the repo.
 
 ## Roadmap
 
 Planned work, in this order:
 
-1. Restrict the deploy workflow (`.github/workflows/`) to `master`. It currently also deploys from `mirror` and `develop`.
-2. Fix reaction-time measurement: use `performance.now()` and record stimulus-onset timestamps.
+1. ~~Restrict the deploy workflow to `master`.~~ Done.
+2. ~~Fix reaction-time measurement (`performance.now()`, stimulus onset).~~ Done.
 3. Save data per view instead of only once at the end.
 4. Balanced randomization.
 5. JSON schema validation for study definitions in `public/experiments/`.
-6. Migrate to Vite, React 18 and MUI v5.
+6. ~~Migrate to Vite, React 18 and MUI v5.~~ Done (branch `upgrade-vite-react18-mui5`).
 
 ## Data format constraint
 

@@ -3,8 +3,9 @@ import createCache from '@emotion/cache';
 import { prefixer } from 'stylis';
 import rtlPlugin from 'stylis-plugin-rtl';
 
-const fontFamily = [
-  'Vazir',
+// Persian/Arabic text reads best in Vazir; Latin text in the system UI font.
+// Vazir stays in both lists as a fallback.
+const systemFonts = [
   '-apple-system',
   'BlinkMacSystemFont',
   '"Segoe UI"',
@@ -15,7 +16,9 @@ const fontFamily = [
   '"Apple Color Emoji"',
   '"Segoe UI Emoji"',
   '"Segoe UI Symbol"',
-].join(',');
+];
+const ltrFontFamily = [...systemFonts.slice(0, 5), 'Vazir', ...systemFonts.slice(5)].join(',');
+const rtlFontFamily = ['Vazir', ...systemFonts].join(',');
 
 const makeTheme = (direction) => responsiveFontSizes(createTheme({
   direction,
@@ -23,8 +26,16 @@ const makeTheme = (direction) => responsiveFontSizes(createTheme({
     mode: 'dark',
     primary: { main: '#039be5' },
     secondary: { main: '#f06292' },
+    // Default dark-mode secondary text is 70% white, which reads as dim grey
+    // on small labels. Raised for legibility.
+    text: { secondary: 'rgba(255, 255, 255, 0.82)' },
   },
-  typography: { fontFamily },
+  typography: {
+    fontFamily: direction === 'rtl' ? rtlFontFamily : ltrFontFamily,
+    // Survey questions, answer labels and instructions: 18px instead of 16px.
+    body1: { fontSize: '1.125rem', lineHeight: 1.6 },
+    body2: { fontSize: '1rem', lineHeight: 1.5 },
+  },
   components: {
     // MUI v5 lightens dark-mode Paper by elevation; v4 did not. Keep the v4 look.
     MuiPaper: { styleOverrides: { root: { backgroundImage: 'none' } } },

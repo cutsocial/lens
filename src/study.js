@@ -191,6 +191,17 @@ export default function Study(props) {
 
   }
 
+  // Optional study-level text size, e.g. "fontScale": 1.2 in the study JSON.
+  // Applied only on survey views; reset on interactive tasks so stimulus sizes
+  // stay exactly as designed. All MUI text is sized in rem, so the root font
+  // size scales it in one place.
+  const fontScale = Number(state.experiment && state.experiment.fontScale) || 1;
+  const isSurveyView = ['text', 'matrix', 'prolific'].includes(state.view && state.view.type);
+  useEffect(() => {
+    document.documentElement.style.fontSize = (isSurveyView && fontScale !== 1) ? `${fontScale * 100}%` : '';
+    return () => { document.documentElement.style.fontSize = ''; };
+  }, [isSurveyView, fontScale]);
+
   //load experiment
   useEffect(() => {
     i18n.changeLanguage(lang);
