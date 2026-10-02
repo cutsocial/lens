@@ -26,9 +26,11 @@ import Stroop2 from './v2/stroop2';
 import GoNoGoAlt2 from './v2/gonogoalt2';
 import NBack2 from './v2/nback2';
 import Bart2 from './v2/bart2';
+import Dictator2 from './v2/dictator2';
+import Ultimatum2 from './v2/ultimatum2';
 
 // Lens 2 view types draw their own surfaces, so the study page doesn't wrap them in a card.
-const LENS2_TYPES = ['stroop2', 'gonogoalt2', 'nback2', 'bart2'];
+const LENS2_TYPES = ['stroop2', 'gonogoalt2', 'nback2', 'bart2', 'dictator2', 'ultimatum2'];
 import BART from './bart';
 import GoNoGo from './gonogo';
 import Stroop from './stroop';
@@ -167,6 +169,10 @@ export default function Study(props) {
         return <NBack2 onStore={storeData} onProgress={updateViewProgress} content={view} key={view.id} />;
       case 'bart2':
         return <Bart2 onStore={storeData} content={view} key={view.id} />;
+      case 'dictator2':
+        return <Dictator2 onStore={storeData} content={view} key={view.id} />;
+      case 'ultimatum2':
+        return <Ultimatum2 onStore={storeData} content={view} key={view.id} />;
       case 'matrix':
         return <Matrix onStore={storeData} content={view} key={view.id} onValidate={(r) => responseIsValid.current = r} />
       case 'ultimatum':

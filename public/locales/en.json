@@ -877,5 +877,18 @@
 	"lens2.bart.this_round": "This round",
 	"lens2.bart.tap_hint": "Tap to pump",
 	"lens2.bart.cash_points": "Cash {{points}} points",
-	"lens2.bart.intro": "In this task you'll see a balloon. Each time you tap it, it grows and you earn points for this round.\n\nBut each balloon can pop at any time. If it pops, you lose that round's points.\n\nTap **Cash** whenever you want to keep this round's points and move to the next balloon."
+	"lens2.bart.intro": "In this task you'll see a balloon. Each time you tap it, it grows and you earn points for this round.\n\nBut each balloon can pop at any time. If it pops, you lose that round's points.\n\nTap **Cash** whenever you want to keep this round's points and move to the next balloon.",
+	"lens2.tokens.drop_here": "Drop tokens here",
+	"lens2.tokens.all_placed": "All tokens placed",
+	"lens2.tokens.drag": "Drag a token onto a person",
+	"lens2.tokens.drag_or_tap": "Drag a token onto a person, or use + and −",
+	"lens2.tokens.you": "You",
+	"lens2.tokens.count": "{{count}} tokens",
+	"lens2.tokens.take_back": "Take a token back from {{name}}",
+	"lens2.tokens.give": "Give {{name}} a token",
+	"lens2.tokens.this_round": "This round",
+	"lens2.tokens.total": "Total",
+	"lens2.tokens.allocate_more": "Place all tokens first ({{count}} left)",
+	"lens2.dictator.intro": "In this task, some tokens are placed between you and another person.\n\nDrag each token onto the other person's card or onto yours. You can split them however you like. When the middle is empty, tap **Collect**.",
+	"lens2.ultimatum.intro": "In this task, some tokens are placed between you and another person.\n\nDrag each token onto the other person's card or onto yours, then tap **Propose**. If they **accept**, you both keep your tokens. If they **reject**, neither of you gets anything.\n\nWe obtained the other players' responses to possible proposals in advance."
 }
