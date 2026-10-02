@@ -873,5 +873,9 @@
 	"lens2.gonogo.rule": "**Consonant:** respond. **Vowel:** do nothing.",
 	"lens2.single.start": "Place a finger on the **Space** key, or get ready to tap the screen. Press Space or tap Start to begin.",
 	"lens2.nback.intro": "In this task, letters appear one at a time.\n\nRespond when a letter is the **same as the one 2 letters before it**: tap the screen or press **Space**. For example, in A → B → **A**, respond to the second A.\n\nOtherwise, do nothing and wait. The first two letters have nothing to compare with, so just watch them.",
-	"lens2.nback.rule": "Same as **2 letters ago**? Respond. Otherwise, wait."
+	"lens2.nback.rule": "Same as **2 letters ago**? Respond. Otherwise, wait.",
+	"lens2.bart.this_round": "This round",
+	"lens2.bart.tap_hint": "Tap to pump",
+	"lens2.bart.cash_points": "Cash {{points}} points",
+	"lens2.bart.intro": "In this task you'll see a balloon. Each time you tap it, it grows and you earn points for this round.\n\nBut each balloon can pop at any time. If it pops, you lose that round's points.\n\nTap **Cash** whenever you want to keep this round's points and move to the next balloon."
 }

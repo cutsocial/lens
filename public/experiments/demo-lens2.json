@@ -249,6 +249,20 @@
       "startText": "lens2.single.start"
     },
     {
+      "id": "lens2.bart.intro",
+      "type": "text",
+      "instruction": true,
+      "text": "lens2.bart.intro"
+    },
+    {
+      "id": "bart2.demo",
+      "type": "bart2",
+      "reward": 7,
+      "maxPumps": 20,
+      "safePumps": 1,
+      "trials": 5
+    },
+    {
       "id": "lens2.done",
       "type": "text",
       "instruction": true,

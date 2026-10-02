@@ -275,3 +275,103 @@ body[data-ui='2'] {
   background-color: transparent;
   cursor: inherit;
 }
+
+/* Score readouts */
+.l2-bart-stats {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+.l2-stat { display: flex; flex-direction: column; }
+.l2-stat-end { align-items: flex-end; }
+.l2-stat-label { font-size: 14px; color: var(--l2-muted); }
+.l2-stat-value {
+  font-family: var(--l2-mono);
+  font-size: 30px;
+  line-height: 38px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+.l2-chip {
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: var(--l2-raised);
+  font-size: 14px;
+  color: var(--l2-muted);
+  white-space: nowrap;
+}
+.l2-tone-accent { color: var(--l2-accent); }
+.l2-tone-caution { color: var(--l2-caution); }
+
+/* BART */
+.l2-bart-area {
+  position: relative;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 360px;
+}
+.l2-bart-stage { flex-grow: 1; }
+.l2-bart-stage:disabled { cursor: default; }
+.l2 .bubble-container {
+  position: relative; /* anchors the classic bubble's highlight */
+  display: block;
+}
+.l2-bart-popped {
+  border-radius: 50%;
+  border: 2px dashed rgba(255, 159, 90, 0.5);
+}
+.l2-bart-hint {
+  position: absolute;
+  inset-block-end: 18px;
+  font-size: 15px;
+  color: var(--l2-muted);
+}
+
+/* Result sheet: rises inside the task area, sized to its content */
+.l2-sheet {
+  position: absolute;
+  inset-inline: 0;
+  inset-block-end: 0;
+  background: var(--l2-raised);
+  border-radius: 24px 24px var(--l2-radius-stage) var(--l2-radius-stage);
+  padding: 12px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  box-shadow: 0 -12px 40px rgba(0, 0, 0, 0.45);
+  animation: l2-sheet-in 220ms ease-out;
+}
+@keyframes l2-sheet-in {
+  from { transform: translateY(24px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .l2-sheet { animation: none; }
+}
+.l2-sheet-grip {
+  width: 40px;
+  height: 4px;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.18);
+  align-self: center;
+}
+.l2-sheet-title {
+  margin: 0;
+  font-size: 26px;
+  line-height: 32px;
+  font-weight: 700;
+}
+.l2-sheet-stats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+.l2-stat-box {
+  background: var(--l2-surface);
+  border-radius: 12px;
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+}
