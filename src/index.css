@@ -57,3 +57,10 @@ span.required {
 .rule-text p {
   margin: 0;
 }
+
+/* Classic task layouts are fixed-height columns. They must never wrap into a
+   second column: on phones (larger text since v1.0, MUI v5 spacing) the
+   stimulus area wrapped off the right edge of the screen. Stack instead. */
+.view-container .MuiGrid-direction-xs-column {
+  flex-wrap: nowrap;
+}
