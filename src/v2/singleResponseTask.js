@@ -7,8 +7,9 @@
  * letters stay yellow #fced24 at 230px on a 300x300 tile, icons stay 300px,
  * and the fixation "+" keeps its classic size and opacity.
  *
- * Deliberate difference from classic: the whole stage is the tap target,
- * not only the 300px tile. Keyboard responses are unaffected.
+ * Deliberate differences from classic: the whole stage is the tap target,
+ * not only the 300px tile, and the tile's lighter background is gone (it
+ * only marked where to click). Keyboard responses are unaffected.
  */
 import React, { useEffect, useState } from 'react';
 import { Box, Typography } from '@mui/material';

@@ -266,3 +266,12 @@ body[data-ui='2'] {
   color: var(--l2-caution);
   font-weight: 600;
 }
+
+/* The classic tasks drew a lighter 300px square behind letter and icon
+   stimuli because the square was the click target. In Lens 2 the whole
+   stage is the target, so the square is dropped. The stimulus itself
+   (color, size, font, position) is unchanged. */
+.l2 .single-stimulus {
+  background-color: transparent;
+  cursor: inherit;
+}
