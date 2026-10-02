@@ -22,7 +22,7 @@ Lens is a client-only SPA that renders a **study** described by a JSON file, the
 - `src/study.js` is the orchestrator. It fetches `public/experiments/{studyId}.json` at runtime, then steps through `experiment.views` by index, holding `responses`, `progress`, and `currentViewIndex` in local state. When the last view is done it renders `Submission` instead.
 - Language (`en`, `fa`, `ar`) comes from the URL; `languages[lang].direction` picks the RTL or LTR MUI theme (`src/utils/theme.js`). Add new languages in `src/utils/i18n.js` **and** `public/locales/{lang}.json`. Locale files are fetched by `i18next-xhr-backend`, not bundled, and `keySeparator` is `false`, so keys like `income.self.q` are flat strings.
 - Experiment JSON strings (`text`, `choices`, `questions`, …) are mostly **i18n keys**, resolved with `t()`. Plain text like `"Thanks!"` falls through as the key itself.
-- `src/submission.js` POSTs `{...submission, submissionId}` to `https://server.cut.social/api/v1/{studyId}/responses`. It retries with backoff (up to 5 attempts, `submissionId` prevents double-counting) and still shows the completion note if all attempts fail. Participant data and Prolific IDs must not be sent to Google Analytics; only error events are.
+- `src/submission.js` (via `src/utils/useSubmission.js`) POSTs `{...submission, submissionId}` to `https://server.cut.social/api/v1/{studyId}/responses`. It retries with backoff (up to 5 attempts, `submissionId` prevents double-counting) and still shows the completion note if all attempts fail. Participant data and Prolific IDs must not be sent to Google Analytics; only error events are.
 
 ### View components contract
 
@@ -53,6 +53,7 @@ Lens 2 tasks are new view types that sit next to the classic ones; classic types
 - `bart2.js`: BART with the classic explosion deck, balloon size and data; orange Lens 2 ball by default (`stimulusStyle: "classic"` for the red bubble); optional `ballScale`.
 - `tokenGame.js`: shared dictator/ultimatum screen (coin piles per person, pointer-event drag, optional `tapControls`, dictator `matchmakingDelay`).
 - `survey.js`: survey page shell (Next button, inline required message), `ScaleSlider`, `CountryPicker`. `text2.js`, `matrix2.js`, `prolific2.js` use it. Survey views store on Next with `onStore(data, true)` (not in an unmount cleanup), so `Study.onNext` skips its required check for Lens 2 types; survey CSS is in rem so `fontScale` applies.
+- `submission2.js`: Lens 2 final page, used when a study has any Lens 2 view (override with `finalPage`). Saving and retries are in `src/utils/useSubmission.js`, shared with classic `src/submission.js`.
 - Current Lens 2 types: `stroop2`, `gonogoalt2`, `nback2`, `bart2`, `dictator2`, `ultimatum2`, `text2`, `matrix2`, `prolific2`. Demo: `/#/demo-lens2/en`.
 
 ## Experiments (`public/experiments/*.json`)

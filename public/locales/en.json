@@ -917,5 +917,11 @@
 	"lens2.demo.alert.c4": "Neither",
 	"lens2.demo.alert.c5": "A little alert",
 	"lens2.demo.alert.c6": "Alert",
-	"lens2.demo.alert.c7": "Very alert"
+	"lens2.demo.alert.c7": "Very alert",
+	"lens2.final.saving": "Saving your responses…",
+	"lens2.final.keep_open": "Please keep this page open.",
+	"lens2.final.thanks": "Thank you!",
+	"lens2.final.recorded": "Your responses have been recorded.",
+	"lens2.final.not_confirmed": "We couldn't confirm that your responses were saved. Please let the researchers know.",
+	"lens2.demo.redirect_text": "This was the Lens 2 demo. Continue to cut.social."
 }
