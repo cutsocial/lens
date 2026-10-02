@@ -1,0 +1,157 @@
+{
+  "studyId": "demo-lens2",
+  "condition": "demo",
+  "redirectTo": "https://cut.social",
+  "submissionNote": "submission.note",
+  "metadata": {
+    "note": "Lens 2 task demos. Classic equivalents are in demo-comprehensive."
+  },
+  "views": [
+    {
+      "id": "lens2.intro",
+      "type": "text",
+      "instruction": true,
+      "text": "lens2.stroop.intro"
+    },
+    {
+      "id": "stroop2.practice",
+      "type": "stroop2",
+      "rule": "lens2.stroop.rule",
+      "colors": {
+        "G": "#6cba47",
+        "R": "#d73636"
+      },
+      "words": {
+        "G": "colors.green",
+        "R": "colors.red"
+      },
+      "trials": [
+        {
+          "stimulus": "GG",
+          "choices": [
+            "GG",
+            "RR"
+          ]
+        },
+        {
+          "stimulus": "RG",
+          "choices": [
+            "GG",
+            "RG"
+          ]
+        },
+        {
+          "stimulus": "GG",
+          "choices": [
+            "GR",
+            "RG"
+          ]
+        },
+        {
+          "stimulus": "RR",
+          "choices": [
+            "GG",
+            "RR"
+          ]
+        },
+        {
+          "stimulus": "RG",
+          "choices": [
+            "GG",
+            "RR"
+          ]
+        }
+      ],
+      "stimulusDuration": 1000,
+      "fixationDuration": 1000,
+      "feedbackDuration": 1000,
+      "timeoutsBeforeReset": 10,
+      "randomizeTrials": true,
+      "randomizeChoices": true,
+      "startText": "lens2.stroop.start"
+    },
+    {
+      "id": "lens2.stroop.main_intro",
+      "type": "text",
+      "instruction": true,
+      "text": "lens2.stroop.main_intro"
+    },
+    {
+      "id": "stroop2.main",
+      "type": "stroop2",
+      "rule": "lens2.stroop.rule",
+      "colors": {
+        "G": "#6cba47",
+        "R": "#d73636"
+      },
+      "words": {
+        "G": "colors.green",
+        "R": "colors.red"
+      },
+      "trials": [
+        {
+          "stimulus": "GG",
+          "choices": [
+            "GG",
+            "RR"
+          ]
+        },
+        {
+          "stimulus": "GR",
+          "choices": [
+            "GG",
+            "RR"
+          ]
+        },
+        {
+          "stimulus": "RR",
+          "choices": [
+            "GR",
+            "RG"
+          ]
+        },
+        {
+          "stimulus": "GR",
+          "choices": [
+            "GG",
+            "RG"
+          ]
+        },
+        {
+          "stimulus": "GG",
+          "choices": [
+            "GR",
+            "RR"
+          ]
+        },
+        {
+          "stimulus": "GR",
+          "choices": [
+            "GR",
+            "RG"
+          ]
+        },
+        {
+          "stimulus": "GG",
+          "choices": [
+            "GG",
+            "RG"
+          ]
+        }
+      ],
+      "stimulusDuration": 1000,
+      "fixationDuration": 1000,
+      "feedbackDuration": 0,
+      "timeoutsBeforeReset": 10,
+      "randomizeTrials": true,
+      "randomizeChoices": true,
+      "startText": "lens2.stroop.start"
+    },
+    {
+      "id": "lens2.done",
+      "type": "text",
+      "instruction": true,
+      "text": "done"
+    }
+  ]
+}

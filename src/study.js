@@ -22,6 +22,10 @@ import Text from './text';
 import Prolific from './prolific'
 import Matrix from './matrix';
 import Submission from './submission';
+import Stroop2 from './v2/stroop2';
+
+// Lens 2 view types draw their own surfaces, so the study page doesn't wrap them in a card.
+const LENS2_TYPES = ['stroop2'];
 import BART from './bart';
 import GoNoGo from './gonogo';
 import Stroop from './stroop';
@@ -152,6 +156,8 @@ export default function Study(props) {
         return <GoNoGo onStore={storeData} onProgress={updateViewProgress} content={view} key={view.id} />;
       case 'stroop': 
         return <Stroop onStore={storeData} content={view} key={view.id} />;
+      case 'stroop2':
+        return <Stroop2 onStore={storeData} content={view} key={view.id} />;
       case 'matrix':
         return <Matrix onStore={storeData} content={view} key={view.id} onValidate={(r) => responseIsValid.current = r} />
       case 'ultimatum':
@@ -236,12 +242,14 @@ export default function Study(props) {
               </Snackbar>
 
               <Grid item>
-                <Paper className='view-container'>
-                {!state.finished && state.loading && <div>{t('loading')}</div>}
-                {!state.loading && renderView(state.view)}
-                </Paper>
+                {LENS2_TYPES.includes(state.view.type) && !state.finished && !state.loading
+                  ? renderView(state.view)
+                  : <Paper className='view-container'>
+                    {!state.finished && state.loading && <div>{t('loading')}</div>}
+                    {!state.loading && renderView(state.view)}
+                    </Paper>}
               </Grid>
-              {!['gonogo','bart','stroop','ultimatum','dictator','taskswitch','simplified_taskswitch','nback','gonogoalt'].includes(state.view.type) && !state.loading &&
+              {!['gonogo','bart','stroop','ultimatum','dictator','taskswitch','simplified_taskswitch','nback','gonogoalt', ...LENS2_TYPES].includes(state.view.type) && !state.loading &&
               <Grid item>
                 <Navigation onNext={onNext} finished={state.finished} redirectTo={state.experiment.redirectTo} />
               </Grid>

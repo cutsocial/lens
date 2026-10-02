@@ -26,6 +26,10 @@ Lens supports the following experiment and question types:
 - **`ultimatum`** - Ultimatum Game: Economic game measuring fairness and negotiation behavior
 - **`dictator`** - Dictator Game: Economic game measuring altruism and fairness
 
+### Lens 2 tasks (new design, same data)
+
+- `stroop2`: Stroop in the Lens 2 design. Same study-file options and data fields as `stroop`, plus `taskVersion: 2` in the response. Optional `"showFixation": true` shows a "+" during the fixation interval (classic leaves it blank). Demo: `/#/demo-lens2/en`.
+
 ### Survey Elements
 - **`text`** - Text display and input: Supports instruction pages, text questions, and autocomplete fields
 - **`matrix`** - Matrix questions: Multiple choice questions with various configurations (slider, vertical/horizontal, single/multiple questions)
