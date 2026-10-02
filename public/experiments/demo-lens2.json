@@ -260,7 +260,8 @@
       "reward": 7,
       "maxPumps": 20,
       "safePumps": 1,
-      "trials": 5
+      "trials": 5,
+      "stimulusStyle": "lens2"
     },
     {
       "id": "lens2.dictator.intro",

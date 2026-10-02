@@ -20,8 +20,11 @@
  *  - "Next Reward" is labelled "This round": it always showed points banked
  *  - results rise as a sheet inside the task instead of a full-height dialog
  *
- * Optional: "ballScale" (default 1) enlarges the balloon for new studies.
- * It changes what participants see, so it is recorded in the echoed view.
+ * Optional, for new studies (both change what participants see, and both are
+ * recorded in the echoed view):
+ *  - "ballScale" (default 1) enlarges the balloon
+ *  - "stimulusStyle": "lens2" draws the balloon as a solid orange ball (the
+ *    Lens 2 design) instead of the classic translucent red bubble
  */
 import React, { useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -43,7 +46,8 @@ const freshDeck = (maxPumps) => shuffleInPlace(Array.from({ length: maxPumps }, 
 const balloonSize = (pumps, scale) => Math.ceil(2 * Math.sqrt(((pumps + 1) * 500) / Math.PI) * scale);
 
 export default function Bart2({ content, onStore }) {
-  const { reward, maxPumps, safePumps, trials, ballScale } = content;
+  const { reward, maxPumps, safePumps, trials, ballScale, stimulusStyle } = content;
+  const lens2Ball = stimulusStyle === 'lens2';
   const scale = Number(ballScale) > 0 ? Number(ballScale) : 1;
   const { t } = useTranslation();
   const { lang } = useParams();
@@ -132,11 +136,11 @@ export default function Bart2({ content, onStore }) {
           {exploded
             ? <div className="l2-bart-popped" style={{ width: size, height: size }} aria-hidden="true" />
             : (
-              <div className="bubble-container" aria-hidden="true" style={{
+              <div className={lens2Ball ? 'l2-ball' : 'bubble-container'} aria-hidden="true" style={{
                 width: size, height: size,
                 transition: state.pumps === 0 ? '' : 'width 1s, height 1s',
               }}>
-                <figure className="bubble" />
+                {!lens2Ball && <figure className="bubble" />}
               </div>
             )}
           {!state.pumpedOnce && !state.sheet && <span className="l2-bart-hint">{t('lens2.bart.tap_hint')}</span>}

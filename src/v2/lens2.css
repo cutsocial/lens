@@ -519,3 +519,11 @@ body[data-ui='2'] {
 }
 @keyframes l2-spin { to { transform: rotate(360deg); } }
 @media (prefers-reduced-motion: reduce) { .l2-spinner { animation-duration: 3s; } }
+
+/* BART balloon in the Lens 2 style (opt-in: "stimulusStyle": "lens2").
+   Same size rule as the classic bubble; only the drawing differs. */
+.l2-ball {
+  border-radius: 50%;
+  background: radial-gradient(circle at 34% 30%, #ffb98a 0%, #ff9f5a 28%, #e0702e 70%, #b9531c 100%);
+  box-shadow: 0 18px 40px rgba(224, 112, 46, 0.28), inset -10px -14px 28px rgba(0, 0, 0, 0.18);
+}
