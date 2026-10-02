@@ -5,6 +5,7 @@ import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 import { TouchBackend } from 'react-dnd-touch-backend';
 import { useTranslation } from 'react-i18next';
+import Markdown from 'react-markdown/with-html';
 import { shuffle } from './utils/random';
 import { ItemTypes, RepositoryBox } from './components/allotmentBox';
 
@@ -244,7 +245,7 @@ export default function Ultimatum({ content, onStore, onNotification }) {
       {state.dialogIsOpen && renderDialog() }
       <Grid container direction='column' spacing={2} alignItems='stretch' justifyContent='flex-start' className='ultimatum-container'>
         <Grid item>
-          <Typography variant="body2">{t(text)}</Typography>
+          <Typography variant="body2" component="div" className="rule-text"><Markdown source={t(text)} escapeHtml={false} /></Typography>
         </Grid>
         {/* Boxes container */}
         <Grid item container spacing={2} alignItems='stretch' justifyContent='space-between' className='boxes-container'>
@@ -263,16 +264,17 @@ export default function Ultimatum({ content, onStore, onNotification }) {
           </DndProvider>
         </Grid>
         {/* Labels and actions */}
-        <Grid item container direction='row' justifyContent="space-around" alignItems='center'>
-          <Grid item xs={4}><Grid container direction='column' justifyContent="space-around" alignItems='center'>
+        <Grid item container direction='row' justifyContent="space-around" alignItems='center' rowSpacing={1} sx={{ textAlign: 'center' }}>
+          {/* Phones: round and score share one row; the button gets its own row below. */}
+          <Grid item xs={6} sm={4}><Grid container direction='column' justifyContent="space-around" alignItems='center'>
             <Typography  variant='body2'>{t('ultimatum.trial_label',{trial:state.trial+1, trials:trials})}</Typography>
           </Grid></Grid>
 
-          <Grid item xs={4}><Grid container direction='column' justifyContent="space-around" alignItems='center'>
+          <Grid item xs={12} sm={4} sx={{ order: { xs: 3, sm: 0 } }}><Grid container direction='column' justifyContent="space-around" alignItems='center'>
             <Button size='large' color={canFinishTrial()?'primary':'inherit'} variant={canFinishTrial()?'contained':'outlined'} onClick={finishTrialAction}>{t('ultimatum.finish.button')}</Button>
           </Grid></Grid>
 
-          <Grid item xs={4}><Grid container direction='column' justifyContent="space-around" alignItems='center'>
+          <Grid item xs={6} sm={4}><Grid container direction='column' justifyContent="space-around" alignItems='center'>
             <Typography variant="body2">{t('ultimatum.total_points',{score:state.totalScore})}</Typography>
           </Grid></Grid>
         </Grid>

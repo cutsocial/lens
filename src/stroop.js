@@ -244,7 +244,7 @@ export default function Stroop({content, onStore}) {
 
   const renderStartScreen = () => {
     return (
-      <Grid container direction='column' spacing={2} alignItems='center'>
+      <Grid container direction='column' spacing={2} alignItems='center' className='Text-container'>
         <Grid item><Markdown source={t('stroop.are_you_ready')} escapeHtml={false} className='markdown-text' /></Grid>
         <Grid item>
           <Button variant='outlined' onClick={() => startTask()}>{t('stroop.start')}</Button>

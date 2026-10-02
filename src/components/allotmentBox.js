@@ -41,7 +41,9 @@ export const RepositoryBox = memo(function RepositoryBox({
   console.log(personsLangPrefix);
   const { t } = useTranslation();
   const style = {
-    height: '128px',
+    minHeight: '128px', // grows when profile text wraps (phones, larger text)
+    display: 'flex',    // keeps content vertically centered now that height can vary
+    alignItems: 'center',
   }
 
   const [{ canDrop, isOver }, drop] = useDrop({

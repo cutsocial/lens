@@ -53,3 +53,7 @@ span.required {
 .MuiTooltip-tooltip {
   font-size: .95rem !important;
 }
+/* Rule text above the token boxes (dictator, ultimatum) is markdown; keep its old spacing. */
+.rule-text p {
+  margin: 0;
+}
