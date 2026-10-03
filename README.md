@@ -39,8 +39,18 @@ Lens supports the following experiment and question types:
 - `bart2`: BART in the Lens 2 design. Same options and data as `bart`. Optional `"ballScale"` (default 1) enlarges the balloon; the balloon is the orange ball from the Lens 2 design; `"stimulusStyle": "classic"` brings back the classic red bubble.
 - `dictator2`, `ultimatum2`: token games in the Lens 2 design. Same options and data as `dictator`/`ultimatum`. Optional `"tapControls": true` adds +/− buttons; dictator's `"matchmakingDelay"` (ms, default 5000) sets the "finding another person" wait.
 - Final page: studies that use any Lens 2 view end on the Lens 2 final page (a ring fills while saving, then "Thank you! Your responses have been recorded."; if saving fails it says so). `redirectTo` adds a button at the bottom, with optional `redirectText` (markdown above it) and `redirectLabel` (button text, default "Continue"). `submissionNote` is optional and shows under the thanks. `"finalPage": "classic"` or `"lens2"` overrides the choice. Both final pages send the same payload (`src/utils/useSubmission.js`).
-- All Lens 2 tasks accept an optional `"startText"` (an i18n key) for the start screen.
+- `stroop2`, `gonogoalt2` and `nback2` accept an optional `"startText"` (an i18n key) for the start screen.
 - `text2`, `matrix2`, `prolific2`: survey pages in the Lens 2 design. Same options and responses as `text`, `matrix`, `prolific`. The answer is stored when Next is pressed (so a question on a study's last page is saved), missing answers show under the question, and horizontal choices stack into rows on phones (`"mobileLayout": "row"` keeps one row; best for up to about 5 short labels). `prolific2` stores a prefilled value without the participant editing it.
+
+### Checking a study file
+
+`npm run validate` checks every file in `public/experiments/` against `schema/study.schema.json` and runs checks a schema can't express. `npm run validate -- public/experiments/mystudy.json` checks one file.
+
+- **Errors** (the run fails, and so does the pull-request check): invalid JSON, an unknown view type or key (often a typo, e.g. `"requried"`), wrong value types, `requiredQuestions` pointing past the last question, Stroop codes with no entry in `colors`/`words`, Go/No-Go icons that don't exist, `nback` ≥ `trials`, opponent types no person has.
+- **Warnings** (study runs, but probably not as meant): i18n keys missing from `locales/en.json` (participants see the key), trial counts that don't fit the total, duplicate view ids, missing avatar images, Stroop trials with no correct answer.
+- **Notes** (`-- --notes` to list): keys that do nothing (`help`, `pattern`, the misspelled `conditon`), keys with English text but no Persian/Arabic text.
+
+In VS Code, study files get autocomplete and inline errors from the schema (`.vscode/settings.json`). Hover a key to see what it does.
 
 ### Survey Elements
 - **`text`** - Text display and input: Supports instruction pages, text questions, and autocomplete fields

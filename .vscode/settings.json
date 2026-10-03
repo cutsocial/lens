@@ -1,3 +1,9 @@
 {
-    "workbench.preferredLightColorTheme": "Visual Studio Dark"
+    "workbench.preferredLightColorTheme": "Visual Studio Dark",
+    "json.schemas": [
+        {
+            "fileMatch": ["/public/experiments/*.json"],
+            "url": "./schema/study.schema.json"
+        }
+    ]
 }

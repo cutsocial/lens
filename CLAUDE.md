@@ -26,7 +26,7 @@ Lens is a client-only SPA that renders a **study** described by a JSON file, the
 
 ### View components contract
 
-Each view `type` in the JSON maps to a component through the `switch` in `Study.renderView` (`src/study.js`). Adding a new task type takes three edits in `study.js`: the import, a `case` in `renderView`, and, if the task drives its own navigation, adding the type to the hard-coded list that hides the shared `<Navigation>` "Next" button. Components receive `content` (the JSON view object) and `onStore`, plus optionally `onProgress`, `onNotification`, and `onValidate`.
+Each view `type` in the JSON maps to a component through the `switch` in `Study.renderView` (`src/study.js`). Adding a new task type takes three edits in `study.js`: the import, a `case` in `renderView`, and, if the task drives its own navigation, adding the type to the hard-coded list that hides the shared `<Navigation>` "Next" button. Then add the type (and any new option on an existing type) to `schema/study.schema.json`; `npm run validate` rejects unknown types and keys. Components receive `content` (the JSON view object) and `onStore`, plus optionally `onProgress`, `onNotification`, and `onValidate`.
 
 There are two patterns for reporting results, and it matters which one a component uses:
 
@@ -58,7 +58,7 @@ Lens 2 tasks are new view types that sit next to the classic ones; classic types
 
 ## Experiments (`public/experiments/*.json`)
 
-Each file is a study. Top-level keys: `studyId`, `condition`, `redirectTo`, `submissionNote` (an i18n key; receives `{{submissionCode}}`), `metadata`, `views[]`. `public/experiments/demo-comprehensive.json` exercises every view type and is the best schema reference; `README.md` lists the types. Many `mad*.json` files are real published studies, so avoid changing them unless asked.
+Each file is a study. Top-level keys: `studyId`, `condition`, `redirectTo`, `submissionNote` (an i18n key; receives `{{submissionCode}}`), `metadata`, `views[]`. `schema/study.schema.json` defines every view type and option (run `npm run validate` after editing a study file); `public/experiments/demo-comprehensive.json` exercises every classic view type; `README.md` lists the types. Many `mad*.json` files are real published studies, so avoid changing them unless asked.
 
 Prolific integration: `PROLIFIC_PID`, `STUDY_ID`, `SESSION_ID` are read from the URL query string in `Study` and sent with the submission. `ASSIGNMENT_ID` (set by the server's `/assign`) is sent too, only when present.
 
@@ -79,7 +79,7 @@ Planned work, in this order:
 2. ~~Fix reaction-time measurement (`performance.now()`, stimulus onset).~~ Done.
 3. ~~Save data per view instead of only once at the end.~~ Done as opt-in `saveProgress` (rows in `<studyId>.partial`; final document unchanged).
 4. ~~Balanced randomization.~~ Done on the server: `/assign` (balanced by completes + active holds); `/randomize` unchanged.
-5. JSON schema validation for study definitions in `public/experiments/`.
+5. ~~JSON schema validation for study definitions in `public/experiments/`.~~ Done: `schema/study.schema.json` + `npm run validate` (`scripts/validate-studies.js`), run in CI on pull requests.
 6. ~~Migrate to Vite, React 18 and MUI v5.~~ Done (branch `upgrade-vite-react18-mui5`).
 
 ## Data format constraint

@@ -1,0 +1,1501 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://lens.cut.social/schema/study.schema.json",
+  "title": "Lens study file",
+  "description": "A study served at /#/<studyId>/<lang>, loaded from public/experiments/<studyId>.json. Most strings are i18n keys resolved against public/locales/<lang>.json; a string with no matching key is shown as written. Check with `npm run validate`.",
+  "type": "object",
+  "required": [
+    "views"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "studyId": {
+      "type": "string",
+      "description": "Should match the file name (without .json)."
+    },
+    "condition": {
+      "type": "string",
+      "description": "Label for the study's condition. Not read by the app or sent with responses; for people reading the file."
+    },
+    "conditon": {
+      "type": "string",
+      "deprecated": true,
+      "description": "Misspelling of `condition` used in older files. Not read by the app."
+    },
+    "metadata": {
+      "type": "object",
+      "description": "Free-form notes (maintainer, purpose). Not read by the app."
+    },
+    "redirectTo": {
+      "type": "string",
+      "format": "uri",
+      "description": "Where the finish button sends participants, e.g. the Prolific completion URL."
+    },
+    "redirectText": {
+      "type": "string",
+      "description": "Lens 2 final page: text above the Continue button (i18n key or plain text)."
+    },
+    "redirectLabel": {
+      "type": "string",
+      "description": "Lens 2 final page: label of the Continue button (i18n key or plain text)."
+    },
+    "submissionNote": {
+      "type": "string",
+      "description": "Note shown after responses are saved (i18n key or plain text)."
+    },
+    "finalPage": {
+      "enum": [
+        "classic",
+        "lens2"
+      ],
+      "description": "Which final page to show. Default: lens2 if any view is a Lens 2 type, else classic."
+    },
+    "fontScale": {
+      "type": "number",
+      "exclusiveMinimum": 0,
+      "maximum": 3,
+      "description": "Enlarges survey text, e.g. 1.2. Default 1."
+    },
+    "saveProgress": {
+      "type": "boolean",
+      "description": "Save each page as it is stored (rows in <studyId>.partial). Only enable when consent covers partial data."
+    },
+    "views": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/view"
+      }
+    }
+  },
+  "$defs": {
+    "i18n": {
+      "type": "string",
+      "description": "An i18n key, or plain text shown as written."
+    },
+    "ms": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Duration in milliseconds."
+    },
+    "positiveInt": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "legacyHelp": {
+      "type": "string",
+      "deprecated": true,
+      "description": "Present in older files but never implemented; has no effect."
+    },
+    "legacyPattern": {
+      "type": "string",
+      "deprecated": true,
+      "description": "Present in older files but never implemented; input is not checked against it."
+    },
+    "view": {
+      "type": "object",
+      "required": [
+        "type"
+      ],
+      "discriminator": {
+        "propertyName": "type"
+      },
+      "oneOf": [
+        {
+          "$ref": "#/$defs/text"
+        },
+        {
+          "$ref": "#/$defs/text2"
+        },
+        {
+          "$ref": "#/$defs/matrix"
+        },
+        {
+          "$ref": "#/$defs/matrix2"
+        },
+        {
+          "$ref": "#/$defs/prolific"
+        },
+        {
+          "$ref": "#/$defs/prolific2"
+        },
+        {
+          "$ref": "#/$defs/bart"
+        },
+        {
+          "$ref": "#/$defs/bart2"
+        },
+        {
+          "$ref": "#/$defs/gonogo"
+        },
+        {
+          "$ref": "#/$defs/gonogoalt"
+        },
+        {
+          "$ref": "#/$defs/gonogoalt2"
+        },
+        {
+          "$ref": "#/$defs/stroop"
+        },
+        {
+          "$ref": "#/$defs/stroop2"
+        },
+        {
+          "$ref": "#/$defs/nback"
+        },
+        {
+          "$ref": "#/$defs/nback2"
+        },
+        {
+          "$ref": "#/$defs/taskswitch"
+        },
+        {
+          "$ref": "#/$defs/simplified_taskswitch"
+        },
+        {
+          "$ref": "#/$defs/dictator"
+        },
+        {
+          "$ref": "#/$defs/dictator2"
+        },
+        {
+          "$ref": "#/$defs/ultimatum"
+        },
+        {
+          "$ref": "#/$defs/ultimatum2"
+        }
+      ]
+    },
+    "viewId": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Identifies the view in the data. Keep it unique within the study."
+    },
+    "text": {
+      "type": "object",
+      "required": [
+        "id",
+        "type"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "const": "text"
+        },
+        "id": {
+          "$ref": "#/$defs/viewId"
+        },
+        "text": {
+          "$ref": "#/$defs/i18n"
+        },
+        "instruction": {
+          "type": "boolean"
+        },
+        "required": {
+          "type": "boolean"
+        },
+        "placeholder": {
+          "$ref": "#/$defs/i18n"
+        },
+        "autoComplete": {
+          "enum": [
+            "countries"
+          ]
+        },
+        "help": {
+          "$ref": "#/$defs/legacyHelp"
+        },
+        "pattern": {
+          "$ref": "#/$defs/legacyPattern"
+        }
+      }
+    },
+    "text2": {
+      "type": "object",
+      "required": [
+        "id",
+        "type"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "const": "text2"
+        },
+        "id": {
+          "$ref": "#/$defs/viewId"
+        },
+        "text": {
+          "$ref": "#/$defs/i18n"
+        },
+        "instruction": {
+          "type": "boolean"
+        },
+        "required": {
+          "type": "boolean"
+        },
+        "placeholder": {
+          "$ref": "#/$defs/i18n"
+        },
+        "autoComplete": {
+          "enum": [
+            "countries"
+          ]
+        }
+      }
+    },
+    "matrixProps": {
+      "description": "Shared property definitions, referenced by the view types.",
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/viewId"
+        },
+        "text": {
+          "$ref": "#/$defs/i18n"
+        },
+        "questions": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/i18n"
+          }
+        },
+        "choices": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/i18n"
+          }
+        },
+        "requiredQuestions": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "description": "Zero-based indexes into questions."
+        },
+        "direction": {
+          "enum": [
+            "vertical",
+            "horizontal"
+          ]
+        },
+        "slider": {
+          "type": "boolean"
+        },
+        "showMidMark": {
+          "type": "boolean"
+        }
+      }
+    },
+    "matrix": {
+      "type": "object",
+      "required": [
+        "id",
+        "type",
+        "questions",
+        "choices"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "const": "matrix"
+        },
+        "id": {
+          "$ref": "#/$defs/viewId"
+        },
+        "text": {
+          "$ref": "#/$defs/i18n"
+        },
+        "questions": {
+          "$ref": "#/$defs/matrixProps/properties/questions"
+        },
+        "choices": {
+          "$ref": "#/$defs/matrixProps/properties/choices"
+        },
+        "requiredQuestions": {
+          "$ref": "#/$defs/matrixProps/properties/requiredQuestions"
+        },
+        "direction": {
+          "$ref": "#/$defs/matrixProps/properties/direction"
+        },
+        "slider": {
+          "type": "boolean"
+        },
+        "showMidMark": {
+          "type": "boolean"
+        }
+      }
+    },
+    "matrix2": {
+      "type": "object",
+      "required": [
+        "id",
+        "type",
+        "questions",
+        "choices"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "const": "matrix2"
+        },
+        "id": {
+          "$ref": "#/$defs/viewId"
+        },
+        "text": {
+          "$ref": "#/$defs/i18n"
+        },
+        "questions": {
+          "$ref": "#/$defs/matrixProps/properties/questions"
+        },
+        "choices": {
+          "$ref": "#/$defs/matrixProps/properties/choices"
+        },
+        "requiredQuestions": {
+          "$ref": "#/$defs/matrixProps/properties/requiredQuestions"
+        },
+        "direction": {
+          "$ref": "#/$defs/matrixProps/properties/direction"
+        },
+        "slider": {
+          "type": "boolean"
+        },
+        "showMidMark": {
+          "type": "boolean"
+        },
+        "mobileLayout": {
+          "enum": [
+            "row"
+          ],
+          "description": "\"row\": keep horizontal choices in one row on phones (default stacks them)."
+        }
+      }
+    },
+    "prolificProps": {
+      "description": "Shared property definitions, referenced by the view types.",
+      "properties": {
+        "getUrlContent": {
+          "type": "boolean",
+          "description": "Prefill from a URL parameter named by paramNameAsContent."
+        },
+        "paramNameAsContent": {
+          "type": "string",
+          "description": "URL parameter to prefill from, e.g. PROLIFIC_PID."
+        },
+        "content": {
+          "type": "string",
+          "description": "Fixed prefill value when getUrlContent is not true."
+        }
+      }
+    },
+    "prolific": {
+      "type": "object",
+      "required": [
+        "id",
+        "type"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "const": "prolific"
+        },
+        "id": {
+          "$ref": "#/$defs/viewId"
+        },
+        "text": {
+          "$ref": "#/$defs/i18n"
+        },
+        "instruction": {
+          "type": "boolean"
+        },
+        "required": {
+          "type": "boolean"
+        },
+        "placeholder": {
+          "$ref": "#/$defs/i18n"
+        },
+        "getUrlContent": {
+          "type": "boolean"
+        },
+        "paramNameAsContent": {
+          "type": "string"
+        },
+        "content": {
+          "type": "string"
+        },
+        "help": {
+          "$ref": "#/$defs/legacyHelp"
+        },
+        "pattern": {
+          "$ref": "#/$defs/legacyPattern"
+        }
+      }
+    },
+    "prolific2": {
+      "type": "object",
+      "required": [
+        "id",
+        "type"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "const": "prolific2"
+        },
+        "id": {
+          "$ref": "#/$defs/viewId"
+        },
+        "text": {
+          "$ref": "#/$defs/i18n"
+        },
+        "instruction": {
+          "type": "boolean"
+        },
+        "required": {
+          "type": "boolean"
+        },
+        "placeholder": {
+          "$ref": "#/$defs/i18n"
+        },
+        "getUrlContent": {
+          "type": "boolean"
+        },
+        "paramNameAsContent": {
+          "type": "string"
+        },
+        "content": {
+          "type": "string"
+        }
+      }
+    },
+    "bartProps": {
+      "description": "Shared property definitions, referenced by the view types.",
+      "properties": {
+        "reward": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Points per pump."
+        },
+        "maxPumps": {
+          "$ref": "#/$defs/positiveInt"
+        },
+        "safePumps": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "trials": {
+          "$ref": "#/$defs/positiveInt",
+          "description": "Number of balloons."
+        }
+      }
+    },
+    "bart": {
+      "type": "object",
+      "required": [
+        "id",
+        "type",
+        "reward",
+        "maxPumps",
+        "trials"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "const": "bart"
+        },
+        "id": {
+          "$ref": "#/$defs/viewId"
+        },
+        "reward": {
+          "$ref": "#/$defs/bartProps/properties/reward"
+        },
+        "maxPumps": {
+          "$ref": "#/$defs/positiveInt"
+        },
+        "safePumps": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "trials": {
+          "$ref": "#/$defs/positiveInt"
+        }
+      }
+    },
+    "bart2": {
+      "type": "object",
+      "required": [
+        "id",
+        "type",
+        "reward",
+        "maxPumps",
+        "trials"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "const": "bart2"
+        },
+        "id": {
+          "$ref": "#/$defs/viewId"
+        },
+        "reward": {
+          "$ref": "#/$defs/bartProps/properties/reward"
+        },
+        "maxPumps": {
+          "$ref": "#/$defs/positiveInt"
+        },
+        "safePumps": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "trials": {
+          "$ref": "#/$defs/positiveInt"
+        },
+        "ballScale": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "description": "Enlarges the balloon. Default 1."
+        },
+        "stimulusStyle": {
+          "enum": [
+            "lens2",
+            "classic"
+          ],
+          "description": "\"classic\": red bubble. Default: orange Lens 2 ball."
+        }
+      }
+    },
+    "gngCounts": {
+      "type": "object",
+      "required": [
+        "total",
+        "go"
+      ],
+      "properties": {
+        "total": {
+          "$ref": "#/$defs/positiveInt"
+        },
+        "go": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "left": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "leftGo": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "starChoices": {
+      "type": "object",
+      "required": [
+        "go",
+        "nogo"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "go": {
+          "enum": [
+            "star",
+            "blue-star"
+          ]
+        },
+        "nogo": {
+          "enum": [
+            "star",
+            "blue-star"
+          ]
+        }
+      }
+    },
+    "stimulusSet": {
+      "type": "object",
+      "required": [
+        "type",
+        "names"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "enum": [
+            "letter",
+            "icon"
+          ]
+        },
+        "names": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string"
+          },
+          "description": "Letters/digits, or icon names: star, circle, triangle, rectangle, hand, ball, watch, school, cup."
+        }
+      }
+    },
+    "timing": {
+      "description": "Shared property definitions, referenced by the view types.",
+      "properties": {
+        "stimuliDuration": {
+          "$ref": "#/$defs/ms"
+        },
+        "fixationDuration": {
+          "$ref": "#/$defs/ms"
+        },
+        "feedbackDuration": {
+          "$ref": "#/$defs/ms"
+        },
+        "timeoutsBeforeReset": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "Timeouts (over the whole run) before the task restarts."
+        }
+      }
+    },
+    "gonogo": {
+      "type": "object",
+      "required": [
+        "id",
+        "type",
+        "trials",
+        "choices"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "const": "gonogo"
+        },
+        "id": {
+          "$ref": "#/$defs/viewId"
+        },
+        "text": {
+          "$ref": "#/$defs/i18n"
+        },
+        "trials": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/gngCounts"
+            }
+          ],
+          "required": [
+            "left",
+            "leftGo"
+          ],
+          "unevaluatedProperties": false
+        },
+        "choices": {
+          "$ref": "#/$defs/starChoices"
+        },
+        "stimuliDuration": {
+          "$ref": "#/$defs/ms"
+        },
+        "fixationDuration": {
+          "$ref": "#/$defs/ms"
+        },
+        "feedbackDuration": {
+          "$ref": "#/$defs/ms"
+        },
+        "timeoutsBeforeReset": {
+          "$ref": "#/$defs/timing/properties/timeoutsBeforeReset"
+        },
+        "help": {
+          "$ref": "#/$defs/legacyHelp"
+        }
+      }
+    },
+    "gonogoaltChoices": {
+      "type": "object",
+      "required": [
+        "go",
+        "nogo"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "go": {
+          "$ref": "#/$defs/stimulusSet"
+        },
+        "nogo": {
+          "$ref": "#/$defs/stimulusSet"
+        }
+      }
+    },
+    "gonogoaltTrials": {
+      "type": "object",
+      "required": [
+        "total",
+        "go"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "total": {
+          "$ref": "#/$defs/positiveInt"
+        },
+        "go": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "gonogoalt": {
+      "type": "object",
+      "required": [
+        "id",
+        "type",
+        "trials",
+        "choices"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "const": "gonogoalt"
+        },
+        "id": {
+          "$ref": "#/$defs/viewId"
+        },
+        "text": {
+          "$ref": "#/$defs/i18n"
+        },
+        "trials": {
+          "$ref": "#/$defs/gonogoaltTrials"
+        },
+        "choices": {
+          "$ref": "#/$defs/gonogoaltChoices"
+        },
+        "stimuliDuration": {
+          "$ref": "#/$defs/ms"
+        },
+        "fixationDuration": {
+          "$ref": "#/$defs/ms"
+        },
+        "feedbackDuration": {
+          "$ref": "#/$defs/ms"
+        },
+        "help": {
+          "$ref": "#/$defs/legacyHelp"
+        }
+      }
+    },
+    "gonogoalt2": {
+      "type": "object",
+      "required": [
+        "id",
+        "type",
+        "trials",
+        "choices"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "const": "gonogoalt2"
+        },
+        "id": {
+          "$ref": "#/$defs/viewId"
+        },
+        "text": {
+          "$ref": "#/$defs/i18n"
+        },
+        "trials": {
+          "$ref": "#/$defs/gonogoaltTrials"
+        },
+        "choices": {
+          "$ref": "#/$defs/gonogoaltChoices"
+        },
+        "stimuliDuration": {
+          "$ref": "#/$defs/ms"
+        },
+        "fixationDuration": {
+          "$ref": "#/$defs/ms"
+        },
+        "feedbackDuration": {
+          "$ref": "#/$defs/ms"
+        },
+        "startText": {
+          "$ref": "#/$defs/i18n"
+        }
+      }
+    },
+    "stroopTrial": {
+      "type": "object",
+      "required": [
+        "stimulus",
+        "choices"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "stimulus": {
+          "type": "string",
+          "minLength": 2,
+          "maxLength": 2,
+          "description": "Two color codes: word, then ink. E.g. \"RG\" = the word for R in G ink."
+        },
+        "choices": {
+          "type": "array",
+          "minItems": 2,
+          "items": {
+            "type": "string",
+            "minLength": 2,
+            "maxLength": 2
+          }
+        }
+      }
+    },
+    "stroopProps": {
+      "description": "Shared property definitions, referenced by the view types.",
+      "properties": {
+        "rule": {
+          "$ref": "#/$defs/i18n"
+        },
+        "colors": {
+          "type": "object",
+          "minProperties": 2,
+          "additionalProperties": {
+            "type": "string"
+          },
+          "description": "Code → CSS color."
+        },
+        "words": {
+          "type": "object",
+          "minProperties": 2,
+          "additionalProperties": {
+            "$ref": "#/$defs/i18n"
+          },
+          "description": "Code → color word."
+        },
+        "trials": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/stroopTrial"
+          }
+        }
+      }
+    },
+    "stroop": {
+      "type": "object",
+      "required": [
+        "id",
+        "type",
+        "colors",
+        "words",
+        "trials"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "const": "stroop"
+        },
+        "id": {
+          "$ref": "#/$defs/viewId"
+        },
+        "rule": {
+          "$ref": "#/$defs/i18n"
+        },
+        "colors": {
+          "$ref": "#/$defs/stroopProps/properties/colors"
+        },
+        "words": {
+          "$ref": "#/$defs/stroopProps/properties/words"
+        },
+        "trials": {
+          "$ref": "#/$defs/stroopProps/properties/trials"
+        },
+        "stimulusDuration": {
+          "$ref": "#/$defs/ms"
+        },
+        "fixationDuration": {
+          "$ref": "#/$defs/ms"
+        },
+        "feedbackDuration": {
+          "$ref": "#/$defs/ms"
+        },
+        "timeoutsBeforeReset": {
+          "$ref": "#/$defs/timing/properties/timeoutsBeforeReset"
+        },
+        "randomizeTrials": {
+          "type": "boolean"
+        },
+        "randomizeChoices": {
+          "type": "boolean"
+        },
+        "help": {
+          "$ref": "#/$defs/legacyHelp"
+        }
+      }
+    },
+    "stroop2": {
+      "type": "object",
+      "required": [
+        "id",
+        "type",
+        "colors",
+        "words",
+        "trials"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "const": "stroop2"
+        },
+        "id": {
+          "$ref": "#/$defs/viewId"
+        },
+        "rule": {
+          "$ref": "#/$defs/i18n"
+        },
+        "colors": {
+          "$ref": "#/$defs/stroopProps/properties/colors"
+        },
+        "words": {
+          "$ref": "#/$defs/stroopProps/properties/words"
+        },
+        "trials": {
+          "$ref": "#/$defs/stroopProps/properties/trials"
+        },
+        "stimulusDuration": {
+          "$ref": "#/$defs/ms"
+        },
+        "fixationDuration": {
+          "$ref": "#/$defs/ms"
+        },
+        "feedbackDuration": {
+          "$ref": "#/$defs/ms"
+        },
+        "timeoutsBeforeReset": {
+          "$ref": "#/$defs/timing/properties/timeoutsBeforeReset"
+        },
+        "randomizeTrials": {
+          "type": "boolean"
+        },
+        "randomizeChoices": {
+          "type": "boolean"
+        },
+        "showFixation": {
+          "type": "boolean",
+          "description": "Show a \"+\" during fixation (classic left it blank)."
+        },
+        "startText": {
+          "$ref": "#/$defs/i18n"
+        }
+      }
+    },
+    "nbackStimulus": {
+      "type": "object",
+      "required": [
+        "type",
+        "name",
+        "amount"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "enum": [
+            "letter",
+            "icon"
+          ]
+        },
+        "name": {
+          "type": "string"
+        },
+        "amount": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "How many times it appears in the stream."
+        }
+      }
+    },
+    "nback": {
+      "type": "object",
+      "required": [
+        "id",
+        "type",
+        "trials",
+        "nback",
+        "stimuli"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "const": "nback"
+        },
+        "id": {
+          "$ref": "#/$defs/viewId"
+        },
+        "text": {
+          "$ref": "#/$defs/i18n"
+        },
+        "trials": {
+          "$ref": "#/$defs/positiveInt"
+        },
+        "nback": {
+          "$ref": "#/$defs/positiveInt"
+        },
+        "stimuli": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/nbackStimulus"
+          }
+        },
+        "stimuliDuration": {
+          "$ref": "#/$defs/ms"
+        },
+        "fixationDuration": {
+          "$ref": "#/$defs/ms"
+        },
+        "feedbackDuration": {
+          "$ref": "#/$defs/ms"
+        },
+        "help": {
+          "$ref": "#/$defs/legacyHelp"
+        }
+      }
+    },
+    "nback2": {
+      "type": "object",
+      "required": [
+        "id",
+        "type",
+        "trials",
+        "nback",
+        "stimuli"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "const": "nback2"
+        },
+        "id": {
+          "$ref": "#/$defs/viewId"
+        },
+        "text": {
+          "$ref": "#/$defs/i18n"
+        },
+        "trials": {
+          "$ref": "#/$defs/positiveInt"
+        },
+        "nback": {
+          "$ref": "#/$defs/positiveInt"
+        },
+        "stimuli": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/nbackStimulus"
+          }
+        },
+        "stimuliDuration": {
+          "$ref": "#/$defs/ms"
+        },
+        "fixationDuration": {
+          "$ref": "#/$defs/ms"
+        },
+        "feedbackDuration": {
+          "$ref": "#/$defs/ms"
+        },
+        "startText": {
+          "$ref": "#/$defs/i18n"
+        }
+      }
+    },
+    "taskswitchHalf": {
+      "type": "object",
+      "required": [
+        "total",
+        "go",
+        "left",
+        "leftGo",
+        "choices"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "total": {
+          "$ref": "#/$defs/positiveInt"
+        },
+        "go": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "left": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "leftGo": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "choices": {
+          "$ref": "#/$defs/starChoices"
+        }
+      }
+    },
+    "taskswitch": {
+      "type": "object",
+      "required": [
+        "id",
+        "type",
+        "trials"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "const": "taskswitch"
+        },
+        "id": {
+          "$ref": "#/$defs/viewId"
+        },
+        "text": {
+          "$ref": "#/$defs/i18n"
+        },
+        "trials": {
+          "type": "object",
+          "required": [
+            "total",
+            "top",
+            "bottom"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "total": {
+              "$ref": "#/$defs/positiveInt"
+            },
+            "top": {
+              "$ref": "#/$defs/taskswitchHalf"
+            },
+            "bottom": {
+              "$ref": "#/$defs/taskswitchHalf"
+            }
+          }
+        },
+        "stimuliDuration": {
+          "$ref": "#/$defs/ms"
+        },
+        "fixationDuration": {
+          "$ref": "#/$defs/ms"
+        },
+        "feedbackDuration": {
+          "$ref": "#/$defs/ms"
+        },
+        "timeoutsBeforeReset": {
+          "$ref": "#/$defs/timing/properties/timeoutsBeforeReset"
+        },
+        "help": {
+          "$ref": "#/$defs/legacyHelp"
+        }
+      }
+    },
+    "simplified_taskswitch": {
+      "type": "object",
+      "required": [
+        "id",
+        "type",
+        "trials"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "const": "simplified_taskswitch"
+        },
+        "id": {
+          "$ref": "#/$defs/viewId"
+        },
+        "text": {
+          "$ref": "#/$defs/i18n"
+        },
+        "trials": {
+          "type": "object",
+          "required": [
+            "total",
+            "typeA",
+            "left",
+            "figureA",
+            "colorA"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "total": {
+              "$ref": "#/$defs/positiveInt"
+            },
+            "typeA": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "left": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "figureA": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "colorA": {
+              "type": "integer",
+              "minimum": 0
+            }
+          }
+        },
+        "stimuliDuration": {
+          "$ref": "#/$defs/ms"
+        },
+        "fixationDuration": {
+          "$ref": "#/$defs/ms"
+        },
+        "feedbackDuration": {
+          "$ref": "#/$defs/ms"
+        },
+        "timeoutsBeforeReset": {
+          "$ref": "#/$defs/timing/properties/timeoutsBeforeReset"
+        },
+        "help": {
+          "$ref": "#/$defs/legacyHelp"
+        }
+      }
+    },
+    "person": {
+      "type": "object",
+      "required": [
+        "id"
+      ],
+      "additionalProperties": false,
+      "description": "An opponent card. Each fieldN value is turned into the i18n key <personsPrefix><id>.<value>.",
+      "properties": {
+        "id": {
+          "type": [
+            "integer",
+            "string"
+          ]
+        },
+        "avatar": {
+          "type": "string",
+          "description": "Image file in public/images/."
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "minAcceptable": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Ultimatum only: smallest offer this opponent accepts."
+        }
+      },
+      "patternProperties": {
+        "^field[0-9]+$": {
+          "type": "string"
+        }
+      }
+    },
+    "gameProps": {
+      "description": "Shared property definitions, referenced by the view types.",
+      "properties": {
+        "trials": {
+          "$ref": "#/$defs/positiveInt",
+          "description": "Number of rounds."
+        },
+        "tokens": {
+          "$ref": "#/$defs/positiveInt",
+          "description": "Tokens to split per round."
+        },
+        "persons": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/person"
+          }
+        },
+        "opponentTypes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Tags; with useOpponentTypes, only persons with these tags are drawn."
+        }
+      }
+    },
+    "dictator": {
+      "type": "object",
+      "required": [
+        "id",
+        "type",
+        "trials",
+        "tokens"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "const": "dictator"
+        },
+        "id": {
+          "$ref": "#/$defs/viewId"
+        },
+        "text": {
+          "$ref": "#/$defs/i18n"
+        },
+        "trials": {
+          "$ref": "#/$defs/gameProps/properties/trials"
+        },
+        "tokens": {
+          "$ref": "#/$defs/gameProps/properties/tokens"
+        },
+        "useOpponentTypes": {
+          "type": "boolean"
+        },
+        "opponentTypes": {
+          "$ref": "#/$defs/gameProps/properties/opponentTypes"
+        },
+        "personsPrefix": {
+          "type": "string"
+        },
+        "persons": {
+          "$ref": "#/$defs/gameProps/properties/persons"
+        }
+      }
+    },
+    "dictator2": {
+      "type": "object",
+      "required": [
+        "id",
+        "type",
+        "trials",
+        "tokens"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "const": "dictator2"
+        },
+        "id": {
+          "$ref": "#/$defs/viewId"
+        },
+        "text": {
+          "$ref": "#/$defs/i18n"
+        },
+        "trials": {
+          "$ref": "#/$defs/gameProps/properties/trials"
+        },
+        "tokens": {
+          "$ref": "#/$defs/gameProps/properties/tokens"
+        },
+        "useOpponentTypes": {
+          "type": "boolean"
+        },
+        "opponentTypes": {
+          "$ref": "#/$defs/gameProps/properties/opponentTypes"
+        },
+        "personsPrefix": {
+          "type": "string"
+        },
+        "persons": {
+          "$ref": "#/$defs/gameProps/properties/persons"
+        },
+        "tapControls": {
+          "type": "boolean",
+          "description": "Add +/− buttons alongside dragging."
+        },
+        "matchmakingDelay": {
+          "$ref": "#/$defs/ms",
+          "description": "Simulated matchmaking wait before Next unlocks. Default 5000."
+        }
+      }
+    },
+    "ultimatum": {
+      "type": "object",
+      "required": [
+        "id",
+        "type",
+        "trials",
+        "tokens"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "const": "ultimatum"
+        },
+        "id": {
+          "$ref": "#/$defs/viewId"
+        },
+        "text": {
+          "$ref": "#/$defs/i18n"
+        },
+        "trials": {
+          "$ref": "#/$defs/gameProps/properties/trials"
+        },
+        "tokens": {
+          "$ref": "#/$defs/gameProps/properties/tokens"
+        },
+        "useOpponentTypes": {
+          "type": "boolean"
+        },
+        "opponentTypes": {
+          "$ref": "#/$defs/gameProps/properties/opponentTypes"
+        },
+        "personsPrefix": {
+          "type": "string"
+        },
+        "persons": {
+          "$ref": "#/$defs/gameProps/properties/persons"
+        },
+        "dialogOptionalText": {
+          "$ref": "#/$defs/i18n"
+        }
+      }
+    },
+    "ultimatum2": {
+      "type": "object",
+      "required": [
+        "id",
+        "type",
+        "trials",
+        "tokens"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "const": "ultimatum2"
+        },
+        "id": {
+          "$ref": "#/$defs/viewId"
+        },
+        "text": {
+          "$ref": "#/$defs/i18n"
+        },
+        "trials": {
+          "$ref": "#/$defs/gameProps/properties/trials"
+        },
+        "tokens": {
+          "$ref": "#/$defs/gameProps/properties/tokens"
+        },
+        "useOpponentTypes": {
+          "type": "boolean"
+        },
+        "opponentTypes": {
+          "$ref": "#/$defs/gameProps/properties/opponentTypes"
+        },
+        "personsPrefix": {
+          "type": "string"
+        },
+        "persons": {
+          "$ref": "#/$defs/gameProps/properties/persons"
+        },
+        "dialogOptionalText": {
+          "$ref": "#/$defs/i18n"
+        },
+        "tapControls": {
+          "type": "boolean",
+          "description": "Add +/− buttons alongside dragging."
+        },
+        "matchmakingDelay": {
+          "$ref": "#/$defs/ms",
+          "description": "Simulated matchmaking wait. Default 5000."
+        }
+      }
+    }
+  }
+}
