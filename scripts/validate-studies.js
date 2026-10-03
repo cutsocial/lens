@@ -14,6 +14,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import Ajv2020 from 'ajv/dist/2020.js';
 import addFormats from 'ajv-formats';
+import { normalizeConfig } from '../src/multiplayer/config.js';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const experimentsDir = path.join(root, 'public/experiments');
@@ -164,6 +165,10 @@ function semanticChecks(study, file, report) {
         }
         break;
       }
+      case 'multiplayer':
+        // the same check the game and the server run, e.g. a "simple" bot that would have to propose
+        try { normalizeConfig(v); } catch (e) { error(`${where}: ${e.message}`); }
+        break;
       default:
     }
   });

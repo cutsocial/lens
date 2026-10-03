@@ -1,0 +1,25 @@
+{
+  "studyId": "test-multiplayer",
+  "views": [
+    {
+      "id": "mp.dg",
+      "type": "multiplayer",
+      "game": "dictator",
+      "tokens": 6,
+      "rounds": 2,
+      "firstProposer": "participant",
+      "practiceRounds": 1,
+      "turnTimeout": 10000,
+      "matching": {
+        "timeout": 15000
+      },
+      "bot": {
+        "strategy": "rational"
+      },
+      "bonusPerToken": 0.05
+    }
+  ],
+  "metadata": {
+    "note": "For the browser tests in scripts/e2e: dictator, practice round, 10 s turn timeout. Not for participants."
+  }
+}

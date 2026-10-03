@@ -166,6 +166,9 @@
         },
         {
           "$ref": "#/$defs/ultimatum2"
+        },
+        {
+          "$ref": "#/$defs/multiplayer"
         }
       ]
     },
@@ -1506,7 +1509,7 @@
         "tokens"
       ],
       "additionalProperties": false,
-      "description": "Live two-player ultimatum or dictator game (in development: not yet a view type Lens can show). Participants are matched first come, first served; after matching.timeout a computer partner takes over unless matching.botFallback is false. Options and defaults: src/multiplayer/config.js.",
+      "description": "Live two-player ultimatum or dictator game. Participants are matched first come, first served; after matching.timeout a computer partner takes over unless matching.botFallback is false. The partner looks the same either way; the debrief afterwards says which it was. Options and defaults: src/multiplayer/config.js.",
       "properties": {
         "type": {
           "const": "multiplayer"
