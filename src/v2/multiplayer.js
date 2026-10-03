@@ -10,6 +10,12 @@
  * finding a partner (computer partner after matching.timeout unless
  * botFallback is false) → rounds → debrief (on by default) → next view.
  *
+ * Each round both players see the same board. The proposer moves tokens;
+ * the responder watches the split take shape live (the proposer's browser
+ * sends it as it changes; display only, not recorded), and Accept / Reject
+ * turn on once the offer is sent. A computer proposer moves its tokens one
+ * by one during its delay, so the two look alike.
+ *
  * The partner is shown the same way whether a person or a computer; the
  * debrief afterwards says which it was (textBot / textHuman).
  *
@@ -27,26 +33,32 @@ import { languages } from '../utils/i18n';
 import { L2Root, Header, Text, Button, NoticeCard } from './components';
 import { normalizeConfig } from '../multiplayer/config';
 import { whoseTurn, playerSummary } from '../multiplayer/engine';
+import { botOffer } from '../multiplayer/bots';
 import { connect } from '../multiplayer/client';
 import './multiplayer.css';
 
 const HEARTBEAT_MS = 10000;
 const STALE_MS = 30000; // matches the server: a partner silent this long has gone
+const DRAFT_INTERVAL_MS = 350; // at most ~3 updates a second while the proposer moves tokens
 
 function Coin({ small, dragging, ...rest }) {
   return <span className={`l2-coin ${small ? 'l2-coin-small' : ''} ${dragging ? 'l2-coin-dragging' : ''}`} aria-hidden="true" {...rest} />;
 }
 
-/** Splitting tokens between the participant and the other person: drag, or + and −. */
-function TokenSplit({ tokens, disabled, onSubmit, t }) {
-  const [piles, setPiles] = useState({ other: 0, pot: tokens, me: 0 });
+/**
+ * The three piles: the other person, the middle, and the participant.
+ * Controlled: `piles` = {other, pot, me}. When `onMove` is given the
+ * participant can drag tokens or use + and −; otherwise it only shows.
+ */
+function Board({ piles, onMove, t }) {
+  const interactive = typeof onMove === 'function';
   const [drag, setDrag] = useState(null);
   const dragRef = useRef(null);
   dragRef.current = drag;
 
   const move = (from, to) => {
-    if (disabled || from === to) return;
-    setPiles((p) => (p[from] > 0 ? { ...p, [from]: p[from] - 1, [to]: p[to] + 1 } : p));
+    if (!interactive || from === to || piles[from] <= 0) return;
+    onMove(from, to);
   };
 
   useEffect(() => {
@@ -56,25 +68,27 @@ function TokenSplit({ tokens, disabled, onSubmit, t }) {
       const box = el && el.closest('[data-pile]');
       return box ? box.getAttribute('data-pile') : null;
     };
-    const onMove = (e) => setDrag((d) => d && { ...d, x: e.clientX, y: e.clientY, over: pileAt(e.clientX, e.clientY) });
+    const onPointerMove = (e) => setDrag((d) => d && { ...d, x: e.clientX, y: e.clientY, over: pileAt(e.clientX, e.clientY) });
     const onUp = (e) => {
       const d = dragRef.current;
       const target = pileAt(e.clientX, e.clientY);
       if (d && target && target !== d.from) move(d.from, target);
       setDrag(null);
     };
-    window.addEventListener('pointermove', onMove);
+    window.addEventListener('pointermove', onPointerMove);
     window.addEventListener('pointerup', onUp);
     window.addEventListener('pointercancel', onUp);
     return () => {
-      window.removeEventListener('pointermove', onMove);
+      window.removeEventListener('pointermove', onPointerMove);
       window.removeEventListener('pointerup', onUp);
       window.removeEventListener('pointercancel', onUp);
     };
   }, [drag !== null]); // eslint-disable-line react-hooks/exhaustive-deps
 
+  useEffect(() => { if (!interactive) setDrag(null); }, [interactive]);
+
   const startDrag = (from) => (e) => {
-    if (disabled) return;
+    if (!interactive) return;
     e.preventDefault();
     setDrag({ from, x: e.clientX, y: e.clientY, over: from });
   };
@@ -84,58 +98,51 @@ function TokenSplit({ tokens, disabled, onSubmit, t }) {
       {Array.from({ length: count }, (_, i) => (
         <Coin key={i} small onPointerDown={startDrag(name)} dragging={drag && drag.from === name && i === count - 1} />
       ))}
-      {count === 0 && <span className="l2-pile-empty">{t('lens2.tokens.drop_here')}</span>}
+      {count === 0 && <span className="l2-pile-empty">{interactive ? t('lens2.tokens.drop_here') : ''}</span>}
     </div>
   );
   const pileClass = (name) => ['l2-person', drag && drag.from !== name ? 'l2-drop-ok' : '', drag && drag.over === name && drag.from !== name ? 'l2-drop-over' : ''].join(' ');
-  const stepper = (name, label) => (
+  const stepper = (name, label) => interactive && (
     <div className="l2-stepper">
-      <button type="button" className="l2-step" onClick={() => move(name, 'pot')} disabled={disabled || piles[name] === 0}
+      <button type="button" className="l2-step" onClick={() => move(name, 'pot')} disabled={piles[name] === 0}
         aria-label={t('lens2.tokens.take_back', { name: label })}>−</button>
-      <button type="button" className="l2-step" onClick={() => move('pot', name)} disabled={disabled || piles.pot === 0}
+      <button type="button" className="l2-step" onClick={() => move('pot', name)} disabled={piles.pot === 0}
         aria-label={t('lens2.tokens.give', { name: label })}>+</button>
     </div>
   );
   const other = t('lens2.mp.other');
-  const done = piles.pot === 0;
 
   return (
-    <>
-      <div className="l2-token-area">
-        <div className={pileClass('other')} data-pile="other">
-          <div className="l2-person-head">
-            <div className="l2-avatar l2-avatar-initials" aria-hidden="true">?</div>
-            <div className="l2-person-text"><span className="l2-person-name">{other}</span></div>
-            <span className="l2-count" aria-label={t('lens2.tokens.count', { count: piles.other })}>{piles.other}</span>
-          </div>
-          <div className="l2-tray">{pile('other', piles.other)}{stepper('other', other)}</div>
+    <div className={`l2-token-area ${interactive ? '' : 'l2-mp-board-watch'}`}>
+      <div className={pileClass('other')} data-pile="other">
+        <div className="l2-person-head">
+          <div className="l2-avatar l2-avatar-initials" aria-hidden="true">?</div>
+          <div className="l2-person-text"><span className="l2-person-name">{other}</span></div>
+          <span className="l2-count" aria-label={t('lens2.tokens.count', { count: piles.other })}>{piles.other}</span>
         </div>
-
-        <div className={`l2-pot ${drag && drag.from !== 'pot' ? 'l2-drop-ok' : ''} ${drag && drag.over === 'pot' && drag.from !== 'pot' ? 'l2-drop-over' : ''}`} data-pile="pot">
-          <div className="l2-pile l2-pile-large" aria-hidden="true">
-            {Array.from({ length: piles.pot }, (_, i) => (
-              <Coin key={i} onPointerDown={startDrag('pot')} dragging={drag && drag.from === 'pot' && i === piles.pot - 1} />
-            ))}
-            {piles.pot === 0 && <span className="l2-pile-empty">{t('lens2.tokens.all_placed')}</span>}
-          </div>
-          <span className="l2-hint-small">{t('lens2.tokens.drag_or_tap')}</span>
-        </div>
-
-        <div className={pileClass('me')} data-pile="me">
-          <div className="l2-person-head">
-            <div className="l2-avatar l2-avatar-you" aria-hidden="true">{t('lens2.tokens.you')}</div>
-            <div className="l2-person-text"><span className="l2-person-name">{t('lens2.tokens.you')}</span></div>
-            <span className="l2-count" aria-label={t('lens2.tokens.count', { count: piles.me })}>{piles.me}</span>
-          </div>
-          <div className="l2-tray">{pile('me', piles.me)}{stepper('me', t('lens2.tokens.you'))}</div>
-        </div>
+        <div className="l2-tray">{pile('other', piles.other)}{stepper('other', other)}</div>
       </div>
-      <Button onClick={() => done && onSubmit(piles.me, piles.other)} disabled={!done || disabled}
-        variant={done ? 'primary' : 'secondary'}>
-        {done ? t('lens2.mp.propose') : t('lens2.tokens.allocate_more', { count: piles.pot })}
-      </Button>
+
+      <div className={`l2-pot ${drag && drag.from !== 'pot' ? 'l2-drop-ok' : ''} ${drag && drag.over === 'pot' && drag.from !== 'pot' ? 'l2-drop-over' : ''}`} data-pile="pot">
+        <div className="l2-pile l2-pile-large" aria-hidden="true">
+          {Array.from({ length: piles.pot }, (_, i) => (
+            <Coin key={i} onPointerDown={startDrag('pot')} dragging={drag && drag.from === 'pot' && i === piles.pot - 1} />
+          ))}
+          {piles.pot === 0 && <span className="l2-pile-empty">{t('lens2.tokens.all_placed')}</span>}
+        </div>
+        {interactive && <span className="l2-hint-small">{t('lens2.tokens.drag_or_tap')}</span>}
+      </div>
+
+      <div className={pileClass('me')} data-pile="me">
+        <div className="l2-person-head">
+          <div className="l2-avatar l2-avatar-you" aria-hidden="true">{t('lens2.tokens.you')}</div>
+          <div className="l2-person-text"><span className="l2-person-name">{t('lens2.tokens.you')}</span></div>
+          <span className="l2-count" aria-label={t('lens2.tokens.count', { count: piles.me })}>{piles.me}</span>
+        </div>
+        <div className="l2-tray">{pile('me', piles.me)}{stepper('me', t('lens2.tokens.you'))}</div>
+      </div>
       {drag && <span className="l2-coin l2-coin-ghost" aria-hidden="true" style={{ left: drag.x - 22, top: drag.y - 22 }} />}
-    </>
+    </div>
   );
 }
 
@@ -299,6 +306,62 @@ export default function Multiplayer({ content, onStore, studyId, participant }) 
     return () => window.removeEventListener('pagehide', onHide);
   }, []);
 
+  // ----- the split on the board this round -----
+  const round = state ? state.round : null;
+  const iPropose = state ? state.proposer === me : false;
+  const [mySplit, setMySplit] = useState(null); // proposer's own piles {other, pot, me}
+  const [botSplit, setBotSplit] = useState(null); // what a computer proposer shows while "deciding"
+  useEffect(() => {
+    if (!state) return;
+    setMySplit({ other: 0, pot: state.tokens, me: 0 });
+    setBotSplit(null);
+  }, [matchId, round]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  // send the proposer's split as it changes (latest wins; at most one request in flight)
+  const draftOut = useRef({ busy: false, pending: null, last: 0 });
+  const sendDraft = (split) => {
+    const q = draftOut.current;
+    q.pending = { round, proposerShare: split.me, responderShare: split.other };
+    const flush = () => {
+      if (q.busy || !q.pending) return;
+      const wait = q.last + DRAFT_INTERVAL_MS - Date.now();
+      if (wait > 0) { setTimeout(flush, wait); return; }
+      const body = { matchId, ...q.pending };
+      q.pending = null; q.busy = true; q.last = Date.now();
+      conn.current.call('/draft', body).catch(() => {}).finally(() => { q.busy = false; flush(); });
+    };
+    flush();
+  };
+  const moveToken = (from, to) => {
+    setMySplit((p) => {
+      if (!p || p[from] <= 0) return p;
+      const next = { ...p, [from]: p[from] - 1, [to]: p[to] + 1 };
+      if (!partnerIsBot) sendDraft(next);
+      return next;
+    });
+  };
+
+  // a computer proposer moves its tokens one by one before its offer lands,
+  // so the participant sees a split take shape either way
+  useEffect(() => {
+    if (status !== 'playing' || !partnerIsBot || iPropose || state.phase !== 'propose' || !match.botDueAt) return undefined;
+    const tokens = state.tokens;
+    const give = botOffer(state.players[1 - me].strategy, tokens);
+    const steps = [];
+    for (let k = 0; k < tokens; k++) steps.push(k < give ? 'me' : 'other');
+    // interleave a little, the way people tend to deal tokens
+    for (let k = steps.length - 1; k > 0; k--) { const j = Math.floor(Math.random() * (k + 1)); [steps[k], steps[j]] = [steps[j], steps[k]]; }
+    const end = serverToLocal(match.botDueAt) - 250;
+    const span = Math.max(0, end - Date.now() - 300);
+    const timers = steps.map((to, k) => setTimeout(() => {
+      setBotSplit((p) => {
+        const cur = p || { other: 0, pot: tokens, me: 0 };
+        return { ...cur, pot: cur.pot - 1, [to]: cur[to] + 1 };
+      });
+    }, 300 + (span * (k + 1)) / steps.length));
+    return () => timers.forEach(clearTimeout);
+  }, [status, round, state && state.phase, match && match.botDueAt]); // eslint-disable-line react-hooks/exhaustive-deps
+
   // ----- moves -----
   const history = state ? state.history : [];
   const showingResult = history.length > acked;
@@ -453,30 +516,63 @@ export default function Multiplayer({ content, onStore, studyId, participant }) 
       );
     } else if (ended) {
       body = null; // moving on (see effect above)
-    } else if (turn === me && state.phase === 'propose') {
-      body = (
-        <>
-          <Text source={t('lens2.mp.propose_title', { tokens: state.tokens })} className="l2-rule" />
-          <TokenSplit key={state.round} tokens={state.tokens} disabled={sending}
-            onSubmit={(mine, theirs) => send({ type: 'propose', proposerShare: mine, responderShare: theirs })} t={t} />
-        </>
-      );
-    } else if (turn === me) {
-      const { proposerShare, responderShare } = state.offer;
-      body = (
-        <>
-          <div className="l2-card l2-mp-offer">
-            <Text source={t('lens2.mp.offer', { mine: responderShare, theirs: proposerShare })} className="l2-body" />
-            <p className="l2-hint">{t(state.game === 'dictator' ? 'lens2.mp.dg_respond' : 'lens2.mp.ug_respond')}</p>
-          </div>
-          <div className="l2-mp-choices">
-            <Button onClick={() => send({ type: 'respond', response: 'accept' })} disabled={sending}>{t('lens2.mp.accept')}</Button>
-            <Button variant="secondary" onClick={() => send({ type: 'respond', response: 'reject' })} disabled={sending}>{t('lens2.mp.reject')}</Button>
-          </div>
-        </>
-      );
     } else {
-      body = <Waiting message={t(state.phase === 'propose' ? 'lens2.mp.wait_propose' : 'lens2.mp.wait_respond')} />;
+      const tokens = state.tokens;
+      const offer = state.offer;
+      let piles;
+      if (iPropose) {
+        piles = offer
+          ? { other: offer.responderShare, pot: 0, me: offer.proposerShare }
+          : (mySplit || { other: 0, pot: tokens, me: 0 });
+      } else if (offer) {
+        piles = { other: offer.proposerShare, pot: 0, me: offer.responderShare };
+      } else if (partnerIsBot) {
+        piles = botSplit || { other: 0, pot: tokens, me: 0 };
+      } else {
+        const d = match.draft && match.draft.round === state.round ? match.draft : null;
+        piles = d
+          ? { other: d.proposerShare, pot: tokens - d.proposerShare - d.responderShare, me: d.responderShare }
+          : { other: 0, pot: tokens, me: 0 };
+      }
+      const proposing = iPropose && state.phase === 'propose';
+      const responding = !iPropose && state.phase === 'respond';
+      const done = proposing && piles.pot === 0;
+
+      body = (
+        <>
+          <Text
+            source={t(iPropose ? 'lens2.mp.role_proposer' : 'lens2.mp.role_responder', { tokens })}
+            className="l2-rule"
+          />
+          <Board piles={piles} onMove={proposing && !sending ? moveToken : undefined} t={t} />
+          {proposing && (
+            <Button onClick={() => done && send({ type: 'propose', proposerShare: piles.me, responderShare: piles.other })}
+              disabled={!done || sending} variant={done ? 'primary' : 'secondary'}>
+              {done ? t('lens2.mp.propose') : t('lens2.tokens.allocate_more', { count: piles.pot })}
+            </Button>
+          )}
+          {iPropose && !proposing && (
+            <div className="l2-matching" role="status"><span className="l2-spinner" aria-hidden="true" /><span>{t('lens2.mp.wait_respond')}</span></div>
+          )}
+          {!iPropose && (
+            <div className="l2-mp-respond" role="status" aria-live="polite">
+              {responding ? (
+                <>
+                  <Text source={t('lens2.mp.offer', { mine: offer.responderShare, theirs: offer.proposerShare })} className="l2-body" />
+                  <p className="l2-hint">{t(state.game === 'dictator' ? 'lens2.mp.dg_respond' : 'lens2.mp.ug_respond')}</p>
+                </>
+              ) : (
+                <div className="l2-matching"><span className="l2-spinner" aria-hidden="true" /><span>{t('lens2.mp.splitting')}</span></div>
+              )}
+              <div className="l2-mp-choices">
+                <Button onClick={() => send({ type: 'respond', response: 'accept' })} disabled={!responding || sending}
+                  variant={responding ? 'primary' : 'secondary'}>{t('lens2.mp.accept')}</Button>
+                <Button variant="secondary" onClick={() => send({ type: 'respond', response: 'reject' })} disabled={!responding || sending}>{t('lens2.mp.reject')}</Button>
+              </div>
+            </div>
+          )}
+        </>
+      );
     }
   }
 
