@@ -20,10 +20,6 @@ const experimentsDir = path.join(root, 'public/experiments');
 const imagesDir = path.join(root, 'public/images');
 const schema = JSON.parse(fs.readFileSync(path.join(root, 'schema/study.schema.json'), 'utf8'));
 
-// Files in public/experiments/ that are not studies. Listed here rather than
-// moved so nothing that might link to them breaks; see the PR description.
-const NOT_STUDIES = new Set(['dospert.json']);
-
 const ajv = new Ajv2020({ allErrors: true, discriminator: true, strict: false });
 addFormats(ajv);
 const validate = ajv.compile(schema);
@@ -231,7 +227,7 @@ const showNotes = args.includes('--notes');
 let files = args.filter((a) => !a.startsWith('--'));
 if (!files.length) {
   files = fs.readdirSync(experimentsDir)
-    .filter((f) => f.endsWith('.json') && !NOT_STUDIES.has(f))
+    .filter((f) => f.endsWith('.json'))
     .sort()
     .map((f) => path.join(experimentsDir, f));
 }

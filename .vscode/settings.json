@@ -2,7 +2,7 @@
     "workbench.preferredLightColorTheme": "Visual Studio Dark",
     "json.schemas": [
         {
-            "fileMatch": ["/public/experiments/*.json", "!/public/experiments/dospert.json"],
+            "fileMatch": ["/public/experiments/*.json"],
             "url": "./schema/study.schema.json"
         }
     ]
