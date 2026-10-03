@@ -446,7 +446,15 @@ body[data-ui='2'] {
   min-height: 34px;
 }
 .l2-pile .l2-coin-small { margin-inline-start: -10px; }
-.l2-pile-large { gap: 10px; padding-inline-start: 0; justify-content: center; min-height: 48px; }
+.l2-pile-large {
+  gap: 10px;
+  padding-inline-start: 0;
+  justify-content: center;
+  align-self: stretch;
+  margin-inline: auto;
+  max-width: calc(5 * 44px + 4 * 10px); /* rows of at most 5: 10 tokens = 5 + 5, not 9 + 1 */
+  min-height: 48px;
+}
 .l2-pile-empty { margin-inline-start: -10px; font-size: 14px; color: #7d8390; }
 .l2-pile-large .l2-pile-empty { margin-inline-start: 0; color: var(--l2-muted); }
 .l2-pot {

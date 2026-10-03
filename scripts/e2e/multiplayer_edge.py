@@ -36,7 +36,7 @@ with sync_playwright() as p:
     B=mk(b,"PB")
     practice_en(B)
     A.locator(".l2-token-area").wait_for(timeout=10000)
-    B.get_by_text("deciding how to split").wait_for(timeout=10000)
+    B.get_by_text("is splitting the tokens").wait_for(timeout=10000)
     B.close()   # partner closes the tab
     A.get_by_text("فرد دیگر بازی را ترک کرد").wait_for(timeout=10000)
     A.screenshot(path=f"{OUT}/fa-partner-left.png")
@@ -52,7 +52,7 @@ with sync_playwright() as p:
     practice_en(C)
     C.get_by_text("Finding another participant").wait_for(timeout=10000)
     D=mk(b,"PD"); practice_en(D)
-    D.get_by_text("deciding how to split").wait_for(timeout=10000)
+    D.get_by_text("is splitting the tokens").wait_for(timeout=10000)
     # C proposes, D (responder) never responds; D's tab stays open but idle
     for _ in range(3): C.locator("[data-pile=\"me\"] .l2-step").nth(1).click()
     for _ in range(3): C.locator("[data-pile=\"other\"] .l2-step").nth(1).click()

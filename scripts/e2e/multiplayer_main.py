@@ -54,7 +54,7 @@ with sync_playwright() as p:
         deadline = time.time() + 15
         while time.time() < deadline:
             for pg in (A, B):
-                if pg.get_by_text("Split 10 tokens").is_visible():
+                if pg.get_by_text("split 10 tokens").is_visible():
                     return pg
             A.wait_for_timeout(200)
         raise AssertionError("nobody is proposing")
@@ -65,8 +65,19 @@ with sync_playwright() as p:
     for rnd, (keep, give, answer) in enumerate(plan):
         P = proposer_now(); R = B if P is A else A
         proposers.append("A" if P is A else "B")
-        R.get_by_text("deciding how to split").wait_for(timeout=10000)
+        R.get_by_text("is splitting the tokens").wait_for(timeout=10000)
         place_all(P, keep, give, use_drag_for_one=(rnd != 1))
+        # the responder watches the split take shape before it is sent
+        deadline = time.time() + 5
+        while time.time() < deadline:
+            other = R.locator('[data-pile="other"] .l2-count').inner_text()
+            mine = R.locator('[data-pile="me"] .l2-count').inner_text()
+            if (other, mine) == (str(keep), str(give)):
+                break
+            R.wait_for_timeout(100)
+        assert (other, mine) == (str(keep), str(give)), ("live split", other, mine)
+        assert R.get_by_role("button", name="Accept", exact=True).is_disabled(), "Accept must wait for the offer"
+        if rnd == 0: R.screenshot(path=f"{OUT}/2b-watching.png")
         if rnd == 0: P.screenshot(path=f"{OUT}/2-propose.png")
         click(P, "Send offer")
         R.get_by_text("offers you").wait_for(timeout=10000)
@@ -110,21 +121,26 @@ with sync_playwright() as p:
     C.goto(BASE + "?PROLIFIC_PID=PID_C")
     t0 = time.time()
     click(C, "Start")
-    C.get_by_text("Split 10 tokens").wait_for(timeout=40000)  # rng decides who proposes; handle both
+    C.locator("text=/split 10 tokens|is splitting the tokens/").first.wait_for(timeout=40000)  # rng decides who proposes; handle both
     waited = time.time() - t0
     print(f"computer partner after {waited:.1f}s")
     assert 19 < waited < 30, waited
     for rnd in range(3):
-        if C.get_by_text("Split 10 tokens").is_visible():
+        if C.get_by_text("You propose").is_visible():
             place_all(C, 7, 3, use_drag_for_one=False)
             click(C, "Send offer")
         else:
+            C.get_by_text("is splitting the tokens").wait_for(timeout=15000)
+            C.wait_for_timeout(600)
+            seen = int(C.locator('[data-pile="other"] .l2-count').inner_text()) + int(C.locator('[data-pile="me"] .l2-count').inner_text())
             C.get_by_text("offers you").wait_for(timeout=15000)
+            print(f"  computer's split in progress: {seen} token(s) placed before its offer")
+            assert 0 < seen, "the computer's tokens should move before its offer lands"
             click(C, "Accept")
         C.locator(".l2-mp-result").wait_for(timeout=15000)
         click(C, "Continue" if rnd == 2 else "Next round")
         if rnd < 2:
-            C.locator("text=/Split 10 tokens|offers you/").first.wait_for(timeout=15000)
+            C.locator("text=/You propose|is splitting the tokens/").first.wait_for(timeout=15000)
     C.get_by_text("computer program").wait_for(timeout=10000)
     C.screenshot(path=f"{OUT}/6-debrief-bot.png")
     click(C, "Continue")

@@ -11,8 +11,14 @@
       "game": "ultimatum",
       "tokens": 10,
       "rounds": 3,
-      "matching": { "timeout": 20000 },
-      "bot": { "strategy": "fair" }
+      "matching": {
+        "timeout": 20000
+      },
+      "bot": {
+        "strategy": "fair",
+        "initialDelay": 2500,
+        "reactionDelay": 3000
+      }
     }
   ]
 }
