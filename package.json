@@ -10,7 +10,8 @@
     "preview": "vite preview",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "validate": "node scripts/validate-studies.js"
+    "validate": "node scripts/validate-studies.js",
+    "test": "node --test src/multiplayer/*.test.js"
   },
   "dependencies": {
     "@emotion/cache": "^11.13.1",

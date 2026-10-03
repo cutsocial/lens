@@ -1496,6 +1496,124 @@
           "description": "Simulated matchmaking wait. Default 5000."
         }
       }
+    },
+    "multiplayer": {
+      "type": "object",
+      "required": [
+        "id",
+        "type",
+        "game",
+        "tokens"
+      ],
+      "additionalProperties": false,
+      "description": "Live two-player ultimatum or dictator game (in development: not yet a view type Lens can show). Participants are matched first come, first served; after matching.timeout a computer partner takes over unless matching.botFallback is false. Options and defaults: src/multiplayer/config.js.",
+      "properties": {
+        "type": {
+          "const": "multiplayer"
+        },
+        "id": {
+          "$ref": "#/$defs/viewId"
+        },
+        "text": {
+          "$ref": "#/$defs/i18n",
+          "description": "Instructions shown before the game."
+        },
+        "game": {
+          "enum": [
+            "ultimatum",
+            "dictator"
+          ],
+          "description": "Ultimatum: the responder can reject, and then both get 0. Dictator: the split always stands; the responder only reacts."
+        },
+        "tokens": {
+          "$ref": "#/$defs/positiveInt",
+          "description": "Tokens split each round."
+        },
+        "rounds": {
+          "$ref": "#/$defs/positiveInt",
+          "description": "Default 1."
+        },
+        "firstProposer": {
+          "enum": [
+            "random",
+            "participant",
+            "partner"
+          ],
+          "description": "Default \"random\". With two people, \"participant\" is whoever arrived first."
+        },
+        "roles": {
+          "enum": [
+            "alternate",
+            "fixed"
+          ],
+          "description": "\"alternate\" (default): proposer and responder swap each round. \"fixed\": the first proposer proposes every round."
+        },
+        "practiceRounds": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Practice rounds before the real ones, recorded separately. Default 0."
+        },
+        "matching": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "timeout": {
+              "$ref": "#/$defs/ms",
+              "description": "Wait for another participant before using a computer partner. Default 30000."
+            },
+            "botFallback": {
+              "type": "boolean",
+              "description": "false: never use a computer partner. Default true."
+            }
+          }
+        },
+        "bot": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "strategy": {
+              "enum": [
+                "fair",
+                "rational",
+                "hyperRational",
+                "simple"
+              ],
+              "description": "fair: offers half, accepts only near-equal splits. rational: offers half, accepts anything above 0. hyperRational: offers 1, accepts anything above 0. simple: only responds (participant must always propose); in dictator always accepts. Default fair."
+            },
+            "initialDelay": {
+              "$ref": "#/$defs/ms",
+              "description": "Default 1000."
+            },
+            "reactionDelay": {
+              "$ref": "#/$defs/ms",
+              "description": "Default 1000."
+            }
+          }
+        },
+        "debrief": {
+          "type": "object",
+          "additionalProperties": false,
+          "description": "Shown after the game. On by default; Prolific requires a debrief in deception studies.",
+          "properties": {
+            "show": {
+              "type": "boolean"
+            },
+            "textBot": {
+              "$ref": "#/$defs/i18n",
+              "description": "Shown when the partner was a computer."
+            },
+            "textHuman": {
+              "$ref": "#/$defs/i18n",
+              "description": "Shown when the partner was another participant."
+            }
+          }
+        },
+        "bonusPerToken": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Money per token, for Prolific bonuses."
+        }
+      }
     }
   }
 }
