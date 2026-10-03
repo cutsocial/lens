@@ -34,7 +34,7 @@ import { useParams } from 'react-router-dom';
 
 import { shuffle } from '../utils/random';
 import { languages } from '../utils/i18n';
-import { L2Root, Header, Text, Button } from './components';
+import { L2Root, Header, Text, Button, potHeight } from './components';
 
 const PILES = ['opponent', 'pot', 'player'];
 const CLASSIC_MATCHMAKING_MS = 5000;
@@ -215,7 +215,7 @@ export default function TokenGame({ game, content, onStore }) {
         {/* The middle pile */}
         <div className={`l2-pot ${drag && drag.from !== 'pot' ? 'l2-drop-ok' : ''} ${drag && drag.over === 'pot' && drag.from !== 'pot' ? 'l2-drop-over' : ''}`} data-pile="pot">
           <span className="l2-pot-label">{t(`dictator.pot`)}: <strong>{remaining}</strong></span>
-          <div className="l2-pile l2-pile-large" aria-hidden="true">
+          <div className="l2-pile l2-pile-large" aria-hidden="true" style={potHeight(tokens)}>
             {Array.from({ length: remaining }, (_, i) => (
               <Coin key={i} onPointerDown={startDrag('pot')} dragging={drag && drag.from === 'pot' && i === remaining - 1} />
             ))}

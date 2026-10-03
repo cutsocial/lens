@@ -35,7 +35,7 @@ import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router-dom';
 
 import { languages } from '../utils/i18n';
-import { L2Root, Header, Text, Button, NoticeCard } from './components';
+import { L2Root, Header, Text, Button, NoticeCard, potHeight } from './components';
 import { normalizeConfig } from '../multiplayer/config';
 import { whoseTurn, playerSummary } from '../multiplayer/engine';
 import { connect } from '../multiplayer/client';
@@ -175,7 +175,7 @@ function Board({ piles, onMove, flight, onFlightDone, t }) {
       </div>
 
       <div className={`l2-pot ${drag && drag.from !== 'pot' ? 'l2-drop-ok' : ''} ${drag && drag.over === 'pot' && drag.from !== 'pot' ? 'l2-drop-over' : ''}`} data-pile="pot">
-        <div className="l2-pile l2-pile-large" aria-hidden="true">
+        <div className="l2-pile l2-pile-large" aria-hidden="true" style={potHeight(piles.other + piles.pot + piles.me)}>
           {Array.from({ length: piles.pot }, (_, i) => (
             <Coin key={i} onPointerDown={startDrag('pot')} dragging={drag && drag.from === 'pot' && i === piles.pot - 1} />
           ))}
