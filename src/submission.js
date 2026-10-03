@@ -1,67 +1,18 @@
-// Replacement for src/submission.js in cutsocial/lens.
-// - retries with backoff if the save fails (2s, 4s, 8s, 16s)
-// - sends a submissionId so retries are never double-counted
-// - still shows the completion note if every attempt fails, so participants aren't stuck
-// - no participant data or Prolific IDs go to Google Analytics
-import React, { useEffect, useRef, useState } from 'react';
+// Classic final page. Sending and retries live in utils/useSubmission.js,
+// shared with the Lens 2 final page (v2/submission2.js).
+import React from 'react';
 
 import {Grid} from '@mui/material';
 import Markdown from 'react-markdown/with-html';
 import {useTranslation} from 'react-i18next';
-import ReactGA from "react-ga4";
 
-const API = 'https://server.cut.social/api/v1';
-const MAX_ATTEMPTS = 5;
-
-const newSubmissionId = () =>
-  (window.crypto && window.crypto.randomUUID)
-    ? window.crypto.randomUUID()
-    : Date.now().toString(36) + Math.random().toString(36).slice(2);
+import useSubmission from './utils/useSubmission';
 
 export default function Submission({submission, studyId, submissionNote}) {
 
   const {t} = useTranslation();
-  const [status, setStatus] = useState('sending'); // sending | saved | failed
-  const [submissionCode, setSubmissionCode] = useState(undefined);
-  const started = useRef(false);
+  const {status, submissionCode} = useSubmission(submission, studyId);
   const debug = process.env.NODE_ENV !== 'production';
-
-  useEffect(() => {
-    if (started.current) return;   // submit exactly once
-    started.current = true;
-
-    const submissionId = newSubmissionId();
-    const payload = JSON.stringify({...submission, submissionId});
-
-    const send = async (attempt) => {
-      try {
-        const resp = await fetch(`${API}/${studyId}/responses`, {
-          method: 'POST',
-          mode: 'cors',
-          body: payload,
-          headers: {'Content-Type': 'application/json'}
-        });
-        if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
-        const json = await resp.json();
-        setSubmissionCode(json.submissionCode);
-        setStatus('saved');
-      } catch (error) {
-        ReactGA.event({
-          category: 'error',
-          action: 'submission_failed',
-          label: `${studyId} attempt ${attempt}: ${error.message}`
-        });
-        if (attempt < MAX_ATTEMPTS) {
-          setTimeout(() => send(attempt + 1), 1000 * 2 ** attempt);
-        } else {
-          setSubmissionCode(submissionId.slice(0, 8).toUpperCase());
-          setStatus('failed');
-        }
-      }
-    };
-
-    send(1);
-  }, []);
 
   return (
     <Grid container direction='column' className='Text-container'>

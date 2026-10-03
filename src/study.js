@@ -31,6 +31,7 @@ import Ultimatum2 from './v2/ultimatum2';
 import Text2 from './v2/text2';
 import Matrix2 from './v2/matrix2';
 import Prolific2 from './v2/prolific2';
+import Submission2 from './v2/submission2';
 
 // Lens 2 view types draw their own surfaces and Next buttons, so the study page
 // doesn't wrap them in a card or add the shared Navigation.
@@ -143,16 +144,25 @@ export default function Study(props) {
 
   }
   
+  // Studies that use any Lens 2 view end on the Lens 2 final page.
+  // "finalPage": "classic" or "lens2" in the study file overrides this.
+  const usesLens2FinalPage = state.experiment.finalPage
+    ? state.experiment.finalPage === 'lens2'
+    : (state.experiment.views || []).some((v) => LENS2_TYPES.includes(v.type));
+
   const renderView = (view) => {
     
     if (state.finished) {
+      const submission = {
+        PROLIFIC_PID: query.get('PROLIFIC_PID'),
+        STUDY_ID: query.get('STUDY_ID'),
+        SESSION_ID: query.get('SESSION_ID'),
+        startedAt: state.startedAt,
+        responses: state.responses};
+      if (usesLens2FinalPage)
+        return <Submission2 submission={submission} studyId={studyId} experiment={state.experiment} />;
       return (
-        <Submission submission={{
-          PROLIFIC_PID: query.get('PROLIFIC_PID'),
-          STUDY_ID: query.get('STUDY_ID'),
-          SESSION_ID: query.get('SESSION_ID'),
-          startedAt: state.startedAt,
-          responses: state.responses}}
+        <Submission submission={submission}
           studyId={studyId} submissionNote={state.experiment.submissionNote} />
       );
     }
@@ -270,7 +280,8 @@ export default function Study(props) {
               </Snackbar>
 
               <Grid item>
-                {LENS2_TYPES.includes(state.view.type) && !state.finished && !state.loading
+                {((LENS2_TYPES.includes(state.view.type) && !state.finished && !state.loading) ||
+                  (state.finished && usesLens2FinalPage))
                   ? renderView(state.view)
                   : <Paper className='view-container'>
                     {!state.finished && state.loading && <div>{t('loading')}</div>}
@@ -278,6 +289,7 @@ export default function Study(props) {
                     </Paper>}
               </Grid>
               {!['gonogo','bart','stroop','ultimatum','dictator','taskswitch','simplified_taskswitch','nback','gonogoalt', ...LENS2_TYPES].includes(state.view.type) && !state.loading &&
+                !(state.finished && usesLens2FinalPage) &&
               <Grid item>
                 <Navigation onNext={onNext} finished={state.finished} redirectTo={state.experiment.redirectTo} />
               </Grid>

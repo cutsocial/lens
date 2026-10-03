@@ -2,7 +2,7 @@
   "studyId": "demo-lens2",
   "condition": "demo",
   "redirectTo": "https://cut.social",
-  "submissionNote": "submission.note",
+  "redirectText": "lens2.demo.redirect_text",
   "metadata": {
     "note": "Lens 2 survey pages and task demos. Classic equivalents are in demo-comprehensive."
   },
@@ -470,12 +470,6 @@
         }
       ],
       "tapControls": true
-    },
-    {
-      "id": "lens2.done",
-      "type": "text2",
-      "instruction": true,
-      "text": "done"
     }
   ]
 }
