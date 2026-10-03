@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Commands
 
-Vite 6, React 18, MUI v5, Node 20 per `.nvmrc`. No linter, and there are currently no tests in `src/`. Source files keep JSX in `.js` files; `vite.config.js` tells esbuild to parse them as JSX.
+Vite 6, React 18, MUI v5, Node 20 per `.nvmrc`. No linter. Tests use Node's built-in runner (`npm test`, files `src/**/*.test.js`); so far only `src/multiplayer/` has them. Source files keep JSX in `.js` files; `vite.config.js` tells esbuild to parse them as JSX.
 
 - `npm start` — Vite dev server at http://localhost:3000.
 - `npm run build` — production build into `build/`. `npm run preview` serves it locally.
@@ -55,6 +55,15 @@ Lens 2 tasks are new view types that sit next to the classic ones; classic types
 - `survey.js`: survey page shell (Next button, inline required message), `ScaleSlider`, `CountryPicker`. `text2.js`, `matrix2.js`, `prolific2.js` use it. Survey views store on Next with `onStore(data, true)` (not in an unmount cleanup), so `Study.onNext` skips its required check for Lens 2 types; survey CSS is in rem so `fontScale` applies.
 - `submission2.js`: Lens 2 final page, used when a study has any Lens 2 view (override with `finalPage`). Saving and retries are in `src/utils/useSubmission.js`, shared with classic `src/submission.js`.
 - Current Lens 2 types: `stroop2`, `gonogoalt2`, `nback2`, `bart2`, `dictator2`, `ultimatum2`, `text2`, `matrix2`, `prolific2`. Demo: `/#/demo-lens2/en`.
+
+## Multiplayer games (`src/multiplayer/`, in development)
+
+Live two-player ultimatum and dictator games, rebuilt from Cut (see `cut-port-spec.md` in the project docs). Not yet a view type: matching and live moves will run on Firestore in `jamasp-gcp-project`.
+
+- `config.js`: study-file options and defaults (`normalizeConfig`); mirrored for authors in `schema/study.schema.json` `$defs/multiplayer`, which joins the view `oneOf` only once the view ships.
+- `engine.js`: pure game rules over a plain state object (`createMatch`, `applyMove`, `whoseTurn`), plus data output: `moveRows` (one row per move, long format) and `playerSummary` (one participant's view, totals, bonus, partner kind/strategy). No React or browser APIs, so a server can check moves with the same code, and a match replays from its move log.
+- `bots.js`: Cut's bot rules exactly (fair, rational, hyperRational, simple). Change them only with the user's agreement; they define what published data meant.
+- Bot disclosure is a debrief after the game, researcher-controlled (`debrief.show`, `textBot`, `textHuman`; on by default). Prolific requires a debrief for everyone in deception studies, including dropouts.
 
 ## Experiments (`public/experiments/*.json`)
 
