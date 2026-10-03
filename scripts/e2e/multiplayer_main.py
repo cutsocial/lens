@@ -68,7 +68,7 @@ with sync_playwright() as p:
         R.get_by_text("is splitting the tokens").wait_for(timeout=10000)
         place_all(P, keep, give, use_drag_for_one=(rnd != 1))
         # the responder watches the split take shape before it is sent
-        deadline = time.time() + 12
+        deadline = time.time() + 20
         while time.time() < deadline:
             other = R.locator('[data-pile="other"] .l2-count').inner_text()
             mine = R.locator('[data-pile="me"] .l2-count').inner_text()

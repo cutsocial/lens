@@ -96,7 +96,7 @@ function Board({ piles, onMove, flight, onFlightDone, t }) {
       { transform: 'translate(0, 0) scale(1)' },
       { transform: `translate(${(b.x - a.x) / 2}px, ${(b.y - a.y) / 2 - 18}px) scale(${toPot ? 0.9 : 0.85})`, offset: 0.5 },
       { transform: `translate(${b.x - a.x}px, ${b.y - a.y}px) scale(${toPot ? 1 : 0.68})` },
-    ], { duration: 340, easing: 'ease-in-out' });
+    ], { duration: 450, easing: 'ease-in-out' });
     let done = false;
     const finish = () => { if (done) return; done = true; coin.remove(); onFlightDone(); };
     anim.onfinish = finish;
@@ -432,7 +432,9 @@ export default function Multiplayer({ content, onStore, studyId, participant }) 
     }
     const gap = Math.abs(shown.other - target.other) + Math.abs(shown.me - target.me);
     const first = shown.pot === state.tokens && shown.other === 0 && shown.me === 0;
-    const wait = first ? 700 + Math.random() * 500 : (gap > 4 ? 60 : 90) + Math.random() * 140;
+    // pace of the other person's hand: a pause before the first token, then
+    // roughly 0.8 s per token (a little quicker when far behind a live split)
+    const wait = first ? 1200 + Math.random() * 800 : (gap > 6 ? 150 : 300) + Math.random() * 300;
     const id = setTimeout(() => setFlight({ from, to, key: Date.now() }), wait);
     return () => clearTimeout(id);
   }, [watching, flight, shown, target && target.other, target && target.me, target && target.pot]); // eslint-disable-line react-hooks/exhaustive-deps
