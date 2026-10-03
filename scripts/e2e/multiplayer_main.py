@@ -68,7 +68,7 @@ with sync_playwright() as p:
         R.get_by_text("is splitting the tokens").wait_for(timeout=10000)
         place_all(P, keep, give, use_drag_for_one=(rnd != 1))
         # the responder watches the split take shape before it is sent
-        deadline = time.time() + 5
+        deadline = time.time() + 20
         while time.time() < deadline:
             other = R.locator('[data-pile="other"] .l2-count').inner_text()
             mine = R.locator('[data-pile="me"] .l2-count').inner_text()
@@ -131,10 +131,17 @@ with sync_playwright() as p:
             click(C, "Send offer")
         else:
             C.get_by_text("is splitting the tokens").wait_for(timeout=15000)
-            C.wait_for_timeout(600)
-            seen = int(C.locator('[data-pile="other"] .l2-count').inner_text()) + int(C.locator('[data-pile="me"] .l2-count').inner_text())
+            seen, t_start = 0, time.time()
+            while time.time() - t_start < 15:
+                seen = int(C.locator('[data-pile="other"] .l2-count').inner_text()) + int(C.locator('[data-pile="me"] .l2-count').inner_text())
+                if 0 < seen < 10:
+                    break
+                C.wait_for_timeout(100)
+            accept_off = C.get_by_role("button", name="Accept", exact=True).is_disabled()
+            t_offer = time.time()
             C.get_by_text("offers you").wait_for(timeout=15000)
-            print(f"  computer's split in progress: {seen} token(s) placed before its offer")
+            print(f"  computer's tokens moving one by one: {seen} placed, Accept off: {accept_off}; offer usable {time.time() - t_offer:.1f}s later")
+            assert accept_off
             assert 0 < seen, "the computer's tokens should move before its offer lands"
             click(C, "Accept")
         C.locator(".l2-mp-result").wait_for(timeout=15000)

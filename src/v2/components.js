@@ -99,3 +99,12 @@ export function Feedback({ correct, correctLabel, incorrectLabel }) {
     </div>
   );
 }
+
+/**
+ * The middle pile keeps the height of all its tokens (rows of up to 5), so the
+ * board doesn't shift as tokens leave it.
+ */
+export function potHeight(tokens) {
+  const rows = Math.max(1, Math.ceil(tokens / 5));
+  return { minHeight: `${rows * 44 + (rows - 1) * 10}px` };
+}

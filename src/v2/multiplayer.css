@@ -19,15 +19,9 @@
   text-align: center;
 }
 .l2-mp-respond .l2-body p { margin: 0; }
-/* a board the participant only watches: no grab cursor, coins arrive softly */
-.l2-mp-board-watch .l2-coin { cursor: default; animation: l2-mp-coin-in 180ms ease-out; }
-@keyframes l2-mp-coin-in {
-  from { transform: scale(0.6); opacity: 0.4; }
-  to { transform: scale(1); opacity: 1; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .l2-mp-board-watch .l2-coin { animation: none; }
-}
+/* a board the participant only watches */
+.l2-mp-board-watch .l2-coin { cursor: default; }
+
 /* the round result sits in the page flow, not over a board */
 .l2-sheet.l2-mp-result {
   position: static;
@@ -37,4 +31,22 @@
 .l2-mp-debrief-text {
   padding-block-start: 18px;
   border-block-start: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Keep the actions right under the board instead of pinned to the bottom of
+   a tall window (the single-player token games grow the board to fill it). */
+.l2-mp-board.l2-token-area {
+  flex-grow: 0;
+}
+.l2-mp-board + .l2-btn,
+.l2-mp-board + .l2-matching,
+.l2-mp-board + .l2-mp-respond {
+  margin-block-start: 6px;
+}
+/* a coin the other person is moving */
+.l2-mp-flying {
+  position: fixed;
+  pointer-events: none;
+  z-index: 10;
+  cursor: default;
 }
