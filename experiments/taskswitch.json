@@ -1,0 +1,75 @@
+{
+  "studyId": "taskswitch-demo",
+  "conditon": "a",
+  "redirectTo": "https://cut.social",
+  "submissionNote": "submission.note",
+  "metadata": {
+    "maintainer": "radmanesh@gmail.com"
+  },
+  "views": [
+    {
+			"id": "taskswitch.intro1",
+			"type": "text",
+			"instruction": true,
+			"text": "taskswitch.intro1.text"
+		},
+    {
+			"id": "taskswitch.intro2",
+			"type": "text",
+			"instruction": true,
+			"text": "taskswitch.intro2.text"
+		},
+    {
+			"id": "taskswitch.intro3",
+			"type": "text",
+			"instruction": true,
+			"text": "taskswitch.intro3.text"
+		},
+    {
+			"id": "taskswitch.intro4",
+			"type": "text",
+			"instruction": true,
+			"text": "taskswitch.intro4.text"
+		},
+    {
+			"id": "taskswitch.intro5",
+			"type": "text",
+			"instruction": true,
+			"text": "taskswitch.intro5.text"
+		},
+    {
+      "id": "TaskSwitch Demo",
+      "type":"taskswitch",
+      "text":"taskswitch.instruction",
+      "help":"taskswitch.help",
+      "trials": {
+        "total": 24,
+        "top":{
+          "total": 12,
+          "go": 6,
+          "left": 6,
+          "leftGo": 3,
+          "choices": {
+            "go": "blue-star",
+            "nogo": "star"
+          }
+        },
+        "bottom":{
+          "total": 12,
+          "go": 6,
+          "left": 6,
+          "leftGo": 3,
+          "choices": {
+            "go": "star",
+            "nogo": "blue-star"
+          }
+        }
+
+      },
+      "stimuliDuration": 2000,
+      "fixationDuration": 1000, 
+      "feedbackDuration": 1000,
+      "timeoutsBeforeReset": 5
+    }
+  ]
+}

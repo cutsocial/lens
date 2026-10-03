@@ -1,0 +1,22 @@
+{
+  "studyId": "text-demo",
+  "conditon": "a",
+  "submissionNote": "submission.note",
+  "redirectTo": "https://app.prolific.co/submissions/complete?cc=58797A74",
+  "metadata": {
+    "maintainer": "ansarinia@me.com"
+  },
+  "views": [
+    {
+      "id": "email",
+      "type": "text",
+      "instruction": false,
+      "required": true,
+      "text": "stroop.practice.introduction",
+      "help": "ramadan2020.questions.email_example",
+      "placeholder": "ramadan2020.questions.email_placeholder",
+      "autoComplete": "countries"
+    }
+
+  ]
+}

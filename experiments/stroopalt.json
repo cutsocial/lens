@@ -1,0 +1,131 @@
+{
+	"studyId": "stroop-demo",
+	"conditon": "a",
+	"redirectTo": "https://google.com?ID=123456",
+	"submissionNote": "submission.note",
+	"metadata": {
+		"maintainer": "ansarinia@me.com"
+	},
+	"views": [{
+		"id": "stroop_demo",
+		"type": "stroop",
+		"rule": "stroop_demo.rule",
+		"help": "stroop_demo.help",
+		"colors": {
+			"G": "#6cba47",
+			"R": "#d73636",
+			"W": "#fff"
+		},
+		"words": {
+			"G": "colors.green",
+			"R": "colors.red"
+		},
+		"trials": [{
+				"stimulus": "GG",
+				"choices": ["GW", "RW"]
+			},
+			{
+				"stimulus": "RR",
+				"choices": ["GW", "RW"]
+			},
+			{
+				"stimulus": "RG",
+				"choices": ["GW", "RW"]
+			},
+			{
+				"stimulus": "GG",
+				"choices": ["GW", "RW"]
+			},
+			{
+				"stimulus": "RR",
+				"choices": ["GW", "RW"]
+			},
+			{
+				"stimulus": "RG",
+				"choices": ["GW", "RW"]
+			},
+			{
+				"stimulus": "GG",
+				"choices": ["GW", "RW"]
+			},
+			{
+				"stimulus": "RR",
+				"choices": ["GW", "RW"]
+			},
+			{
+				"stimulus": "RG",
+				"choices": ["GW", "RW"]
+			},
+			{
+				"stimulus": "GG",
+				"choices": ["GW", "RW"]
+			},
+			{
+				"stimulus": "RR",
+				"choices": ["GW", "RW"]
+			},
+			{
+				"stimulus": "RG",
+				"choices": ["GW", "RW"]
+			},
+			{
+				"stimulus": "GG",
+				"choices": ["GW", "RW"]
+			},
+			{
+				"stimulus": "RR",
+				"choices": ["GW", "RW"]
+			},
+			{
+				"stimulus": "RG",
+				"choices": ["GW", "RW"]
+			},
+			{
+				"stimulus": "GG",
+				"choices": ["GW", "RW"]
+			},
+			{
+				"stimulus": "RR",
+				"choices": ["GW", "RW"]
+			},
+			{
+				"stimulus": "RG",
+				"choices": ["GW", "RW"]
+			},
+			{
+				"stimulus": "GG",
+				"choices": ["GW", "RW"]
+			},
+			{
+				"stimulus": "RR",
+				"choices": ["GW", "RW"]
+			},
+			{
+				"stimulus": "RG",
+				"choices": ["GW", "RW"]
+			},
+			{
+				"stimulus": "GR",
+				"choices": ["GW", "RW"]
+			},
+			{
+				"stimulus": "GG",
+				"choices": ["GW", "RW"]
+			},
+			{
+				"stimulus": "RR",
+				"choices": ["GW", "RW"]
+			},
+			{
+				"stimulus": "RG",
+				"choices": ["GW", "RW"]
+			}
+		],
+		"stimulusDuration": 1000,
+		"fixationDuration": 1000,
+		"feedbackDuration": 750,
+		"timeoutsBeforeReset": 10,
+		"randomizeTrials": true,
+		"randomizeChoices": false
+	}]
+}

@@ -1,0 +1,53 @@
+{
+  "studyId": "demo-nback",
+  "condition": "demo",
+  "metadata": {
+    "note": "Single-task demo linked from the README. Same views as in demo-lens2."
+  },
+  "views": [
+    {
+      "id": "lens2.nback.intro",
+      "type": "text2",
+      "instruction": true,
+      "text": "lens2.nback.intro"
+    },
+    {
+      "id": "nback2.demo",
+      "type": "nback2",
+      "text": "lens2.nback.rule",
+      "trials": 10,
+      "nback": 2,
+      "stimuli": [
+        {
+          "type": "letter",
+          "name": "A",
+          "amount": 5
+        },
+        {
+          "type": "letter",
+          "name": "B",
+          "amount": 5
+        },
+        {
+          "type": "letter",
+          "name": "C",
+          "amount": 5
+        },
+        {
+          "type": "letter",
+          "name": "D",
+          "amount": 5
+        },
+        {
+          "type": "letter",
+          "name": "E",
+          "amount": 5
+        }
+      ],
+      "stimuliDuration": 2000,
+      "fixationDuration": 500,
+      "feedbackDuration": 500,
+      "startText": "lens2.single.start"
+    }
+  ]
+}
