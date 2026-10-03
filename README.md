@@ -1,170 +1,119 @@
-# Lens: A Study Viewer
+# Lens
 
-Lens is the evolution of [Cut](https://cut.social/), a platform that facilitates rapid development and deployment of interactive research instruments. Examples include:
+Lens runs online behavioral studies in the browser: surveys, reaction-time tasks and economic games, described in a single JSON file and served at a link you can post on Prolific. It is the successor to [Cut](https://cut.social/), and it supports English, Persian and Arabic, including right-to-left layout, on phones and computers.
 
-* [2-Alternative-Forced-Choice Task](https://lens.cut.social/#/gonogo/en)
-* [Balloon Analogue Risk Task (BART)](https://lens.cut.social/#/bart/en)
-* [Stroop Task](https://lens.cut.social/#/stroop/en)
-* [Ultimatum Game](https://lens.cut.social/#/ultimatum/en)
-* [Dictator Game](https://lens.cut.social/#/dictator/en)
-* [Task Switch](https://lens.cut.social/#/taskswitch/en)
-* [Go/NoGo](https://lens.cut.social/#/gonogoalt/en)
-* [N-back](https://lens.cut.social/#/nback/en)
+## Try it
 
-## Experiment Types
+Each link opens one task in the current design (Lens 2):
 
-Lens supports the following experiment and question types:
+* [Survey pages](https://lens.cut.social/#/demo-survey/en): text, country, choice and slider questions
+* [Stroop task](https://lens.cut.social/#/demo-stroop/en)
+* [Go/No-Go](https://lens.cut.social/#/demo-gonogo/en)
+* [N-back](https://lens.cut.social/#/demo-nback/en)
+* [Balloon Analogue Risk Task (BART)](https://lens.cut.social/#/demo-bart/en)
+* [Dictator game](https://lens.cut.social/#/demo-dictator/en)
+* [Ultimatum game](https://lens.cut.social/#/demo-ultimatum/en)
+* [Multiplayer ultimatum game](https://lens.cut.social/#/demo-multiplayer/en): open it in two windows to play yourself, or wait 20 seconds for a computer partner
+* [All Lens 2 tasks and survey pages in one study](https://lens.cut.social/#/demo-lens2/en)
 
-### Interactive Tasks
-- **`bart`** - Balloon Analogue Risk Task: Measures risk-taking behavior through a balloon pumping game
-- **`gonogo`** - Go/NoGo Task: Response inhibition task with go and no-go stimuli
-- **`gonogoalt`** - Alternative Go/NoGo Task: Variant with different stimulus configurations
-- **`stroop`** - Stroop Task: Cognitive interference task measuring selective attention
-- **`taskswitch`** - Task Switching: Measures cognitive flexibility by switching between tasks
-- **`simplified_taskswitch`** - Simplified Task Switching: Streamlined version of task switching
-- **`nback`** - N-back Task: Working memory task requiring participants to recall previous stimuli
-- **`ultimatum`** - Ultimatum Game: Economic game measuring fairness and negotiation behavior
-- **`dictator`** - Dictator Game: Economic game measuring altruism and fairness
+Replace `/en` with `/fa` or `/ar` to see Persian or Arabic.
 
-### Saving as participants go, and balanced conditions
+The original designs (Lens 1, release `v1.0`) still run every existing study unchanged: [2-alternative forced choice](https://lens.cut.social/#/gonogo/en), [task switching](https://lens.cut.social/#/taskswitch/en), [simplified task switching](https://lens.cut.social/#/simplified_taskswitch/en), and [all classic types in one study](https://lens.cut.social/#/demo-comprehensive/en).
 
-- `"saveProgress": true` (top level of a study file) saves each page to the server as soon as it is stored, one row per page in the `<studyId>.partial` collection (same `submissionId` as the final document, plus `index`, `viewId`, `viewType`, `view`, `response`, Prolific IDs, `savedAt`). The final document in `<studyId>` is unchanged. Use it to see where people dropped out, or to recover data if the final save fails. Off by default: check that your consent form allows keeping data from people who stop partway.
-- Balanced assignment: link participants to `https://server.cut.social/assign?studies=studyA/en,studyB/en` (add Prolific's `&PROLIFIC_PID={{%PROLIFIC_PID%}}&STUDY_ID={{%STUDY_ID%}}&SESSION_ID={{%SESSION_ID%}}`). Each arrival goes to the condition with the fewest participants, counting completions plus starts from the last `hold` minutes (`&hold=60` by default), so dropouts free their slot. A returning Prolific ID keeps its condition. Lens sends the assignment back with the final submission (`ASSIGNMENT_ID`, only in assigned sessions). Counts so far: `https://server.cut.social/assign/status?studies=studyA/en,studyB/en`. The old `/randomize` links keep picking at random.
+## Task types
 
-### Lens 2 tasks (new design, same data)
+A study is a list of views, shown in order. Each view has a `type`:
 
-- `stroop2`: Stroop in the Lens 2 design. Same study-file options and data fields as `stroop`, plus `taskVersion: 2` in the response. Optional `"showFixation": true` shows a "+" during the fixation interval (classic leaves it blank). Demo: `/#/demo-lens2/en`.
-- `gonogoalt2`: letter/icon Go/No-Go in the Lens 2 design. Same options and data as `gonogoalt`; tap anywhere on the stage or press Space.
-- `nback2`: N-back in the Lens 2 design. Same options and data as `nback`; responses during the first `nback` trials are refused, as in classic.
-- `bart2`: BART in the Lens 2 design. Same options and data as `bart`. Optional `"ballScale"` (default 1) enlarges the balloon; the balloon is the orange ball from the Lens 2 design; `"stimulusStyle": "classic"` brings back the classic red bubble.
-- `dictator2`, `ultimatum2`: token games in the Lens 2 design. Same options and data as `dictator`/`ultimatum`. Optional `"tapControls": true` adds +/− buttons; dictator's `"matchmakingDelay"` (ms, default 5000) sets the "finding another person" wait.
-- Final page: studies that use any Lens 2 view end on the Lens 2 final page (a ring fills while saving, then "Thank you! Your responses have been recorded."; if saving fails it says so). `redirectTo` adds a button at the bottom, with optional `redirectText` (markdown above it) and `redirectLabel` (button text, default "Continue"). `submissionNote` is optional and shows under the thanks. `"finalPage": "classic"` or `"lens2"` overrides the choice. Both final pages send the same payload (`src/utils/useSubmission.js`).
-- `stroop2`, `gonogoalt2` and `nback2` accept an optional `"startText"` (an i18n key) for the start screen.
-- `text2`, `matrix2`, `prolific2`: survey pages in the Lens 2 design. Same options and responses as `text`, `matrix`, `prolific`. The answer is stored when Next is pressed (so a question on a study's last page is saved), missing answers show under the question, and horizontal choices stack into rows on phones (`"mobileLayout": "row"` keeps one row; best for up to about 5 short labels). `prolific2` stores a prefilled value without the participant editing it.
+| | Lens 2 (current design) | Classic (frozen at `v1.0`) |
+|---|---|---|
+| Text, questions, instructions | `text2` | `text` |
+| Choice grids and sliders | `matrix2` | `matrix` |
+| Prolific ID | `prolific2` | `prolific` |
+| Stroop | `stroop2` | `stroop` |
+| Go/No-Go (letters or icons) | `gonogoalt2` | `gonogoalt` |
+| 2-alternative forced choice | | `gonogo` |
+| N-back | `nback2` | `nback` |
+| BART | `bart2` | `bart` |
+| Dictator / ultimatum (pre-recorded opponents) | `dictator2`, `ultimatum2` | `dictator`, `ultimatum` |
+| Task switching | | `taskswitch`, `simplified_taskswitch` |
+| Live two-player ultimatum / dictator | `multiplayer` | |
 
-### Multiplayer games (`multiplayer`)
+A Lens 2 task takes the same study-file options and records the same data fields as its classic version, plus `taskVersion: 2`, so results stay comparable. Reaction-time tasks record stimulus-onset and response times with `performance.now()` (`timingVersion: 2`) next to the original fields.
 
-Live two-player ultimatum or dictator game. Participants are paired first come, first served; if no one arrives within `matching.timeout` (default 30 s), a computer partner plays instead (`matching.botFallback: false` turns that off). The partner looks the same either way, and a debrief after the game says which it was (on by default; change the text with `debrief.textBot` / `debrief.textHuman`, or turn it off with `debrief.show: false`).
+Lens 2 options worth knowing:
+
+- `stroop2`, `gonogoalt2`, `nback2`: optional `"startText"` (an i18n key) for the start screen. `stroop2`: `"showFixation": true` shows a "+" between trials.
+- `bart2`: the balloon is an orange ball; `"stimulusStyle": "classic"` brings back the red bubble. `"ballScale"` enlarges it.
+- `dictator2`, `ultimatum2`: `"tapControls": true` adds + and − buttons next to dragging. Dictator's `"matchmakingDelay"` (ms, default 5000) sets the "finding another person" pause.
+- `text2`, `matrix2`, `prolific2`: answers are saved when Next is pressed, missing answers are pointed out under the question, and horizontal choices stack on phones (`"mobileLayout": "row"` keeps one row).
+- Studies with any Lens 2 view end on the Lens 2 final page. `redirectTo` adds a Continue button (e.g. back to Prolific), with optional `redirectText` and `redirectLabel`. `"finalPage": "classic"` or `"lens2"` overrides the choice.
+
+### Multiplayer games
+
+`multiplayer` pairs participants live, first come, first served. If no one else arrives within `matching.timeout` (default 30 s), a computer partner plays instead (`"matching": {"botFallback": false}` turns that off). The partner looks the same either way; a debrief after the game says which it was. It is on by default, and you can change its text (`debrief.textBot`, `debrief.textHuman`) or turn it off (`"debrief": {"show": false}`).
 
 ```json
 { "id": "ug", "type": "multiplayer", "game": "ultimatum", "tokens": 10, "rounds": 3,
   "bot": { "strategy": "fair" }, "bonusPerToken": 0.05 }
 ```
-Other options: `firstProposer` (`random`, `participant`, `partner`), `roles` (`alternate` or `fixed`), `practiceRounds`, `turnTimeout`, bot delays. All are described in `schema/study.schema.json` (hover them in VS Code).
 
-Bots, as in Cut: `fair` offers half and accepts only near-equal splits; `rational` offers half and accepts anything above 0; `hyperRational` offers 1 and accepts anything above 0; `simple` only responds (the participant must always propose).
+Other options: `firstProposer` (`random`, `participant`, `partner`), `roles` (`alternate` or `fixed`), `practiceRounds`, `turnTimeout`, and bot delays. Computer partners follow Cut's rules: `fair` offers half and accepts only near-equal splits; `rational` offers half and accepts anything above 0; `hyperRational` offers 1 and accepts anything above 0; `simple` only responds.
 
-Each participant's data holds their rounds from their side, totals, bonus, decision times, whether the partner was a person or a computer (and which strategy), how long they waited and whether they saw the debrief. The full match data, including who never saw the debrief, comes from the server: see `multiplayer/README.md` in `cutsocial/submission-server`.
+Each participant's data includes their rounds from their side, totals, bonus, decision times, whether the partner was a person or a computer (and which strategy), how long they waited, and whether they saw the debrief. The full match data, including who never reached the debrief, comes from the server (see `multiplayer/README.md` in `cutsocial/submission-server`).
 
-If a study tells participants they play another person, apply Prolific's Deception pre-screener, and keep the debrief on: Prolific requires one for everyone, including people who drop out.
+If participants are told they play another person, apply Prolific's Deception pre-screener and keep the debrief on: Prolific requires one for everyone, including people who drop out.
 
-Demo: `/#/demo-multiplayer/en` (open it in two windows).
+## Writing a study
+
+A study is a file in `public/experiments/`, served at `https://lens.cut.social/#/<file name>/<language>`:
+
+```json
+{
+  "studyId": "my-study",
+  "redirectTo": "https://app.prolific.com/submissions/complete?cc=XXXX",
+  "views": [
+    { "id": "welcome", "type": "text2", "instruction": true, "text": "Welcome! This takes about 10 minutes." },
+    { "id": "bart", "type": "bart2", "reward": 5, "maxPumps": 20, "safePumps": 1, "trials": 10 }
+  ]
+}
+```
+
+- Text in a study file is either plain text or an **i18n key** looked up in `public/locales/en.json`, `fa.json` and `ar.json`, which is how one study runs in several languages. Markdown works in both.
+- Top-level options: `redirectTo`, `submissionNote`, `fontScale` (larger survey text, e.g. `1.2`; tasks are never scaled), `saveProgress` (below), `finalPage`, `metadata` (free-form notes).
+- `schema/study.schema.json` describes every type and option. In VS Code you get autocomplete and an explanation when you hover a key.
+- The `demo-*.json` files are good starting points.
 
 ### Checking a study file
 
-`npm run validate` checks every file in `public/experiments/` against `schema/study.schema.json` and runs checks a schema can't express. `npm run validate -- public/experiments/mystudy.json` checks one file.
+`npm run validate` checks every study file (`npm run validate -- public/experiments/my-study.json` for one). It runs on every pull request too.
 
-- **Errors** (the run fails, and so does the pull-request check): invalid JSON, an unknown view type or key (often a typo, e.g. `"requried"`), wrong value types, `requiredQuestions` pointing past the last question, Stroop codes with no entry in `colors`/`words`, Go/No-Go icons that don't exist, `nback` ≥ `trials`, opponent types no person has.
-- **Warnings** (study runs, but probably not as meant): i18n keys missing from `locales/en.json` (participants see the key), trial counts that don't fit the total, duplicate view ids, missing avatar images, Stroop trials with no correct answer.
-- **Notes** (`-- --notes` to list): keys that do nothing (`help`, `pattern`, the misspelled `conditon`), keys with English text but no Persian/Arabic text.
+- **Errors** stop the check: invalid JSON, an unknown type or key (often a typo), wrong value types, `requiredQuestions` past the last question, Stroop codes missing from `colors`/`words`, Go/No-Go icons that don't exist, `nback` ≥ `trials`, impossible multiplayer settings.
+- **Warnings** mean the study runs, but probably not as intended: i18n keys missing from `en.json` (participants would see the key), trial counts that don't fit the total, duplicate view ids, missing images.
+- **Notes** (`-- --notes`): keys that do nothing, and text without a Persian or Arabic version.
 
-In VS Code, study files get autocomplete and inline errors from the schema (`.vscode/settings.json`). Hover a key to see what it does.
+## Running a study
 
-### Survey Elements
-- **`text`** - Text display and input: Supports instruction pages, text questions, and autocomplete fields
-- **`matrix`** - Matrix questions: Multiple choice questions with various configurations (slider, vertical/horizontal, single/multiple questions)
-- **`prolific`** - Prolific integration: Specialized view for Prolific participant management
+- **Prolific:** add `?PROLIFIC_PID={{%PROLIFIC_PID%}}&STUDY_ID={{%STUDY_ID%}}&SESSION_ID={{%SESSION_ID%}}` to the study link. These are saved with the responses.
+- **Saving as participants go:** `"saveProgress": true` saves every page as soon as it is completed, in addition to the full submission at the end. Use it to see where people drop out, or to recover data if the final save fails. Check that your consent form allows keeping data from people who stop partway.
+- **Balanced conditions:** link to `https://server.cut.social/assign?studies=studyA/en,studyB/en` (plus the Prolific parameters). Each arrival goes to the condition with the fewest participants, counting completions and recent starts, so dropouts free their slot. A returning participant keeps their condition. Counts: `https://server.cut.social/assign/status?studies=studyA/en,studyB/en`. The older `/randomize` links still pick at random.
+- **Data:** responses are stored in MongoDB by the submission server, one document per participant, holding each view's settings next to its response, so the data describes itself. Multiplayer matches are stored in Firestore.
 
-## Getting Started
+## Development
 
-### Prerequisites
+Node 20 (see `.nvmrc`).
 
-- Node.js 20 or newer (see `.nvmrc`)
-- npm or yarn
-
-### Installation
-
-1. Clone the repository:
-```bash
-git clone <repository-url>
-cd lens
-```
-
-2. Install dependencies:
 ```bash
 npm install
-```
-
-### Running the Development Server
-
-Start the development server:
-```bash
-npm start
-```
-
-The application will open at `http://localhost:3000` in your browser.
-
-### Building for Production
-
-Create a production build:
-```bash
+npm start          # http://localhost:3000
+npm test           # game rules and bots
+npm run validate   # study files
 npm run build
 ```
 
-Deploy to GitHub Pages:
-```bash
-npm run deploy
-```
-
-## Using Experiments
-
-### Accessing Experiments
-
-Experiments are accessed via URL in the format:
-```
-/#/{studyId}/{language}
-```
-
-Where:
-- `studyId` is the name of the JSON file in `public/experiments/` (without the `.json` extension)
-- `language` is the language code (e.g., `en`, `fa`, `ar`)
-
-Examples:
-- `/#/bart/en` - BART experiment in English
-- `/#/dictator/fa` - Dictator game in Farsi
-- `/#/demo-comprehensive/en` - Comprehensive demo with all experiment types
-
-### Creating Experiments
-
-1. Create a JSON file in `public/experiments/` following the experiment schema
-2. The JSON file should include:
-   - `studyId`: Unique identifier for the study
-   - `condition`: Condition/variant identifier
-   - `redirectTo`: URL to redirect after completion
-   - `submissionNote`: Translation key for submission message
-   - `metadata`: Study metadata (e.g., maintainer email)
-   - `fontScale` (optional): Text size on survey pages, e.g. `1.2` for 20% larger. Interactive tasks are never scaled, so stimulus sizes stay as designed. Default `1`.
-   - `views`: Array of experiment views/tasks
-
-3. See `public/experiments/demo-comprehensive.json` for a comprehensive example with all experiment types
-
-### Experiment Configuration
-
-Each view in the `views` array can be one of the supported types. Views are executed sequentially, and responses are collected automatically. Interactive tasks (like `bart`, `gonogo`, etc.) handle their own navigation, while survey elements use the standard navigation buttons.
-
-## Architecture
-
-Lens uses React and Material UI to structure the development process while simplifying the study design for experimenters and providing a streamlined experience to respondents. It works by sending users a JSON file containing the tasks and questions and collecting their responses in the same format. See the details [here](https://sites.google.com/view/msrad/cut?authuser=0).
-
-This architecture provides several other functionalities, in addition to facilitating the integration of interactive tasks with conventional survey elements:
-
-* Multilingual survey content with minimal effort
-* Device adaptive research instruments
-* Markdown text formatting
+Pushing to `master` deploys to lens.cut.social through GitHub Actions. `CLAUDE.md` describes the code; `scripts/e2e/` has browser tests for the multiplayer games.
 
 ## Research
 
-We obtained funding from the New School and the Association for Psychological Science (APS) to develop this tool. Research using this platform has been published in the *Journal Personality and Social Psychology Bulletin*:
+Development was funded by The New School and the Association for Psychological Science (APS). Research using this platform:
 
-* Rad, M. S., Ansarinia, M., & Shafir, E. (2023). Temporary self-deprivation can impair cognitive control: evidence from the Ramadan fast. Personality and social psychology bulletin, 49(3), 415-428. https://journals.sagepub.com/doi/full/10.1177/01461672211070385
-
+* Rad, M. S., Ansarinia, M., & Shafir, E. (2023). Temporary self-deprivation can impair cognitive control: Evidence from the Ramadan fast. *Personality and Social Psychology Bulletin*, 49(3), 415–428. https://doi.org/10.1177/01461672211070385

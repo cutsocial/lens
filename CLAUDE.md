@@ -70,7 +70,7 @@ Live two-player ultimatum and dictator games, rebuilt from Cut (see `cut-port-sp
 
 ## Experiments (`public/experiments/*.json`)
 
-Each file is a study. Top-level keys: `studyId`, `condition`, `redirectTo`, `submissionNote` (an i18n key; receives `{{submissionCode}}`), `metadata`, `views[]`. `schema/study.schema.json` defines every view type and option (run `npm run validate` after editing a study file); `public/experiments/demo-comprehensive.json` exercises every classic view type; `README.md` lists the types. Many `mad*.json` files are real published studies, so avoid changing them unless asked.
+Each file is a study. Top-level keys: `studyId`, `condition`, `redirectTo`, `submissionNote` (an i18n key; receives `{{submissionCode}}`), `metadata`, `views[]`. `schema/study.schema.json` defines every view type and option (run `npm run validate` after editing a study file); `public/experiments/demo-comprehensive.json` exercises every classic view type; `demo-lens2.json` every Lens 2 type, and `demo-<task>.json` one Lens 2 task each (linked from `README.md`, which lists the types). Many `mad*.json` files are real published studies, so avoid changing them unless asked.
 
 Prolific integration: `PROLIFIC_PID`, `STUDY_ID`, `SESSION_ID` are read from the URL query string in `Study` and sent with the submission. `ASSIGNMENT_ID` (set by the server's `/assign`) is sent too, only when present.
 

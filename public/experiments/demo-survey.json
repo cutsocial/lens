@@ -1,0 +1,93 @@
+{
+  "studyId": "demo-survey",
+  "condition": "demo",
+  "metadata": {
+    "note": "Single-task demo linked from the README. Same views as in demo-lens2."
+  },
+  "views": [
+    {
+      "id": "lens2.demo.survey_intro",
+      "type": "text2",
+      "instruction": true,
+      "text": "A few example survey questions in the Lens 2 design."
+    },
+    {
+      "id": "lens2.demo.country",
+      "type": "text2",
+      "instruction": false,
+      "text": "lens2.demo.country",
+      "autoComplete": "countries",
+      "required": true
+    },
+    {
+      "id": "lens2.demo.relax",
+      "type": "text2",
+      "instruction": false,
+      "text": "lens2.demo.relax",
+      "placeholder": "lens2.demo.your_answer",
+      "required": false
+    },
+    {
+      "id": "lens2.demo.sleep",
+      "type": "matrix2",
+      "text": "",
+      "direction": "vertical",
+      "requiredQuestions": [
+        0
+      ],
+      "choices": [
+        "lens2.demo.sleep.c1",
+        "lens2.demo.sleep.c2",
+        "lens2.demo.sleep.c3",
+        "lens2.demo.sleep.c4"
+      ],
+      "questions": [
+        "lens2.demo.sleep.q"
+      ]
+    },
+    {
+      "id": "lens2.demo.agree",
+      "type": "matrix2",
+      "text": "lens2.demo.agree.text",
+      "direction": "horizontal",
+      "requiredQuestions": [
+        0,
+        1
+      ],
+      "choices": [
+        "lens2.demo.agree.c1",
+        "lens2.demo.agree.c2",
+        "lens2.demo.agree.c3",
+        "lens2.demo.agree.c4",
+        "lens2.demo.agree.c5"
+      ],
+      "questions": [
+        "lens2.demo.agree.q1",
+        "lens2.demo.agree.q2"
+      ]
+    },
+    {
+      "id": "lens2.demo.alert",
+      "type": "matrix2",
+      "text": "",
+      "slider": true,
+      "showMidMark": true,
+      "direction": "vertical",
+      "requiredQuestions": [
+        0
+      ],
+      "choices": [
+        "lens2.demo.alert.c1",
+        "lens2.demo.alert.c2",
+        "lens2.demo.alert.c3",
+        "lens2.demo.alert.c4",
+        "lens2.demo.alert.c5",
+        "lens2.demo.alert.c6",
+        "lens2.demo.alert.c7"
+      ],
+      "questions": [
+        "lens2.demo.alert.q"
+      ]
+    }
+  ]
+}
