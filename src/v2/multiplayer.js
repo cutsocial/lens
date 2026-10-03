@@ -11,10 +11,15 @@
  * botFallback is false) → rounds → debrief (on by default) → next view.
  *
  * Each round both players see the same board. The proposer moves tokens;
- * the responder watches the split take shape live (the proposer's browser
- * sends it as it changes; display only, not recorded), and Accept / Reject
- * turn on once the offer is sent. A computer proposer moves its tokens one
- * by one during its delay, so the two look alike.
+ * the responder watches them move: the proposer's split arrives as it
+ * changes (display only, not recorded) and is replayed one token at a time,
+ * each coin flying to its pile. Accept / Reject turn on once the whole offer
+ * is on the board and at least MIN_OFFER_MS after the round appeared. The
+ * same replay shows a computer's offer, or one made while the responder was
+ * still reading the last result, so the other player is always seen deciding.
+ *
+ * decisionMs: proposer from the board appearing to Send offer; responder
+ * from Accept / Reject turning on to the choice.
  *
  * The partner is shown the same way whether a person or a computer; the
  * debrief afterwards says which it was (textBot / textHuman).
@@ -25,7 +30,7 @@
  * the debrief was shown, why the match ended, the practice summary, and
  * taskVersion: 2.
  */
-import React, { useEffect, useMemo, useRef, useState } from 'react';
+import React, { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router-dom';
 
@@ -33,13 +38,16 @@ import { languages } from '../utils/i18n';
 import { L2Root, Header, Text, Button, NoticeCard } from './components';
 import { normalizeConfig } from '../multiplayer/config';
 import { whoseTurn, playerSummary } from '../multiplayer/engine';
-import { botOffer } from '../multiplayer/bots';
 import { connect } from '../multiplayer/client';
 import './multiplayer.css';
 
 const HEARTBEAT_MS = 10000;
 const STALE_MS = 30000; // matches the server: a partner silent this long has gone
 const DRAFT_INTERVAL_MS = 350; // at most ~3 updates a second while the proposer moves tokens
+// What the responder sees: the other person's tokens move one at a time, and
+// an offer can't be answered sooner than this after the round appears.
+const MIN_OFFER_MS = 2500;
+const EMPTY = (tokens) => ({ other: 0, pot: tokens, me: 0 });
 
 function Coin({ small, dragging, ...rest }) {
   return <span className={`l2-coin ${small ? 'l2-coin-small' : ''} ${dragging ? 'l2-coin-dragging' : ''}`} aria-hidden="true" {...rest} />;
@@ -50,8 +58,51 @@ function Coin({ small, dragging, ...rest }) {
  * Controlled: `piles` = {other, pot, me}. When `onMove` is given the
  * participant can drag tokens or use + and −; otherwise it only shows.
  */
-function Board({ piles, onMove, t }) {
+function Board({ piles, onMove, flight, onFlightDone, t }) {
   const interactive = typeof onMove === 'function';
+  const rootRef = useRef(null);
+
+  // a coin flying from one pile to another (the other person moving a token)
+  useLayoutEffect(() => {
+    if (!flight || !rootRef.current) return undefined;
+    const root = rootRef.current;
+    const area = (pile) => root.querySelector(pile === 'pot' ? '[data-pile="pot"] .l2-pile' : `[data-pile="${pile}"] .l2-pile`);
+    const fromEl = area(flight.from);
+    const toEl = area(flight.to);
+    const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!fromEl || !toEl || reduce) { onFlightDone(); return undefined; }
+    const centre = (el, end) => {
+      const r = el.getBoundingClientRect();
+      const coins = el.querySelectorAll('.l2-coin');
+      const last = end && coins.length ? coins[coins.length - 1].getBoundingClientRect() : null;
+      // land just after the last coin in the pile, or at the pile's start
+      if (end) {
+        const rtl = getComputedStyle(el).direction === 'rtl';
+        const x = last ? (rtl ? last.left - 12 : last.right + 12) : (rtl ? r.right - 20 : r.left + 20);
+        return { x, y: r.top + r.height / 2 };
+      }
+      return { x: r.left + r.width / 2, y: r.top + r.height / 2 };
+    };
+    const a = centre(fromEl, false);
+    const b = centre(toEl, true);
+    const coin = document.createElement('span');
+    coin.className = 'l2-coin l2-mp-flying';
+    coin.setAttribute('aria-hidden', 'true');
+    coin.style.left = `${a.x - 22}px`;
+    coin.style.top = `${a.y - 22}px`;
+    root.appendChild(coin);
+    const toPot = flight.to === 'pot';
+    const anim = coin.animate([
+      { transform: 'translate(0, 0) scale(1)' },
+      { transform: `translate(${(b.x - a.x) / 2}px, ${(b.y - a.y) / 2 - 18}px) scale(${toPot ? 0.9 : 0.85})`, offset: 0.5 },
+      { transform: `translate(${b.x - a.x}px, ${b.y - a.y}px) scale(${toPot ? 1 : 0.68})` },
+    ], { duration: 340, easing: 'ease-in-out' });
+    let done = false;
+    const finish = () => { if (done) return; done = true; coin.remove(); onFlightDone(); };
+    anim.onfinish = finish;
+    return () => { anim.cancel(); coin.remove(); };
+  }, [flight && flight.key]); // eslint-disable-line react-hooks/exhaustive-deps
+
   const [drag, setDrag] = useState(null);
   const dragRef = useRef(null);
   dragRef.current = drag;
@@ -113,7 +164,7 @@ function Board({ piles, onMove, t }) {
   const other = t('lens2.mp.other');
 
   return (
-    <div className={`l2-token-area ${interactive ? '' : 'l2-mp-board-watch'}`}>
+    <div ref={rootRef} className={`l2-token-area l2-mp-board ${interactive ? '' : 'l2-mp-board-watch'}`}>
       <div className={pileClass('other')} data-pile="other">
         <div className="l2-person-head">
           <div className="l2-avatar l2-avatar-initials" aria-hidden="true">?</div>
@@ -310,11 +361,9 @@ export default function Multiplayer({ content, onStore, studyId, participant }) 
   const round = state ? state.round : null;
   const iPropose = state ? state.proposer === me : false;
   const [mySplit, setMySplit] = useState(null); // proposer's own piles {other, pot, me}
-  const [botSplit, setBotSplit] = useState(null); // what a computer proposer shows while "deciding"
   useEffect(() => {
     if (!state) return;
-    setMySplit({ other: 0, pot: state.tokens, me: 0 });
-    setBotSplit(null);
+    setMySplit(EMPTY(state.tokens));
   }, [matchId, round]); // eslint-disable-line react-hooks/exhaustive-deps
 
   // send the proposer's split as it changes (latest wins; at most one request in flight)
@@ -341,31 +390,73 @@ export default function Multiplayer({ content, onStore, studyId, participant }) 
     });
   };
 
-  // a computer proposer moves its tokens one by one before its offer lands,
-  // so the participant sees a split take shape either way
-  useEffect(() => {
-    if (status !== 'playing' || !partnerIsBot || iPropose || state.phase !== 'propose' || !match.botDueAt) return undefined;
-    const tokens = state.tokens;
-    const give = botOffer(state.players[1 - me].strategy, tokens);
-    const steps = [];
-    for (let k = 0; k < tokens; k++) steps.push(k < give ? 'me' : 'other');
-    // interleave a little, the way people tend to deal tokens
-    for (let k = steps.length - 1; k > 0; k--) { const j = Math.floor(Math.random() * (k + 1)); [steps[k], steps[j]] = [steps[j], steps[k]]; }
-    const end = serverToLocal(match.botDueAt) - 250;
-    const span = Math.max(0, end - Date.now() - 300);
-    const timers = steps.map((to, k) => setTimeout(() => {
-      setBotSplit((p) => {
-        const cur = p || { other: 0, pot: tokens, me: 0 };
-        return { ...cur, pot: cur.pot - 1, [to]: cur[to] + 1 };
-      });
-    }, 300 + (span * (k + 1)) / steps.length));
-    return () => timers.forEach(clearTimeout);
-  }, [status, round, state && state.phase, match && match.botDueAt]); // eslint-disable-line react-hooks/exhaustive-deps
-
-  // ----- moves -----
+  // ----- what the responder sees: the other person's tokens, one at a time -----
+  // The board follows the proposer's split as it arrives (live while they
+  // move tokens, or all at once when the offer is already in, e.g. from a
+  // computer or while the responder was still reading the last result), but
+  // always replays it token by token, so the other person is seen deciding.
   const history = state ? state.history : [];
   const showingResult = history.length > acked;
-  const myDecision = status === 'playing' && !showingResult && turn === me;
+  const watching = status === 'playing' && !!state && !iPropose && !showingResult;
+  const offer = state ? state.offer : null;
+  let target = null;
+  if (state) {
+    if (offer) target = { other: offer.proposerShare, pot: 0, me: offer.responderShare };
+    else if (!partnerIsBot && match.draft && match.draft.round === state.round) {
+      const d = match.draft;
+      target = { other: d.proposerShare, pot: state.tokens - d.proposerShare - d.responderShare, me: d.responderShare };
+    } else target = EMPTY(state.tokens);
+  }
+  const [shown, setShown] = useState(null);
+  const [flight, setFlight] = useState(null); // {from, to, key}
+  const roundSeen = useRef({ key: null, at: 0 });
+  const roundKey = `${matchId}:${round}`;
+  if (watching && roundSeen.current.key !== roundKey) roundSeen.current = { key: roundKey, at: Date.now() };
+  useEffect(() => {
+    if (!state) return;
+    setShown(EMPTY(state.tokens));
+    setFlight(null);
+  }, [matchId, round]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  const same = (x, y) => !!x && !!y && x.other === y.other && x.me === y.me && x.pot === y.pot;
+  useEffect(() => {
+    if (!watching || flight || !shown || !target || same(shown, target)) return undefined;
+    // next single move: take back first, then deal into a pile still short of its target
+    let from = null; let to = null;
+    if (shown.other > target.other) { from = 'other'; to = 'pot'; }
+    else if (shown.me > target.me) { from = 'me'; to = 'pot'; }
+    else {
+      const short = ['other', 'me'].flatMap((k) => Array(Math.max(0, target[k] - shown[k])).fill(k));
+      if (!short.length || shown.pot <= 0) return undefined;
+      from = 'pot'; to = short[Math.floor(Math.random() * short.length)];
+    }
+    const gap = Math.abs(shown.other - target.other) + Math.abs(shown.me - target.me);
+    const first = shown.pot === state.tokens && shown.other === 0 && shown.me === 0;
+    const wait = first ? 700 + Math.random() * 500 : (gap > 4 ? 60 : 90) + Math.random() * 140;
+    const id = setTimeout(() => setFlight({ from, to, key: Date.now() }), wait);
+    return () => clearTimeout(id);
+  }, [watching, flight, shown, target && target.other, target && target.me, target && target.pot]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  const landFlight = () => {
+    setShown((p) => (flight && p ? { ...p, [flight.from]: p[flight.from] - 1, [flight.to]: p[flight.to] + 1 } : p));
+    setFlight(null);
+  };
+
+  // the offer can be answered once it is fully on the board and MIN_OFFER_MS have passed
+  const [, setTick] = useState(0);
+  const offerOnBoard = watching && !!offer && !flight && same(shown, target);
+  const sinceSeen = Date.now() - roundSeen.current.at;
+  const offerReady = offerOnBoard && sinceSeen >= MIN_OFFER_MS;
+  useEffect(() => {
+    if (!offerOnBoard || offerReady) return undefined;
+    const id = setTimeout(() => setTick((n) => n + 1), MIN_OFFER_MS - sinceSeen + 20);
+    return () => clearTimeout(id);
+  }, [offerOnBoard, offerReady]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  // ----- moves -----
+  // Decision time starts when the participant can act: the proposer when the
+  // board appears, the responder when Accept / Reject turn on.
+  const myDecision = status === 'playing' && !showingResult && turn === me && (iPropose || offerReady);
   const decisionKey = state ? `${state.round}-${state.phase}` : null;
   if (myDecision && shownAt.current.key !== decisionKey) shownAt.current = { key: decisionKey, at: performance.now() };
 
@@ -518,24 +609,18 @@ export default function Multiplayer({ content, onStore, studyId, participant }) 
       body = null; // moving on (see effect above)
     } else {
       const tokens = state.tokens;
-      const offer = state.offer;
       let piles;
       if (iPropose) {
         piles = offer
           ? { other: offer.responderShare, pot: 0, me: offer.proposerShare }
-          : (mySplit || { other: 0, pot: tokens, me: 0 });
-      } else if (offer) {
-        piles = { other: offer.proposerShare, pot: 0, me: offer.responderShare };
-      } else if (partnerIsBot) {
-        piles = botSplit || { other: 0, pot: tokens, me: 0 };
+          : (mySplit || EMPTY(tokens));
       } else {
-        const d = match.draft && match.draft.round === state.round ? match.draft : null;
-        piles = d
-          ? { other: d.proposerShare, pot: tokens - d.proposerShare - d.responderShare, me: d.responderShare }
-          : { other: 0, pot: tokens, me: 0 };
+        // the replayed board; while a coin is in the air it has left its pile
+        piles = shown || EMPTY(tokens);
+        if (flight) piles = { ...piles, [flight.from]: piles[flight.from] - 1 };
       }
       const proposing = iPropose && state.phase === 'propose';
-      const responding = !iPropose && state.phase === 'respond';
+      const responding = !iPropose && offerReady;
       const done = proposing && piles.pot === 0;
 
       body = (
@@ -544,7 +629,8 @@ export default function Multiplayer({ content, onStore, studyId, participant }) 
             source={t(iPropose ? 'lens2.mp.role_proposer' : 'lens2.mp.role_responder', { tokens })}
             className="l2-rule"
           />
-          <Board piles={piles} onMove={proposing && !sending ? moveToken : undefined} t={t} />
+          <Board piles={piles} onMove={proposing && !sending ? moveToken : undefined}
+            flight={iPropose ? null : flight} onFlightDone={landFlight} t={t} />
           {proposing && (
             <Button onClick={() => done && send({ type: 'propose', proposerShare: piles.me, responderShare: piles.other })}
               disabled={!done || sending} variant={done ? 'primary' : 'secondary'}>
