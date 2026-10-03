@@ -1612,6 +1612,11 @@
           "type": "number",
           "minimum": 0,
           "description": "Money per token, for Prolific bonuses."
+        },
+        "turnTimeout": {
+          "type": "integer",
+          "minimum": 10000,
+          "description": "If the player whose turn it is does not move for this long (ms), they are treated as having left and the match ends. Default 90000."
         }
       }
     }

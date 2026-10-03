@@ -39,6 +39,9 @@ export const DEFAULTS = {
     textBot: 'multiplayer.debrief.bot',
     textHuman: 'multiplayer.debrief.human',
   },
+  // If the player whose turn it is doesn't move for this long (ms), they are
+  // treated as having left and the match ends for both (e.g. a closed tab).
+  turnTimeout: 90000,
   // Optional: money per token, for computing Prolific bonuses.
   bonusPerToken: null,
 };
@@ -68,6 +71,7 @@ export function normalizeConfig(view) {
     matching: { ...DEFAULTS.matching, ...(v.matching || {}) },
     bot: { ...DEFAULTS.bot, ...(v.bot || {}) },
     debrief: { ...DEFAULTS.debrief, ...(v.debrief || {}) },
+    turnTimeout: v.turnTimeout ?? DEFAULTS.turnTimeout,
     bonusPerToken: v.bonusPerToken ?? DEFAULTS.bonusPerToken,
   };
 
@@ -82,6 +86,7 @@ export function normalizeConfig(view) {
     if (!isInt(config.bot[k]) || config.bot[k] < 0) throw new ConfigError(`"bot.${k}" must be 0 or more milliseconds`);
   }
   if (!isInt(config.matching.timeout) || config.matching.timeout < 0) throw new ConfigError('"matching.timeout" must be 0 or more milliseconds');
+  if (!isInt(config.turnTimeout) || config.turnTimeout < 10000) throw new ConfigError('"turnTimeout" must be at least 10000 milliseconds');
   if (config.bonusPerToken !== null && !(typeof config.bonusPerToken === 'number' && config.bonusPerToken >= 0)) {
     throw new ConfigError('"bonusPerToken" must be a number of 0 or more');
   }

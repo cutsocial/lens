@@ -36,6 +36,7 @@ test('config: defaults fill in', () => {
   assert.deepEqual(c.bot, DEFAULTS.bot);
   assert.equal(c.debrief.show, true);
   assert.equal(c.bonusPerToken, null);
+  assert.equal(c.turnTimeout, 90000);
 });
 
 test('config: partial nested settings keep the other defaults', () => {
@@ -53,6 +54,7 @@ test('config: rejects settings that cannot work', () => {
     { game: 'ultimatum', tokens: 5, bot: { strategy: 'greedy' } },
     { game: 'ultimatum', tokens: 5, bot: { reactionDelay: -1 } },
     { game: 'ultimatum', tokens: 5, bonusPerToken: -0.1 },
+    { game: 'ultimatum', tokens: 5, turnTimeout: 500 },
     // the simple bot never proposes
     { game: 'ultimatum', tokens: 5, bot: { strategy: 'simple' } },
     { game: 'ultimatum', tokens: 5, rounds: 3, firstProposer: 'participant', bot: { strategy: 'simple' } },
