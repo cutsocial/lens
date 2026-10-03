@@ -36,7 +36,7 @@ import Submission2 from './v2/submission2';
 // Lens 2 view types draw their own surfaces and Next buttons, so the study page
 // doesn't wrap them in a card or add the shared Navigation.
 const LENS2_SURVEY_TYPES = ['text2', 'matrix2', 'prolific2'];
-const LENS2_TYPES = ['stroop2', 'gonogoalt2', 'nback2', 'bart2', 'dictator2', 'ultimatum2', ...LENS2_SURVEY_TYPES];
+const LENS2_TYPES = ['stroop2', 'gonogoalt2', 'nback2', 'bart2', 'dictator2', 'ultimatum2', 'multiplayer', ...LENS2_SURVEY_TYPES];
 import BART from './bart';
 import GoNoGo from './gonogo';
 import Stroop from './stroop';
@@ -49,6 +49,7 @@ import NBack from './nback';
 import GoNoGoAlt from './gonogoalt';
 import ReactGA from "react-ga4";
 import { newSubmissionId, saveView } from './utils/api';
+import Multiplayer from './v2/multiplayer';
 
 function useQuery() {
   return new URLSearchParams(useLocation().search);
@@ -205,6 +206,14 @@ export default function Study(props) {
         return <Dictator2 onStore={storeData} content={view} key={view.id} />;
       case 'ultimatum2':
         return <Ultimatum2 onStore={storeData} content={view} key={view.id} />;
+      case 'multiplayer':
+        return <Multiplayer onStore={storeData} content={view} key={view.id} studyId={studyId}
+          participant={{
+            submissionId: submissionId.current,
+            PROLIFIC_PID: query.get('PROLIFIC_PID'),
+            STUDY_ID: query.get('STUDY_ID'),
+            SESSION_ID: query.get('SESSION_ID'),
+          }} />;
       case 'text2':
         return <Text2 onStore={storeData} content={view} key={view.id} />;
       case 'matrix2':

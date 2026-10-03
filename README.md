@@ -42,6 +42,24 @@ Lens supports the following experiment and question types:
 - `stroop2`, `gonogoalt2` and `nback2` accept an optional `"startText"` (an i18n key) for the start screen.
 - `text2`, `matrix2`, `prolific2`: survey pages in the Lens 2 design. Same options and responses as `text`, `matrix`, `prolific`. The answer is stored when Next is pressed (so a question on a study's last page is saved), missing answers show under the question, and horizontal choices stack into rows on phones (`"mobileLayout": "row"` keeps one row; best for up to about 5 short labels). `prolific2` stores a prefilled value without the participant editing it.
 
+### Multiplayer games (`multiplayer`)
+
+Live two-player ultimatum or dictator game. Participants are paired first come, first served; if no one arrives within `matching.timeout` (default 30 s), a computer partner plays instead (`matching.botFallback: false` turns that off). The partner looks the same either way, and a debrief after the game says which it was (on by default; change the text with `debrief.textBot` / `debrief.textHuman`, or turn it off with `debrief.show: false`).
+
+```json
+{ "id": "ug", "type": "multiplayer", "game": "ultimatum", "tokens": 10, "rounds": 3,
+  "bot": { "strategy": "fair" }, "bonusPerToken": 0.05 }
+```
+Other options: `firstProposer` (`random`, `participant`, `partner`), `roles` (`alternate` or `fixed`), `practiceRounds`, `turnTimeout`, bot delays. All are described in `schema/study.schema.json` (hover them in VS Code).
+
+Bots, as in Cut: `fair` offers half and accepts only near-equal splits; `rational` offers half and accepts anything above 0; `hyperRational` offers 1 and accepts anything above 0; `simple` only responds (the participant must always propose).
+
+Each participant's data holds their rounds from their side, totals, bonus, decision times, whether the partner was a person or a computer (and which strategy), how long they waited and whether they saw the debrief. The full match data, including who never saw the debrief, comes from the server: see `multiplayer/README.md` in `cutsocial/submission-server`.
+
+If a study tells participants they play another person, apply Prolific's Deception pre-screener, and keep the debrief on: Prolific requires one for everyone, including people who drop out.
+
+Demo: `/#/demo-multiplayer/en` (open it in two windows).
+
 ### Checking a study file
 
 `npm run validate` checks every file in `public/experiments/` against `schema/study.schema.json` and runs checks a schema can't express. `npm run validate -- public/experiments/mystudy.json` checks one file.

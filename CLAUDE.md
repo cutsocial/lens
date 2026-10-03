@@ -54,16 +54,19 @@ Lens 2 tasks are new view types that sit next to the classic ones; classic types
 - `tokenGame.js`: shared dictator/ultimatum screen (coin piles per person, pointer-event drag, optional `tapControls`, dictator `matchmakingDelay`).
 - `survey.js`: survey page shell (Next button, inline required message), `ScaleSlider`, `CountryPicker`. `text2.js`, `matrix2.js`, `prolific2.js` use it. Survey views store on Next with `onStore(data, true)` (not in an unmount cleanup), so `Study.onNext` skips its required check for Lens 2 types; survey CSS is in rem so `fontScale` applies.
 - `submission2.js`: Lens 2 final page, used when a study has any Lens 2 view (override with `finalPage`). Saving and retries are in `src/utils/useSubmission.js`, shared with classic `src/submission.js`.
-- Current Lens 2 types: `stroop2`, `gonogoalt2`, `nback2`, `bart2`, `dictator2`, `ultimatum2`, `text2`, `matrix2`, `prolific2`. Demo: `/#/demo-lens2/en`.
+- Current Lens 2 types: `stroop2`, `gonogoalt2`, `nback2`, `bart2`, `dictator2`, `ultimatum2`, `text2`, `matrix2`, `prolific2`, and `multiplayer` (below). Demo: `/#/demo-lens2/en`.
 
-## Multiplayer games (`src/multiplayer/`, in development)
+## Multiplayer games (view type `multiplayer`)
 
-Live two-player ultimatum and dictator games, rebuilt from Cut (see `cut-port-spec.md` in the project docs). Not yet a view type: matching and live moves will run on Firestore in `jamasp-gcp-project`.
+Live two-player ultimatum and dictator games, rebuilt from Cut (see `cut-port-spec.md` in the project docs). Matching and moves run on the server (`cutsocial/submission-server`, `multiplayer/`, routes under `server.cut.social/mp`), which stores matches in the `lens` Firestore database in `jamasp-gcp-project` and checks every move with the same rules.
 
-- `config.js`: study-file options and defaults (`normalizeConfig`); mirrored for authors in `schema/study.schema.json` `$defs/multiplayer`, which joins the view `oneOf` only once the view ships.
-- `engine.js`: pure game rules over a plain state object (`createMatch`, `applyMove`, `whoseTurn`), plus data output: `moveRows` (one row per move, long format) and `playerSummary` (one participant's view, totals, bonus, partner kind/strategy). No React or browser APIs, so a server can check moves with the same code, and a match replays from its move log.
-- `bots.js`: Cut's bot rules exactly (fair, rational, hyperRational, simple). Change them only with the user's agreement; they define what published data meant.
-- Bot disclosure is a debrief after the game, researcher-controlled (`debrief.show`, `textBot`, `textHuman`; on by default). Prolific requires a debrief for everyone in deception studies, including dropouts.
+- `src/multiplayer/config.js`: study-file options and defaults (`normalizeConfig`); mirrored for authors in `schema/study.schema.json` `$defs/multiplayer`. The validator runs `normalizeConfig` on every multiplayer view.
+- `src/multiplayer/engine.js`, `bots.js`: pure game rules and Cut's bots (fair, rational, hyperRational, simple), plus data output (`moveRows`, `playerSummary`). The server has a copy in `multiplayer/engine/`; change rules here first (tests: `npm test`), then copy them there. Change bot rules only with the user's agreement; they define what published data meant.
+- `src/multiplayer/client.js`: anonymous Firebase sign-in, calls to `/mp`, live updates of the participant's own match (Firestore `onSnapshot`). Firebase is loaded only when a study has a multiplayer view (separate chunks). `VITE_MP_DEV=1` swaps Firebase for the server's local dev mode (polling).
+- `src/v2/multiplayer.js`: the screen. Instructions → optional practice against a computer → finding a partner (computer after `matching.timeout` unless `botFallback` is false) → rounds (drag or +/−) → debrief (on by default; `textBot`/`textHuman`) → stores `playerSummary` + matchId, waitMs, endReason, debrief time, practice summary, `taskVersion: 2`. Heartbeats every 10 s; a partner silent for 30 s, or not moving within `turnTimeout` on their turn, ends the match as abandoned.
+- The partner looks the same whether a person or a computer; the debrief says which. Prolific requires a debrief for everyone in deception studies (incl. dropouts): the server's `/mp/export` lists who never saw it.
+- Browser tests: `scripts/e2e/` (two players, computer partner, practice in Persian, partner leaving, silent partner), against the server's local dev mode. See its README.
+- Demo: `/#/demo-multiplayer/en` (open in two windows). `test-multiplayer.json` is for the tests only.
 
 ## Experiments (`public/experiments/*.json`)
 
@@ -77,7 +80,7 @@ Google Analytics (`react-ga4`, ID hard-coded in `src/index.js` and `src/study.js
 
 ## Backend and infrastructure
 
-- Submissions go to a Cloud Run server at `server.cut.social` (GCP project `jamasp-gcp-project`), which writes to MongoDB Atlas. Its code is in the private repo `cutsocial/submission-server`. It does not store participant IP addresses (`STORE_IP` is off).
+- Submissions go to a Cloud Run server at `server.cut.social` (GCP project `jamasp-gcp-project`), which writes to MongoDB Atlas. Multiplayer matches go to Firestore (database `lens`) through the same server. Its code is in the private repo `cutsocial/submission-server`. It does not store participant IP addresses (`STORE_IP` is off).
 - Heroku is no longer used. If you come across a Heroku reference (URLs, config, docs, comments), flag it to the user. As of the last check there were none in the repo.
 
 ## Roadmap

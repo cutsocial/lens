@@ -1,0 +1,27 @@
+/* Multiplayer games: only what the shared Lens 2 classes don't cover. */
+.l2-mp-wait {
+  margin-block: auto;
+}
+.l2-mp-wait .l2-spinner {
+  width: 28px;
+  height: 28px;
+}
+.l2-mp-offer {
+  margin-block-start: auto;
+}
+.l2-mp-choices {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-block-end: auto;
+}
+/* the round result sits in the page flow, not over a board */
+.l2-sheet.l2-mp-result {
+  position: static;
+  margin-block: auto;
+  border-radius: var(--l2-radius-card);
+}
+.l2-mp-debrief-text {
+  padding-block-start: 18px;
+  border-block-start: 1px solid rgba(255, 255, 255, 0.08);
+}
