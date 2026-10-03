@@ -6,20 +6,18 @@
  *   still show the completion note and participants aren't stuck
  * - no participant data or Prolific IDs go to Google Analytics, only errors
  *
+ * `presetSubmissionId` is the id the study already used for per-page saves.
+ *
  * Returns {status: 'sending' | 'saved' | 'failed', submissionCode}.
  */
 import { useEffect, useRef, useState } from 'react';
 import ReactGA from 'react-ga4';
 
-const API = 'https://server.cut.social/api/v1';
+import { API, newSubmissionId } from './api';
+
 const MAX_ATTEMPTS = 5;
 
-const newSubmissionId = () =>
-  (window.crypto && window.crypto.randomUUID)
-    ? window.crypto.randomUUID()
-    : Date.now().toString(36) + Math.random().toString(36).slice(2);
-
-export default function useSubmission(submission, studyId) {
+export default function useSubmission(submission, studyId, presetSubmissionId) {
   const [status, setStatus] = useState('sending');
   const [submissionCode, setSubmissionCode] = useState(undefined);
   const started = useRef(false);
@@ -28,7 +26,9 @@ export default function useSubmission(submission, studyId) {
     if (started.current) return;   // submit exactly once
     started.current = true;
 
-    const submissionId = newSubmissionId();
+    // The study creates the id at its start so per-page saves and the final
+    // submission share it.
+    const submissionId = presetSubmissionId || newSubmissionId();
     const payload = JSON.stringify({ ...submission, submissionId });
 
     const send = async (attempt) => {
