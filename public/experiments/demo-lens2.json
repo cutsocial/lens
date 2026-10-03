@@ -4,12 +4,96 @@
   "redirectTo": "https://cut.social",
   "submissionNote": "submission.note",
   "metadata": {
-    "note": "Lens 2 task demos. Classic equivalents are in demo-comprehensive."
+    "note": "Lens 2 survey pages and task demos. Classic equivalents are in demo-comprehensive."
   },
   "views": [
     {
+      "id": "lens2.demo.survey_intro",
+      "type": "text2",
+      "instruction": true,
+      "text": "lens2.demo.survey_intro"
+    },
+    {
+      "id": "lens2.demo.country",
+      "type": "text2",
+      "instruction": false,
+      "text": "lens2.demo.country",
+      "autoComplete": "countries",
+      "required": true
+    },
+    {
+      "id": "lens2.demo.relax",
+      "type": "text2",
+      "instruction": false,
+      "text": "lens2.demo.relax",
+      "placeholder": "lens2.demo.your_answer",
+      "required": false
+    },
+    {
+      "id": "lens2.demo.sleep",
+      "type": "matrix2",
+      "text": "",
+      "direction": "vertical",
+      "requiredQuestions": [
+        0
+      ],
+      "choices": [
+        "lens2.demo.sleep.c1",
+        "lens2.demo.sleep.c2",
+        "lens2.demo.sleep.c3",
+        "lens2.demo.sleep.c4"
+      ],
+      "questions": [
+        "lens2.demo.sleep.q"
+      ]
+    },
+    {
+      "id": "lens2.demo.agree",
+      "type": "matrix2",
+      "text": "lens2.demo.agree.text",
+      "direction": "horizontal",
+      "requiredQuestions": [
+        0,
+        1
+      ],
+      "choices": [
+        "lens2.demo.agree.c1",
+        "lens2.demo.agree.c2",
+        "lens2.demo.agree.c3",
+        "lens2.demo.agree.c4",
+        "lens2.demo.agree.c5"
+      ],
+      "questions": [
+        "lens2.demo.agree.q1",
+        "lens2.demo.agree.q2"
+      ]
+    },
+    {
+      "id": "lens2.demo.alert",
+      "type": "matrix2",
+      "text": "",
+      "slider": true,
+      "showMidMark": true,
+      "direction": "vertical",
+      "requiredQuestions": [
+        0
+      ],
+      "choices": [
+        "lens2.demo.alert.c1",
+        "lens2.demo.alert.c2",
+        "lens2.demo.alert.c3",
+        "lens2.demo.alert.c4",
+        "lens2.demo.alert.c5",
+        "lens2.demo.alert.c6",
+        "lens2.demo.alert.c7"
+      ],
+      "questions": [
+        "lens2.demo.alert.q"
+      ]
+    },
+    {
       "id": "lens2.intro",
-      "type": "text",
+      "type": "text2",
       "instruction": true,
       "text": "lens2.stroop.intro"
     },
@@ -72,7 +156,7 @@
     },
     {
       "id": "lens2.stroop.main_intro",
-      "type": "text",
+      "type": "text2",
       "instruction": true,
       "text": "lens2.stroop.main_intro"
     },
@@ -149,7 +233,7 @@
     },
     {
       "id": "lens2.gonogo.intro",
-      "type": "text",
+      "type": "text2",
       "instruction": true,
       "text": "lens2.gonogo.intro"
     },
@@ -206,7 +290,7 @@
     },
     {
       "id": "lens2.nback.intro",
-      "type": "text",
+      "type": "text2",
       "instruction": true,
       "text": "lens2.nback.intro"
     },
@@ -250,7 +334,7 @@
     },
     {
       "id": "lens2.bart.intro",
-      "type": "text",
+      "type": "text2",
       "instruction": true,
       "text": "lens2.bart.intro"
     },
@@ -264,7 +348,7 @@
     },
     {
       "id": "lens2.dictator.intro",
-      "type": "text",
+      "type": "text2",
       "instruction": true,
       "text": "lens2.dictator.intro"
     },
@@ -324,7 +408,7 @@
     },
     {
       "id": "lens2.ultimatum.intro",
-      "type": "text",
+      "type": "text2",
       "instruction": true,
       "text": "lens2.ultimatum.intro"
     },
@@ -389,7 +473,7 @@
     },
     {
       "id": "lens2.done",
-      "type": "text",
+      "type": "text2",
       "instruction": true,
       "text": "done"
     }
