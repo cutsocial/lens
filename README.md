@@ -20,6 +20,8 @@ Replace `/en` with `/fa` or `/ar` to see Persian or Arabic.
 
 The original designs (Lens 1, release `v1.0`) still run every existing study unchanged: [2-alternative forced choice](https://lens.cut.social/#/gonogo/en), [task switching](https://lens.cut.social/#/taskswitch/en), [simplified task switching](https://lens.cut.social/#/simplified_taskswitch/en), and [all classic types in one study](https://lens.cut.social/#/demo-comprehensive/en).
 
+**Make your own study** with the [study builder](https://lens.cut.social/#/builder): pick pages from a menu, fill in forms (or edit the JSON), and see each page live as you go. See [Building a study](#building-a-study).
+
 ## Task types
 
 A study is a list of views, shown in order. Each view has a `type`:
