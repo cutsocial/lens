@@ -181,11 +181,18 @@ export function whoseTurn(state) {
 
 /**
  * One row per move (long format, ready for R). `round` is 1-based here.
+ * Respond rows repeat the offer they answered, so each row stands alone.
  * Each row says whether the player's partner was a bot, and which strategy.
  */
 export function moveRows(state) {
+  // a "respond" row also carries the offer it answered (the round's proposal)
+  const offers = {};
+  for (const m of state.moves) {
+    if (m.type === 'propose') offers[m.round] = m;
+  }
   return state.moves.map((m) => {
     const me = state.players[m.player];
+    const offer = m.type === 'respond' ? offers[m.round] : m;
     const partner = state.players[1 - m.player];
     return {
       matchId: state.matchId,
@@ -199,8 +206,8 @@ export function moveRows(state) {
       partnerId: partner.id,
       partnerKind: partner.kind,
       partnerStrategy: partner.kind === 'bot' ? partner.strategy : null,
-      proposerShare: m.proposerShare ?? null,
-      responderShare: m.responderShare ?? null,
+      proposerShare: offer && offer.proposerShare !== undefined ? offer.proposerShare : null,
+      responderShare: offer && offer.responderShare !== undefined ? offer.responderShare : null,
       response: m.response ?? null,
       at: m.at,
       decisionMs: m.decisionMs,

@@ -202,6 +202,11 @@ test('records: long-format rows say who the partner was', () => {
     { round: r0.round, move: r0.move, playerId: r0.playerId, role: r0.role, partnerKind: r0.partnerKind, partnerStrategy: r0.partnerStrategy, decisionMs: r0.decisionMs },
     { round: 1, move: 'propose', playerId: 'A', role: 'proposer', partnerKind: 'bot', partnerStrategy: 'rational', decisionMs: 500 },
   );
+  const respond = rows.filter((r) => r.move === 'respond');
+  for (const r of respond) {
+    const prop = rows.find((x) => x.move === 'propose' && x.round === r.round);
+    assert.deepEqual([r.proposerShare, r.responderShare], [prop.proposerShare, prop.responderShare], 'respond row carries its offer');
+  }
   const botRow = rows.find((r) => r.playerKind === 'bot');
   assert.equal(botRow.partnerKind, 'human');
   assert.equal(botRow.partnerStrategy, null);
