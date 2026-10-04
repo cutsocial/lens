@@ -159,7 +159,7 @@ with sync_playwright() as p:
     pg.get_by_label("For Prolific (records each participant's Prolific IDs)").uncheck()
     assert pg.locator(".lb-link").inner_text().endswith("#/demo-lens2/fa")
     pg.get_by_label("Condition").fill("changed"); st=status(); print("after an edit:", st); assert st.startswith("Live, but")
-    pg.get_by_label("Study id (file name)").fill("brand-new-study"); st=status(); print("new id:", st); assert st.startswith("Not published yet")
+    pg.get_by_label("Study id (file name)").fill("brand-new-study"); st=status(); print("new id:", st); assert st.startswith("Not published yet. To publish")
     if SHOTS: pg.screenshot(path=f"{SHOTS}/b-link.png")
 
     print("page errors:", errs[:5]); assert not errs
