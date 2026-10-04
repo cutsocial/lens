@@ -21,7 +21,7 @@ import {
 import {
   Add as AddIcon, Delete as DeleteIcon, ContentCopy as CopyIcon, ArrowUpward as UpIcon,
   ArrowDownward as DownIcon, FileDownload as DownloadIcon, FolderOpen as OpenIcon,
-  NoteAdd as NewIcon, Settings as SettingsIcon, ErrorOutline as ErrorIcon, WarningAmber as WarnIcon,
+  NoteAdd as NewIcon, Settings as SettingsIcon, DragIndicator as DragIcon, ErrorOutline as ErrorIcon, WarningAmber as WarnIcon,
 } from '@mui/icons-material';
 
 import { makeChecker } from '../studyCheck/check';
@@ -75,6 +75,25 @@ function PageList({ study, selected, onSelect, onAdd, onMove, onDuplicate, onDel
   const [anchor, setAnchor] = useState(null);
   const views = study.views || [];
   const box = useRef(null);
+  // drag and drop: the page being dragged, and where it would land (0 = before the first page)
+  const [drag, setDrag] = useState(null);
+  const [dropAt, setDropAt] = useState(null);
+  const endDrag = () => { setDrag(null); setDropAt(null); };
+  const overPage = (e, i) => {
+    if (drag === null) return;
+    e.preventDefault();
+    e.dataTransfer.dropEffect = 'move';
+    const r = e.currentTarget.getBoundingClientRect();
+    setDropAt(e.clientY < r.top + r.height / 2 ? i : i + 1);
+  };
+  const dropPage = (e) => {
+    e.preventDefault();
+    if (drag !== null && dropAt !== null) {
+      const to = dropAt > drag ? dropAt - 1 : dropAt;
+      if (to !== drag) onMove(drag, to);
+    }
+    endDrag();
+  };
   // keep the selected page in sight (e.g. when the cursor in the JSON moves to another page)
   useEffect(() => {
     const on = box.current && box.current.querySelector('.lb-page-on');
@@ -87,16 +106,22 @@ function PageList({ study, selected, onSelect, onAdd, onMove, onDuplicate, onDel
         {issueCount('settings') > 0 && <span className="lb-badge">{issueCount('settings')}</span>}
       </button>
       <div className="lb-pages-head">Pages <span className="lb-count">{views.length}</span></div>
-      <ol className="lb-page-list">
+      <ol className="lb-page-list" onDragOver={(e) => { if (drag !== null) e.preventDefault(); }} onDrop={dropPage}>
         {views.map((v, i) => (
-          <li key={`${v.id}-${i}`}>
-            <button type="button" className={`lb-page ${selected === i ? 'lb-page-on' : ''}`} onClick={() => onSelect(i)}>
+          <li key={`${v.id}-${i}`}
+            className={[drag === i ? 'lb-dragging' : '', dropAt === i && drag !== null && drag !== i && drag !== i - 1 ? 'lb-drop-before' : '',
+              dropAt === i + 1 && i === views.length - 1 && drag !== null && drag !== i ? 'lb-drop-after' : ''].join(' ').trim() || undefined}
+            onDragOver={(e) => overPage(e, i)}>
+            <button type="button" className={`lb-page ${selected === i ? 'lb-page-on' : ''}`} onClick={() => onSelect(i)}
+              draggable onDragStart={(e) => { setDrag(i); e.dataTransfer.effectAllowed = 'move'; e.dataTransfer.setData('text/plain', String(i + 1)); }}
+              onDragEnd={endDrag} title="Drag to move">
               <span className="lb-page-num">{i + 1}</span>
               <span className="lb-page-body">
                 <span className="lb-page-title">{TYPE_LABEL[v.type] || v.type}</span>
                 <span className="lb-page-sub">{pageSummary(study, v, lang, locales) || v.id}</span>
               </span>
               {issueCount(i) > 0 && <span className="lb-badge">{issueCount(i)}</span>}
+              <DragIcon className="lb-drag-handle" fontSize="small" aria-hidden="true" />
             </button>
             {selected === i && (
               <span className="lb-page-tools">
@@ -169,7 +194,7 @@ function SettingsEditor({ ctx }) {
       <div className="lb-editor-head"><div><div className="lb-kicker">Study</div><h2>Settings</h2></div></div>
       <Issues items={ctx.issuesFor('settings')} />
       <ObjectFields ctx={ctx} path={[]} node={studySchema} skip={['views', 'strings', '$schema', 'metadata', 'conditon', 'studyId']} />
-      <div className="lb-field">
+      <div className="lb-field lb-field-after">
         <TextField label="Notes for researchers (not shown to participants)" value={note} multiline minRows={2} fullWidth size="small"
           onChange={(e) => ctx.setStudy((s) => setIn(s, ['metadata'], { ...(s.metadata || {}), note: e.target.value || undefined }))} />
       </div>

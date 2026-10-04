@@ -35,16 +35,16 @@
       "description": "Where the finish button sends participants, e.g. the Prolific completion URL."
     },
     "redirectText": {
-      "type": "string",
-      "description": "Lens 2 final page: text above the Continue button (i18n key or plain text)."
+      "$ref": "#/$defs/i18n",
+      "description": "Lens 2 final page: text above the Continue button."
     },
     "redirectLabel": {
-      "type": "string",
-      "description": "Lens 2 final page: label of the Continue button (i18n key or plain text)."
+      "$ref": "#/$defs/i18n",
+      "description": "Lens 2 final page: label of the Continue button. Default \"Continue\"."
     },
     "submissionNote": {
-      "type": "string",
-      "description": "Note shown after responses are saved (i18n key or plain text)."
+      "$ref": "#/$defs/i18n",
+      "description": "Shown once responses are saved. Can include the completion code as {{submissionCode}}."
     },
     "finalPage": {
       "enum": [
@@ -61,7 +61,7 @@
     },
     "saveProgress": {
       "type": "boolean",
-      "description": "Save each page as it is stored (rows in <studyId>.partial). Only enable when consent covers partial data."
+      "description": "Save each page as the participant finishes it, not only at the end (stored as <studyId>.partial). Turn on only if your consent form covers data from people who stop partway."
     },
     "strings": {
       "type": "object",

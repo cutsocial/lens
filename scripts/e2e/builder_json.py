@@ -2,7 +2,8 @@
 apply to the study (page list, preview), broken JSON is flagged and not
 applied, the cursor selects pages, and a round trip through the JSON view
 leaves the file identical.  Run with `npm start` running:
-python scripts/e2e/builder_json.py"""
+python scripts/e2e/builder_json.py [screenshot-dir]
+Also: study settings highlight in the JSON, and dragging pages in the page list."""
 from playwright.sync_api import sync_playwright
 import json, os, sys
 ROOT=os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -99,6 +100,32 @@ with sync_playwright() as p:
     if got!=orig:
         print([ (i,a.get("id"),bb.get("id")) for i,(a,bb) in enumerate(zip(got["views"],orig["views"])) if a!=bb][:3], set(got)^set(orig))
     assert got==orig
+    # study settings: in the JSON view, the top-level settings lines are highlighted
+    pg.locator("button.lb-page-settings").click(); pg.wait_for_timeout(400)
+    hl=pg.evaluate("() => [...document.querySelectorAll('.lb-json-page')].map(l=>l.textContent.trim().split(':')[0])")
+    print("settings highlight:", hl)
+    assert '"studyId"' in hl and '"views"' not in hl
+
+    # drag a page to a new place in the page list
+    titles=lambda: [t.inner_text() for t in pg.locator(".lb-page-list > li .lb-page-sub").all()]
+    before=titles()
+    pg.locator(".lb-page-list > li").nth(2).locator("button.lb-page").drag_to(
+        pg.locator(".lb-page-list > li").nth(0).locator("button.lb-page"), target_position={"x": 40, "y": 5})
+    pg.wait_for_timeout(400)
+    after=titles()
+    print("dragged page 3 to the top:", after[:3])
+    assert after[0]==before[2] and after[1]==before[0] and after[2]==before[1]
+    assert pg.locator(".lb-page-list > li").nth(0).locator("button.lb-page.lb-page-on").count()==1
+    # and down: back below the fourth page (just under the two it passed)
+    pg.locator(".lb-page-list > li").nth(0).locator("button.lb-page").drag_to(
+        pg.locator(".lb-page-list > li").nth(3).locator("button.lb-page"), target_position={"x": 40, "y": 50})
+    pg.wait_for_timeout(400)
+    print("dragged it down below page 4:", titles()[:4])
+    assert titles()[:4]==[before[0], before[1], before[3], before[2]]
+    ids=pg.evaluate("() => JSON.parse(localStorage.getItem('lens-builder-draft-v1')).study.views.map(v=>v.id)")
+    orig=[v["id"] for v in json.load(open(f"{ROOT}/public/experiments/demo-lens2.json"))["views"]]
+    assert ids[:4]==[orig[0],orig[1],orig[3],orig[2]] and ids[4:]==orig[4:]
+
     print("page errors:", errs[:5]); assert not errs
     print("BUILDER JSON OK")
     b.close()
