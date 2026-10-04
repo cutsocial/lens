@@ -3,7 +3,8 @@ apply to the study (page list, preview), broken JSON is flagged and not
 applied, the cursor selects pages, and a round trip through the JSON view
 leaves the file identical.  Run with `npm start` running:
 python scripts/e2e/builder_json.py [screenshot-dir]
-Also: study settings highlight in the JSON, and dragging pages in the page list."""
+Also: study settings highlight in the JSON, dragging pages in the page list,
+the Form | JSON switch staying in view, and resizing the preview."""
 from playwright.sync_api import sync_playwright
 import json, os, sys
 ROOT=os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -125,6 +126,23 @@ with sync_playwright() as p:
     ids=pg.evaluate("() => JSON.parse(localStorage.getItem('lens-builder-draft-v1')).study.views.map(v=>v.id)")
     orig=[v["id"] for v in json.load(open(f"{ROOT}/public/experiments/demo-lens2.json"))["views"]]
     assert ids[:4]==[orig[0],orig[1],orig[3],orig[2]] and ids[4:]==orig[4:]
+
+    # layout: the Form | JSON switch stays at the top while the form scrolls
+    pg.get_by_role("button", name="Form", exact=True).click(); pg.wait_for_timeout(300)
+    pages.nth(1).click(); pg.wait_for_timeout(300)
+    pg.mouse.wheel(0, 1500); pg.wait_for_timeout(300)
+    bar=pg.locator(".lb-center-bar").bounding_box(); print("switch bar top after scrolling:", round(bar["y"]))
+    assert 55 <= bar["y"] <= 70
+
+    # the preview is wider when its edge is dragged left; double-click resets it
+    w0=pg.locator(".lb-phone").bounding_box()["width"]
+    h=pg.locator(".lb-resize").bounding_box()
+    pg.mouse.move(h["x"]+4, h["y"]+300); pg.mouse.down(); pg.mouse.move(h["x"]-200, h["y"]+300, steps=8); pg.mouse.up()
+    pg.wait_for_timeout(300)
+    w1=pg.locator(".lb-phone").bounding_box()["width"]; print("preview width:", round(w0), "->", round(w1))
+    assert 180 <= w1-w0 <= 220
+    pg.locator(".lb-resize").dblclick(); pg.wait_for_timeout(300)
+    assert abs(pg.locator(".lb-phone").bounding_box()["width"]-w0) < 2
 
     print("page errors:", errs[:5]); assert not errs
     print("BUILDER JSON OK")
