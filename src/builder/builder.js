@@ -16,7 +16,7 @@
 import React, { Suspense, lazy, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import {
   ThemeProvider, createTheme, CssBaseline, Button, IconButton, TextField, Menu, MenuItem, ListSubheader,
-  Dialog, DialogTitle, DialogContent, DialogActions, ToggleButton, ToggleButtonGroup, Chip,
+  Dialog, DialogTitle, DialogContent, DialogActions, ToggleButton, ToggleButtonGroup, Chip, Checkbox, FormControlLabel,
 } from '@mui/material';
 import {
   Add as AddIcon, Delete as DeleteIcon, ContentCopy as CopyIcon, ArrowUpward as UpIcon,
@@ -187,12 +187,77 @@ function PageEditor({ ctx, index, onRename }) {
   );
 }
 
+// ----- the link to give participants -----
+const PROLIFIC_QUERY = '?PROLIFIC_PID={{%PROLIFIC_PID%}}&STUDY_ID={{%STUDY_ID%}}&SESSION_ID={{%SESSION_ID%}}';
+
+/** Whether the study is live, and whether the live file is the same as this draft. */
+function usePublished(study) {
+  const id = study.studyId;
+  const [state, setState] = useState({ status: 'checking' });
+  useEffect(() => {
+    if (!id) { setState({ status: 'noid' }); return undefined; }
+    let gone = false;
+    const t = setTimeout(() => {
+      fetch(`${PUBLIC}/experiments/${encodeURIComponent(id)}.json`, { cache: 'no-cache' })
+        .then((r) => (r.ok ? r.json() : null))
+        .catch(() => null)
+        .then((live) => {
+          if (gone) return;
+          if (!live || !Array.isArray(live.views)) { setState({ status: 'unpublished' }); return; }
+          const same = JSON.stringify({ studyId: id, ...live }) === JSON.stringify(pruneStrings(study));
+          setState({ status: same ? 'live' : 'changed' });
+        });
+    }, 800);
+    return () => { gone = true; clearTimeout(t); };
+  }, [id, study]);
+  return state;
+}
+
+function StudyLink({ study }) {
+  const [lang, setLang] = useState('en');
+  const [prolific, setProlific] = useState(true);
+  const [copied, setCopied] = useState(false);
+  const { status } = usePublished(study);
+  const base = `${window.location.origin}${window.location.pathname}`;
+  const link = `${base}#/${study.studyId || 'your-study-id'}/${lang}${prolific ? PROLIFIC_QUERY : ''}`;
+  const copy = () => {
+    const done = () => { setCopied(true); setTimeout(() => setCopied(false), 1500); };
+    try { navigator.clipboard.writeText(link).then(done, () => {}); } catch (e) { /* no clipboard */ }
+  };
+  const statusText = {
+    checking: ['', 'Checking whether it is live…'],
+    noid: ['warn', 'Give the study an id (top left) to get its link.'],
+    unpublished: ['warn', `Not published yet: this link works once ${study.studyId}.json is added to the site (Download, then upload).`],
+    changed: ['warn', 'Live, but this draft has changes that aren\'t published yet. Participants get the published version.'],
+    live: ['ok', 'Live, and the same as this draft.'],
+  }[status];
+  return (
+    <fieldset className="lb-fieldset lb-link-box">
+      <legend>Study link</legend>
+      <div className="lb-link-row">
+        <code className="lb-link" aria-label="Study link">{link}</code>
+        <Button size="small" variant="outlined" onClick={copy}>{copied ? 'Copied' : 'Copy'}</Button>
+        <Button size="small" href={link.replace(PROLIFIC_QUERY, '')} target="_blank" rel="noreferrer" disabled={status !== 'live' && status !== 'changed'}>Open</Button>
+      </div>
+      <div className="lb-link-opts">
+        <ToggleButtonGroup size="small" exclusive value={lang} onChange={(_, v) => v && setLang(v)} aria-label="Language">
+          {Object.entries(LANGS).map(([k, l]) => <ToggleButton key={k} value={k}>{l.label}</ToggleButton>)}
+        </ToggleButtonGroup>
+        <FormControlLabel control={<Checkbox size="small" checked={prolific} onChange={(e) => setProlific(e.target.checked)} />}
+          label={<span className="lb-muted">For Prolific (records each participant's Prolific IDs)</span>} />
+      </div>
+      <div className={`lb-link-status lb-link-status-${statusText[0]}`} role="status">{statusText[1]}</div>
+    </fieldset>
+  );
+}
+
 function SettingsEditor({ ctx }) {
   const note = (ctx.study.metadata && ctx.study.metadata.note) || '';
   return (
     <section className="lb-editor" aria-label="Study settings">
       <div className="lb-editor-head"><div><div className="lb-kicker">Study</div><h2>Settings</h2></div></div>
       <Issues items={ctx.issuesFor('settings')} />
+      <StudyLink study={ctx.study} />
       <ObjectFields ctx={ctx} path={[]} node={studySchema} skip={['views', 'strings', '$schema', 'metadata', 'conditon', 'studyId']} />
       <div className="lb-field lb-field-after">
         <TextField label="Notes for researchers (not shown to participants)" value={note} multiline minRows={2} fullWidth size="small"

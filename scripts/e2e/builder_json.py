@@ -4,7 +4,8 @@ applied, the cursor selects pages, and a round trip through the JSON view
 leaves the file identical.  Run with `npm start` running:
 python scripts/e2e/builder_json.py [screenshot-dir]
 Also: study settings highlight in the JSON, dragging pages in the page list,
-the Form | JSON switch staying in view, and resizing the preview."""
+the Form | JSON switch staying in view, resizing the preview, and the
+study link in the settings."""
 from playwright.sync_api import sync_playwright
 import json, os, sys
 ROOT=os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -143,6 +144,23 @@ with sync_playwright() as p:
     assert 180 <= w1-w0 <= 220
     pg.locator(".lb-resize").dblclick(); pg.wait_for_timeout(300)
     assert abs(pg.locator(".lb-phone").bounding_box()["width"]-w0) < 2
+
+    # study link in settings: live and the same, then changed, then not published
+    pg.goto("http://localhost:3000/#/builder"); pg.wait_for_timeout(1500)
+    pg.get_by_role("button", name="Open").click()
+    pg.get_by_placeholder("e.g. demo-lens2").fill("demo-lens2")
+    pg.get_by_role("dialog").get_by_role("button", name="Open", exact=True).click(); pg.wait_for_timeout(500)
+    pg.locator("button.lb-page-settings").click()
+    status=lambda: (pg.wait_for_timeout(1500), pg.locator(".lb-link-status").inner_text())[1]
+    st=status(); print("link status:", st); assert st.startswith("Live, and the same")
+    link=pg.locator(".lb-link").inner_text(); print("link:", link)
+    assert link.endswith("#/demo-lens2/en?PROLIFIC_PID={{%PROLIFIC_PID%}}&STUDY_ID={{%STUDY_ID%}}&SESSION_ID={{%SESSION_ID%}}")
+    pg.get_by_label("Language").get_by_role("button", name="فارسی").click()
+    pg.get_by_label("For Prolific (records each participant's Prolific IDs)").uncheck()
+    assert pg.locator(".lb-link").inner_text().endswith("#/demo-lens2/fa")
+    pg.get_by_label("Condition").fill("changed"); st=status(); print("after an edit:", st); assert st.startswith("Live, but")
+    pg.get_by_label("Study id (file name)").fill("brand-new-study"); st=status(); print("new id:", st); assert st.startswith("Not published yet")
+    if SHOTS: pg.screenshot(path=f"{SHOTS}/b-link.png")
 
     print("page errors:", errs[:5]); assert not errs
     print("BUILDER JSON OK")

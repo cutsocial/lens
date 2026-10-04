@@ -220,3 +220,15 @@
 .lb-resizing { user-select: none; }
 .lb-resizing iframe { pointer-events: none; }
 @media (max-width: 1100px) { .lb-resize { display: none; } }
+
+/* study link (settings) */
+.lb-link-box { margin-bottom: 18px; }
+.lb-link-row { display: flex; gap: 8px; align-items: center; }
+.lb-link {
+  flex: 1; min-width: 0; font-size: 13px; padding: 7px 10px; border-radius: 6px;
+  background: #f3f4f6; border: 1px solid var(--lb-line); overflow-wrap: anywhere; user-select: all;
+}
+.lb-link-opts { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-top: 10px; }
+.lb-link-status { font-size: 13px; margin-top: 8px; color: var(--lb-muted); }
+.lb-link-status-ok { color: #15803d; }
+.lb-link-status-warn { color: #b45309; }
