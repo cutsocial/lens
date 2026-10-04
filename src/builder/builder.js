@@ -227,8 +227,8 @@ function StudyLink({ study }) {
   const statusText = {
     checking: ['', 'Checking whether it is live…'],
     noid: ['warn', 'Give the study an id (top left) to get its link.'],
-    unpublished: ['warn', `Not published yet: this link works once ${study.studyId}.json is added to the site (Download, then upload).`],
-    changed: ['warn', 'Live, but this draft has changes that aren\'t published yet. Participants get the published version.'],
+    unpublished: ['warn', <>Not published yet. To publish: <b>Download</b> the file, then upload it to <a href={UPLOAD_URL} target="_blank" rel="noreferrer">the study folder on GitHub</a> as a pull request and merge it. The link works a minute later.</>],
+    changed: ['warn', <>Live, but this draft has changes that aren't published yet; participants get the published version. To publish them: <b>Download</b>, then upload the file to <a href={UPLOAD_URL} target="_blank" rel="noreferrer">the study folder on GitHub</a> with the same name.</>],
     live: ['ok', 'Live, and the same as this draft.'],
   }[status];
   return (
