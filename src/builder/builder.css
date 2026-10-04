@@ -1,0 +1,161 @@
+/* Study builder (researcher tool). Light, quiet, dense enough for editing. */
+.lb-app {
+  --lb-line: #e3e6eb;
+  --lb-muted: #6b7280;
+  --lb-panel: #ffffff;
+  --lb-accent: #2563eb;
+  --lb-accent-soft: #eaf1ff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #f6f7f9;
+  color: #111827;
+}
+.lb-top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding: 10px 16px;
+  background: var(--lb-panel);
+  border-bottom: 1px solid var(--lb-line);
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+.lb-brand { font-weight: 700; font-size: 17px; margin-inline-end: 8px; }
+.lb-brand span { font-weight: 400; color: var(--lb-muted); }
+.lb-langs { display: flex; align-items: center; gap: 8px; }
+.lb-spacer { flex: 1; }
+.lb-muted { color: var(--lb-muted); font-size: 13px; }
+.lb-message {
+  display: flex; justify-content: space-between; gap: 12px; align-items: center;
+  padding: 8px 16px; background: var(--lb-accent-soft); font-size: 14px;
+}
+.lb-message button { border: 0; background: none; color: var(--lb-accent); cursor: pointer; font: inherit; }
+
+.lb-main {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 270px minmax(0, 1fr) 430px;
+  min-height: 0;
+}
+@media (max-width: 1100px) {
+  .lb-main { grid-template-columns: 240px minmax(0, 1fr); }
+  .lb-preview { grid-column: 1 / -1; }
+}
+@media (max-width: 700px) {
+  .lb-main { grid-template-columns: 1fr; }
+}
+
+/* pages */
+.lb-pages {
+  padding: 12px;
+  border-inline-end: 1px solid var(--lb-line);
+  background: var(--lb-panel);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  overflow-y: auto;
+  max-height: calc(100vh - 62px);
+  position: sticky;
+  top: 62px;
+}
+.lb-pages-head { font-size: 12px; text-transform: uppercase; letter-spacing: .04em; color: var(--lb-muted); margin-top: 8px; }
+.lb-count { color: var(--lb-muted); font-weight: 400; margin-inline-start: 4px; }
+.lb-page-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 4px; }
+.lb-page {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-align: start;
+  border: 1px solid transparent;
+  background: none;
+  border-radius: 8px;
+  padding: 8px;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+}
+.lb-page:hover { background: #f3f4f6; }
+.lb-page-on, .lb-page-on:hover { background: var(--lb-accent-soft); border-color: #c7d7fe; }
+.lb-page-num {
+  width: 22px; height: 22px; border-radius: 11px; flex-shrink: 0;
+  display: inline-flex; align-items: center; justify-content: center;
+  background: #eef0f3; font-size: 12px; color: var(--lb-muted);
+}
+.lb-page-body { display: flex; flex-direction: column; min-width: 0; flex: 1; }
+.lb-page-title { font-size: 14px; font-weight: 600; }
+.lb-page-sub { font-size: 12px; color: var(--lb-muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.lb-page-settings { border-color: var(--lb-line); }
+.lb-page-tools { display: flex; justify-content: flex-end; gap: 2px; padding: 0 4px 4px; }
+.lb-badge {
+  background: #fee2e2; color: #b91c1c; border-radius: 10px; padding: 0 7px;
+  font-size: 12px; font-weight: 600; line-height: 20px;
+}
+
+/* editor */
+.lb-center { padding: 20px 24px 60px; min-width: 0; }
+.lb-editor { max-width: 760px; margin: 0 auto; }
+.lb-editor-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; margin-bottom: 8px; flex-wrap: wrap; }
+.lb-editor-head h2 { margin: 2px 0 0; font-size: 22px; }
+.lb-kicker { font-size: 12px; text-transform: uppercase; letter-spacing: .04em; color: var(--lb-muted); }
+.lb-type-help { margin: 0 0 16px; }
+.lb-fields { display: flex; flex-direction: column; gap: 14px; }
+.lb-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; }
+.lb-field { min-width: 0; }
+.lb-help { font-size: 12.5px; color: var(--lb-muted); margin-top: 4px; line-height: 1.45; }
+.lb-field-error { font-size: 12.5px; color: #b91c1c; margin-top: 4px; }
+.lb-subhead { font-size: 14px; font-weight: 600; margin-bottom: 4px; }
+.lb-fieldset {
+  border: 1px solid var(--lb-line); border-radius: 10px; padding: 12px 14px 14px; margin: 0;
+  background: var(--lb-panel);
+}
+.lb-fieldset legend { font-size: 13px; font-weight: 600; padding: 0 6px; }
+.lb-list-row { display: flex; align-items: center; gap: 6px; margin: 6px 0; }
+.lb-list-controls { display: inline-flex; flex-shrink: 0; }
+.lb-card { border: 1px solid var(--lb-line); border-radius: 10px; padding: 8px 12px 12px; margin: 8px 0; background: var(--lb-panel); }
+.lb-card-head { display: flex; justify-content: space-between; align-items: center; font-size: 13px; font-weight: 600; color: var(--lb-muted); margin-bottom: 6px; }
+.lb-swatch { width: 24px; height: 24px; border-radius: 6px; flex-shrink: 0; border: 1px solid var(--lb-line); }
+.lb-issues { list-style: none; margin: 0 0 16px; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+.lb-issue { display: flex; gap: 8px; align-items: flex-start; font-size: 13.5px; padding: 8px 10px; border-radius: 8px; }
+.lb-issue svg { margin-top: 2px; flex-shrink: 0; }
+.lb-issue-error { background: #fef2f2; color: #991b1b; }
+.lb-issue-warn { background: #fffbeb; color: #92400e; }
+
+/* preview */
+.lb-preview {
+  border-inline-start: 1px solid var(--lb-line);
+  background: #eceef2;
+  padding: 12px 16px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  position: sticky;
+  top: 62px;
+  max-height: calc(100vh - 62px);
+}
+.lb-preview-head { width: 100%; max-width: 390px; display: flex; justify-content: space-between; align-items: center; font-size: 14px; font-weight: 600; }
+.lb-phone {
+  width: 100%;
+  max-width: 390px;
+  flex: 1;
+  min-height: 560px;
+  border-radius: 28px;
+  border: 8px solid #1f2329;
+  overflow: hidden;
+  background: #16171b;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, .15);
+}
+.lb-phone iframe { width: 100%; height: 100%; border: 0; display: block; }
+
+/* dialogs */
+.lb-dialog-p { margin: 0 0 10px; font-size: 15px; }
+.lb-row { display: flex; gap: 8px; margin-bottom: 18px; }
+.lb-steps { margin: 0 0 12px; padding-inline-start: 20px; line-height: 1.7; font-size: 15px; }
+.lb-steps code { background: #f3f4f6; padding: 1px 6px; border-radius: 4px; }
+.lb-warn-text { color: #b45309; }
+/* the classic dictator game styles every small MUI dialog; not ours */
+.MuiPaper-root.MuiDialog-paper.lb-dialog { height: auto !important; width: 100% !important; }
