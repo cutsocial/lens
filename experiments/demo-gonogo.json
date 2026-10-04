@@ -1,0 +1,66 @@
+{
+  "studyId": "demo-gonogo",
+  "condition": "demo",
+  "metadata": {
+    "note": "Single-task demo linked from the README. Same views as in demo-lens2."
+  },
+  "views": [
+    {
+      "id": "lens2.gonogo.intro",
+      "type": "text2",
+      "instruction": true,
+      "text": "lens2.gonogo.intro"
+    },
+    {
+      "id": "gonogoalt2.demo",
+      "type": "gonogoalt2",
+      "text": "lens2.gonogo.rule",
+      "trials": {
+        "total": 12,
+        "go": 6
+      },
+      "stimuliDuration": 2000,
+      "fixationDuration": 500,
+      "feedbackDuration": 500,
+      "choices": {
+        "go": {
+          "type": "letter",
+          "names": [
+            "B",
+            "C",
+            "D",
+            "F",
+            "G",
+            "H",
+            "J",
+            "K",
+            "L",
+            "M",
+            "N",
+            "P",
+            "Q",
+            "R",
+            "S",
+            "T",
+            "V",
+            "W",
+            "X",
+            "Y",
+            "Z"
+          ]
+        },
+        "nogo": {
+          "type": "letter",
+          "names": [
+            "A",
+            "E",
+            "I",
+            "O",
+            "U"
+          ]
+        }
+      },
+      "startText": "lens2.single.start"
+    }
+  ]
+}

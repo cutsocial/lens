@@ -1,0 +1,221 @@
+{
+    "studyId": "ultimatum+BART",
+    "conditon": "a",
+    "redirectTo": "https://app.prolific.co/submissions/complete?cc=CXY33OQO",
+    "submissionNote": "submission.note",
+    "metadata": {
+      "maintainer": "radmanesh@gmail.com"
+    },
+    "views": [
+      {
+        "id": "prolific ID",
+        "type": "text",
+        "instruction": false,
+        "required": true,
+        "text": "p.id.intro",
+        "help": "",
+        "placeholder": "",
+        "pattern": ""
+          },
+      {
+        "id": "introduction",
+        "type": "text",
+        "instruction": true,
+        "text": "intro.ug"
+          }, 
+      {
+        "id": "introduction.bart",
+        "type": "text",
+        "instruction": true,
+        "text": "bart.intro"
+          },    
+      {
+		"id": "bart",
+		"type": "bart",
+		"reward": 10,
+		"maxPumps": 20,
+		"safePumps": 1,
+		"trials": 15
+		  },
+      {
+              "id": "ultimatum.intro1",
+              "type": "text",
+              "instruction": true,
+              "text": "ultimatum.intro1.text"
+          },
+      {
+              "id": "ultimatum.intro2",
+              "type": "text",
+              "instruction": true,
+              "text": "ultimatum.intro2.text"
+          },
+      {
+              "id": "ultimatum.intro3",
+              "type": "text",
+              "instruction": true,
+              "text": "ultimatum.intro3.text"
+          },
+      {
+              "id": "ultimatum.intro4",
+              "type": "text",
+              "instruction": true,
+              "text": "ultimatum.intro4.text"
+          },
+      {
+              "id": "ultimatum.intro5",
+              "type": "text",
+              "instruction": true,
+              "text": "ultimatum.intro5.text"
+          },
+      {
+              "id": "ultimatum.intro6",
+              "type": "text",
+              "instruction": true,
+              "text": "ultimatum.intro6.text"
+          },
+      {
+              "id": "ultimatum.intro7",
+              "type": "text",
+              "instruction": true,
+              "text": "ultimatum.intro7.text"
+          },
+      {
+              "id": "ultimatum-1",
+              "type": "ultimatum",
+              "text" : "ultimatum.rule.text",
+              "trials": 5,
+        "tokens": 8,
+        "opponentTypes": ["occupied","female"],
+        "useOpponentTypes": false,
+        "personsPrefix" : "ultimatum.person",
+        "persons": [
+          {
+            "id": 1,
+            "field1": "field1.content",
+            "field2": "",
+            "minAcceptable": 4,
+            "avatar": "",
+            "tags": ["occupied","single","female","young"]
+          },
+          {
+            "id": 2,
+            "field1": "field1.content",
+            "field3": "",
+            "minAcceptable": 4,
+            "tags": ["unemployed","married","male"]
+          },
+          {
+            "id": 3,
+            "field1": "field1.content",
+            "field2": "",
+            "avatar": "",
+            "minAcceptable": 4,
+            "tags": ["occupied","single","male","rich","young"]
+          },
+          {
+            "id": 4,
+            "field1": "field1.content",
+            "field3": "",
+            "minAcceptable": 4,
+            "tags": ["unemployed","married","male"]
+          },      
+          {
+            "id": 5,
+            "field1": "field1.content",
+            "field3": "",
+            "minAcceptable": 4,
+            "tags": ["unemployed","married","male"]
+          }
+        ]
+            },  
+            {
+                "id": "BSCS",
+                "type": "matrix",
+                "text": "trust.q",
+                "slider": true,
+                "showMidMark": true,
+                "requiredQuestions": [
+                    0,
+                    1,
+                    2
+                ],
+                "direction": "vertical",
+                "choices": [
+                    "BSCS.c1",
+                    "BSCS.c2",
+                    "BSCS.c3",
+                    "BSCS.c4",
+                    "BSCS.c5"
+                ],
+                "questions": [
+                    "BSCS.1",
+                    "BSCS.2",
+                    "BSCS.3",
+                    "BSCS.4",
+                    "BSCS.5",
+                    "BSCS.6",
+                    "BSCS.7",
+                    "BSCS.8",
+                    "check.1",
+                    "BSCS.9",
+                    "BSCS.10",
+                    "BSCS.11",
+                    "BSCS.12",
+                    "BSCS.13",
+                    "BSCS.14"
+                ]
+            },
+            {
+                "id": "food.reminder.time",
+                "type": "matrix",
+                "text": "",
+                "requiredQuestions": [0],
+                "direction": "vertical",
+                "choices": [
+                    "food.reminder.c1",
+                    "food.reminder.c2",
+                    "food.reminder.c3",
+                    "food.reminder.c4",
+                    "food.reminder.c5",
+                    "food.reminder.c6",
+                    "food.reminder.c7",
+                    "food.reminder.c8"
+                ],
+                "questions": [
+                    "food.reminder.time.q"
+                ]
+            },
+            {
+                "id": "hunger",
+                "type": "matrix",
+                "text": "",
+                "slider": true,
+                "showMidMark": true,
+                "requiredQuestions": [0],
+                "direction": "vertical",
+                "choices": [
+                    "hunger.c1",
+                    "hunger.c2",
+                    "hunger.c3",
+                    "hunger.c4",
+                    "hunger.c5",
+                    "hunger.c6",
+                    "hunger.c7",
+                    "hunger.c8",
+                    "hunger.c9",
+                    "hunger.c10",
+                    "hunger.c11"
+    
+                ],
+                "questions": ["hunger.q"]
+            },
+
+      {
+        "id": "done.statement",
+        "type": "text",
+        "instruction": true,
+        "text": "done"
+      }
+    ]
+  }
+  

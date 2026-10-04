@@ -1,0 +1,70 @@
+{
+	"studyId": "TwoAFC",
+	"conditon": "", 
+	"redirectTo": "https://app.prolific.co/submissions/complete?cc=756FAAEA",
+	"submissionNote": "submission.note",
+	"metadata": {
+		"maintainer": "salarirad@gmail.com"
+	},
+	"views": [
+		{
+			"id": "gonogo.introduction",
+			"type": "text",
+			"instruction": true,
+			"text": "gonogo.introduction"
+		},
+		{
+			"id": "gonogo.w.feedback",
+			"type": "gonogo",
+			"text": "gonogo.instruction",
+			"help": "",
+			"trials": {
+				"total": 60,
+				"go": 45,
+				"left": 30,
+				"leftGo": 22
+			},
+			"stimuliDuration": 1000,
+			"fixationDuration": 1000,
+			"feedbackDuration": 500,
+			"timeoutsBeforeReset": 20,
+			"choices": {
+				"go": "blue-star",
+				"nogo": "star"
+			}
+		},
+		{
+			"id": "gonogo.n.feedback.introduction",
+			"type": "text",
+			"instruction": true,
+			"text": "gonogo.main.introduction"
+		},
+		{
+			"id": "gonogo.n.feedback",
+			"type": "gonogo",
+			"text": "gonogo.instruction",
+			"help": "Press one of the images in less than three seconds.",
+			"trials": {
+				"total": 60,
+				"go": 45,
+				"left": 30,
+				"leftGo": 22
+			},
+			"stimuliDuration": 1000,
+			"fixationDuration": 1000,
+			"feedbackDuration": 0,
+			"timeoutsBeforeReset": 20,
+			"choices": {
+				"go": "blue-star",
+				"nogo": "star"
+			}
+		},
+		{
+			"id": "done.statement",
+			"type": "text",
+			"instruction": true,
+			"text": "done"
+		}
+		  
+	]
+}
