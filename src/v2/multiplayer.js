@@ -304,24 +304,26 @@ export default function Multiplayer({ content, onStore, studyId, participant }) 
     return () => clearTimeout(fallbackTimer);
   }, [status, matchId]); // eslint-disable-line react-hooks/exhaustive-deps
 
-  // ----- while playing: let a computer partner move; end the match if a person goes silent -----
+  // ----- while playing: keep the partner's turn moving; end the match if they go silent -----
+  // The browser can't tell a computer partner from a person while the game is
+  // on (the server hides it). On the partner's turn it asks the server at
+  // nextTickAt whether anything is due; a computer partner moves then.
   const turn = state ? whoseTurn(state) : null;
-  const partnerIsBot = state ? state.players[1 - me].kind === 'bot' : false;
   const serverToLocal = (ts) => ts + (skew.current || 0);
 
   useEffect(() => {
-    if (status !== 'playing' || !match.botDueAt) return undefined;
+    if (status !== 'playing' || turn === null || turn === me || !match.nextTickAt) return undefined;
     let timer;
     let tries = 0;
     const tick = () => conn.current.call('/tick', { matchId }).then((r) => {
-      if (!r.moved && tries++ < 20) timer = setTimeout(tick, 400);
-    }).catch(() => { if (tries++ < 20) timer = setTimeout(tick, 1000); });
-    timer = setTimeout(tick, Math.max(0, serverToLocal(match.botDueAt) - Date.now()));
+      if (!r.moved && r.wait && tries++ < 10) timer = setTimeout(tick, Math.min(r.wait + 50, 5000));
+    }).catch(() => { if (tries++ < 10) timer = setTimeout(tick, 1000); });
+    timer = setTimeout(tick, Math.max(0, serverToLocal(match.nextTickAt) - Date.now()));
     return () => clearTimeout(timer);
-  }, [status, match && match.botDueAt]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [status, turn, match && match.nextTickAt]); // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
-    if (status !== 'playing' || turn === null || turn === me || partnerIsBot || !match.turnStartedAt) return undefined;
+    if (status !== 'playing' || turn === null || turn === me || !match.turnStartedAt) return undefined;
     let timer;
     const claim = () => conn.current.call('/timeout', { matchId }).catch((e) => {
       if (e.code === 'too-early') timer = setTimeout(claim, 2000);
@@ -334,7 +336,7 @@ export default function Multiplayer({ content, onStore, studyId, participant }) 
   const matchRef = useRef(null);
   matchRef.current = match;
   useEffect(() => {
-    if (status !== 'playing' || partnerIsBot) return undefined;
+    if (status !== 'playing') return undefined;
     const check = setInterval(() => {
       const m = matchRef.current;
       const seen = m && m.lastSeen ? m.lastSeen[1 - me] : null;
@@ -343,7 +345,7 @@ export default function Multiplayer({ content, onStore, studyId, participant }) 
       }
     }, 5000);
     return () => clearInterval(check);
-  }, [status, partnerIsBot]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [status]); // eslint-disable-line react-hooks/exhaustive-deps
 
   // tell the server if the participant closes the page mid-game
   useEffect(() => {
@@ -385,7 +387,7 @@ export default function Multiplayer({ content, onStore, studyId, participant }) 
     setMySplit((p) => {
       if (!p || p[from] <= 0) return p;
       const next = { ...p, [from]: p[from] - 1, [to]: p[to] + 1 };
-      if (!partnerIsBot) sendDraft(next);
+      sendDraft(next);
       return next;
     });
   };
@@ -402,7 +404,7 @@ export default function Multiplayer({ content, onStore, studyId, participant }) 
   let target = null;
   if (state) {
     if (offer) target = { other: offer.proposerShare, pot: 0, me: offer.responderShare };
-    else if (!partnerIsBot && match.draft && match.draft.round === state.round) {
+    else if (match.draft && match.draft.round === state.round) {
       const d = match.draft;
       target = { other: d.proposerShare, pot: state.tokens - d.proposerShare - d.responderShare, me: d.responderShare };
     } else target = EMPTY(state.tokens);
