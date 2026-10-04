@@ -203,8 +203,35 @@ function SettingsEditor({ ctx }) {
 }
 
 // ----- preview -----
-function Preview({ study, startIndex, lang }) {
+const PREVIEW_MIN = 320;
+const PREVIEW_DEFAULT = 430;
+const clampPreview = (w) => Math.round(Math.max(PREVIEW_MIN, Math.min(w, window.innerWidth - 560)));
+
+function Preview({ study, startIndex, lang, width, onWidth }) {
   const frame = useRef(null);
+  const [resizing, setResizing] = useState(false);
+  // drag the left edge to make the preview wider or narrower; double-click resets
+  const startResize = (e) => {
+    e.preventDefault();
+    const handle = e.currentTarget;
+    handle.setPointerCapture(e.pointerId);
+    setResizing(true);
+    const right = handle.parentElement.getBoundingClientRect().right;
+    const move = (ev) => onWidth(clampPreview(right - ev.clientX));
+    const up = () => {
+      setResizing(false);
+      handle.removeEventListener('pointermove', move);
+      handle.removeEventListener('pointerup', up);
+      handle.removeEventListener('pointercancel', up);
+    };
+    handle.addEventListener('pointermove', move);
+    handle.addEventListener('pointerup', up);
+    handle.addEventListener('pointercancel', up);
+  };
+  const nudge = (e) => {
+    if (e.key === 'ArrowLeft') onWidth(clampPreview(width + 20));
+    if (e.key === 'ArrowRight') onWidth(clampPreview(width - 20));
+  };
   const [ready, setReady] = useState(false);
   const [nonce, setNonce] = useState(0);
   const send = useCallback(() => {
@@ -227,9 +254,12 @@ function Preview({ study, startIndex, lang }) {
   }, [ready, send]);
 
   return (
-    <aside className="lb-preview" aria-label="Preview">
+    <aside className={`lb-preview ${resizing ? 'lb-resizing' : ''}`} aria-label="Preview">
+      <div className="lb-resize" role="separator" aria-orientation="vertical" aria-label="Preview width" tabIndex={0}
+        aria-valuenow={width} aria-valuemin={PREVIEW_MIN} title="Drag to resize the preview (double-click to reset)"
+        onPointerDown={startResize} onDoubleClick={() => onWidth(PREVIEW_DEFAULT)} onKeyDown={nudge} />
       <div className="lb-preview-head">
-        <span>Preview <span className="lb-muted">· nothing is saved</span></span>
+        <span>Preview <span className="lb-muted">· {resizing ? `${Math.round(width - 48)} px wide` : 'nothing is saved'}</span></span>
         <Button size="small" onClick={() => setNonce((n) => n + 1)}>Restart</Button>
       </div>
       <div className="lb-phone">
@@ -244,6 +274,7 @@ export default function Builder() {
   const [draft, setDraft] = useState(() => loadDraft() || { study: emptyStudy(), lang: 'en' });
   const { study, lang } = draft;
   const mode = draft.mode === 'json' ? 'json' : 'form';
+  const previewWidth = Number(draft.previewWidth) || PREVIEW_DEFAULT;
   const [selected, setSelected] = useState(0);
   const [jump, setJump] = useState(0); // bumped when a page is picked, so the JSON view scrolls to it
   const selectPage = useCallback((i) => { setSelected(i); setJump((n) => n + 1); }, []);
@@ -410,7 +441,7 @@ export default function Builder() {
         </header>
         {message && <div className="lb-message" role="status"><span>{message}</span><button type="button" onClick={() => setMessage(null)}>Dismiss</button></div>}
 
-        <main className="lb-main">
+        <main className="lb-main" style={{ '--lb-preview-w': `${previewWidth}px` }}>
           <PageList study={study} selected={sel} onSelect={selectPage} onAdd={addPage} onMove={movePage}
             onDuplicate={duplicatePage} onDelete={deletePage} issueCount={issueCount} lang={lang} locales={locales} />
           <div className={`lb-center lb-center-${mode}`}>
@@ -436,7 +467,8 @@ export default function Builder() {
                 : <PageEditor key={sel} ctx={ctx} index={sel} onRename={(id) => renamePage(sel, id)} />}
             </div>
           </div>
-          <Preview study={study} startIndex={sel === 'settings' ? 0 : sel} lang={lang} />
+          <Preview study={study} startIndex={sel === 'settings' ? 0 : sel} lang={lang}
+            width={previewWidth} onWidth={(w) => setDraft((d) => ({ ...d, previewWidth: w }))} />
         </main>
 
         <input ref={fileInput} type="file" accept=".json,application/json" hidden
