@@ -159,3 +159,33 @@
 .lb-warn-text { color: #b45309; }
 /* the classic dictator game styles every small MUI dialog; not ours */
 .MuiPaper-root.MuiDialog-paper.lb-dialog { height: auto !important; width: 100% !important; }
+
+/* Form | JSON */
+.lb-center-bar {
+  max-width: 760px; margin: 0 auto 14px;
+  display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
+}
+.lb-center-json .lb-center-bar { max-width: none; }
+.lb-json-status { font-size: 13px; color: var(--lb-muted); }
+.lb-json-status-bad { color: #b91c1c; }
+.lb-center-body { animation: lb-slide-in .22s ease-out; }
+@keyframes lb-slide-in { from { opacity: 0; transform: translateX(18px); } to { opacity: 1; transform: none; } }
+[dir="rtl"] .lb-center-body { animation-name: lb-slide-in-rtl; }
+@keyframes lb-slide-in-rtl { from { opacity: 0; transform: translateX(-18px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .lb-center-body { animation: none; } }
+
+/* JSON mode: the editor fills the middle column and scrolls on its own */
+.lb-center-json {
+  display: flex; flex-direction: column;
+  height: calc(100vh - 62px); position: sticky; top: 62px;
+  padding: 14px 16px 16px;
+}
+.lb-center-json .lb-center-body { flex: 1; min-height: 0; }
+.lb-json {
+  height: 100%;
+  border: 1px solid var(--lb-line); border-radius: 10px; overflow: hidden;
+  background: #fff;
+}
+@media (max-width: 1100px) {
+  .lb-center-json { position: static; height: 75vh; }
+}

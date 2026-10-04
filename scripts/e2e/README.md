@@ -16,4 +16,5 @@ Restart the game server between runs: it keeps matches in memory, and players fr
 
 With `npm start` running (no game server needed):
 - `python scripts/e2e/builder_build.py [out-dir]`: builds a study from scratch with every Lens 2 page type, edits text in English and Persian, breaks and fixes a setting, downloads it and runs the validator on the file.
+- `python scripts/e2e/builder_json.py [out-dir]`: the JSON view: picking a page scrolls to it, edits reach the form and page list, broken JSON is flagged and not applied, the cursor selects pages, problems are marked, undo/redo, and the file comes back identical.
 - `python scripts/e2e/builder_roundtrip.py [id,id,...]`: opens published studies, visits every page, downloads them unchanged and checks each file comes back identical.

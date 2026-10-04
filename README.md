@@ -70,6 +70,7 @@ The easiest way is the **study builder**: [lens.cut.social/#/builder](https://le
 - Add pages from a menu (survey pages, tasks, games), reorder, duplicate or delete them.
 - Each page has a form with every option and a short explanation of it. Type text directly; switch the language at the top to add Persian or Arabic versions.
 - A live preview shows the selected page as participants will see it (nothing is saved while previewing).
+- **Form | JSON** switches the middle column to the study file itself, for editing the JSON directly. Picking a page scrolls to it; edits apply as you type, and JSON errors and problems are marked on their lines.
 - Problems are flagged as you type, with the same checks as `npm run validate`.
 - **Open** loads a published study or a file from your computer; **Download** gives the study file. The draft is kept in your browser between visits.
 - To publish, upload the downloaded file to `public/experiments/` on GitHub as a pull request (the builder walks you through it). Once merged, the study is live at `lens.cut.social/#/<study id>/en`.

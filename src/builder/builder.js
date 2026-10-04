@@ -4,7 +4,8 @@
  * - Left: the study's pages (plus study settings). Add, reorder, duplicate, delete.
  * - Middle: a form for the selected page, generated from the study schema.
  *   Text is typed in the language chosen at the top and stored in the
- *   study's own "strings" (see model.js).
+ *   study's own "strings" (see model.js). Or, with the Form | JSON switch,
+ *   the whole study file as JSON (jsonEditor.js).
  * - Right: a live preview of the selected page in a phone-sized frame,
  *   running the real study page in preview mode (nothing is saved).
  * - The same checks as `npm run validate` run as you type.
@@ -12,7 +13,7 @@
  * The draft is kept in this browser. "Download" gives the study file; it goes
  * live once it is added to public/experiments/ in the repo (pull request).
  */
-import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import React, { Suspense, lazy, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import {
   ThemeProvider, createTheme, CssBaseline, Button, IconButton, TextField, Menu, MenuItem, ListSubheader,
   Dialog, DialogTitle, DialogContent, DialogActions, ToggleButton, ToggleButtonGroup, Chip,
@@ -27,6 +28,8 @@ import { makeChecker } from '../studyCheck/check';
 import { LANGS, freshId, pageSummary, plainCopy, pruneStrings, setIn } from './model';
 import { ObjectFields, viewSchema, studySchema, humanize } from './schemaForm';
 import './builder.css';
+
+const JsonEditor = lazy(() => import('./jsonEditor'));
 
 const theme = createTheme({
   palette: { mode: 'light', primary: { main: '#2563eb' }, background: { default: '#f6f7f9' } },
@@ -71,8 +74,14 @@ const fetchJson = (url) => fetch(url).then((r) => { if (!r.ok) throw new Error(`
 function PageList({ study, selected, onSelect, onAdd, onMove, onDuplicate, onDelete, issueCount, lang, locales }) {
   const [anchor, setAnchor] = useState(null);
   const views = study.views || [];
+  const box = useRef(null);
+  // keep the selected page in sight (e.g. when the cursor in the JSON moves to another page)
+  useEffect(() => {
+    const on = box.current && box.current.querySelector('.lb-page-on');
+    if (on) on.scrollIntoView({ block: 'nearest' });
+  }, [selected]);
   return (
-    <aside className="lb-pages" aria-label="Pages">
+    <aside className="lb-pages" aria-label="Pages" ref={box}>
       <button type="button" className={`lb-page lb-page-settings ${selected === 'settings' ? 'lb-page-on' : ''}`} onClick={() => onSelect('settings')}>
         <SettingsIcon fontSize="small" /> <span className="lb-page-title">Study settings</span>
         {issueCount('settings') > 0 && <span className="lb-badge">{issueCount('settings')}</span>}
@@ -209,7 +218,12 @@ function Preview({ study, startIndex, lang }) {
 export default function Builder() {
   const [draft, setDraft] = useState(() => loadDraft() || { study: emptyStudy(), lang: 'en' });
   const { study, lang } = draft;
+  const mode = draft.mode === 'json' ? 'json' : 'form';
   const [selected, setSelected] = useState(0);
+  const [jump, setJump] = useState(0); // bumped when a page is picked, so the JSON view scrolls to it
+  const selectPage = useCallback((i) => { setSelected(i); setJump((n) => n + 1); }, []);
+  const [jsonError, setJsonError] = useState(null); // what's wrong with the JSON being typed, if anything
+  const jsonValid = !jsonError;
   const [locales, setLocales] = useState({ en: {}, fa: {}, ar: {} });
   const [templates, setTemplates] = useState({});
   const [dialog, setDialog] = useState(null); // 'open' | 'published' | 'new'
@@ -219,6 +233,11 @@ export default function Builder() {
 
   const setStudy = useCallback((fn) => setDraft((d) => ({ ...d, study: typeof fn === 'function' ? fn(d.study) : fn })), []);
   const setLang = (l) => setDraft((d) => ({ ...d, lang: l }));
+  const setMode = (m) => {
+    if (m === 'form' && !jsonValid) setMessage('The JSON had an error, so the form shows its last valid version.');
+    setJsonError(null);
+    setDraft((d) => ({ ...d, mode: m }));
+  };
 
   useEffect(() => { saveDraft(draft); }, [draft]);
   useEffect(() => {
@@ -282,11 +301,11 @@ export default function Builder() {
     base.id = freshId(study, ID_BASE[type] || type);
     const at = sel === 'settings' ? views.length : sel + 1;
     setStudy((s) => ({ ...s, views: [...(s.views || []).slice(0, at), base, ...(s.views || []).slice(at)] }));
-    setSelected(at);
+    selectPage(at);
   };
   const movePage = (i, j) => {
     setStudy((s) => { const v = [...s.views]; const [x] = v.splice(i, 1); v.splice(j, 0, x); return { ...s, views: v }; });
-    setSelected(j);
+    selectPage(j);
   };
   const duplicatePage = (i) => {
     setStudy((s) => {
@@ -296,11 +315,11 @@ export default function Builder() {
       v.splice(i + 1, 0, copy);
       return { ...s, views: v };
     });
-    setSelected(i + 1);
+    selectPage(i + 1);
   };
   const deletePage = (i) => {
     setStudy((s) => ({ ...s, views: s.views.filter((_, j) => j !== i) }));
-    setSelected(Math.max(0, i - 1));
+    selectPage(Math.max(0, i - 1));
   };
   const renamePage = (i, id) => setStudy((s) => setIn(s, ['views', i, 'id'], id));
 
@@ -308,7 +327,7 @@ export default function Builder() {
   const openStudy = (s, label) => {
     if (!s || !Array.isArray(s.views)) { setMessage('That file is not a Lens study (it has no "views").'); return; }
     setDraft((d) => ({ ...d, study: s }));
-    setSelected(0);
+    selectPage(0);
     setDialog(null);
     setMessage(`Opened ${label}.`);
   };
@@ -367,12 +386,30 @@ export default function Builder() {
         {message && <div className="lb-message" role="status"><span>{message}</span><button type="button" onClick={() => setMessage(null)}>Dismiss</button></div>}
 
         <main className="lb-main">
-          <PageList study={study} selected={sel} onSelect={setSelected} onAdd={addPage} onMove={movePage}
+          <PageList study={study} selected={sel} onSelect={selectPage} onAdd={addPage} onMove={movePage}
             onDuplicate={duplicatePage} onDelete={deletePage} issueCount={issueCount} lang={lang} locales={locales} />
-          <div className="lb-center">
-            {sel === 'settings'
-              ? <SettingsEditor ctx={ctx} />
-              : <PageEditor key={sel} ctx={ctx} index={sel} onRename={(id) => renamePage(sel, id)} />}
+          <div className={`lb-center lb-center-${mode}`}>
+            <div className="lb-center-bar">
+              <ToggleButtonGroup size="small" exclusive value={mode} onChange={(_, v) => v && setMode(v)} aria-label="Edit with">
+                <ToggleButton value="form">Form</ToggleButton>
+                <ToggleButton value="json">JSON</ToggleButton>
+              </ToggleButtonGroup>
+              {mode === 'json' && (
+                <span className={`lb-json-status ${jsonValid ? '' : 'lb-json-status-bad'}`} role="status">
+                  {jsonValid ? 'Edits apply as you type' : `${jsonError}. Until it's fixed, the preview shows the last valid version.`}
+                </span>
+              )}
+            </div>
+            <div key={mode} className="lb-center-body">
+              {mode === 'json' ? (
+                <Suspense fallback={<p className="lb-muted">Loading…</p>}>
+                  <JsonEditor study={study} onChange={(s) => setStudy(s)} onValid={(ok, why) => setJsonError(ok ? null : why)}
+                    selected={sel} jump={jump} onCursorPage={setSelected} issues={all} />
+                </Suspense>
+              ) : sel === 'settings'
+                ? <SettingsEditor ctx={ctx} />
+                : <PageEditor key={sel} ctx={ctx} index={sel} onRename={(id) => renamePage(sel, id)} />}
+            </div>
           </div>
           <Preview study={study} startIndex={sel === 'settings' ? 0 : sel} lang={lang} />
         </main>

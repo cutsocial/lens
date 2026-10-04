@@ -219,7 +219,7 @@ export function makeChecker({ schema, locales = {}, imageExists = null }) {
         const text = formatAjvError(e, study);
         if (seen.has(text)) continue;
         seen.add(text);
-        const extra = e.params && (e.params.additionalProperty || e.params.unevaluatedProperty);
+        const extra = e.params && (e.params.additionalProperty || e.params.unevaluatedProperty || (e.keyword === 'discriminator' && e.params.tag));
         const path = (e.instancePath.replace(/^\//, '').replace(/\//g, '.') + (extra ? `.${extra}` : '')).replace(/^\./, '');
         report.error(text, path || null);
       }
