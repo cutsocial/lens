@@ -189,3 +189,17 @@
 @media (max-width: 1100px) {
   .lb-center-json { position: static; height: 75vh; }
 }
+.lb-field-after { margin-top: 14px; }
+
+/* dragging pages */
+.lb-page[draggable="true"] { cursor: grab; }
+.lb-page[draggable="true"]:active { cursor: grabbing; }
+.lb-drag-handle { color: #b6bcc6; opacity: 0; flex-shrink: 0; margin-inline-start: -4px; }
+.lb-page:hover .lb-drag-handle { opacity: 1; }
+.lb-dragging { opacity: .4; }
+.lb-page-list > li { position: relative; }
+.lb-drop-before::before, .lb-drop-after::after {
+  content: ""; position: absolute; inset-inline: 4px; height: 3px; border-radius: 2px; background: var(--lb-accent);
+}
+.lb-drop-before::before { top: -3.5px; }
+.lb-drop-after::after { bottom: -3.5px; }

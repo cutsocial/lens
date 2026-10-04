@@ -35,21 +35,34 @@ const pageField = StateField.define({
 
 function nodeFor(tree, page) {
   if (!tree) return null;
-  if (page === 'settings') return null;
+  if (page === 'settings') return settingsNodes(tree)[0] || null;
   return findNodeAtLocation(tree, ['views', page]) || null;
+}
+
+/** The study's top-level settings: every property except the pages and the text tables. */
+function settingsNodes(tree) {
+  if (!tree || tree.type !== 'object') return [];
+  return (tree.children || []).filter((p) => p.children && !['views', 'strings'].includes(p.children[0].value));
 }
 
 const pageLines = EditorView.decorations.compute(['doc', pageField], (state) => {
   const page = state.field(pageField);
   const builder = new RangeSetBuilder();
-  if (page === null || page === 'settings') return builder.finish();
-  const node = nodeFor(parseTree(state.doc.toString()), page);
-  if (!node) return builder.finish();
-  const first = state.doc.lineAt(node.offset).number;
-  const last = state.doc.lineAt(Math.min(node.offset + node.length, state.doc.length)).number;
-  for (let n = first; n <= last; n++) {
-    const cls = n === first ? 'lb-json-page lb-json-page-first' : n === last ? 'lb-json-page lb-json-page-last' : 'lb-json-page';
-    builder.add(state.doc.line(n).from, state.doc.line(n).from, Decoration.line({ class: cls }));
+  if (page === null) return builder.finish();
+  const tree = parseTree(state.doc.toString());
+  // a page is one block; the settings are the top-level lines around the pages
+  const nodes = page === 'settings' ? settingsNodes(tree) : [nodeFor(tree, page)].filter(Boolean);
+  const lines = new Set();
+  for (const node of nodes) {
+    const first = state.doc.lineAt(node.offset).number;
+    const last = state.doc.lineAt(Math.min(node.offset + node.length, state.doc.length)).number;
+    for (let n = first; n <= last; n++) lines.add(n);
+  }
+  for (const n of [...lines].sort((a, b) => a - b)) {
+    const cls = ['lb-json-page'];
+    if (!lines.has(n - 1)) cls.push('lb-json-page-first');
+    if (!lines.has(n + 1)) cls.push('lb-json-page-last');
+    builder.add(state.doc.line(n).from, state.doc.line(n).from, Decoration.line({ class: cls.join(' ') }));
   }
   return builder.finish();
 });
