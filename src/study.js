@@ -50,16 +50,26 @@ import GoNoGoAlt from './gonogoalt';
 import ReactGA from "react-ga4";
 import { newSubmissionId, saveView } from './utils/api';
 import Multiplayer from './v2/multiplayer';
+import { addStudyStrings } from './utils/studyStrings';
+import { PreviewEnd, PreviewNotice } from './builder/previewParts';
 
 function useQuery() {
   return new URLSearchParams(useLocation().search);
 }
 
+/**
+ * props.preview (study builder): { experiment, startIndex } shows a study that
+ * isn't published, from a given page. Nothing is saved or sent: no
+ * submissions, no per-page saves, no analytics, and multiplayer games only
+ * show a notice (the server only plays published studies).
+ */
 export default function Study(props) {
 
-  ReactGA.initialize("G-YFD0H08757");
+  const preview = props.preview || null;
+  if (!preview) ReactGA.initialize("G-YFD0H08757");
   const {t, i18n} = useTranslation();
-  let {lang, studyId} = useParams();
+  let {lang, studyId: studyIdParam} = useParams();
+  const studyId = preview ? ((preview.experiment && preview.experiment.studyId) || 'preview') : studyIdParam;
 
   // prolific shits
   let query = useQuery();
@@ -93,7 +103,7 @@ export default function Study(props) {
     console.log('study.storeData', data);
 
     const index = storedCount.current++;
-    if (progressMeta.current) {
+    if (progressMeta.current && !preview) {
       saveView(studyId, submissionId.current, index, data, progressMeta.current);
     }
 
@@ -166,6 +176,10 @@ export default function Study(props) {
 
   const renderView = (view) => {
     
+    if (state.finished && preview) {
+      return <PreviewEnd onRestart={props.onRestart} />;
+    }
+
     if (state.finished) {
       const submission = {
         PROLIFIC_PID: query.get('PROLIFIC_PID'),
@@ -207,6 +221,7 @@ export default function Study(props) {
       case 'ultimatum2':
         return <Ultimatum2 onStore={storeData} content={view} key={view.id} />;
       case 'multiplayer':
+        if (preview) return <PreviewNotice onNext={onNext} />;
         return <Multiplayer onStore={storeData} content={view} key={view.id} studyId={studyId}
           participant={{
             submissionId: submissionId.current,
@@ -240,11 +255,11 @@ export default function Study(props) {
 
   }
   
-  const startExperiment = (experiment) => {
+  const startExperiment = (experiment, startIndex = 0) => {
     console.log("starting experiment", experiment);
     console.log("prolific pid : ",query.get('PROLIFIC_PID'))
     const startedAt = Date.now();
-    if (experiment.saveProgress === true) {
+    if (experiment.saveProgress === true && !preview) {
       progressMeta.current = {
         PROLIFIC_PID: query.get('PROLIFIC_PID'),
         STUDY_ID: query.get('STUDY_ID'),
@@ -258,12 +273,13 @@ export default function Study(props) {
         ...prev,
         startedAt,
         experiment: experiment,
-        currentViewIndex: 0,
-        view: experiment.views[0]
+        currentViewIndex: startIndex,
+        progress: 100 * startIndex / Math.max(1, experiment.views.length),
+        view: experiment.views[startIndex] || experiment.views[0]
       }
     });
 
-    if (process.env.NODE_ENV === 'production') {
+    if (process.env.NODE_ENV === 'production' && !preview) {
       ReactGA.send({ hitType: "pageview", page: window.location.pathname , title: "window?.title" });
     }
 
@@ -282,10 +298,22 @@ export default function Study(props) {
 
   //load experiment
   useEffect(() => {
-    i18n.changeLanguage(lang);
-    fetch(process.env.PUBLIC_URL + `/experiments/${studyId}.json`)
-      .then(resp => resp.json())
-      .then(experiment => startExperiment(experiment));
+    if (preview) {
+      i18n.changeLanguage(lang).then(() => i18n.loadLanguages(['en'])).then(() => {
+        addStudyStrings(i18n, preview.experiment);
+        startExperiment(preview.experiment, preview.startIndex || 0);
+      });
+      return;
+    }
+    // Text a study carries itself ("strings": {lang: {key: text}}) is added once
+    // the shared locale files have loaded, so it takes precedence over them.
+    Promise.all([
+      fetch(process.env.PUBLIC_URL + `/experiments/${studyId}.json`).then(resp => resp.json()),
+      i18n.changeLanguage(lang).then(() => i18n.loadLanguages(['en'])),
+    ]).then(([experiment]) => {
+      addStudyStrings(i18n, experiment);
+      startExperiment(experiment);
+    });
   },[studyId]);
 
   //render

@@ -63,6 +63,23 @@
       "type": "boolean",
       "description": "Save each page as it is stored (rows in <studyId>.partial). Only enable when consent covers partial data."
     },
+    "strings": {
+      "type": "object",
+      "description": "Text for this study, by language: {\"en\": {\"key\": \"text\"}, \"fa\": {...}}. Any text field can use these keys, and they take precedence over the shared locale files. Lets a study carry its own wording (and translations) in one file; the study builder writes text here.",
+      "propertyNames": {
+        "enum": [
+          "en",
+          "fa",
+          "ar"
+        ]
+      },
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "string"
+        }
+      }
+    },
     "views": {
       "type": "array",
       "minItems": 1,
@@ -192,21 +209,26 @@
           "$ref": "#/$defs/viewId"
         },
         "text": {
-          "$ref": "#/$defs/i18n"
+          "$ref": "#/$defs/i18n",
+          "description": "What the page says (markdown: **bold**, line breaks)."
         },
         "instruction": {
-          "type": "boolean"
+          "type": "boolean",
+          "description": "On: only shows the text, with no answer box."
         },
         "required": {
-          "type": "boolean"
+          "type": "boolean",
+          "description": "On: the participant must answer before going on."
         },
         "placeholder": {
-          "$ref": "#/$defs/i18n"
+          "$ref": "#/$defs/i18n",
+          "description": "Hint shown inside the empty answer box."
         },
         "autoComplete": {
           "enum": [
             "countries"
-          ]
+          ],
+          "description": "\"countries\": the answer is picked from a list of countries."
         },
         "help": {
           "$ref": "#/$defs/legacyHelp"
@@ -231,21 +253,26 @@
           "$ref": "#/$defs/viewId"
         },
         "text": {
-          "$ref": "#/$defs/i18n"
+          "$ref": "#/$defs/i18n",
+          "description": "What the page says (markdown: **bold**, line breaks)."
         },
         "instruction": {
-          "type": "boolean"
+          "type": "boolean",
+          "description": "On: only shows the text, with no answer box."
         },
         "required": {
-          "type": "boolean"
+          "type": "boolean",
+          "description": "On: the participant must answer before going on."
         },
         "placeholder": {
-          "$ref": "#/$defs/i18n"
+          "$ref": "#/$defs/i18n",
+          "description": "Hint shown inside the empty answer box."
         },
         "autoComplete": {
           "enum": [
             "countries"
-          ]
+          ],
+          "description": "\"countries\": the answer is picked from a list of countries."
         }
       }
     },
@@ -312,25 +339,31 @@
           "$ref": "#/$defs/viewId"
         },
         "text": {
-          "$ref": "#/$defs/i18n"
+          "$ref": "#/$defs/i18n",
+          "description": "Shown above the questions (optional)."
         },
         "questions": {
-          "$ref": "#/$defs/matrixProps/properties/questions"
+          "$ref": "#/$defs/matrixProps/properties/questions",
+          "description": "One row per question; all share the same choices."
         },
         "choices": {
-          "$ref": "#/$defs/matrixProps/properties/choices"
+          "$ref": "#/$defs/matrixProps/properties/choices",
+          "description": "The answer options, in order (e.g. a 1–7 scale)."
         },
         "requiredQuestions": {
           "$ref": "#/$defs/matrixProps/properties/requiredQuestions"
         },
         "direction": {
-          "$ref": "#/$defs/matrixProps/properties/direction"
+          "$ref": "#/$defs/matrixProps/properties/direction",
+          "description": "\"vertical\": choices listed under each question. \"horizontal\": choices side by side."
         },
         "slider": {
-          "type": "boolean"
+          "type": "boolean",
+          "description": "On: answer on a slider instead of buttons."
         },
         "showMidMark": {
-          "type": "boolean"
+          "type": "boolean",
+          "description": "On: mark the middle of the slider."
         }
       }
     },
@@ -351,25 +384,31 @@
           "$ref": "#/$defs/viewId"
         },
         "text": {
-          "$ref": "#/$defs/i18n"
+          "$ref": "#/$defs/i18n",
+          "description": "Shown above the questions (optional)."
         },
         "questions": {
-          "$ref": "#/$defs/matrixProps/properties/questions"
+          "$ref": "#/$defs/matrixProps/properties/questions",
+          "description": "One row per question; all share the same choices."
         },
         "choices": {
-          "$ref": "#/$defs/matrixProps/properties/choices"
+          "$ref": "#/$defs/matrixProps/properties/choices",
+          "description": "The answer options, in order (e.g. a 1–7 scale)."
         },
         "requiredQuestions": {
           "$ref": "#/$defs/matrixProps/properties/requiredQuestions"
         },
         "direction": {
-          "$ref": "#/$defs/matrixProps/properties/direction"
+          "$ref": "#/$defs/matrixProps/properties/direction",
+          "description": "\"vertical\": choices listed under each question. \"horizontal\": choices side by side."
         },
         "slider": {
-          "type": "boolean"
+          "type": "boolean",
+          "description": "On: answer on a slider instead of buttons."
         },
         "showMidMark": {
-          "type": "boolean"
+          "type": "boolean",
+          "description": "On: mark the middle of the slider."
         },
         "mobileLayout": {
           "enum": [
@@ -411,22 +450,27 @@
           "$ref": "#/$defs/viewId"
         },
         "text": {
-          "$ref": "#/$defs/i18n"
+          "$ref": "#/$defs/i18n",
+          "description": "What the page says (markdown: **bold**, line breaks)."
         },
         "instruction": {
-          "type": "boolean"
+          "type": "boolean",
+          "description": "On: only shows the text, with no answer box."
         },
         "required": {
-          "type": "boolean"
+          "type": "boolean",
+          "description": "On: the participant must answer before going on."
         },
         "placeholder": {
-          "$ref": "#/$defs/i18n"
+          "$ref": "#/$defs/i18n",
+          "description": "Hint shown inside the empty answer box."
         },
         "getUrlContent": {
           "type": "boolean"
         },
         "paramNameAsContent": {
-          "type": "string"
+          "type": "string",
+          "description": "Link parameter to fill the box from, e.g. PROLIFIC_PID."
         },
         "content": {
           "type": "string"
@@ -454,22 +498,27 @@
           "$ref": "#/$defs/viewId"
         },
         "text": {
-          "$ref": "#/$defs/i18n"
+          "$ref": "#/$defs/i18n",
+          "description": "What the page says (markdown: **bold**, line breaks)."
         },
         "instruction": {
-          "type": "boolean"
+          "type": "boolean",
+          "description": "On: only shows the text, with no answer box."
         },
         "required": {
-          "type": "boolean"
+          "type": "boolean",
+          "description": "On: the participant must answer before going on."
         },
         "placeholder": {
-          "$ref": "#/$defs/i18n"
+          "$ref": "#/$defs/i18n",
+          "description": "Hint shown inside the empty answer box."
         },
         "getUrlContent": {
           "type": "boolean"
         },
         "paramNameAsContent": {
-          "type": "string"
+          "type": "string",
+          "description": "Link parameter to fill the box from, e.g. PROLIFIC_PID."
         },
         "content": {
           "type": "string"

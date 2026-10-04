@@ -63,6 +63,20 @@ Each participant's data includes their rounds from their side, totals, bonus, de
 
 If participants are told they play another person, apply Prolific's Deception pre-screener and keep the debrief on: Prolific requires one for everyone, including people who drop out.
 
+## Building a study
+
+The easiest way is the **study builder**: [lens.cut.social/#/builder](https://lens.cut.social/#/builder).
+
+- Add pages from a menu (survey pages, tasks, games), reorder, duplicate or delete them.
+- Each page has a form with every option and a short explanation of it. Type text directly; switch the language at the top to add Persian or Arabic versions.
+- A live preview shows the selected page as participants will see it (nothing is saved while previewing).
+- **Form | JSON** switches the middle column to the study file itself, for editing the JSON directly. Picking a page scrolls to it; edits apply as you type, and JSON errors and problems are marked on their lines.
+- Problems are flagged as you type, with the same checks as `npm run validate`.
+- **Open** loads a published study or a file from your computer; **Download** gives the study file. The draft is kept in your browser between visits.
+- To publish, upload the downloaded file to `public/experiments/` on GitHub as a pull request (the builder walks you through it). Once merged, the study is live at `lens.cut.social/#/<study id>/en`.
+
+The builder stores a study's text in the study file itself (`"strings"`, below), so a study carries its own wording and translations.
+
 ## Writing a study
 
 A study is a file in `public/experiments/`, served at `https://lens.cut.social/#/<file name>/<language>`:
@@ -78,7 +92,7 @@ A study is a file in `public/experiments/`, served at `https://lens.cut.social/#
 }
 ```
 
-- Text in a study file is either plain text or an **i18n key** looked up in `public/locales/en.json`, `fa.json` and `ar.json`, which is how one study runs in several languages. Markdown works in both.
+- Text in a study file is either plain text or an **i18n key**. Keys are looked up first in the study's own `"strings"` (`{"en": {"key": "text"}, "fa": {…}}`), then in the shared `public/locales/en.json`, `fa.json` and `ar.json`. That is how one study runs in several languages. Markdown works in all of them.
 - Top-level options: `redirectTo`, `submissionNote`, `fontScale` (larger survey text, e.g. `1.2`; tasks are never scaled), `saveProgress` (below), `finalPage`, `metadata` (free-form notes).
 - `schema/study.schema.json` describes every type and option. In VS Code you get autocomplete and an explanation when you hover a key.
 - The `demo-*.json` files are good starting points.
