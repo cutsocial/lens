@@ -188,6 +188,9 @@
           "$ref": "#/$defs/ultimatum2"
         },
         {
+          "$ref": "#/$defs/dice"
+        },
+        {
           "$ref": "#/$defs/multiplayer"
         }
       ]
@@ -1605,6 +1608,62 @@
         "matchmakingDelay": {
           "$ref": "#/$defs/ms",
           "description": "Simulated matchmaking wait. Default 5000."
+        }
+      }
+    },
+    "dice": {
+      "type": "object",
+      "required": [
+        "id",
+        "type",
+        "trials"
+      ],
+      "additionalProperties": false,
+      "description": "Dice allocation: each round the participant privately decides which of two dice (blue, orange) is theirs, rolls both, then gives one to themselves and one to the other person. Points = the die's face value.",
+      "properties": {
+        "type": {
+          "const": "dice"
+        },
+        "id": {
+          "$ref": "#/$defs/viewId"
+        },
+        "text": {
+          "$ref": "#/$defs/i18n",
+          "description": "Rule shown above the board. Default: lens2.dice.rule."
+        },
+        "trials": {
+          "$ref": "#/$defs/gameProps/properties/trials"
+        },
+        "useOpponentTypes": {
+          "type": "boolean"
+        },
+        "opponentTypes": {
+          "$ref": "#/$defs/gameProps/properties/opponentTypes"
+        },
+        "personsPrefix": {
+          "type": "string"
+        },
+        "persons": {
+          "$ref": "#/$defs/gameProps/properties/persons"
+        },
+        "bonusPerPoint": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Bonus per point the participant keeps, recorded in the data as `bonus`. Leave out for no bonus."
+        },
+        "rolls": {
+          "type": "array",
+          "description": "Fixed dice values for the first rounds, as [blue, orange] pairs; later rounds are random.",
+          "items": {
+            "type": "array",
+            "minItems": 2,
+            "maxItems": 2,
+            "items": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 6
+            }
+          }
         }
       }
     },

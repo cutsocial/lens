@@ -896,3 +896,77 @@ body[data-ui='2'] {
   border-radius: var(--l2-radius-stage);
   z-index: 1;
 }
+
+/* Dice task (dice): two dice told apart by color and name; each person card
+   has a slot for the die they are given. */
+.l2-dice-person { cursor: default; }
+.l2-dice-person[role='button'] { cursor: pointer; }
+.l2-dice-person:focus-visible { outline: 3px solid var(--l2-accent); outline-offset: 2px; }
+.l2-dice-slot {
+  width: 76px;
+  height: 76px;
+  flex-shrink: 0;
+  border-radius: 16px;
+  border: 2px dashed rgba(255, 255, 255, 0.16);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.l2-dice-slot:has(.l2-die) { border-color: transparent; }
+.l2-dice-table {
+  flex-grow: 1;
+  min-height: 170px;
+  border-radius: var(--l2-radius-card);
+  border: 2px dashed rgba(255, 255, 255, 0.14);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 16px;
+}
+.l2-dice-row { display: flex; gap: 28px; min-height: 76px; align-items: center; }
+.l2-dice-status {
+  margin: 0;
+  max-width: 30em;
+  text-align: center;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--l2-muted);
+}
+.l2-die {
+  width: 68px;
+  height: 68px;
+  padding: 10px;
+  border: 0;
+  border-radius: 15px;
+  box-shadow: inset 0 -4px 0 rgba(0, 0, 0, 0.22), 0 6px 16px rgba(0, 0, 0, 0.35);
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.l2-die:disabled { cursor: default; }
+.l2-die-blue { background: #5aa9ff; }
+.l2-die-orange { background: #ff9f5a; }
+.l2-die-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  width: 100%;
+  height: 100%;
+  place-items: center;
+}
+.l2-pip { width: 11px; height: 11px; border-radius: 50%; background: #10151f; }
+.l2-die.is-selected { outline: 3px solid var(--l2-text); outline-offset: 4px; }
+.l2-die:focus-visible { outline: 3px solid var(--l2-text); outline-offset: 4px; }
+.l2-die.is-dragging { opacity: 0.35; }
+.l2-die.is-rolling { animation: l2-die-shake 180ms ease-in-out infinite alternate; }
+.l2-die-ghost { position: fixed; pointer-events: none; z-index: 10; cursor: grabbing; display: block; }
+@keyframes l2-die-shake {
+  from { transform: rotate(-12deg) translateY(-2px); }
+  to { transform: rotate(12deg) translateY(2px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .l2-die.is-rolling { animation: none; }
+}
