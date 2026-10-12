@@ -322,6 +322,18 @@ export default function Study(props) {
     });
   },[studyId]);
 
+  // Until the study file and its text have loaded, show only a plain dark
+  // page (the Lens 2 background) instead of an empty classic card with a
+  // "Not Implemented!" message and a Next button. A spinner appears only if
+  // loading takes more than half a second.
+  if (!state.experiment.views) {
+    return (
+      <div className="study-loading" dir={languages[lang].direction} aria-busy="true">
+        <span className="study-loading-spinner" role="status" aria-label={t('loading')} />
+      </div>
+    );
+  }
+
   //render
   return (
     <CacheProvider value={isRtl?rtlCache:ltrCache}>
