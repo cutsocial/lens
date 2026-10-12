@@ -1,0 +1,35 @@
+{
+  "studyId": "test-scroll",
+  "conditon": "a",
+  "submissionNote": "submission.note",
+  "metadata": {
+    "maintainer": "ansarinia@me.com"
+  },
+  "views": [
+    {
+      "id": "trust",
+      "type": "matrix",
+      "text": "trust.q",
+      "requiredQuestions": [
+        0,
+        1,
+        2
+      ],
+      "direction": "vertical",
+      "choices": [
+        "trust.c1",
+        "trust.c2",
+        "trust.c3",
+        "trust.c4",
+        "trust.c5"
+      ],
+      "questions": [
+        "trust.q1",
+        "trust.q2",
+        "trust.q3",
+        "trust.q4",
+        "trust.q5"
+      ]
+    }
+  ]
+}

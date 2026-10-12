@@ -1,0 +1,20 @@
+{
+  "studyId": "kitchensink",
+  "conditon": "a",
+  "redirectTo": "https://google.com?ID=123456",
+  "submissionNote": "submission.note",
+  "metadata": {
+    "maintainer": "ansarinia@me.com"
+  },
+  "views": [
+		{
+			"id": "bart",
+			"type": "bart",
+			"reward": 10,
+			"maxPumps": 20,
+			"safePumps": 1,
+			"trials": 25
+		}
+
+  ]
+}

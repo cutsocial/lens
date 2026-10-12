@@ -1,0 +1,23 @@
+{
+  "studyId": "demo-bart",
+  "condition": "demo",
+  "metadata": {
+    "note": "Single-task demo linked from the README. Same views as in demo-lens2."
+  },
+  "views": [
+    {
+      "id": "lens2.bart.intro",
+      "type": "text2",
+      "instruction": true,
+      "text": "lens2.bart.intro"
+    },
+    {
+      "id": "bart2.demo",
+      "type": "bart2",
+      "reward": 7,
+      "maxPumps": 20,
+      "safePumps": 1,
+      "trials": 5
+    }
+  ]
+}
