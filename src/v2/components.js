@@ -3,7 +3,7 @@
  * so start screens, notices, feedback and buttons look and behave the same
  * everywhere.
  */
-import React, { useEffect } from 'react';
+import React, { useLayoutEffect } from 'react';
 import Markdown from 'react-markdown/with-html';
 import '@fontsource/atkinson-hyperlegible-next/400.css';
 import '@fontsource/atkinson-hyperlegible-next/600.css';
@@ -13,7 +13,9 @@ import './lens2.css';
 
 /** Root of every Lens 2 view; switches the page ground while mounted. */
 export function L2Root({ dir, children }) {
-  useEffect(() => {
+  // Layout effect: switch the page ground before the first paint, so the
+  // classic grey background never shows behind a Lens 2 view.
+  useLayoutEffect(() => {
     const prev = document.body.getAttribute('data-ui');
     document.body.setAttribute('data-ui', '2');
     return () => {

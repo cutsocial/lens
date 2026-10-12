@@ -64,3 +64,27 @@ span.required {
 .view-container .MuiGrid-direction-xs-column {
   flex-wrap: nowrap;
 }
+
+/* Shown while a study file and its text load (see Study in study.js) */
+.study-loading {
+  position: fixed;
+  inset: 0;
+  background: #16171b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.study-loading-spinner {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 3px solid rgba(255, 255, 255, 0.15);
+  border-top-color: #5aa9ff;
+  opacity: 0;
+  animation: study-loading-in 200ms ease-out 500ms forwards, study-loading-spin 0.9s linear infinite;
+}
+@keyframes study-loading-in { to { opacity: 1; } }
+@keyframes study-loading-spin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) {
+  .study-loading-spinner { animation: study-loading-in 200ms ease-out 500ms forwards; }
+}
