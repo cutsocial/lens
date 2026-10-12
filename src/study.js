@@ -23,6 +23,7 @@ import Prolific from './prolific'
 import Matrix from './matrix';
 import Submission from './submission';
 import Stroop2 from './v2/stroop2';
+import GoNoGo2 from './v2/gonogo2';
 import GoNoGoAlt2 from './v2/gonogoalt2';
 import NBack2 from './v2/nback2';
 import Bart2 from './v2/bart2';
@@ -36,7 +37,7 @@ import Submission2 from './v2/submission2';
 // Lens 2 view types draw their own surfaces and Next buttons, so the study page
 // doesn't wrap them in a card or add the shared Navigation.
 const LENS2_SURVEY_TYPES = ['text2', 'matrix2', 'prolific2'];
-const LENS2_TYPES = ['stroop2', 'gonogoalt2', 'nback2', 'bart2', 'dictator2', 'ultimatum2', 'multiplayer', ...LENS2_SURVEY_TYPES];
+const LENS2_TYPES = ['stroop2', 'gonogo2', 'gonogoalt2', 'nback2', 'bart2', 'dictator2', 'ultimatum2', 'multiplayer', ...LENS2_SURVEY_TYPES];
 import BART from './bart';
 import GoNoGo from './gonogo';
 import Stroop from './stroop';
@@ -210,6 +211,8 @@ export default function Study(props) {
         return <Stroop onStore={storeData} content={view} key={view.id} />;
       case 'stroop2':
         return <Stroop2 onStore={storeData} content={view} key={view.id} />;
+      case 'gonogo2':
+        return <GoNoGo2 onStore={storeData} onProgress={updateViewProgress} content={view} key={view.id} />;
       case 'gonogoalt2':
         return <GoNoGoAlt2 onStore={storeData} onProgress={updateViewProgress} content={view} key={view.id} />;
       case 'nback2':

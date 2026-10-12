@@ -149,6 +149,9 @@
           "$ref": "#/$defs/gonogo"
         },
         {
+          "$ref": "#/$defs/gonogo2"
+        },
+        {
           "$ref": "#/$defs/gonogoalt"
         },
         {
@@ -761,6 +764,62 @@
           "$ref": "#/$defs/legacyHelp"
         }
       }
+    },
+    "gonogo2": {
+      "type": "object",
+      "required": [
+        "id",
+        "type",
+        "trials",
+        "choices"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "const": "gonogo2"
+        },
+        "id": {
+          "$ref": "#/$defs/viewId"
+        },
+        "text": {
+          "$ref": "#/$defs/i18n"
+        },
+        "trials": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/gngCounts"
+            }
+          ],
+          "required": [
+            "left",
+            "leftGo"
+          ],
+          "unevaluatedProperties": false
+        },
+        "choices": {
+          "$ref": "#/$defs/starChoices"
+        },
+        "stimuliDuration": {
+          "$ref": "#/$defs/ms"
+        },
+        "fixationDuration": {
+          "$ref": "#/$defs/ms"
+        },
+        "feedbackDuration": {
+          "$ref": "#/$defs/ms"
+        },
+        "timeoutsBeforeReset": {
+          "$ref": "#/$defs/timing/properties/timeoutsBeforeReset"
+        },
+        "showFixation": {
+          "type": "boolean",
+          "description": "Show a \"+\" between trials (classic left it blank)."
+        },
+        "startText": {
+          "$ref": "#/$defs/i18n"
+        }
+      },
+      "description": "Two-choice task (Lens 2 version of classic \"gonogo\"): a star appears on the left or right; for the go star press the key on the same side, for the no-go star the opposite side. Same options and data as classic."
     },
     "gonogoaltChoices": {
       "type": "object",

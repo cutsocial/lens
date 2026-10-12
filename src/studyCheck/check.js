@@ -72,7 +72,7 @@ function semanticChecks(study, base, report, { locales, imageExists }) {
         }
         break;
       }
-      case 'gonogo':
+      case 'gonogo': case 'gonogo2':
         if (t && typeof t === 'object') {
           if (t.go > t.total) warn(`${where}: trials.go (${t.go}) is more than trials.total (${t.total})`);
           if (t.left > t.total) warn(`${where}: trials.left (${t.left}) is more than trials.total (${t.total})`);
