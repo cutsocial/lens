@@ -43,12 +43,12 @@ const UPLOAD_URL = 'https://github.com/cutsocial/lens/upload/master/public/exper
 
 const TYPES = [
   { group: 'Survey', items: [['text2', 'Text or question'], ['matrix2', 'Choice questions / scale'], ['prolific2', 'Prolific ID']] },
-  { group: 'Tasks', items: [['stroop2', 'Stroop'], ['gonogoalt2', 'Go/No-Go'], ['nback2', 'N-back'], ['bart2', 'BART']] },
+  { group: 'Tasks', items: [['stroop2', 'Stroop'], ['gonogo2', '2-choice'], ['gonogoalt2', 'Go/No-Go'], ['nback2', 'N-back'], ['bart2', 'BART']] },
   { group: 'Games', items: [['dictator2', 'Dictator game'], ['ultimatum2', 'Ultimatum game'], ['multiplayer', 'Multiplayer game (live)']] },
   { group: 'Classic (for existing studies)', items: [['text', 'Text (classic)'], ['matrix', 'Matrix (classic)'], ['prolific', 'Prolific ID (classic)'], ['stroop', 'Stroop (classic)'], ['gonogo', '2-choice (classic)'], ['gonogoalt', 'Go/No-Go (classic)'], ['nback', 'N-back (classic)'], ['bart', 'BART (classic)'], ['taskswitch', 'Task switch (classic)'], ['simplified_taskswitch', 'Simplified task switch (classic)'], ['dictator', 'Dictator (classic)'], ['ultimatum', 'Ultimatum (classic)']] },
 ];
 const TYPE_LABEL = Object.fromEntries(TYPES.flatMap((g) => g.items));
-const ID_BASE = { text2: 'text', matrix2: 'scale', prolific2: 'prolific-id', stroop2: 'stroop', gonogoalt2: 'gonogo', nback2: 'nback', bart2: 'bart', dictator2: 'dictator', ultimatum2: 'ultimatum', multiplayer: 'game' };
+const ID_BASE = { text2: 'text', matrix2: 'scale', prolific2: 'prolific-id', stroop2: 'stroop', gonogo2: 'two-choice', gonogoalt2: 'gonogo', nback2: 'nback', bart2: 'bart', dictator2: 'dictator', ultimatum2: 'ultimatum', multiplayer: 'game' };
 
 function emptyStudy() {
   return {

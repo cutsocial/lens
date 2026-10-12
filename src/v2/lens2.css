@@ -847,3 +847,52 @@ body[data-ui='2'] {
   .l2-ring-fill, .l2-ring.is-closing .l2-ring-fill, .l2-ring-icon { transition: none; }
   .l2-final-message, .l2-final-note, .l2-final-redirect { animation: none; }
 }
+
+/* Two-choice task (gonogo2): two sides of the stage, always left-to-right.
+   Each side is the classic lighter square, 45% wide, and the stimulus keeps
+   the classic icons and colors (gonogo.css). Tapping a side answers for it. */
+.l2-sides {
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  gap: 0;
+}
+.l2-sides::after {
+  content: "";
+  position: absolute;
+  inset-block: 16px;
+  inset-inline-start: 50%;
+  border-inline-start: 1px solid var(--l2-hairline);
+}
+.l2-side {
+  position: relative;
+  width: 45%;
+  aspect-ratio: 1 / 1;
+  border: 0;
+  padding: 0;
+  border-radius: 12px;
+  background-color: #ffffff22;
+  cursor: pointer;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.l2-side[aria-disabled='true'] { cursor: default; }
+.l2-side:focus { outline: none; }
+.l2-side:focus-visible { outline: 3px solid var(--l2-accent); outline-offset: 2px; }
+.l2-side-figure {
+  position: absolute;
+  inset: 0;
+  width: 100% !important;
+  height: 100% !important;
+}
+.l2-sides-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--l2-surface);
+  border-radius: var(--l2-radius-stage);
+  z-index: 1;
+}

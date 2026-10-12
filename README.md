@@ -9,6 +9,7 @@ Each link opens one task in the current design (Lens 2):
 * [Survey pages](https://lens.cut.social/#/demo-survey/en): text, country, choice and slider questions
 * [Stroop task](https://lens.cut.social/#/demo-stroop/en)
 * [Go/No-Go](https://lens.cut.social/#/demo-gonogo/en)
+* [Two-choice task (2-alternative forced choice)](https://lens.cut.social/#/demo-twochoice/en)
 * [N-back](https://lens.cut.social/#/demo-nback/en)
 * [Balloon Analogue Risk Task (BART)](https://lens.cut.social/#/demo-bart/en)
 * [Dictator game](https://lens.cut.social/#/demo-dictator/en)
@@ -18,7 +19,7 @@ Each link opens one task in the current design (Lens 2):
 
 Replace `/en` with `/fa` or `/ar` to see Persian or Arabic.
 
-The original designs (Lens 1, release `v1.0`) still run every existing study unchanged: [2-alternative forced choice](https://lens.cut.social/#/gonogo/en), [task switching](https://lens.cut.social/#/taskswitch/en), [simplified task switching](https://lens.cut.social/#/simplified_taskswitch/en), and [all classic types in one study](https://lens.cut.social/#/demo-comprehensive/en).
+The original designs (Lens 1, release `v1.0`) still run every existing study unchanged: [2-alternative forced choice](https://lens.cut.social/#/gonogo/en) (type `gonogo`), [task switching](https://lens.cut.social/#/taskswitch/en), [simplified task switching](https://lens.cut.social/#/simplified_taskswitch/en), and [all classic types in one study](https://lens.cut.social/#/demo-comprehensive/en).
 
 **Make your own study** with the [study builder](https://lens.cut.social/#/builder): pick pages from a menu, fill in forms (or edit the JSON), and see each page live as you go. See [Building a study](#building-a-study).
 
@@ -33,7 +34,7 @@ A study is a list of views, shown in order. Each view has a `type`:
 | Prolific ID | `prolific2` | `prolific` |
 | Stroop | `stroop2` | `stroop` |
 | Go/No-Go (letters or icons) | `gonogoalt2` | `gonogoalt` |
-| 2-alternative forced choice | | `gonogo` |
+| 2-alternative forced choice | `gonogo2` | `gonogo` |
 | N-back | `nback2` | `nback` |
 | BART | `bart2` | `bart` |
 | Dictator / ultimatum (pre-recorded opponents) | `dictator2`, `ultimatum2` | `dictator`, `ultimatum` |
@@ -44,7 +45,8 @@ A Lens 2 task takes the same study-file options and records the same data fields
 
 Lens 2 options worth knowing:
 
-- `stroop2`, `gonogoalt2`, `nback2`: optional `"startText"` (an i18n key) for the start screen. `stroop2`: `"showFixation": true` shows a "+" between trials.
+- `stroop2`, `gonogo2`, `gonogoalt2`, `nback2`: optional `"startText"` (an i18n key) for the start screen. `stroop2`, `gonogo2`: `"showFixation": true` shows a "+" between trials.
+- `gonogo2`: the Lens 2 version of the classic two-choice task, which is called `gonogo` for historical reasons (Go/No-Go proper is `gonogoalt`). The classic name is unchanged, so existing studies still work. Participants press ← / → or tap a side; the sides stay left-to-right in Persian and Arabic.
 - `bart2`: the balloon is an orange ball; `"stimulusStyle": "classic"` brings back the red bubble. `"ballScale"` enlarges it.
 - `dictator2`, `ultimatum2`: `"tapControls": true` adds + and − buttons next to dragging. Dictator's `"matchmakingDelay"` (ms, default 5000) sets the "finding another person" pause.
 - `text2`, `matrix2`, `prolific2`: answers are saved when Next is pressed, missing answers are pointed out under the question, and horizontal choices stack on phones (`"mobileLayout": "row"` keeps one row).

@@ -50,11 +50,12 @@ Lens 2 tasks are new view types that sit next to the classic ones; classic types
 - Study page renders `LENS2_TYPES` without the classic card wrapper. Stimuli (colors, words, sizes) come from the study file or keep classic values; never restyle them through the design system.
 - Interface strings live under `lens2.*` keys in all three locale files.
 - `singleResponseTask.js`: shared component for one-response tasks (tap the stage or press Space; withholding is the other answer). Draws stimuli with the classic CSS classes from `nback.css`, so letters/icons/fixation look identical to classic.
+- `gonogo2.js`: the Lens 2 two-choice task (classic `gonogo`, a 2-alternative forced choice despite its name). Classic stream, scoring and stimuli (icons and colors from `gonogo.css`, 45%-wide sides with the classic lighter square); the sides are tappable and always left-to-right. Checked against classic `gonogo` with identical seeded sessions (keys, taps, timeouts and a reset): same trial records.
 - `bart2.js`: BART with the classic explosion deck, balloon size and data; orange Lens 2 ball by default (`stimulusStyle: "classic"` for the red bubble); optional `ballScale`.
 - `tokenGame.js`: shared dictator/ultimatum screen (coin piles per person, pointer-event drag, optional `tapControls`, dictator `matchmakingDelay`).
 - `survey.js`: survey page shell (Next button, inline required message), `ScaleSlider`, `CountryPicker`. `text2.js`, `matrix2.js`, `prolific2.js` use it. Survey views store on Next with `onStore(data, true)` (not in an unmount cleanup), so `Study.onNext` skips its required check for Lens 2 types; survey CSS is in rem so `fontScale` applies.
 - `submission2.js`: Lens 2 final page, used when a study has any Lens 2 view (override with `finalPage`). Saving and retries are in `src/utils/useSubmission.js`, shared with classic `src/submission.js`.
-- Current Lens 2 types: `stroop2`, `gonogoalt2`, `nback2`, `bart2`, `dictator2`, `ultimatum2`, `text2`, `matrix2`, `prolific2`, and `multiplayer` (below). Demo: `/#/demo-lens2/en`.
+- Current Lens 2 types: `stroop2`, `gonogo2`, `gonogoalt2`, `nback2`, `bart2`, `dictator2`, `ultimatum2`, `text2`, `matrix2`, `prolific2`, and `multiplayer` (below). Demo: `/#/demo-lens2/en`.
 
 ## Multiplayer games (view type `multiplayer`)
 
@@ -84,7 +85,7 @@ Study-level text: a study file may have `"strings": {lang: {key: text}}`; `Study
 
 ## Experiments (`public/experiments/*.json`)
 
-Each file is a study. Top-level keys: `studyId`, `condition`, `redirectTo`, `submissionNote` (an i18n key; receives `{{submissionCode}}`), `metadata`, `strings` (the study's own text by language), `views[]`. `schema/study.schema.json` defines every view type and option (run `npm run validate` after editing a study file); `public/experiments/demo-comprehensive.json` exercises every classic view type; `demo-lens2.json` every Lens 2 type, and `demo-<task>.json` one Lens 2 task each (linked from `README.md`, which lists the types). Many `mad*.json` files are real published studies, so avoid changing them unless asked.
+Each file is a study. Top-level keys: `studyId`, `condition`, `redirectTo`, `submissionNote` (an i18n key; receives `{{submissionCode}}`), `metadata`, `strings` (the study's own text by language), `views[]`. `schema/study.schema.json` defines every view type and option (run `npm run validate` after editing a study file); `public/experiments/demo-comprehensive.json` exercises every classic view type; `demo-lens2.json` every Lens 2 type, and `demo-<task>.json` one Lens 2 task each (`demo-twochoice.json` for `gonogo2`) (linked from `README.md`, which lists the types). Many `mad*.json` files are real published studies, so avoid changing them unless asked.
 
 Prolific integration: `PROLIFIC_PID`, `STUDY_ID`, `SESSION_ID` are read from the URL query string in `Study` and sent with the submission. `ASSIGNMENT_ID` (set by the server's `/assign`) is sent too, only when present.
 
