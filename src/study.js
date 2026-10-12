@@ -29,6 +29,7 @@ import NBack2 from './v2/nback2';
 import Bart2 from './v2/bart2';
 import Dictator2 from './v2/dictator2';
 import Ultimatum2 from './v2/ultimatum2';
+import Dice from './v2/dice';
 import Text2 from './v2/text2';
 import Matrix2 from './v2/matrix2';
 import Prolific2 from './v2/prolific2';
@@ -37,7 +38,7 @@ import Submission2 from './v2/submission2';
 // Lens 2 view types draw their own surfaces and Next buttons, so the study page
 // doesn't wrap them in a card or add the shared Navigation.
 const LENS2_SURVEY_TYPES = ['text2', 'matrix2', 'prolific2'];
-const LENS2_TYPES = ['stroop2', 'gonogo2', 'gonogoalt2', 'nback2', 'bart2', 'dictator2', 'ultimatum2', 'multiplayer', ...LENS2_SURVEY_TYPES];
+const LENS2_TYPES = ['stroop2', 'gonogo2', 'gonogoalt2', 'nback2', 'bart2', 'dictator2', 'ultimatum2', 'dice', 'multiplayer', ...LENS2_SURVEY_TYPES];
 import BART from './bart';
 import GoNoGo from './gonogo';
 import Stroop from './stroop';
@@ -219,6 +220,8 @@ export default function Study(props) {
         return <NBack2 onStore={storeData} onProgress={updateViewProgress} content={view} key={view.id} />;
       case 'bart2':
         return <Bart2 onStore={storeData} content={view} key={view.id} />;
+      case 'dice':
+        return <Dice onStore={storeData} content={view} key={view.id} />;
       case 'dictator2':
         return <Dictator2 onStore={storeData} content={view} key={view.id} />;
       case 'ultimatum2':

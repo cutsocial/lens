@@ -14,6 +14,7 @@ Each link opens one task in the current design (Lens 2):
 * [Balloon Analogue Risk Task (BART)](https://lens.cut.social/#/demo-bart/en)
 * [Dictator game](https://lens.cut.social/#/demo-dictator/en)
 * [Ultimatum game](https://lens.cut.social/#/demo-ultimatum/en)
+* [Dice allocation](https://lens.cut.social/#/demo-dice/en)
 * [Multiplayer ultimatum game](https://lens.cut.social/#/demo-multiplayer/en): open it in two windows to play yourself, or wait 20 seconds for a computer partner
 * [All Lens 2 tasks and survey pages in one study](https://lens.cut.social/#/demo-lens2/en)
 
@@ -39,6 +40,7 @@ A study is a list of views, shown in order. Each view has a `type`:
 | BART | `bart2` | `bart` |
 | Dictator / ultimatum (pre-recorded opponents) | `dictator2`, `ultimatum2` | `dictator`, `ultimatum` |
 | Task switching | | `taskswitch`, `simplified_taskswitch` |
+| Dice allocation | `dice` | |
 | Live two-player ultimatum / dictator | `multiplayer` | |
 
 A Lens 2 task takes the same study-file options and records the same data fields as its classic version, plus `taskVersion: 2`, so results stay comparable. Reaction-time tasks record stimulus-onset and response times with `performance.now()` (`timingVersion: 2`) next to the original fields.
@@ -51,6 +53,20 @@ Lens 2 options worth knowing:
 - `dictator2`, `ultimatum2`: `"tapControls": true` adds + and − buttons next to dragging. Dictator's `"matchmakingDelay"` (ms, default 5000) sets the "finding another person" pause.
 - `text2`, `matrix2`, `prolific2`: answers are saved when Next is pressed, missing answers are pointed out under the question, and horizontal choices stack on phones (`"mobileLayout": "row"` keeps one row).
 - Studies with any Lens 2 view end on the Lens 2 final page. `redirectTo` adds a Continue button (e.g. back to Prolific), with optional `redirectText` and `redirectLabel`. `"finalPage": "classic"` or `"lens2"` overrides the choice.
+
+### Dice allocation
+
+`dice` is based on a prototype Morteza Ansarinia built in Cut in 2018. Each round the participant privately decides which of two dice (blue, orange) is theirs and which is the other person's, rolls both, and then gives one die to themselves and one to the other person (drag it onto a card, or tap the die and then the card). Each gets the die's face value in points. The private choice is never recorded, so self-serving allocation shows only in aggregate: honest participants get the higher die in about half the rounds where the dice differ.
+
+```json
+{ "id": "dice", "type": "dice", "trials": 10, "personsPrefix": "detailed.set.p", "persons": [ ... ],
+  "bonusPerPoint": 0.01 }
+```
+
+- `trials` (required): number of rounds. Opponents are `persons`, as in the dictator and ultimatum games.
+- `bonusPerPoint` (optional): records `bonus` = points kept × this value. Leave it out for no bonus.
+- `rolls` (optional): fixed `[blue, orange]` values for the first rounds; later rounds are random.
+- Each round records both dice, which die the participant kept, both points, the opponent, `changes` (how often they switched the dice before Done), `decideMs` (round start to roll) and `allocateMs` (dice landed to Done). The response adds `selfTotal`, `otherTotal`, `unequalRounds`, `selfHigherRounds`, `selfHigherShare` and, with `bonusPerPoint`, `bonus`.
 
 ### Multiplayer games
 

@@ -107,6 +107,12 @@ function semanticChecks(study, base, report, { locales, imageExists }) {
           }
         }
         break;
+      case 'dice':
+        if (Array.isArray(v.rolls) && typeof v.trials === 'number' && v.rolls.length > v.trials) {
+          warn(`${where}: rolls has ${v.rolls.length} pairs but there are only ${v.trials} rounds; the extra pairs are never used`);
+        }
+        if (!(v.persons || []).length) warn(`${where}: no persons; the other person is shown as "the other person"`);
+        break;
       case 'stroop': case 'stroop2': {
         // A code is two letters: word, then ink. The right answer is the choice
         // whose word names the stimulus's ink. A choice's ink may be left out of
