@@ -1,0 +1,24 @@
+{
+  "studyId": "demo-multiplayer",
+  "condition": "demo",
+  "metadata": {
+    "note": "Multiplayer ultimatum game demo. Open it in two windows to play each other; alone, a computer partner (fair) joins after 20 seconds."
+  },
+  "views": [
+    {
+      "id": "mp.ultimatum",
+      "type": "multiplayer",
+      "game": "ultimatum",
+      "tokens": 10,
+      "rounds": 3,
+      "matching": {
+        "timeout": 20000
+      },
+      "bot": {
+        "strategy": "fair",
+        "initialDelay": 2500,
+        "reactionDelay": 3000
+      }
+    }
+  ]
+}

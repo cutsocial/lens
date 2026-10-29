@@ -1,0 +1,35 @@
+{
+  "studyId": "demo-twochoice",
+  "condition": "demo",
+  "metadata": {
+    "note": "Single-task demo linked from the README. Same views as in demo-lens2."
+  },
+  "views": [
+    {
+      "id": "lens2.twochoice.intro",
+      "type": "text2",
+      "instruction": true,
+      "text": "lens2.twochoice.intro"
+    },
+    {
+      "id": "gonogo2.demo",
+      "type": "gonogo2",
+      "text": "lens2.twochoice.rule",
+      "trials": {
+        "total": 12,
+        "go": 6,
+        "left": 6,
+        "leftGo": 3
+      },
+      "stimuliDuration": 2000,
+      "fixationDuration": 500,
+      "feedbackDuration": 500,
+      "timeoutsBeforeReset": 4,
+      "choices": {
+        "go": "blue-star",
+        "nogo": "star"
+      },
+      "startText": "lens2.twochoice.start"
+    }
+  ]
+}

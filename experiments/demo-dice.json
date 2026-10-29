@@ -1,0 +1,62 @@
+{
+  "studyId": "demo-dice",
+  "condition": "demo",
+  "metadata": {
+    "note": "Single-task demo linked from the README. Same views as in demo-lens2."
+  },
+  "views": [
+    {
+      "id": "lens2.dice.intro",
+      "type": "text2",
+      "instruction": true,
+      "text": "lens2.dice.intro"
+    },
+    {
+      "id": "dice.demo",
+      "type": "dice",
+      "trials": 5,
+      "personsPrefix": "detailed.set.p",
+      "persons": [
+        {
+          "id": 1,
+          "field1": "field1.content",
+          "field2": "field2.content",
+          "field3": "field3.content",
+          "field4": "field4.content",
+          "avatar": "marry-avatar.jpg",
+          "tags": [
+            "occupied",
+            "single",
+            "female",
+            "young"
+          ]
+        },
+        {
+          "id": 2,
+          "field1": "field1.content",
+          "field3": "field3.content",
+          "tags": [
+            "unemployed",
+            "married",
+            "male"
+          ]
+        },
+        {
+          "id": 3,
+          "field1": "field1.content",
+          "field2": "field2.content",
+          "field3": "field3.content",
+          "field4": "field4.content",
+          "avatar": "peter-avatar.jpg",
+          "tags": [
+            "occupied",
+            "single",
+            "male",
+            "rich",
+            "young"
+          ]
+        }
+      ]
+    }
+  ]
+}
